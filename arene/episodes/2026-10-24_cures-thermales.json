@@ -1,0 +1,72 @@
+{
+ "slug": "2026-10-24_cures-thermales",
+ "source": "Sources : Public Sénat, LCP",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET DE LA SÉCU",
+   "texte": "La Sécu doit-elle **rembourser les cures thermales** ?",
+   "sous": "Le gouvernement veut baisser leur prise en charge."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le budget de la Sécu prévoit de **baisser** le remboursement des cures, aujourd'hui de 65 %.",
+    "La différence passerait aux **mutuelles**. Économie attendue : environ **200 millions €**."
+   ],
+   "titre": "CE QUI EST PROPOSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "**500 000** curistes par an, selon les élus des villes thermales.",
+    "La filière revendique **25 000 emplois** et 4,8 milliards € de retombées."
+   ],
+   "titre": "EN CHIFFRES"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Gouvernement, une partie du camp présidentiel",
+   "pas": 3.9,
+   "arguments": [
+    "Est-ce à la Sécu de **financer une activité économique** ?",
+    "L'efficacité médicale reste **débattue** : la Haute Autorité de santé n'a pas tranché.",
+    "Les cures coûtent **260 millions €** par an à la Sécurité sociale."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "LR, PS, centristes, élus des villes thermales",
+   "pas": 3.9,
+   "arguments": [
+    "L'Académie de médecine considère la cure comme un **vrai traitement**.",
+    "**300 000 curistes** sur 500 000 pourraient renoncer : un mauvais calcul.",
+    "Des communes qui gèrent leurs thermes seraient **mises en difficulté**."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "La baisse passerait par décret. Une mesure semblable avait échoué l'an dernier."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, rembourser les cures ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "slug": "2026-10-20_gel-des-pensions",
+ "source": "Sources : Public Sénat, LCP",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET DE LA SÉCU",
+   "texte": "Faut-il **geler une partie** des retraites ?",
+   "sous": "Le débat arrive à l'Assemblée."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le budget de la Sécu propose de ne plus **revaloriser** les pensions au-delà d'environ 1 260 € par mois.",
+    "Les petites pensions resteraient indexées sur l'inflation."
+   ],
+   "titre": "CE QUI EST PROPOSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "**4 milliards €** d'économies attendues.",
+    "Sans mesure, les dépenses de retraite grimperaient de **13 milliards €** l'an prochain."
+   ],
+   "titre": "EN CHIFFRES"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Gouvernement",
+   "pas": 3.9,
+   "arguments": [
+    "**Tout le monde doit contribuer** : 25 % de la population, 10 % de l'effort.",
+    "Les **petites pensions** restent protégées : 1 260 €, c'est 85 % du Smic net.",
+    "Le déficit de la Sécu, **21,8 milliards €**, doit être divisé par deux."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "Socialistes, LFI, réserves jusqu'au centre",
+   "pas": 3.9,
+   "arguments": [
+    "**L'argent est ailleurs** : pas question de geler, même partiellement.",
+    "Le **seuil de pauvreté** est à 1 337 € : 1 260 €, ce n'est pas une grosse retraite.",
+    "Un retraité seul qui paie un **loyer** n'est pas aisé, même à 2 000 €."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "Les députés examinent le budget de la Sécu à partir du 20 octobre."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, sur le gel des retraites ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "slug": "2026-10-26_indemnites-de-rupture",
+ "source": "Sources : LCP, Previssima",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET 2027",
+   "texte": "Faut-il **taxer davantage** les grosses indemnités de départ ?",
+   "sous": "Licenciement, rupture conventionnelle : les règles pourraient changer."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le budget veut unifier et **plafonner** les exonérations sur les indemnités de licenciement et de rupture conventionnelle.",
+    "Au-delà du plafond : **impôt et cotisations**."
+   ],
+   "titre": "CE QUI EST PROPOSÉ"
+  },
+  {
+   "type": "compare",
+   "duree": 9,
+   "titre": "LA MESURE",
+   "libelle": "Exonération maximale d'impôt sur le revenu (environ)",
+   "avant": "288 000 €",
+   "apres": "48 900 €",
+   "note": "Un **seul plafond** pour l'impôt, les cotisations et la CSG."
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Gouvernement",
+   "pas": 3.9,
+   "arguments": [
+    "Pour **95 % des salariés**, ça ne change rien.",
+    "Seuls les **5 %** qui touchent les plus grosses indemnités seraient concernés.",
+    "Un système **simplifié** : un plafond au lieu de plusieurs."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "Droite républicaine et d'autres groupes",
+   "pas": 3.9,
+   "arguments": [
+    "Il faut de **vraies économies** sur la dépense publique, pas de nouvelles taxes.",
+    "Les **cadres** et salariés de longue date seraient les plus touchés.",
+    "Les employeurs auraient un argument de plus pour **réduire** les indemnités négociées."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "La mesure peut encore changer pendant le débat au Parlement."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, plafonner les indemnités ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

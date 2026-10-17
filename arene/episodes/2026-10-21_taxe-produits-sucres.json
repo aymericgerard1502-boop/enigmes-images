@@ -1,0 +1,72 @@
+{
+ "slug": "2026-10-21_taxe-produits-sucres",
+ "source": "Sources : LCP, AFP",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET DE LA SÉCU",
+   "texte": "Faut-il **taxer les produits sucrés** ?",
+   "sous": "Après les sodas, les gâteaux et viennoiseries ?"
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le budget de la Sécu étend la taxe sur les **boissons sucrées** à certains aliments transformés.",
+    "Seuls les produits au-delà d'un seuil de sucre seraient visés. Recette attendue : **300 millions €**."
+   ],
+   "titre": "CE QUI EST PROPOSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "**80 %** des enfants dépassent déjà les apports recommandés en sucre.",
+    "**18 %** des adultes sont obèses en France, près de 10 millions de personnes."
+   ],
+   "titre": "EN CHIFFRES"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Gouvernement",
+   "pas": 3.9,
+   "arguments": [
+    "Une taxe **comportementale**, pour faire baisser la consommation de sucre.",
+    "Agir sur ce que vendent les industriels, **pas seulement** sur la prévention.",
+    "Trop d'**obésité et de diabète** : l'enjeu est d'abord sanitaire."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "Industriels, artisans, RN",
+   "pas": 3.9,
+   "arguments": [
+    "Ce sont **les consommateurs** qui paieront, au supermarché comme à la boulangerie.",
+    "Une menace pour des **entreprises familiales** implantées dans les territoires.",
+    "Elle pèserait surtout sur les **ménages modestes**, les plus touchés par l'obésité."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "La mesure sera débattue avec le budget de la Sécu à l'Assemblée."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, taxer le sucre ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

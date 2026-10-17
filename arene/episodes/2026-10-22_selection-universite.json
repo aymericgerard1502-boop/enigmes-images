@@ -1,0 +1,72 @@
+{
+ "slug": "2026-10-22_selection-universite",
+ "source": "Sources : Public Sénat, L'Étudiant",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "ÉDUCATION",
+   "texte": "Faut-il une **sélection à l'entrée** de l'université ?",
+   "sous": "La question s'invite dans la présidentielle."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Bruno Retailleau, candidat LR, veut **en finir** avec l'accès automatique en licence après le bac.",
+    "En face, les syndicats étudiants réclament **250 000 places** de plus, sans sélection."
+   ],
+   "titre": "CE QUI S'EST PASSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "**576 000** lycéens candidats sur Parcoursup en 2026.",
+    "Environ **80 000** sans formation à la fin de la phase principale, le 11 juillet."
+   ],
+   "titre": "EN CHIFFRES"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Bruno Retailleau (LR), un rapport du Sénat",
+   "pas": 3.9,
+   "arguments": [
+    "Selon lui, **un étudiant sur deux** n'a aucun diplôme universitaire cinq ans après le bac.",
+    "La sélection existe **déjà en cachette** : autant l'assumer.",
+    "Un rapport du Sénat recommande de **mettre fin** à l'accès automatique avec le bac."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "Syndicats étudiants, CFDT, des chercheurs",
+   "pas": 3.9,
+   "arguments": [
+    "L'université publique doit rester **ouverte à tous** les bacheliers.",
+    "Les recalés partiraient vers des **écoles privées payantes** : un tri social.",
+    "Le vrai problème, ce sont les moyens : **+30 % d'étudiants** depuis 2010, sans hausse des dépenses."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Le débat est lancé.**",
+    "Changer l'accès à l'université demanderait une loi votée par le Parlement."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, la sélection à la fac ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

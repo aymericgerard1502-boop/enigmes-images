@@ -1,0 +1,72 @@
+{
+ "slug": "2026-10-23_aides-aux-familles",
+ "source": "Sources : LCP, MoneyVox",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET DE LA SÉCU",
+   "texte": "Faut-il **raboter les aides** aux familles ?",
+   "sous": "Allocations familiales et allocation de rentrée dans le viseur."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le budget prévoit de **geler** les allocations familiales et de **recentrer** l'allocation de rentrée scolaire.",
+    "Le gel rapporterait **1,1 milliard €**, le rabot de l'allocation de rentrée **600 millions €**."
+   ],
+   "titre": "CE QUI EST PROPOSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "Allocation de rentrée : de **427 à 466 €** par enfant, selon l'âge.",
+    "Elle coûte un peu plus de **2 milliards €** par an."
+   ],
+   "titre": "AUJOURD'HUI"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Gouvernement",
+   "pas": 3.9,
+   "arguments": [
+    "L'allocation de rentrée n'est **pas toujours en lien** avec les besoins des familles.",
+    "Un **recentrage** de l'aide, pas une suppression.",
+    "Le déficit de la Sécu, **21,8 milliards €**, doit être divisé par deux."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "De la gauche à la droite et au RN",
+   "pas": 3.9,
+   "arguments": [
+    "Les familles, surtout **les plus modestes**, ont besoin de ce soutien.",
+    "L'allocation de rentrée paie **fournitures, vêtements, cantine**, selon la CAF.",
+    "En 2025, l'Assemblée avait **déjà refusé** de geler ces allocations."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "Les députés débattent du budget de la Sécu depuis le 20 octobre."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, raboter les aides aux familles ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

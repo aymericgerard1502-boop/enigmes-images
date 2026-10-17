@@ -1,0 +1,70 @@
+{
+ "slug": "2026-10-27_medicaments-a-l-unite",
+ "source": "Sources : LCP",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET DE LA SÉCU",
+   "texte": "Faut-il vendre les **médicaments à l'unité** ?",
+   "sous": "Une idée qui dépasse les clivages."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Les députés ont adopté en commission la **délivrance à l'unité** de certains médicaments.",
+    "Le pharmacien donnerait le nombre exact de comprimés prescrits, pas une boîte entière."
+   ],
+   "titre": "CE QUI S'EST PASSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "Un traitement de **18 comprimés** ?",
+    "Aujourd'hui, la Sécu peut payer une boîte de **20 ou 30**."
+   ],
+   "titre": "EXEMPLE"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Renaissance, LFI, RN",
+   "pas": 5.2,
+   "arguments": [
+    "La Sécu n'a pas à payer **30 comprimés** parce qu'un labo a choisi cette boîte.",
+    "C'est déjà possible pour **certains antibiotiques** : il faut l'élargir."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "Le rapporteur général (Droite républicaine)",
+   "pas": 5.2,
+   "arguments": [
+    "Il y a une différence entre **l'idée et la mise en œuvre**.",
+    "Il faudrait adapter **logiciels, emballages, étiquetage** et la rémunération des pharmacies."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "L'amendement doit être revoté en séance : le texte du gouvernement ne le prévoit pas."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, les médicaments à l'unité ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

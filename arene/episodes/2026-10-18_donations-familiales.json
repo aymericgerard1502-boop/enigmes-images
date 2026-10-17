@@ -1,0 +1,81 @@
+{
+ "slug": "2026-10-18_donations-familiales",
+ "source": "Sources : LCP, L'Express, 20 Minutes",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET 2027",
+   "texte": "Donner **100 000 €** à ses enfants sans impôt ?",
+   "sous": "Les députés viennent de voter. Le débat ne fait que commencer."
+  },
+  {
+   "type": "texte",
+   "duree": 9,
+   "pas": 3.6,
+   "lignes": [
+    "Le 16 octobre, l'Assemblée a **adopté** une hausse de l'abattement sur les dons d'argent en famille.",
+    "Le gouvernement proposait 50 000 €. Un amendement de l'UDR l'a porté à 100 000 €, pour toute l'année 2027."
+   ],
+   "titre": "CE QUI S'EST PASSÉ"
+  },
+  {
+   "type": "compare",
+   "duree": 9,
+   "titre": "LA MESURE",
+   "libelle": "Don d'argent en famille exonéré d'impôt",
+   "avant": "31 865 €",
+   "apres": "100 000 €",
+   "note": "Valable en **2027**, si la mesure reste dans le budget final."
+  },
+  {
+   "type": "vote",
+   "duree": 8,
+   "titre": "LE VOTE",
+   "contre": 66,
+   "pour": 25,
+   "label_contre": "POUR LA MESURE",
+   "label_pour": "CONTRE LA MESURE",
+   "legende": "Les **quatre groupes de gauche** ont voté contre."
+  },
+  {
+   "type": "camp",
+   "duree": 12.5,
+   "camp": "POUR",
+   "qui": "Gouvernement, droite, MoDem, RN, UDR",
+   "pas": 3.8,
+   "arguments": [
+    "Faire circuler l'argent entre générations pour **relancer la consommation** et la TVA.",
+    "La **liberté de transmettre** le fruit de son travail à ses enfants.",
+    "Mieux vaut aider les jeunes **de son vivant** qu'attendre la succession."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 12.5,
+   "camp": "CONTRE",
+   "qui": "Les quatre groupes de gauche",
+   "pas": 3.8,
+   "arguments": [
+    "Les dons d'argent sont **déjà largement favorisés** par la loi.",
+    "La mesure profite **d'abord aux plus aisés**.",
+    "Elle renforce une **société d'héritiers**, où la naissance compte plus que le travail."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 5.5,
+   "pas": 1.6,
+   "lignes": [
+    "**Rien n'est joué.**",
+    "Le budget doit encore passer au Sénat. Seul le texte final dira si la mesure s'applique."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, 100 000 € sans impôt ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

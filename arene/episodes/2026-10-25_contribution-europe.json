@@ -1,0 +1,70 @@
+{
+ "slug": "2026-10-25_contribution-europe",
+ "source": "Sources : LCP",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "BUDGET 2027",
+   "texte": "La France paie-t-elle **trop à l'Europe** ?",
+   "sous": "Les députés ont voté sa contribution."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le 14 octobre, l'Assemblée a validé la contribution de la France au **budget européen** pour 2027.",
+    "Montant : **30,9 milliards €**."
+   ],
+   "titre": "CE QUI S'EST PASSÉ"
+  },
+  {
+   "type": "vote",
+   "duree": 8,
+   "titre": "LE VOTE",
+   "contre": 111,
+   "pour": 93,
+   "label_contre": "POUR",
+   "label_pour": "CONTRE",
+   "legende": "Contre : **RN**, **UDR**, **LFI** et le groupe communiste GDR."
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "Gouvernement, rapporteur général du budget",
+   "pas": 5.2,
+   "arguments": [
+    "La France est la **première bénéficiaire** en volume des subventions européennes.",
+    "Ne pas voter ne changerait rien : la contribution est une **obligation juridique**."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "RN, UDR, LFI, GDR",
+   "pas": 5.2,
+   "arguments": [
+    "La France **donne plus qu'elle ne reçoit** : elle est contributrice nette.",
+    "Le RN voulait **11 milliards €** de baisse, pour limiter le coût net à 5 milliards."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**Le débat continue.**",
+    "Le budget 2027 doit encore être voté en entier, puis passer au Sénat."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, la contribution à l'Europe ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}

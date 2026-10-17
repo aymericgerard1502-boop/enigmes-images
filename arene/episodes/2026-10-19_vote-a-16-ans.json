@@ -1,0 +1,72 @@
+{
+ "slug": "2026-10-19_vote-a-16-ans",
+ "source": "Sources : Public Sénat, AP",
+ "scenes": [
+  {
+   "type": "hook",
+   "duree": 4.5,
+   "tag": "PRÉSIDENTIELLE 2027",
+   "texte": "Faut-il **voter dès 16 ans** ?",
+   "sous": "L'idée revient dans la campagne."
+  },
+  {
+   "type": "texte",
+   "duree": 9.5,
+   "pas": 3.6,
+   "lignes": [
+    "Le 11 octobre, Jean-Luc Mélenchon a promis le **droit de vote à 16 ans** s'il est élu.",
+    "Raphaël Glucksmann et Marine Tondelier soutiennent aussi l'idée. Le Sénat l'avait rejetée en 2021."
+   ],
+   "titre": "CE QUI S'EST PASSÉ"
+  },
+  {
+   "type": "texte",
+   "duree": 8,
+   "pas": 2.8,
+   "lignes": [
+    "Environ **1,5 million** d'électeurs en plus.",
+    "L'**Autriche** vote dès 16 ans depuis 2007, comme le Brésil et l'Argentine. L'Allemagne et l'Écosse pour certaines élections."
+   ],
+   "titre": "EN CHIFFRES"
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "POUR",
+   "qui": "LFI, Place publique, Écologistes, des chercheurs",
+   "pas": 3.9,
+   "arguments": [
+    "À 16 ans, on peut être **émancipé**, parent ou aller en prison : pourquoi pas voter ?",
+    "Voter dès le lycée crée une **habitude** qui dure toute la vie.",
+    "Là où c'est en place, la participation aurait **progressé de 7 à 8 points**."
+   ]
+  },
+  {
+   "type": "camp",
+   "duree": 14.5,
+   "camp": "CONTRE",
+   "qui": "Ses opposants, des chercheurs",
+   "pas": 3.9,
+   "arguments": [
+    "À 16 ans, on manque de **recul** face à l'influence des proches et des réseaux.",
+    "Les jeunes ne le demandent pas : en 2017, **72 %** des 18-30 ans étaient contre.",
+    "Une **forte majorité** de Français y reste opposée."
+   ]
+  },
+  {
+   "type": "texte",
+   "duree": 6,
+   "pas": 1.6,
+   "lignes": [
+    "**La question est posée.**",
+    "Pour l'appliquer, il faudrait changer la loi électorale."
+   ]
+  },
+  {
+   "type": "cta",
+   "duree": 8,
+   "question": "Et toi, voter à 16 ans ?",
+   "appel": "Ton avis en commentaire ↓"
+  }
+ ]
+}
