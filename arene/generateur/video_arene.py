@@ -145,9 +145,10 @@ class Bar:
 def sc_hook(s, T):
     els = []
     tag = pill(s['tag'], 42)
-    els.append(El(tag, X0, 700, 0.15))
+    # visibles dès la première image : TikTok s'en sert comme miniature
+    els.append(El(tag, X0, 700, -1, dy=0))
     hk = rich_block(s['texte'], BLACKI, 112, X1 - X0, lh=1.08)
-    els.append(El(hk, X0, 800, 0.35, dur=0.6, dy=60))
+    els.append(El(hk, X0, 800, -1, dy=0))
     if s.get('sous'):
         sb = rich_block(s['sous'], SEMI, 46, X1 - X0, color=GREY)
         els.append(El(sb, X0, 840 + hk.height, 1.2))
