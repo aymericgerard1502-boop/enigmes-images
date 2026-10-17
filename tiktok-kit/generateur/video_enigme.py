@@ -177,10 +177,10 @@ def cta_layer(livre, cover, n_enigmes):
     L.alpha_composite(sh, (x0 - 40, y0 - 40)); L.alpha_composite(c, (x0, y0))
     y2 = y0 + ch + 50
     y2 = text_block(d, (LX, y2), f"{n_enigmes} énigmes comme celle-ci", F("Caladea-Bold.ttf", 62), WHITE, RX - LX, 1.1, "center")
-    bw, bh = 520, 96; bx = (LX + RX) // 2 - bw // 2
+    bf = F("Carlito-Bold.ttf", 46); t = "Sur Amazon : Maël Kerjean"
+    bw, bh = int(d.textlength(t, font=bf)) + 90, 96; bx = (LX + RX) // 2 - bw // 2
     d.rounded_rectangle((bx, y2 + 20, bx + bw, y2 + 20 + bh), 48, fill=RED)
-    bf = F("Carlito-Bold.ttf", 48); t = "Lien en bio"
-    d.text((bx + (bw - d.textlength(t, font=bf)) / 2, y2 + 38), t, font=bf, fill=WHITE)
+    d.text((bx + (bw - d.textlength(t, font=bf)) / 2, y2 + 41), t, font=bf, fill=WHITE)
     text_block(d, (LX, y2 + 140), "@maelkerjean", F("Carlito-Bold.ttf", 40), MUTED, RX - LX, align="center")
     return L
 
