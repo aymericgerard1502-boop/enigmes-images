@@ -25,17 +25,29 @@ def load(slug, num):
     return livre, e
 
 def crop_plan(path):
-    """Découpe le plan des lieux (cadre noir épais) sur la page d'énigme."""
+    """Découpe le plan des lieux : le bloc le plus haut de la colonne gauche, sous le titre."""
     im = Image.open(path).convert("L"); a = np.array(im)
-    rows = np.where((a[:1300, 100:1150] < 80).sum(1) > 500)[0]
-    top, bot = rows.min(), rows.max()
-    dark = a[top + 3, :1300] < 80
-    runs, start = [], None
-    for x, v in enumerate(list(dark) + [False]):
-        if v and start is None: start = x
-        if not v and start is not None: runs.append((start, x - 1)); start = None
-    left, right = max(runs, key=lambda r: r[1] - r[0])
-    return Image.open(path).convert("RGB").crop((left - 6, top - 6, right + 7, bot + 7))
+    left = a[:1400, 100:1050] < 110
+    rows = left.any(1)
+    blocks, start, gap = [], None, 0
+    for y, v in enumerate(list(rows) + [False] * 20):
+        if v:
+            if start is None: start = y
+            gap = 0; end = y
+        elif start is not None:
+            gap += 1
+            if gap >= 15: blocks.append((start, end)); start = None
+    top, bot = max(blocks[:8], key=lambda b: b[1] - b[0])
+    dark = (a[top:bot + 1, :1200] < 110).any(0)
+    runs, st, last = [], None, None
+    for x, v in enumerate(dark):
+        if v:
+            if st is None: st = x
+            elif x - last > 25: runs.append((st, last)); st = x
+            last = x
+    runs.append((st, last))
+    l, r = max(runs, key=lambda t: t[1] - t[0])
+    return Image.open(path).convert("RGB").crop((l - 8, top - 8, r + 9, bot + 9))
 
 # ---------- dessin ----------
 def background():
@@ -112,7 +124,8 @@ def board_layers(livre, e, plan):
     y = ytop + card.height + 30
     lab, val = F("Carlito-Bold.ttf", 34), F("Carlito-Bold.ttf", 52)
     suspects = sorted(e["solution"].keys())
-    objets = sorted(v["objet"][0] for v in e["solution"].values())
+    import re
+    objets = sorted(re.sub(r"^(le |la |les |l')", "", v["objet"][1]) for v in e["solution"].values())
     d.text((LX, y), "SUSPECTS", font=lab, fill=MUTED)
     d.text((LX + 200, y - 11), "  ·  ".join(suspects), font=val, fill=WHITE)
     y += 70
@@ -137,7 +150,7 @@ def question_layer(e, y, remaining, frac):
     d.rounded_rectangle(box, 26, fill=RED)
     q = f"Qui se trouvait {e['question_lieu'][1]} ?"
     qf = F("Caladea-Bold.ttf", 50)
-    while d.textlength(q, font=qf) > RX - LX - 150 and qf.size > 34: qf = F("Caladea-Bold.ttf", qf.size - 2)
+    while d.textlength(q, font=qf) > RX - LX - 150 and qf.size > 42: qf = F("Caladea-Bold.ttf", qf.size - 2)
     lines = wrap(d, q, qf, RX - LX - 150)
     ty = y + 75 - len(lines) * qf.size * 0.6
     for ln in lines: d.text((LX + 20, ty), ln, font=qf, fill=WHITE); ty += int(qf.size * 1.15)
@@ -154,7 +167,7 @@ def question_layer(e, y, remaining, frac):
 def cta_layer(livre, cover, n_enigmes):
     L = layer(); d = ImageDraw.Draw(L)
     y = text_block(d, (LX, 230), "Ton suspect en commentaire", F("Caladea-Bold.ttf", 82), GOLD, RX - LX, 1.05, "center")
-    text_block(d, (LX, y + 20), "Réponse demain, dans les commentaires.", F("Carlito-Regular.ttf", 46), WHITE, RX - LX, align="center")
+    text_block(d, (LX, y + 20), "Réponse demain sur le compte.", F("Carlito-Regular.ttf", 46), WHITE, RX - LX, align="center")
     cw = 470; ch = int(cover.height * cw / cover.width)
     c = cover.resize((cw, ch), Image.LANCZOS).convert("RGBA")
     sh = Image.new("RGBA", (cw + 80, ch + 80), (0, 0, 0, 0))
