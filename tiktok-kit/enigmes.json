@@ -1,0 +1,2304 @@
+[
+ {
+  "livre": "Tempête sur Belle-Île",
+  "slug": "Tempete-sur-Belle-Ile",
+  "amazon": "https://www.amazon.fr/dp/B0HLZTZPRP",
+  "couverture": "couvertures/Tempete-sur-Belle-Ile.jpg",
+  "enigmes": [
+   {
+    "num": 1,
+    "titre": "La valise ouverte",
+    "incident": "À peine arrivée, Rose trouve sa valise entrouverte et son carnet de balades feuilleté. Quelqu'un est bien curieux de savoir ce qu'elle vient faire ici.",
+    "question_lieu": [
+     "Véranda",
+     "dans la véranda"
+    ],
+    "coupable": "Corentin",
+    "solution": {
+     "Madeleine": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Gwenola": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     },
+     "Corentin": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     }
+    },
+    "indices": [
+     "Corentin avait le carnet.",
+     "Corentin n'était pas dans la salle à manger.",
+     "Madeleine n'avait pas le trousseau de clés.",
+     "Madeleine était dans la bibliothèque."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme01.png"
+   },
+   {
+    "num": 2,
+    "titre": "Le thé renversé",
+    "incident": "Au goûter, une théière en faïence se brise sur le parquet. Personne ne veut avouer sa maladresse, et Sardine lèche déjà le sucre.",
+    "question_lieu": [
+     "Hall",
+     "dans le hall"
+    ],
+    "coupable": "Solenn",
+    "solution": {
+     "Hugo": {
+      "lieu": [
+       "Salon",
+       "dans le salon"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Solenn": {
+      "lieu": [
+       "Hall",
+       "dans le hall"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     },
+     "Madeleine": {
+      "lieu": [
+       "Bar",
+       "au bar"
+      ],
+      "objet": [
+       "lampe tempête",
+       "la lampe tempête"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le carnet était dans le hall.",
+     "Solenn se trouvait dans une pièce voisine de celle de la personne qui avait la lampe tempête.",
+     "Hugo n'était pas au bar.",
+     "Ni Solenn ni Madeleine n'avait le journal."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme02.png"
+   },
+   {
+    "num": 3,
+    "titre": "Le portrait de travers",
+    "incident": "Le portrait du fondateur de l'hôtel a été décroché puis remis de travers. Qui s'intéresse tant à ce vieux monsieur moustachu ?",
+    "question_lieu": [
+     "Bar",
+     "au bar"
+    ],
+    "coupable": "Isabelle",
+    "solution": {
+     "Isabelle": {
+      "lieu": [
+       "Bar",
+       "au bar"
+      ],
+      "objet": [
+       "tasse de thé",
+       "la tasse de thé"
+      ]
+     },
+     "Hugo": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     },
+     "Ronan": {
+      "lieu": [
+       "Réception",
+       "à la réception"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     }
+    },
+    "indices": [
+     "Hugo n'était pas à la réception.",
+     "Isabelle n'avait pas le trousseau de clés.",
+     "Isabelle était au bar.",
+     "La personne qui avait le journal était à la réception."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme03.png"
+   },
+   {
+    "num": 4,
+    "titre": "Le télégramme envolé",
+    "incident": "Un télégramme de 1962, encadré près de l'escalier, a quitté son cadre. Il annonçait l'achat de l'hôtel par la famille Kervella.",
+    "question_lieu": [
+     "Bibliothèque",
+     "dans la bibliothèque"
+    ],
+    "coupable": "Dominique",
+    "solution": {
+     "Bertrand": {
+      "lieu": [
+       "Salon",
+       "dans le salon"
+      ],
+      "objet": [
+       "longue-vue",
+       "la longue-vue"
+      ]
+     },
+     "Madeleine": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     },
+     "Dominique": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     }
+    },
+    "indices": [
+     "Bertrand ne se trouvait pas dans une pièce voisine de celle de Madeleine.",
+     "Ni Bertrand ni Dominique n'avait le trousseau de clés.",
+     "La personne qui avait la longue-vue était dans le salon."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme04.png"
+   },
+   {
+    "num": 5,
+    "titre": "Sardine a disparu",
+    "incident": "Sardine reste introuvable pendant une heure. On la retrouve enfermée, la queue frétillante. Qui a refermé la porte sur elle ?",
+    "question_lieu": [
+     "Véranda",
+     "dans la véranda"
+    ],
+    "coupable": "Hugo",
+    "solution": {
+     "Hugo": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "lampe tempête",
+       "la lampe tempête"
+      ]
+     },
+     "Fanny": {
+      "lieu": [
+       "Réception",
+       "à la réception"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     },
+     "Isabelle": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la lampe tempête n'était pas à la réception.",
+     "Isabelle n'était pas dans la véranda.",
+     "Ni Hugo ni Fanny n'avait le journal.",
+     "Ni Hugo ni Isabelle n'avait le carnet.",
+     "La personne qui avait le journal n'était pas à la réception."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme05.png"
+   },
+   {
+    "num": 6,
+    "titre": "Le piano muet",
+    "incident": "Une corde du vieux piano a été desserrée. Rose se demande si quelqu'un voulait éviter qu'on joue… ou couvrir un bruit.",
+    "question_lieu": [
+     "Réception",
+     "à la réception"
+    ],
+    "coupable": "Pierrick",
+    "solution": {
+     "Gwenola": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     },
+     "Pierrick": {
+      "lieu": [
+       "Réception",
+       "à la réception"
+      ],
+      "objet": [
+       "lampe tempête",
+       "la lampe tempête"
+      ]
+     },
+     "Isabelle": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     }
+    },
+    "indices": [
+     "Gwenola était dans la véranda.",
+     "La personne qui avait la lampe tempête n'était pas dans la salle à manger.",
+     "Isabelle se trouvait dans une pièce voisine de celle de la personne qui avait la lampe tempête.",
+     "Gwenola avait le trousseau de clés."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme06.png"
+   },
+   {
+    "num": 7,
+    "titre": "La page arrachée",
+    "incident": "Une page du registre des clients a été arrachée : celle de l'été 1965.",
+    "question_lieu": [
+     "Bibliothèque",
+     "dans la bibliothèque"
+    ],
+    "coupable": "Hugo",
+    "solution": {
+     "Madeleine": {
+      "lieu": [
+       "Salon",
+       "dans le salon"
+      ],
+      "objet": [
+       "lampe tempête",
+       "la lampe tempête"
+      ]
+     },
+     "Armelle": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Hugo": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "parapluie",
+       "le parapluie"
+      ]
+     }
+    },
+    "indices": [
+     "Hugo n'avait pas le journal.",
+     "Hugo n'était pas dans le salon.",
+     "La personne qui avait le journal n'était pas dans le salon.",
+     "Madeleine n'avait pas le parapluie.",
+     "Armelle n'était pas dans le salon.",
+     "Madeleine et Hugo se trouvaient dans des pièces voisines."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme07.png"
+   },
+   {
+    "num": 8,
+    "titre": "Le feu de minuit moins le quart",
+    "incident": "Quelqu'un a ravivé le feu tard dans la soirée pour y brûler des papiers. Il reste un coin de photo noirci.",
+    "question_lieu": [
+     "Bar",
+     "au bar"
+    ],
+    "coupable": "Fanny",
+    "solution": {
+     "Ronan": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     },
+     "Isabelle": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     },
+     "Fanny": {
+      "lieu": [
+       "Bar",
+       "au bar"
+      ],
+      "objet": [
+       "longue-vue",
+       "la longue-vue"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Ronan ni Isabelle n'avait la longue-vue.",
+     "Isabelle était dans la véranda.",
+     "Isabelle se trouvait dans une pièce voisine de celle de la personne qui avait le carnet."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme08.png"
+   },
+   {
+    "num": 9,
+    "titre": "La fenêtre battante",
+    "incident": "La tempête s'engouffre : une fenêtre a été laissée ouverte. De l'eau ruisselle déjà sur le carrelage.",
+    "question_lieu": [
+     "Salon",
+     "dans le salon"
+    ],
+    "coupable": "Ronan",
+    "solution": {
+     "Gwenola": {
+      "lieu": [
+       "Réception",
+       "à la réception"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     },
+     "Ronan": {
+      "lieu": [
+       "Salon",
+       "dans le salon"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Dominique": {
+      "lieu": [
+       "Hall",
+       "dans le hall"
+      ],
+      "objet": [
+       "longue-vue",
+       "la longue-vue"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le trousseau de clés n'était pas dans le hall.",
+     "Ni Gwenola ni Ronan n'avait la longue-vue.",
+     "La personne qui avait le journal n'était pas dans le hall.",
+     "Gwenola était à la réception.",
+     "La personne qui avait le trousseau de clés n'était pas dans le salon."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme09.png"
+   },
+   {
+    "num": 10,
+    "titre": "La porte claquée",
+    "incident": "Yann Kervella vient d'annoncer la vente de l'hôtel. Une porte claque si fort qu'un cadre tombe. Qui n'a pas supporté la nouvelle ?",
+    "question_lieu": [
+     "Salle à manger",
+     "dans la salle à manger"
+    ],
+    "coupable": "Gwenola",
+    "solution": {
+     "Fanny": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Gwenola": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     },
+     "Dominique": {
+      "lieu": [
+       "Réception",
+       "à la réception"
+      ],
+      "objet": [
+       "trousseau",
+       "le trousseau de clés"
+      ]
+     }
+    },
+    "indices": [
+     "Fanny se trouvait dans une pièce voisine de celle de la personne qui avait le carnet.",
+     "Fanny était dans la bibliothèque.",
+     "Gwenola avait le carnet.",
+     "La personne qui avait le journal était dans la bibliothèque."
+    ],
+    "image": "enigmes/Tempete-sur-Belle-Ile_enigme10.png"
+   }
+  ]
+ },
+ {
+  "livre": "Les Santons de Minuit",
+  "slug": "Les-Santons-de-Minuit",
+  "amazon": "https://www.amazon.fr/dp/B0HM13CCC4",
+  "couverture": "couvertures/Les-Santons-de-Minuit.jpg",
+  "enigmes": [
+   {
+    "num": 1,
+    "titre": "Le santon décapité",
+    "incident": "Sur le stand de Fernand, un santon de berger a perdu la tête. On l'a cassé exprès, d'un coup sec.",
+    "question_lieu": [
+     "Parvis",
+     "sur le parvis"
+    ],
+    "coupable": "Victor",
+    "solution": {
+     "Gaston": {
+      "lieu": [
+       "Fontaine",
+       "près de la fontaine"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Camille": {
+      "lieu": [
+       "Lavoir",
+       "au lavoir"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe rouge"
+      ]
+     },
+     "Victor": {
+      "lieu": [
+       "Parvis",
+       "sur le parvis"
+      ],
+      "objet": [
+       "santon",
+       "le santon du ravi"
+      ]
+     }
+    },
+    "indices": [
+     "Camille n'était pas sur le parvis.",
+     "Victor avait le santon du ravi.",
+     "Gaston n'avait pas l'écharpe rouge.",
+     "Gaston était près de la fontaine."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme01.png"
+   },
+   {
+    "num": 2,
+    "titre": "Le prix effacé",
+    "incident": "Quelqu'un a effacé à la craie les prix d'un stand entier. Le marchand ne décolère pas.",
+    "question_lieu": [
+     "Mairie",
+     "devant la mairie"
+    ],
+    "coupable": "Camille",
+    "solution": {
+     "Sylvain": {
+      "lieu": [
+       "Parvis",
+       "sur le parvis"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Mireille": {
+      "lieu": [
+       "Stand d'olives",
+       "au stand d'olives"
+      ],
+      "objet": [
+       "marrons",
+       "le cornet de marrons"
+      ]
+     },
+     "Camille": {
+      "lieu": [
+       "Mairie",
+       "devant la mairie"
+      ],
+      "objet": [
+       "panier",
+       "le panier"
+      ]
+     }
+    },
+    "indices": [
+     "Camille avait le panier.",
+     "La personne qui avait le panier était devant la mairie.",
+     "Mireille n'était pas sur le parvis.",
+     "La personne qui avait la lanterne n'était pas au stand d'olives."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme02.png"
+   },
+   {
+    "num": 3,
+    "titre": "La crèche dérangée",
+    "incident": "Dans la grande crèche de la place, le meunier a pris la place du ravi. Simple farce, ou message ?",
+    "question_lieu": [
+     "Halle",
+     "sous la halle"
+    ],
+    "coupable": "Honorine",
+    "solution": {
+     "Gaston": {
+      "lieu": [
+       "Fontaine",
+       "près de la fontaine"
+      ],
+      "objet": [
+       "panier",
+       "le panier"
+      ]
+     },
+     "Sylvain": {
+      "lieu": [
+       "Café des Arts",
+       "au café des Arts"
+      ],
+      "objet": [
+       "calendrier",
+       "le calendrier de l'Avent"
+      ]
+     },
+     "Honorine": {
+      "lieu": [
+       "Halle",
+       "sous la halle"
+      ],
+      "objet": [
+       "santon",
+       "le santon du ravi"
+      ]
+     }
+    },
+    "indices": [
+     "Gaston se trouvait dans un lieu voisin de celui de la personne qui avait le calendrier de l'Avent.",
+     "La personne qui avait le calendrier de l'Avent n'était pas près de la fontaine.",
+     "La personne qui avait le santon du ravi n'était pas au café des Arts.",
+     "Honorine avait le santon du ravi."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme03.png"
+   },
+   {
+    "num": 4,
+    "titre": "Les marrons envolés",
+    "incident": "Un cornet de marrons chauds a disparu du brasero. Sardine, cette fois, n'y est pour rien.",
+    "question_lieu": [
+     "Boulangerie",
+     "à la boulangerie"
+    ],
+    "coupable": "Marius",
+    "solution": {
+     "Nathan": {
+      "lieu": [
+       "Mairie",
+       "devant la mairie"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Sylvain": {
+      "lieu": [
+       "Halle",
+       "sous la halle"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe rouge"
+      ]
+     },
+     "Marius": {
+      "lieu": [
+       "Boulangerie",
+       "à la boulangerie"
+      ],
+      "objet": [
+       "marrons",
+       "le cornet de marrons"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la lanterne n'était pas à la boulangerie.",
+     "Sylvain se trouvait dans un lieu voisin de celui de la personne qui avait le cornet de marrons.",
+     "Nathan était devant la mairie.",
+     "La personne qui avait l'écharpe rouge était sous la halle."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme04.png"
+   },
+   {
+    "num": 5,
+    "titre": "L'affiche arrachée",
+    "incident": "L'affiche annonçant la révélation de Fernand, le soir de Noël, a été arrachée du panneau de la mairie.",
+    "question_lieu": [
+     "Halle",
+     "sous la halle"
+    ],
+    "coupable": "Lucie",
+    "solution": {
+     "Lucie": {
+      "lieu": [
+       "Halle",
+       "sous la halle"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe rouge"
+      ]
+     },
+     "Nathan": {
+      "lieu": [
+       "Fontaine",
+       "près de la fontaine"
+      ],
+      "objet": [
+       "calendrier",
+       "le calendrier de l'Avent"
+      ]
+     },
+     "Sylvain": {
+      "lieu": [
+       "Parvis",
+       "sur le parvis"
+      ],
+      "objet": [
+       "marrons",
+       "le cornet de marrons"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le cornet de marrons était sur le parvis.",
+     "Ni Nathan ni Sylvain n'avait l'écharpe rouge.",
+     "Nathan était près de la fontaine."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme05.png"
+   },
+   {
+    "num": 6,
+    "titre": "Le chant interrompu",
+    "incident": "Pendant la répétition des chants sur le parvis, quelqu'un a coupé la sono. La chorale reste bouche bée.",
+    "question_lieu": [
+     "Halle",
+     "sous la halle"
+    ],
+    "coupable": "Lazare",
+    "solution": {
+     "Gaston": {
+      "lieu": [
+       "Mairie",
+       "devant la mairie"
+      ],
+      "objet": [
+       "calendrier",
+       "le calendrier de l'Avent"
+      ]
+     },
+     "Nathan": {
+      "lieu": [
+       "Café des Arts",
+       "au café des Arts"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe rouge"
+      ]
+     },
+     "Lazare": {
+      "lieu": [
+       "Halle",
+       "sous la halle"
+      ],
+      "objet": [
+       "panier",
+       "le panier"
+      ]
+     }
+    },
+    "indices": [
+     "Gaston n'avait pas l'écharpe rouge.",
+     "La personne qui avait l'écharpe rouge était au café des Arts.",
+     "Ni Gaston ni Nathan n'avait le panier.",
+     "La personne qui avait le calendrier de l'Avent n'était pas sous la halle."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme06.png"
+   },
+   {
+    "num": 7,
+    "titre": "Le panier renversé",
+    "incident": "Un panier de fougasses a fini dans la fontaine. La boulangère jure qu'on l'a poussé.",
+    "question_lieu": [
+     "Mairie",
+     "devant la mairie"
+    ],
+    "coupable": "Gaston",
+    "solution": {
+     "Gaston": {
+      "lieu": [
+       "Mairie",
+       "devant la mairie"
+      ],
+      "objet": [
+       "gui",
+       "la branche de gui"
+      ]
+     },
+     "Paul": {
+      "lieu": [
+       "Fontaine",
+       "près de la fontaine"
+      ],
+      "objet": [
+       "calendrier",
+       "le calendrier de l'Avent"
+      ]
+     },
+     "Nathan": {
+      "lieu": [
+       "Boulangerie",
+       "à la boulangerie"
+      ],
+      "objet": [
+       "panier",
+       "le panier"
+      ]
+     }
+    },
+    "indices": [
+     "Paul n'avait pas le panier.",
+     "Paul et Nathan se trouvaient dans des lieux voisins.",
+     "Ni Paul ni Nathan n'avait la branche de gui.",
+     "Gaston n'était pas près de la fontaine.",
+     "Nathan n'était pas près de la fontaine."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme07.png"
+   },
+   {
+    "num": 8,
+    "titre": "La lettre au Père Noël",
+    "incident": "Une lettre glissée dans la boîte du Père Noël n'est pas d'un enfant : elle menace Fernand.",
+    "question_lieu": [
+     "Fontaine",
+     "près de la fontaine"
+    ],
+    "coupable": "Suzanne",
+    "solution": {
+     "Paul": {
+      "lieu": [
+       "Lavoir",
+       "au lavoir"
+      ],
+      "objet": [
+       "panier",
+       "le panier"
+      ]
+     },
+     "Suzanne": {
+      "lieu": [
+       "Fontaine",
+       "près de la fontaine"
+      ],
+      "objet": [
+       "marrons",
+       "le cornet de marrons"
+      ]
+     },
+     "Lazare": {
+      "lieu": [
+       "Stand d'olives",
+       "au stand d'olives"
+      ],
+      "objet": [
+       "gui",
+       "la branche de gui"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Paul ni Lazare n'avait le cornet de marrons.",
+     "Paul se trouvait dans un lieu voisin de celui de la personne qui avait la branche de gui.",
+     "La personne qui avait le panier était au lavoir."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme08.png"
+   },
+   {
+    "num": 9,
+    "titre": "Le lavoir gelé",
+    "incident": "Au lavoir, quelqu'un a tenté de rincer une tache rouge sur une manche, malgré le froid.",
+    "question_lieu": [
+     "Halle",
+     "sous la halle"
+    ],
+    "coupable": "Gaston",
+    "solution": {
+     "Marius": {
+      "lieu": [
+       "Mairie",
+       "devant la mairie"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe rouge"
+      ]
+     },
+     "Nathan": {
+      "lieu": [
+       "Boulangerie",
+       "à la boulangerie"
+      ],
+      "objet": [
+       "panier",
+       "le panier"
+      ]
+     },
+     "Gaston": {
+      "lieu": [
+       "Halle",
+       "sous la halle"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la lanterne était sous la halle.",
+     "La personne qui avait l'écharpe rouge n'était pas à la boulangerie.",
+     "Marius n'était pas sous la halle.",
+     "Nathan était à la boulangerie."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme09.png"
+   },
+   {
+    "num": 10,
+    "titre": "Le dernier verre",
+    "incident": "Au café, Fernand trinque avec ses amis et lance : « Après Noël, certains ne pourront plus mentir. » Un verre se brise.",
+    "question_lieu": [
+     "Stand d'olives",
+     "au stand d'olives"
+    ],
+    "coupable": "Odile",
+    "solution": {
+     "Victor": {
+      "lieu": [
+       "Parvis",
+       "sur le parvis"
+      ],
+      "objet": [
+       "calendrier",
+       "le calendrier de l'Avent"
+      ]
+     },
+     "Lazare": {
+      "lieu": [
+       "Fontaine",
+       "près de la fontaine"
+      ],
+      "objet": [
+       "marrons",
+       "le cornet de marrons"
+      ]
+     },
+     "Odile": {
+      "lieu": [
+       "Stand d'olives",
+       "au stand d'olives"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe rouge"
+      ]
+     }
+    },
+    "indices": [
+     "Odile se trouvait dans un lieu voisin de celui de la personne qui avait le calendrier de l'Avent.",
+     "Lazare était près de la fontaine.",
+     "Victor se trouvait dans un lieu voisin de celui de la personne qui avait le cornet de marrons.",
+     "La personne qui avait le cornet de marrons était près de la fontaine."
+    ],
+    "image": "enigmes/Les-Santons-de-Minuit_enigme10.png"
+   }
+  ]
+ },
+ {
+  "livre": "Vendanges tardives",
+  "slug": "Vendanges-tardives",
+  "amazon": "https://www.amazon.fr/dp/B0HMP5Y7WJ",
+  "couverture": "couvertures/Vendanges-tardives.jpg",
+  "enigmes": [
+   {
+    "num": 1,
+    "titre": "La hotte renversée",
+    "incident": "Une hotte pleine de raisins a été renversée au bout d'un rang. Une demi-journée de travail, perdue.",
+    "question_lieu": [
+     "Verger",
+     "dans le verger"
+    ],
+    "coupable": "Margot",
+    "solution": {
+     "Margot": {
+      "lieu": [
+       "Verger",
+       "dans le verger"
+      ],
+      "objet": [
+       "chapeau",
+       "le chapeau de paille"
+      ]
+     },
+     "Anne": {
+      "lieu": [
+       "Clos des Cigognes",
+       "dans le Clos des Cigognes"
+      ],
+      "objet": [
+       "sécateur",
+       "le sécateur"
+      ]
+     },
+     "Gustave": {
+      "lieu": [
+       "Belvédère",
+       "au belvédère"
+      ],
+      "objet": [
+       "hotte",
+       "la hotte"
+      ]
+     }
+    },
+    "indices": [
+     "Margot se trouvait dans un lieu voisin de celui de la personne qui avait la hotte.",
+     "La personne qui avait le sécateur n'était pas dans le verger.",
+     "Anne n'était pas au belvédère.",
+     "Anne n'était pas dans le verger.",
+     "Margot n'était pas au belvédère."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme01.png"
+   },
+   {
+    "num": 2,
+    "titre": "Le sécateur égaré",
+    "incident": "Le vieux sécateur d'Albert, gravé à ses initiales, a disparu de la cabane de vigne.",
+    "question_lieu": [
+     "Coteau",
+     "sur le coteau"
+    ],
+    "coupable": "Bernard",
+    "solution": {
+     "Catherine": {
+      "lieu": [
+       "Belvédère",
+       "au belvédère"
+      ],
+      "objet": [
+       "seau",
+       "le seau"
+      ]
+     },
+     "Margot": {
+      "lieu": [
+       "Source",
+       "à la source"
+      ],
+      "objet": [
+       "bretzel",
+       "le bretzel"
+      ]
+     },
+     "Bernard": {
+      "lieu": [
+       "Coteau",
+       "sur le coteau"
+      ],
+      "objet": [
+       "hotte",
+       "la hotte"
+      ]
+     }
+    },
+    "indices": [
+     "Margot se trouvait dans un lieu voisin de celui de la personne qui avait le seau.",
+     "La personne qui avait le bretzel était à la source.",
+     "Margot n'avait pas la hotte.",
+     "Bernard était sur le coteau."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme02.png"
+   },
+   {
+    "num": 3,
+    "titre": "Les grappes oubliées",
+    "incident": "Un rang entier de vendanges tardives a été cueilli trop tôt. Quelqu'un ne connaissait pas la consigne… ou voulait nuire.",
+    "question_lieu": [
+     "Remparts",
+     "sur le chemin des remparts"
+    ],
+    "coupable": "Catherine",
+    "solution": {
+     "Catherine": {
+      "lieu": [
+       "Remparts",
+       "sur le chemin des remparts"
+      ],
+      "objet": [
+       "gourde",
+       "la gourde"
+      ]
+     },
+     "Pauline": {
+      "lieu": [
+       "Clos des Cigognes",
+       "dans le Clos des Cigognes"
+      ],
+      "objet": [
+       "sécateur",
+       "le sécateur"
+      ]
+     },
+     "Gustave": {
+      "lieu": [
+       "Cabane de vigne",
+       "à la cabane de vigne"
+      ],
+      "objet": [
+       "hotte",
+       "la hotte"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la gourde n'était pas dans le Clos des Cigognes.",
+     "La personne qui avait la hotte était à la cabane de vigne.",
+     "Gustave n'avait pas le sécateur.",
+     "Gustave n'avait pas la gourde.",
+     "Catherine n'était pas dans le Clos des Cigognes."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme03.png"
+   },
+   {
+    "num": 4,
+    "titre": "Le panier du midi",
+    "incident": "Le panier du casse-croûte a été ouvert : il manque le munster et la bouteille de pinot noir.",
+    "question_lieu": [
+     "Belvédère",
+     "au belvédère"
+    ],
+    "coupable": "Sophie",
+    "solution": {
+     "Elsa": {
+      "lieu": [
+       "Source",
+       "à la source"
+      ],
+      "objet": [
+       "panier",
+       "le panier repas"
+      ]
+     },
+     "Sophie": {
+      "lieu": [
+       "Belvédère",
+       "au belvédère"
+      ],
+      "objet": [
+       "bretzel",
+       "le bretzel"
+      ]
+     },
+     "Anne": {
+      "lieu": [
+       "Cabane de vigne",
+       "à la cabane de vigne"
+      ],
+      "objet": [
+       "hotte",
+       "la hotte"
+      ]
+     }
+    },
+    "indices": [
+     "Anne était à la cabane de vigne.",
+     "Sophie se trouvait dans un lieu voisin de celui de la personne qui avait le panier repas.",
+     "Anne n'avait pas le bretzel.",
+     "La personne qui avait le panier repas était à la source."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme04.png"
+   },
+   {
+    "num": 5,
+    "titre": "Les cigognes dérangées",
+    "incident": "Quelqu'un a grimpé près du nid des cigognes, sur le toit de la cabane. On a retrouvé une échelle mal rangée.",
+    "question_lieu": [
+     "Belvédère",
+     "au belvédère"
+    ],
+    "coupable": "Gustave",
+    "solution": {
+     "Thibault": {
+      "lieu": [
+       "Verger",
+       "dans le verger"
+      ],
+      "objet": [
+       "seau",
+       "le seau"
+      ]
+     },
+     "Gustave": {
+      "lieu": [
+       "Belvédère",
+       "au belvédère"
+      ],
+      "objet": [
+       "gourde",
+       "la gourde"
+      ]
+     },
+     "Lucien": {
+      "lieu": [
+       "Remparts",
+       "sur le chemin des remparts"
+      ],
+      "objet": [
+       "sécateur",
+       "le sécateur"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Thibault ni Gustave n'avait le sécateur.",
+     "La personne qui avait la gourde était au belvédère.",
+     "Thibault était dans le verger."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme05.png"
+   },
+   {
+    "num": 6,
+    "titre": "La borne déplacée",
+    "incident": "Une borne de pierre séparant deux parcelles a été déplacée de quelques mètres. Le Clos des Cigognes s'est soudain agrandi.",
+    "question_lieu": [
+     "Calvaire",
+     "près du calvaire"
+    ],
+    "coupable": "Denis",
+    "solution": {
+     "Denis": {
+      "lieu": [
+       "Calvaire",
+       "près du calvaire"
+      ],
+      "objet": [
+       "gourde",
+       "la gourde"
+      ]
+     },
+     "Lucien": {
+      "lieu": [
+       "Cabane de vigne",
+       "à la cabane de vigne"
+      ],
+      "objet": [
+       "bretzel",
+       "le bretzel"
+      ]
+     },
+     "Sophie": {
+      "lieu": [
+       "Remparts",
+       "sur le chemin des remparts"
+      ],
+      "objet": [
+       "seau",
+       "le seau"
+      ]
+     }
+    },
+    "indices": [
+     "Denis avait la gourde.",
+     "La personne qui avait le bretzel était à la cabane de vigne.",
+     "Lucien avait le bretzel.",
+     "Lucien et Sophie se trouvaient dans des lieux voisins."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme06.png"
+   },
+   {
+    "num": 7,
+    "titre": "Le chapeau dans la source",
+    "incident": "Un chapeau de paille flotte dans la source. Son propriétaire jure qu'il ne l'a pas perdu.",
+    "question_lieu": [
+     "Coteau",
+     "sur le coteau"
+    ],
+    "coupable": "Lucien",
+    "solution": {
+     "Margot": {
+      "lieu": [
+       "Remparts",
+       "sur le chemin des remparts"
+      ],
+      "objet": [
+       "panier",
+       "le panier repas"
+      ]
+     },
+     "Denis": {
+      "lieu": [
+       "Source",
+       "à la source"
+      ],
+      "objet": [
+       "hotte",
+       "la hotte"
+      ]
+     },
+     "Lucien": {
+      "lieu": [
+       "Coteau",
+       "sur le coteau"
+      ],
+      "objet": [
+       "bretzel",
+       "le bretzel"
+      ]
+     }
+    },
+    "indices": [
+     "Margot était sur le chemin des remparts.",
+     "Denis avait la hotte.",
+     "Lucien n'était pas à la source.",
+     "Margot avait le panier repas."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme07.png"
+   },
+   {
+    "num": 8,
+    "titre": "Le chant interrompu",
+    "incident": "Le chant des vendangeurs s'arrête net quand quelqu'un crie qu'un serpent rôde. Il n'y a jamais eu de serpent.",
+    "question_lieu": [
+     "Source",
+     "à la source"
+    ],
+    "coupable": "Xavier",
+    "solution": {
+     "Sophie": {
+      "lieu": [
+       "Cabane de vigne",
+       "à la cabane de vigne"
+      ],
+      "objet": [
+       "seau",
+       "le seau"
+      ]
+     },
+     "Gustave": {
+      "lieu": [
+       "Verger",
+       "dans le verger"
+      ],
+      "objet": [
+       "gourde",
+       "la gourde"
+      ]
+     },
+     "Xavier": {
+      "lieu": [
+       "Source",
+       "à la source"
+      ],
+      "objet": [
+       "panier",
+       "le panier repas"
+      ]
+     }
+    },
+    "indices": [
+     "Xavier était à la source.",
+     "Gustave n'avait pas le panier repas.",
+     "Sophie avait le seau.",
+     "Gustave n'était pas à la cabane de vigne."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme08.png"
+   },
+   {
+    "num": 9,
+    "titre": "La photo volée",
+    "incident": "La photo de famille accrochée dans la cabane a disparu. Il ne reste que le clou.",
+    "question_lieu": [
+     "Clos des Cigognes",
+     "dans le Clos des Cigognes"
+    ],
+    "coupable": "Thibault",
+    "solution": {
+     "Xavier": {
+      "lieu": [
+       "Remparts",
+       "sur le chemin des remparts"
+      ],
+      "objet": [
+       "chapeau",
+       "le chapeau de paille"
+      ]
+     },
+     "Sophie": {
+      "lieu": [
+       "Belvédère",
+       "au belvédère"
+      ],
+      "objet": [
+       "hotte",
+       "la hotte"
+      ]
+     },
+     "Thibault": {
+      "lieu": [
+       "Clos des Cigognes",
+       "dans le Clos des Cigognes"
+      ],
+      "objet": [
+       "sécateur",
+       "le sécateur"
+      ]
+     }
+    },
+    "indices": [
+     "Sophie n'était pas sur le chemin des remparts.",
+     "Thibault n'était pas sur le chemin des remparts.",
+     "Sophie se trouvait dans un lieu voisin de celui de la personne qui avait le sécateur.",
+     "Sophie n'avait pas le chapeau de paille.",
+     "Thibault n'était pas au belvédère."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme09.png"
+   },
+   {
+    "num": 10,
+    "titre": "Le toast d'Albert",
+    "incident": "Au dîner, Albert lève son verre : « À ceux qui croient que je ne sais rien. » Un verre de rouge se renverse sur une manche.",
+    "question_lieu": [
+     "Calvaire",
+     "près du calvaire"
+    ],
+    "coupable": "Pauline",
+    "solution": {
+     "Sophie": {
+      "lieu": [
+       "Clos des Cigognes",
+       "dans le Clos des Cigognes"
+      ],
+      "objet": [
+       "bretzel",
+       "le bretzel"
+      ]
+     },
+     "Pauline": {
+      "lieu": [
+       "Calvaire",
+       "près du calvaire"
+      ],
+      "objet": [
+       "chapeau",
+       "le chapeau de paille"
+      ]
+     },
+     "Thibault": {
+      "lieu": [
+       "Belvédère",
+       "au belvédère"
+      ],
+      "objet": [
+       "gourde",
+       "la gourde"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le bretzel était dans le Clos des Cigognes.",
+     "Ni Sophie ni Pauline n'avait la gourde.",
+     "Thibault se trouvait dans un lieu voisin de celui de la personne qui avait le bretzel.",
+     "Sophie avait le bretzel."
+    ],
+    "image": "enigmes/Vendanges-tardives_enigme10.png"
+   }
+  ]
+ },
+ {
+  "livre": "La Nuit de l'Ankou",
+  "slug": "La-Nuit-de-l-Ankou",
+  "amazon": "https://www.amazon.fr/dp/B0HN5Q9779",
+  "couverture": "couvertures/La-Nuit-de-l-Ankou.jpg",
+  "enigmes": [
+   {
+    "num": 1,
+    "titre": "Le navet grimaçant",
+    "incident": "Avant les citrouilles, les Bretons sculptaient des navets. L'un d'eux a été posé, chandelle allumée, devant la chambre de Rose.",
+    "question_lieu": [
+     "Vestibule",
+     "dans le vestibule"
+    ],
+    "coupable": "Fanch",
+    "solution": {
+     "Fanch": {
+      "lieu": [
+       "Vestibule",
+       "dans le vestibule"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Katell": {
+      "lieu": [
+       "Salon des portraits",
+       "dans le salon des portraits"
+      ],
+      "objet": [
+       "châle",
+       "le châle"
+      ]
+     },
+     "Quentin": {
+      "lieu": [
+       "Galerie",
+       "dans la galerie"
+      ],
+      "objet": [
+       "livre de contes",
+       "le livre de contes"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Katell ni Quentin n'avait la bougie.",
+     "Katell n'était pas dans le vestibule.",
+     "La personne qui avait le livre de contes était dans la galerie.",
+     "Katell n'avait pas le livre de contes."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme01.png"
+   },
+   {
+    "num": 2,
+    "titre": "La bougie soufflée",
+    "incident": "Au plus fort du premier conte, toutes les bougies s'éteignent d'un coup. Quelqu'un a ouvert une porte, ou soufflé.",
+    "question_lieu": [
+     "Galerie",
+     "dans la galerie"
+    ],
+    "coupable": "Daniel",
+    "solution": {
+     "Daniel": {
+      "lieu": [
+       "Galerie",
+       "dans la galerie"
+      ],
+      "objet": [
+       "navet sculpté",
+       "le navet sculpté"
+      ]
+     },
+     "Annaig": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Quentin": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "livre de contes",
+       "le livre de contes"
+      ]
+     }
+    },
+    "indices": [
+     "Daniel n'était pas dans la bibliothèque.",
+     "Annaig n'avait pas le navet sculpté.",
+     "Annaig et Quentin se trouvaient dans des pièces voisines.",
+     "Daniel et Annaig se trouvaient dans des pièces voisines.",
+     "La personne qui avait le navet sculpté n'était pas dans la bibliothèque.",
+     "Quentin n'avait pas la bougie."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme02.png"
+   },
+   {
+    "num": 3,
+    "titre": "Le portrait qui pleure",
+    "incident": "Le portrait de l'arrière-grand-père Le Moal semble pleurer : quelqu'un y a passé un chiffon mouillé.",
+    "question_lieu": [
+     "Bibliothèque",
+     "dans la bibliothèque"
+    ],
+    "coupable": "Bleuenn",
+    "solution": {
+     "Daniel": {
+      "lieu": [
+       "Salon des portraits",
+       "dans le salon des portraits"
+      ],
+      "objet": [
+       "navet sculpté",
+       "le navet sculpté"
+      ]
+     },
+     "Fanch": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "livre de contes",
+       "le livre de contes"
+      ]
+     },
+     "Bleuenn": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la bougie était dans la bibliothèque.",
+     "Daniel était dans le salon des portraits.",
+     "La personne qui avait le livre de contes était dans la cuisine.",
+     "Fanch était dans la cuisine."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme03.png"
+   },
+   {
+    "num": 4,
+    "titre": "La bolée renversée",
+    "incident": "Une bolée de cidre s'est renversée sur le livre de contes du manoir. Maladresse, ou geste voulu ?",
+    "question_lieu": [
+     "Grande salle",
+     "dans la grande salle"
+    ],
+    "coupable": "Maxime",
+    "solution": {
+     "Morgane": {
+      "lieu": [
+       "Salon des portraits",
+       "dans le salon des portraits"
+      ],
+      "objet": [
+       "châle",
+       "le châle"
+      ]
+     },
+     "Annaig": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "bolée",
+       "la bolée de cidre"
+      ]
+     },
+     "Maxime": {
+      "lieu": [
+       "Grande salle",
+       "dans la grande salle"
+      ],
+      "objet": [
+       "galette",
+       "la galette"
+      ]
+     }
+    },
+    "indices": [
+     "Annaig n'était pas dans le salon des portraits.",
+     "La personne qui avait le châle n'était pas dans la bibliothèque.",
+     "Morgane et Annaig se trouvaient dans des pièces voisines.",
+     "La personne qui avait le châle n'était pas dans la grande salle.",
+     "Maxime n'avait pas la bolée de cidre.",
+     "La personne qui avait la bolée de cidre n'était pas dans la grande salle."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme04.png"
+   },
+   {
+    "num": 5,
+    "titre": "Le chat dans la chapelle",
+    "incident": "Un chat noir miaule derrière la porte close de la chapelle. Qui l'y a enfermé ?",
+    "question_lieu": [
+     "Chapelle",
+     "dans la chapelle du manoir"
+    ],
+    "coupable": "Daniel",
+    "solution": {
+     "Soizic": {
+      "lieu": [
+       "Vestibule",
+       "dans le vestibule"
+      ],
+      "objet": [
+       "bolée",
+       "la bolée de cidre"
+      ]
+     },
+     "Daniel": {
+      "lieu": [
+       "Chapelle",
+       "dans la chapelle du manoir"
+      ],
+      "objet": [
+       "galette",
+       "la galette"
+      ]
+     },
+     "Nolwenn": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "châle",
+       "le châle"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le châle n'était pas dans la chapelle du manoir.",
+     "Daniel se trouvait dans une pièce voisine de celle de la personne qui avait le châle.",
+     "Nolwenn n'était pas dans le vestibule.",
+     "La personne qui avait la bolée de cidre était dans le vestibule."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme05.png"
+   },
+   {
+    "num": 6,
+    "titre": "Les pas dans la galerie",
+    "incident": "Des pas résonnent dans la galerie à l'heure où chacun est censé écouter le conteur.",
+    "question_lieu": [
+     "Grande salle",
+     "dans la grande salle"
+    ],
+    "coupable": "Nolwenn",
+    "solution": {
+     "Katell": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "galette",
+       "la galette"
+      ]
+     },
+     "Thomas": {
+      "lieu": [
+       "Office",
+       "dans l'office"
+      ],
+      "objet": [
+       "livre de contes",
+       "le livre de contes"
+      ]
+     },
+     "Nolwenn": {
+      "lieu": [
+       "Grande salle",
+       "dans la grande salle"
+      ],
+      "objet": [
+       "navet sculpté",
+       "le navet sculpté"
+      ]
+     }
+    },
+    "indices": [
+     "Thomas se trouvait dans une pièce voisine de celle de la personne qui avait la galette.",
+     "Nolwenn était dans la grande salle.",
+     "Thomas n'avait pas le navet sculpté.",
+     "Katell était dans la bibliothèque."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme06.png"
+   },
+   {
+    "num": 7,
+    "titre": "La page manquante",
+    "incident": "Dans la bibliothèque, un vieux recueil de contes de 1931 a perdu sa page de garde, celle qui porte le nom de l'autrice.",
+    "question_lieu": [
+     "Grande salle",
+     "dans la grande salle"
+    ],
+    "coupable": "Bleuenn",
+    "solution": {
+     "Alan": {
+      "lieu": [
+       "Vestibule",
+       "dans le vestibule"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Bleuenn": {
+      "lieu": [
+       "Grande salle",
+       "dans la grande salle"
+      ],
+      "objet": [
+       "galette",
+       "la galette"
+      ]
+     },
+     "Soizic": {
+      "lieu": [
+       "Chapelle",
+       "dans la chapelle du manoir"
+      ],
+      "objet": [
+       "châle",
+       "le châle"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la galette n'était pas dans le vestibule.",
+     "Alan avait la bougie.",
+     "Ni Alan ni Bleuenn n'avait le châle.",
+     "La personne qui avait le châle n'était pas dans le vestibule.",
+     "La personne qui avait la galette n'était pas dans la chapelle du manoir."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme07.png"
+   },
+   {
+    "num": 8,
+    "titre": "La cloche de l'office",
+    "incident": "La cloche de l'office a sonné trois coups, alors que personne n'y avait affaire.",
+    "question_lieu": [
+     "Galerie",
+     "dans la galerie"
+    ],
+    "coupable": "Rozenn",
+    "solution": {
+     "Nolwenn": {
+      "lieu": [
+       "Vestibule",
+       "dans le vestibule"
+      ],
+      "objet": [
+       "galette",
+       "la galette"
+      ]
+     },
+     "Rozenn": {
+      "lieu": [
+       "Galerie",
+       "dans la galerie"
+      ],
+      "objet": [
+       "bolée",
+       "la bolée de cidre"
+      ]
+     },
+     "Maxime": {
+      "lieu": [
+       "Office",
+       "dans l'office"
+      ],
+      "objet": [
+       "livre de contes",
+       "le livre de contes"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Rozenn ni Maxime n'avait la galette.",
+     "Maxime n'avait pas la bolée de cidre.",
+     "Nolwenn n'était pas dans la galerie.",
+     "La personne qui avait le livre de contes était dans l'office."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme08.png"
+   },
+   {
+    "num": 9,
+    "titre": "La faux du vestibule",
+    "incident": "La faux de bois qui décore le vestibule a été décrochée, puis remise à l'envers.",
+    "question_lieu": [
+     "Salon des portraits",
+     "dans le salon des portraits"
+    ],
+    "coupable": "Quentin",
+    "solution": {
+     "Fanch": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "navet sculpté",
+       "le navet sculpté"
+      ]
+     },
+     "Quentin": {
+      "lieu": [
+       "Salon des portraits",
+       "dans le salon des portraits"
+      ],
+      "objet": [
+       "bolée",
+       "la bolée de cidre"
+      ]
+     },
+     "Alan": {
+      "lieu": [
+       "Office",
+       "dans l'office"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     }
+    },
+    "indices": [
+     "Fanch était dans la cuisine.",
+     "La personne qui avait la bolée de cidre n'était pas dans l'office.",
+     "Alan n'était pas dans le salon des portraits.",
+     "Alan se trouvait dans une pièce voisine de celle de la personne qui avait le navet sculpté."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme09.png"
+   },
+   {
+    "num": 10,
+    "titre": "Le dernier conte",
+    "incident": "Hervé lève son verre : « Le dernier conte de l'Ankou rendra justice à qui de droit. » Un châle glisse d'une épaule, une chaise grince.",
+    "question_lieu": [
+     "Bibliothèque",
+     "dans la bibliothèque"
+    ],
+    "coupable": "Soizic",
+    "solution": {
+     "Nolwenn": {
+      "lieu": [
+       "Vestibule",
+       "dans le vestibule"
+      ],
+      "objet": [
+       "galette",
+       "la galette"
+      ]
+     },
+     "Annaig": {
+      "lieu": [
+       "Grande salle",
+       "dans la grande salle"
+      ],
+      "objet": [
+       "bolée",
+       "la bolée de cidre"
+      ]
+     },
+     "Soizic": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "chandelier",
+       "le chandelier"
+      ]
+     }
+    },
+    "indices": [
+     "Soizic était dans la bibliothèque.",
+     "Soizic n'avait pas la bolée de cidre.",
+     "Annaig n'avait pas la galette.",
+     "La personne qui avait la galette était dans le vestibule."
+    ],
+    "image": "enigmes/La-Nuit-de-l-Ankou_enigme10.png"
+   }
+  ]
+ },
+ {
+  "livre": "Le Train des Neiges",
+  "slug": "Le-Train-des-Neiges",
+  "amazon": null,
+  "couverture": "couvertures/Le-Train-des-Neiges.jpg",
+  "enigmes": [
+   {
+    "num": 1,
+    "titre": "Le billet déchiré",
+    "incident": "Sur le quai, Rose ramasse un billet déchiré en deux. Il était pour la voiture 4, celle d'Augustin.",
+    "question_lieu": [
+     "Buffet",
+     "au buffet de la gare"
+    ],
+    "coupable": "Jacques",
+    "solution": {
+     "Constance": {
+      "lieu": [
+       "Voiture-salon",
+       "dans la voiture-salon"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     },
+     "Henri": {
+      "lieu": [
+       "Couloir",
+       "dans le couloir"
+      ],
+      "objet": [
+       "thermos",
+       "le thermos"
+      ]
+     },
+     "Jacques": {
+      "lieu": [
+       "Buffet",
+       "au buffet de la gare"
+      ],
+      "objet": [
+       "valise",
+       "la valise"
+      ]
+     }
+    },
+    "indices": [
+     "Jacques se trouvait dans une pièce voisine de celle de la personne qui avait le carnet.",
+     "Jacques n'avait pas le thermos.",
+     "La personne qui avait la valise n'était pas dans la voiture-salon.",
+     "Henri était dans le couloir."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme01.png"
+   },
+   {
+    "num": 2,
+    "titre": "La valise échangée",
+    "incident": "Deux valises identiques ont été échangées au fourgon. L'une contient des plans de locomotive.",
+    "question_lieu": [
+     "Compartiment 7",
+     "dans le compartiment 7"
+    ],
+    "coupable": "Margaux",
+    "solution": {
+     "Tatiana": {
+      "lieu": [
+       "Hall",
+       "dans le hall de la gare"
+      ],
+      "objet": [
+       "billet",
+       "le billet"
+      ]
+     },
+     "Nicolas": {
+      "lieu": [
+       "Buffet",
+       "au buffet de la gare"
+      ],
+      "objet": [
+       "thermos",
+       "le thermos"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Compartiment 7",
+       "dans le compartiment 7"
+      ],
+      "objet": [
+       "carnet",
+       "le carnet"
+      ]
+     }
+    },
+    "indices": [
+     "Nicolas n'était pas dans le compartiment 7.",
+     "Tatiana n'avait pas le carnet.",
+     "Tatiana était dans le hall de la gare.",
+     "Margaux se trouvait dans une pièce voisine de celle de la personne qui avait le thermos."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme02.png"
+   },
+   {
+    "num": 3,
+    "titre": "Le bouquet de houx",
+    "incident": "Le bouquet de houx de la voiture-salon a été arraché et jeté par la fenêtre, avant même le départ.",
+    "question_lieu": [
+     "Voiture-salon",
+     "dans la voiture-salon"
+    ],
+    "coupable": "Clara",
+    "solution": {
+     "Samuel": {
+      "lieu": [
+       "Hall",
+       "dans le hall de la gare"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe"
+      ]
+     },
+     "Clara": {
+      "lieu": [
+       "Voiture-salon",
+       "dans la voiture-salon"
+      ],
+      "objet": [
+       "valise",
+       "la valise"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Buffet",
+       "au buffet de la gare"
+      ],
+      "objet": [
+       "billet",
+       "le billet"
+      ]
+     }
+    },
+    "indices": [
+     "Clara se trouvait dans une pièce voisine de celle de la personne qui avait l'écharpe.",
+     "Samuel se trouvait dans une pièce voisine de celle de la personne qui avait le billet.",
+     "La personne qui avait le billet n'était pas dans la voiture-salon.",
+     "Ni Samuel ni Clara n'avait le billet."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme03.png"
+   },
+   {
+    "num": 4,
+    "titre": "Le sifflet du départ",
+    "incident": "Le sifflet du contrôleur a disparu. Le train part avec cinq minutes de retard, une première en quarante ans.",
+    "question_lieu": [
+     "Compartiment 7",
+     "dans le compartiment 7"
+    ],
+    "coupable": "Tatiana",
+    "solution": {
+     "Margaux": {
+      "lieu": [
+       "Hall",
+       "dans le hall de la gare"
+      ],
+      "objet": [
+       "valise",
+       "la valise"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Compartiment 7",
+       "dans le compartiment 7"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Gabriel": {
+      "lieu": [
+       "Quai",
+       "sur le quai"
+      ],
+      "objet": [
+       "billet",
+       "le billet"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le journal n'était pas dans le hall de la gare.",
+     "Tatiana avait le journal.",
+     "Gabriel n'était pas dans le hall de la gare.",
+     "La personne qui avait le billet était sur le quai."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme04.png"
+   },
+   {
+    "num": 5,
+    "titre": "La place réservée",
+    "incident": "Quelqu'un a changé l'étiquette de réservation du compartiment 7. Rose se retrouve à côté de la voiture d'Augustin.",
+    "question_lieu": [
+     "Fourgon",
+     "dans le fourgon à bagages"
+    ],
+    "coupable": "Gabriel",
+    "solution": {
+     "Samuel": {
+      "lieu": [
+       "Quai",
+       "sur le quai"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Couloir",
+       "dans le couloir"
+      ],
+      "objet": [
+       "valise",
+       "la valise"
+      ]
+     },
+     "Gabriel": {
+      "lieu": [
+       "Fourgon",
+       "dans le fourgon à bagages"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait le journal n'était pas dans le couloir.",
+     "La personne qui avait l'écharpe était dans le fourgon à bagages.",
+     "Samuel n'était pas dans le couloir.",
+     "Gabriel avait l'écharpe."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme05.png"
+   },
+   {
+    "num": 6,
+    "titre": "Le toast du départ",
+    "incident": "Augustin lève sa coupe : « Ce train finira dans un musée au Japon, et ce sera mon dernier voyage. » Un verre se brise.",
+    "question_lieu": [
+     "Voiture-salon",
+     "dans la voiture-salon"
+    ],
+    "coupable": "Mathilde",
+    "solution": {
+     "Ulysse": {
+      "lieu": [
+       "Wagon-restaurant",
+       "dans le wagon-restaurant"
+      ],
+      "objet": [
+       "écharpe",
+       "l'écharpe"
+      ]
+     },
+     "Gabriel": {
+      "lieu": [
+       "Compartiment 7",
+       "dans le compartiment 7"
+      ],
+      "objet": [
+       "journal",
+       "le journal"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Voiture-salon",
+       "dans la voiture-salon"
+      ],
+      "objet": [
+       "parapluie",
+       "le parapluie"
+      ]
+     }
+    },
+    "indices": [
+     "Gabriel n'était pas dans le wagon-restaurant.",
+     "Ulysse se trouvait dans une pièce voisine de celle de la personne qui avait le journal.",
+     "Mathilde était dans la voiture-salon.",
+     "La personne qui avait le parapluie n'était pas dans le wagon-restaurant."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme06.png"
+   }
+  ]
+ }
+]
