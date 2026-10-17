@@ -1,0 +1,33 @@
+{
+  "slug": "2026-10-18_abattement-retraites",
+  "source": "Sources : LCP, AFP",
+  "scenes": [
+    {"type": "hook", "duree": 4.5, "tag": "BUDGET 2027",
+     "texte": "Les retraités doivent-ils payer **plus d'impôts** ?",
+     "sous": "Les députés viennent de trancher. Pour l'instant."},
+    {"type": "texte", "duree": 9, "titre": "CE QUI S'EST PASSÉ", "pas": 3.6,
+     "lignes": ["Jeudi, l'Assemblée a **rejeté** une mesure phare du budget du gouvernement.",
+                "Elle visait l'abattement fiscal de 10 % dont bénéficient les retraités sur leurs pensions."]},
+    {"type": "compare", "duree": 9, "titre": "LA MESURE",
+     "libelle": "Plafond de l'abattement de 10 %",
+     "avant": "4 439 €", "apres": "3 000 €",
+     "note": "Recette attendue pour l'État : **1,4 milliard €**."},
+    {"type": "vote", "duree": 8, "titre": "LE VOTE",
+     "contre": 116, "pour": 30, "label_contre": "CONTRE LA MESURE", "label_pour": "POUR LA MESURE",
+     "legende": "Seuls **Renaissance** et le **MoDem** l'ont défendue."},
+    {"type": "camp", "duree": 12.5, "camp": "POUR", "qui": "Gouvernement, Renaissance, MoDem", "pas": 3.4,
+     "arguments": ["La pauvreté des retraités a été **divisée par 3** depuis les années 70. Celle des jeunes, **multipliée par 3**.",
+                   "Environ **30 € par mois** pour un retraité imposé à 30 % : un petit effort de solidarité.",
+                   "**1,4 milliard €** pour réduire le déficit."]},
+    {"type": "camp", "duree": 12.5, "camp": "CONTRE", "qui": "De la gauche au RN", "pas": 3.4,
+     "arguments": ["**4,6 millions de foyers** touchés, dont des couples à 1 250 € de pension chacun.",
+                   "Les inégalités sont une question de **revenus**, pas d'âge : on n'oppose pas les générations.",
+                   "Les retraités paient déjà : **5,5 milliards €** d'effort leur sont demandés dans ce budget."]},
+    {"type": "texte", "duree": 5.5, "pas": 1.6,
+     "lignes": ["**Rien n'est joué.**",
+                "Seule la version finale du budget dira si la mesure s'applique en 2027."]},
+    {"type": "cta", "duree": 8,
+     "question": "Et toi, sur l'impôt des retraités ?",
+     "appel": "Ton avis en commentaire ↓"}
+  ]
+}
