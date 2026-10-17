@@ -168,6 +168,7 @@ def cta_layer(livre, cover, n_enigmes):
     d.rounded_rectangle((bx, y2 + 20, bx + bw, y2 + 20 + bh), 48, fill=RED)
     bf = F("Carlito-Bold.ttf", 48); t = "Lien en bio"
     d.text((bx + (bw - d.textlength(t, font=bf)) / 2, y2 + 38), t, font=bf, fill=WHITE)
+    text_block(d, (LX, y2 + 140), "@maelkerjean", F("Carlito-Bold.ttf", 40), MUTED, RX - LX, align="center")
     return L
 
 # ---------- son (synthétisé, libre de droits) ----------
