@@ -261,5 +261,51 @@ def build(slug, num, out):
     p.stdin.close(); p.wait(); os.remove(tmp)
     return dict(duree=round(dur, 1), coupable=e["coupable"], titre=e["titre"])
 
+def banner_layer(secs):
+    L = layer(); d = ImageDraw.Draw(L)
+    bf = F("Carlito-Bold.ttf", 46); t = f"TROUVE LE COUPABLE EN {secs} SECONDES"
+    bw = int(d.textlength(t, font=bf)) + 70; bx = (W - bw) // 2
+    d.rounded_rectangle((bx, 130, bx + bw, 210), 40, fill=GOLD)
+    d.text((bx + 35, 147), t, font=bf, fill=NAVY_TOP)
+    return L
+
+def build_rapide(slug, num, out, secs=15):
+    """Format court : énigme complète dès la 1re image, minuteur, puis écran final."""
+    livre, e = load(slug, num)
+    plan = crop_plan(os.path.join(KIT, e["image"]))
+    cover = Image.open(os.path.join(KIT, livre["couverture"])).convert("RGB")
+    n_enigmes = 24 if "Neiges" in livre["livre"] else 40
+    bg = background().convert("RGBA")
+    base, clues, qy = board_layers(livre, e, plan)
+    board = bg.copy(); board.alpha_composite(base)
+    for C in clues: board.alpha_composite(C)
+    board.alpha_composite(banner_layer(secs))
+    cta = cta_layer(livre, cover, n_enigmes)
+    T_CTA = 4.5; dur = secs + T_CTA
+    tmp = out + ".wav"
+    make_audio(tmp, dur, [], 0, secs)
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+           "-i", tmp, "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
+           "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", out]
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    qcache = {}
+    for fi in range(int(dur * FPS)):
+        t = fi / FPS
+        if t < secs + 0.4:
+            fr = board.copy()
+            rem = max(1, secs - int(t)); frac = min(1, t / secs); key = (rem, round(frac * 90))
+            if key not in qcache: qcache[key] = question_layer(e, qy, rem, key[1] / 90)
+            fr.alpha_composite(qcache[key])
+            if t > secs:
+                paste_alpha(fr, Image.new("RGBA", (W, H), (*NAVY_TOP, 255)), ease((t - secs) / 0.4))
+        else:
+            fr = bg.copy()
+        if t >= secs:
+            paste_alpha(fr, cta, ease((t - secs) / 0.6), (1 - ease((t - secs) / 0.6)) * 40)
+        p.stdin.write(fr.convert("RGB").tobytes())
+    p.stdin.close(); p.wait(); os.remove(tmp)
+    return dict(duree=round(dur, 1), coupable=e["coupable"], titre=e["titre"])
+
 if __name__ == "__main__":
-    print(build(sys.argv[1], int(sys.argv[2]), sys.argv[3]))
+    f = build_rapide if "--rapide" in sys.argv else build
+    print(f(sys.argv[1], int(sys.argv[2]), sys.argv[3]))
