@@ -1,0 +1,166 @@
+{
+ "slug": "si_gel-retraites",
+ "rubrique": "SI ÇA PASSE · RETRAITES",
+ "source": "Sources : LCP, Public Sénat, JeChange",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si le gel des retraites passe, voilà ce que ta grand-mère pourrait perdre.",
+   "affiche": "Si le gel des retraites passe, voilà ce que **ta grand-mère** pourrait perdre.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · RETRAITES",
+    "lignes": [
+     "SI LE GEL",
+     "DES RETRAITES",
+     "PASSE…"
+    ],
+    "taille": 88
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Le gouvernement veut ne plus revaloriser pleinement les pensions au-dessus de 1260 euros par mois.",
+   "affiche": "Le gouvernement veut ne plus revaloriser pleinement les pensions **au-dessus de 1 260 €** par mois.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE",
+    "titre": "Retraite totale par mois",
+    "seuil": "1 260 €",
+    "gauche": "Revalorisée",
+    "droite": "Gelée ou réduite",
+    "part": 0.42
+   }
+  },
+  {
+   "dit": "Prenons une retraite de base de 1500 euros.",
+   "affiche": "Prenons une retraite de base de **1 500 €**.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · RETRAITE DE BASE",
+    "lignes": [
+     [
+      "Retraite de base",
+      "1 500 €",
+      0.2
+     ],
+     [
+      "Avec l'inflation (+2,1 %)",
+      "1 531,50 €",
+      2.6
+     ],
+     [
+      "Avec un gel total",
+      "1 500 €",
+      4.6
+     ]
+    ],
+    "total": [
+     "Chaque mois",
+     "−31,50 €",
+     5.6
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Normalement, elle suit l'inflation, environ 2 pour cent. Avec un gel total, elle ne bouge plus.",
+   "affiche": "Normalement, elle suit l'inflation, environ **2 %**. Avec un gel total, elle **ne bouge plus**."
+  },
+  {
+   "dit": "Résultat : 31 euros 50 de moins chaque mois. Soit 378 euros sur l'année.",
+   "affiche": "Résultat : **31,50 €** de moins chaque mois. Soit **378 €** sur l'année.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 378,
+    "prefixe": "−",
+    "suffixe": " €",
+    "legende": [
+     "par an, avec un gel total",
+     "sur une retraite de base de 1 500 €"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Et ça s'additionne : chaque hausse suivante part d'une pension plus basse.",
+   "affiche": "Et ça **s'additionne** : chaque hausse suivante part d'une pension plus basse."
+  },
+  {
+   "dit": "Mais attention : sous 1260 euros, rien ne change. Et aucune pension ne peut baisser.",
+   "affiche": "Mais attention : sous **1 260 €**, rien ne change. Et **aucune pension** ne peut baisser.",
+   "carte": {
+    "type": "checks",
+    "label": "À SAVOIR",
+    "pas": 2.2,
+    "lignes": [
+     [
+      true,
+      "Sous 1 260 € : protégée"
+     ],
+     [
+      true,
+      "Aucune pension ne baisse"
+     ],
+     [
+      null,
+      "Taux exact : fixé par décret"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, c'est 4 milliards d'économies, et tout le monde doit contribuer.",
+   "affiche": "Pour le gouvernement, c'est **4 milliards** d'économies, et tout le monde doit contribuer.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement",
+    "lignes": [
+     "4 milliards €",
+     "d'économies.",
+     "Tout le monde",
+     "doit contribuer."
+    ]
+   }
+  },
+  {
+   "dit": "Pour ses opposants, 1260 euros, ce n'est pas une grosse retraite : le seuil de pauvreté est à 1337 euros.",
+   "affiche": "Pour ses opposants, 1 260 €, ce n'est pas une grosse retraite : le seuil de pauvreté est à **1 337 €**.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Socialistes, LFI…",
+    "lignes": [
+     "1 260 €, ce n'est",
+     "pas une grosse",
+     "retraite."
+    ]
+   }
+  },
+  {
+   "dit": "L'Assemblée a rejeté le budget de la Sécu. Mais le Sénat reprend le texte du gouvernement le 9 novembre.",
+   "affiche": "L'Assemblée a **rejeté** le budget de la Sécu. Mais le Sénat reprend le texte du gouvernement le **9 novembre**.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "REJETÉ",
+    "sous": "Assemblée nationale, 23 octobre",
+    "suite": "SÉNAT · 9 NOV.",
+    "apres": 2.6
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, ce gel : tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, ce gel : tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
