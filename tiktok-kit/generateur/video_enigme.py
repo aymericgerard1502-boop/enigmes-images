@@ -164,10 +164,12 @@ def question_layer(e, y, remaining, frac):
     d.text((cx - d.textlength(s, font=nf) / 2, cy - 33), s, font=nf, fill=WHITE)
     return L
 
-def cta_layer(livre, cover, n_enigmes):
+def cta_layer(livre, cover, n_enigmes, noms=None):
     L = layer(); d = ImageDraw.Draw(L)
-    y = text_block(d, (LX, 230), "Ton suspect en commentaire", F("Caladea-Bold.ttf", 82), GOLD, RX - LX, 1.05, "center")
-    text_block(d, (LX, y + 20), "Réponse demain sur le compte.", F("Carlito-Regular.ttf", 46), WHITE, RX - LX, align="center")
+    titre = (", ".join(noms[:-1]) + " ou " + noms[-1] + " ?") if noms else "Ton suspect en commentaire"
+    sous = "Réponds en commentaire !" if noms else "Réponse demain sur le compte."
+    y = text_block(d, (LX, 230), titre, F("Caladea-Bold.ttf", 82), GOLD, RX - LX, 1.05, "center")
+    text_block(d, (LX, y + 20), sous, F("Carlito-Regular.ttf", 46), WHITE, RX - LX, align="center")
     cw = 470; ch = int(cover.height * cw / cover.width)
     c = cover.resize((cw, ch), Image.LANCZOS).convert("RGBA")
     sh = Image.new("RGBA", (cw + 80, ch + 80), (0, 0, 0, 0))
@@ -280,7 +282,7 @@ def build_rapide(slug, num, out, secs=15):
     board = bg.copy(); board.alpha_composite(base)
     for C in clues: board.alpha_composite(C)
     board.alpha_composite(banner_layer(secs))
-    cta = cta_layer(livre, cover, n_enigmes)
+    cta = cta_layer(livre, cover, n_enigmes, sorted(e["solution"].keys()))
     T_CTA = 4.5; dur = secs + T_CTA
     tmp = out + ".wav"
     make_audio(tmp, dur, [], 0, secs)
