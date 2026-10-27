@@ -199,12 +199,19 @@ def plan_card(plan, y, width=820):
     lay.alpha_composite(card, ((W - width) // 2 - 40, y))
     return lay, y + card.height
 
+def hook_words_of(title):
+    out = []
+    for w in title.upper().split():
+        if out and w in ("?", "!", ":", ";"): out[-1] += "\u00a0" + w
+        else: out.append(w)
+    return out
+
 def hook_layer(title, n_words_shown, last_pop):
     lay = L(); d = ImageDraw.Draw(lay)
     f = F("Carlito-Bold.ttf", 40); t = "ÉNIGME DU JOUR"
     bw = d.textlength(t, font=f) + 60; bx = (W - bw) / 2 - 40
     d.rounded_rectangle((bx, 330, bx + bw, 400), 35, fill=RED); d.text((bx + 30, 343), t, font=f, fill=WHITE)
-    words = title.upper().split()
+    words = hook_words_of(title)
     shown = [[w, GOLD] for w in words[:n_words_shown]]
     big = F("Caladea-Bold.ttf", 132)
     y = draw_rich(d, shown, big, 480 - int(10 * (1 - last_pop)), width=860, stroke=8, spacing=1.08)
@@ -305,9 +312,9 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
         st = (np.stack([mix, mix], 1) * 32767).astype("<i2"); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(st.tobytes())
 
     # --- visuels pré-calculés
-    static = S.scene_train_static(); st = S.stars(); train, chimney = S.train_layer(0)
-    still = static.copy(); dd = ImageDraw.Draw(still, "RGBA")
-    still.alpha_composite(S.lamp_glow(1)); still.alpha_composite(train, (-60, 1010))
+    sc = S.make_scene(slug)
+    still = sc["static"].copy(); dd = ImageDraw.Draw(still, "RGBA")
+    sc["back"](still, dd, 4.0)
     S.rose(dd, 250, S.GROUND_Y, 0); S.sardine(dd, 560, S.GROUND_Y, 0)
     dim_bg = still.filter(ImageFilter.GaussianBlur(14)); dim_bg.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 205)))
     chips = chips_layer(names, cols)
@@ -336,7 +343,7 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
     for c in chunks:
         for j, wd in enumerate(c):
             tl.append((acc / tot, c, j)); acc += len(wd) + 1
-    hook_words = hook.upper().split()
+    hook_words = hook_words_of(hook)
 
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
            "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
@@ -347,13 +354,11 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
     for fi in range(int(dur * FPS)):
         t = fi / FPS
         if t < t_story_end + 0.3:
-            fr = static.copy(); d = ImageDraw.Draw(fr, "RGBA")
-            S.draw_stars(d, st, t); fr.alpha_composite(S.lamp_glow(t))
-            xt = int(-1400 * (1 - ease(min(1, t / 3.5))))
-            fr.alpha_composite(train, (xt - 60, 1010)); S.smoke(d, xt - 60 + chimney, t)
+            fr = sc["static"].copy(); d = ImageDraw.Draw(fr, "RGBA")
+            sc["back"](fr, d, t)
             S.rose(d, 250, S.GROUND_Y, t); S.sardine(d, 560, S.GROUND_Y, t)
             if "billet" in e["incident"].lower() and t > T["setup"][0]: S.ticket(d, 760, S.GROUND_Y - 14, t)
-            S.snow(d, t)
+            sc["front"](fr, d, t)
             if t < T["hook"][1]:
                 fr.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 150)))
                 el = t - T["hook"][0]; per = 0.28

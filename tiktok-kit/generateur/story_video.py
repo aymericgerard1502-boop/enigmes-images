@@ -254,3 +254,145 @@ def build(slug, num, out, secs=15):
 
 if __name__ == "__main__":
     print(build(sys.argv[1], int(sys.argv[2]), sys.argv[3]))
+
+
+# ================================================================ décors par livre
+def _rain(d, t, seed=5, n=140):
+    rnd = random.Random(seed)
+    for _ in range(n):
+        x0, y0, sp = rnd.randrange(W + 300), rnd.randrange(H), rnd.uniform(900, 1400)
+        y = (y0 + t * sp) % H; x = (x0 - (y * 0.35)) % (W + 300) - 150
+        d.line((x, y, x - 14, y + 42), fill=(190, 205, 235, 150), width=3)
+
+def _clouds(d, t, cols=((30, 36, 66, 230), (40, 46, 80, 220))):
+    for k, (cy, sp, sz) in enumerate([(260, 18, 1.0), (420, 30, 1.3), (600, 12, 0.9)]):
+        cx = (k * 400 + t * sp) % (W + 700) - 350
+        for dx, dy, r in [(0, 0, 110), (120, -30, 130), (250, 10, 100), (-110, 20, 90)]:
+            rr = r * sz
+            d.ellipse((cx + dx - rr, cy + dy - rr * 0.6, cx + dx + rr, cy + dy + rr * 0.6), fill=cols[k % 2])
+
+def scene_belle_ile():
+    im = sky((12, 16, 36), (30, 42, 76)); d = ImageDraw.Draw(im)
+    d.polygon([(560, 1290), (650, 1190), (780, 1150), (940, 1160), (1080, 1210), (1080, 1300)], fill=INK)
+    x = 860
+    d.polygon([(x - 62, 1180), (x + 62, 1180), (x + 42, 760), (x - 42, 760)], fill=CREAM)
+    for k in range(3):
+        y1 = 1180 - 140 * k - 70; y2 = y1 - 70
+        f1 = 62 - (1180 - y1) * 20 / 420; f2 = 62 - (1180 - y2) * 20 / 420
+        d.polygon([(x - f1, y1), (x + f1, y1), (x + f2, y2), (x - f2, y2)], fill=RED)
+    d.rectangle((x - 50, 752, x + 50, 770), fill=INK)
+    d.rectangle((x - 34, 690, x + 34, 752), fill=GOLD)
+    d.polygon([(x - 46, 690), (x + 46, 690), (x, 640)], fill=INK)
+    d.rectangle((0, 1290, W, 1470), fill=(22, 38, 70))
+    d.rectangle((0, 1460, W, H), fill=(34, 32, 60))
+    d.rectangle((0, 1460, W, 1472), fill=CREAM)
+    for k in range(9):
+        d.line((k * 130, 1472, k * 130 - 90, H), fill=(28, 26, 52), width=4)
+    def back(fr, dd, t):
+        _clouds(dd, t)
+        ang = math.radians(200 + 30 * math.sin(t * 0.9))
+        for spread, al in [(0.16, 18), (0.08, 26)]:
+            p1 = (x + 1600 * math.cos(ang - spread), 721 + 1600 * math.sin(ang - spread))
+            p2 = (x + 1600 * math.cos(ang + spread), 721 + 1600 * math.sin(ang + spread))
+            dd.polygon([(x, 721), p1, p2], fill=(255, 230, 150, al))
+        for k in range(6):
+            yy = 1300 + k * 28; ph = t * (1.6 + k * 0.3) + k
+            pts = [(xx, yy + 8 * math.sin(xx / 70 + ph)) for xx in range(0, W + 40, 40)]
+            dd.line(pts, fill=(70, 100, 150, 170), width=4)
+        if (t % 7.3) < 0.12:
+            fr.alpha_composite(Image.new("RGBA", (W, H), (230, 235, 255, 55)))
+    def front(fr, dd, t): _rain(dd, t)
+    return dict(static=im, back=back, front=front)
+
+def scene_vendanges():
+    im = sky((14, 14, 38), (46, 38, 86)); d = ImageDraw.Draw(im)
+    d.ellipse((800, 250, 940, 390), fill=CREAM); d.ellipse((835, 260, 935, 360), fill=(228, 218, 190))
+    d.polygon([(0, 1010), (200, 880), (420, 960), (620, 900), (860, 1000), (1080, 930), (1080, 1300), (0, 1300)], fill=(40, 38, 84))
+    cx = 230; d.rectangle((cx - 70, 820, cx + 50, 900), fill=INK)
+    for k in range(5): d.rectangle((cx - 70 + k * 26, 802, cx - 56 + k * 26, 822), fill=INK)
+    d.rectangle((cx + 10, 760, cx + 50, 830), fill=INK)
+    d.polygon([(0, 1150), (300, 1040), (640, 1110), (1080, 1020), (1080, 1460), (0, 1460)], fill=(56, 52, 112))
+    for r in range(9):
+        y = 1080 + r * 42
+        for xx in range(-40, W, 34):
+            d.ellipse((xx, y + (xx % 3) * 2, xx + 18, y + 12), fill=(38, 34, 80))
+    houses = [(60, 190), (280, 170), (470, 210), (700, 180), (900, 200)]
+    for hx, hw in houses:
+        top = 1240
+        d.rectangle((hx, top, hx + hw, 1460), fill=(30, 26, 60))
+        d.polygon([(hx - 14, top), (hx + hw / 2, top - 120), (hx + hw + 14, top)], fill=INK)
+        for xx in (hx + 20, hx + hw - 70):
+            d.rectangle((xx, top + 50, xx + 50, top + 110), fill=WARM)
+        d.line((hx, top + 140, hx + hw, top + 140), fill=(90, 70, 60), width=6)
+        d.line((hx + 10, top + 140, hx + hw / 2, top + 40), fill=(90, 70, 60), width=6)
+        d.line((hx + hw - 10, top + 140, hx + hw / 2, top + 40), fill=(90, 70, 60), width=6)
+    d.rectangle((0, 1460, W, H), fill=(32, 28, 62)); d.rectangle((0, 1460, W, 1472), fill=GOLD)
+    def back(fr, dd, t):
+        g = int(18 + 6 * math.sin(t * 2))
+        for r in (150, 120, 95):
+            dd.ellipse((870 - r, 320 - r, 870 + r, 320 + r), fill=(250, 240, 214, g))
+    def front(fr, dd, t):
+        rnd = random.Random(4)
+        for _ in range(26):
+            x0, y0, sp = rnd.randrange(W), rnd.randrange(H), rnd.uniform(70, 130)
+            y = (y0 + t * sp) % H; x = (x0 + 60 * math.sin(t * 1.3 + y0)) % W
+            a = t * 3 + y0; col = rnd.choice([(214, 120, 50, 230), (190, 60, 50, 230), (240, 180, 70, 230)])
+            dd.polygon([(x + 12 * math.cos(a), y + 12 * math.sin(a)), (x + 6 * math.cos(a + 2), y + 6 * math.sin(a + 2)),
+                        (x - 12 * math.cos(a), y - 12 * math.sin(a)), (x + 6 * math.cos(a - 2), y + 6 * math.sin(a - 2))], fill=col)
+    return dict(static=im, back=back, front=front)
+
+def scene_santons():
+    im = sky((16, 14, 40), (42, 34, 82)); d = ImageDraw.Draw(im)
+    for cx in (90, 1000):
+        d.ellipse((cx - 34, 980, cx + 34, 1440), fill=INK)
+    blocks = [(0, 1210, 200), (180, 1170, 170), (520, 1190, 200), (700, 1230, 190), (870, 1180, 210)]
+    wins = []
+    for bx, top, bw in blocks:
+        d.rectangle((bx, top, bx + bw, 1460), fill=(30, 26, 60))
+        d.polygon([(bx - 10, top), (bx + bw + 10, top), (bx + bw, top - 26), (bx, top - 26)], fill=(150, 70, 50))
+        for k in range(2):
+            wx = bx + 30 + k * (bw - 90); wins.append((wx, top + 60))
+    tx = 400
+    d.rectangle((tx - 70, 860, tx + 70, 1460), fill=CREAM)
+    d.polygon([(tx - 80, 860), (tx + 80, 860), (tx, 760)], fill=(150, 70, 50))
+    d.ellipse((tx - 42, 920, tx + 42, 1004), fill=(240, 230, 200), outline=INK, width=6)
+    d.line((tx, 962, tx, 932), fill=INK, width=5); d.line((tx, 962, tx + 22, 962), fill=INK, width=5)
+    d.rectangle((tx - 28, 1060, tx + 28, 1160), fill=INK)
+    d.rectangle((0, 1460, W, H), fill=(36, 30, 64)); d.rectangle((0, 1460, W, 1472), fill=GOLD)
+    for r in range(6):
+        for c in range(14):
+            d.rounded_rectangle((c * 82 + (r % 2) * 41 - 20, 1490 + r * 70, c * 82 + (r % 2) * 41 + 50, 1540 + r * 70), 10, outline=(46, 40, 80), width=3)
+    def back(fr, dd, t):
+        s = 34 + 8 * math.sin(t * 3); cx, cy = 880, 300
+        dd.polygon([(cx, cy - s * 2), (cx + s * 0.35, cy - s * 0.35), (cx + s * 2, cy), (cx + s * 0.35, cy + s * 0.35),
+                    (cx, cy + s * 2), (cx - s * 0.35, cy + s * 0.35), (cx - s * 2, cy), (cx - s * 0.35, cy - s * 0.35)], fill=GOLD)
+        for k, (wx, wy) in enumerate(wins):
+            on = 0.5 + 0.5 * math.sin(t * 1.7 + k * 1.3) > 0.15
+            dd.rectangle((wx, wy, wx + 46, wy + 60), fill=WARM if on else (60, 50, 70))
+        pts = [(xx, 1120 + 90 * ((xx - 540) / 540) ** 2) for xx in range(0, W + 1, 20)]
+        dd.line(pts, fill=(20, 18, 40), width=3)
+        cols = [RED, GOLD, (90, 214, 200), (255, 140, 200)]
+        for k, (xx, yy) in enumerate(pts[1::3]):
+            on = math.sin(t * 4 + k * 0.9) > -0.3
+            c = cols[k % 4] if on else (60, 56, 80)
+            dd.ellipse((xx - 9, yy + 4, xx + 9, yy + 22), fill=c)
+    def front(fr, dd, t):
+        rnd = random.Random(11)
+        for _ in range(40):
+            x0, y0 = rnd.randrange(W), rnd.randrange(1300)
+            a = int(120 + 120 * math.sin(t * 2 + x0))
+            if a > 0: dd.ellipse((x0 - 2, y0 - 2, x0 + 2, y0 + 2), fill=(255, 240, 200, min(255, a)))
+    return dict(static=im, back=back, front=front)
+
+def scene_train():
+    im = scene_train_static(); st = stars(); tr, chim = train_layer(0)
+    def back(fr, dd, t):
+        draw_stars(dd, st, t); fr.alpha_composite(lamp_glow(t))
+        xt = int(-1400 * (1 - ease(min(1, t / 3.5))))
+        fr.alpha_composite(tr, (xt - 60, 1010)); smoke(dd, xt - 60 + chim, t)
+    def front(fr, dd, t): snow(dd, t)
+    return dict(static=im, back=back, front=front)
+
+def make_scene(slug):
+    return {"Le-Train-des-Neiges": scene_train, "Tempete-sur-Belle-Ile": scene_belle_ile,
+            "Vendanges-tardives": scene_vendanges, "Les-Santons-de-Minuit": scene_santons}.get(slug, scene_train)()
