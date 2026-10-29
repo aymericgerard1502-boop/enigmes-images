@@ -21,13 +21,14 @@ L'ancien format (`video_arene.py`, dossier `episodes/`) n'est plus utilisé.
    `mkdir -p arene/voix && for e in onnx onnx.json; do curl -sL -o arene/voix/fr_FR-tom-medium.$e https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/tom/medium/fr_FR-tom-medium.$e; done`
    (le domaine huggingface.co et *.hf.co doivent être autorisés ; si le téléchargement échoue, ne rien publier et le signaler à Aymeric).
 4. Chercher le sujet du jour (recherche web), lire au moins deux articles complets. Vérifier où en est le texte (commission, séance, Sénat, rejet…) au jour même : l'actualité parlementaire change vite.
-5. Écrire l'épisode `arene/episodes-si/AAAA-MM-JJ_slug.json` sur le modèle de `arene/episodes-si/prototype_gel-retraites.json` : 9 à 12 phrases courtes (≤ 20 mots).
+5. Écrire l'épisode `arene/episodes-si/AAAA-MM-JJ_slug.json` sur le modèle de `arene/episodes-si/prototype_gel-retraites.json` : 7 à 9 phrases courtes (≤ 16 mots).
    - `dit` = texte prononcé : nombres sans espace (« 1260 euros », « 31 euros 50 »), pas d'abréviations ni de symboles.
    - `affiche` = sous-titre : typographie normale (« 1 260 € »), `**mot**` en rouge sur les faits clés, avec parcimonie.
    - `carte` = nouvelle carte à l'écran (types : titre, seuil, calcul, compteur, cumul, checks, camp, tampon, cta) ; les temps d'apparition (`at`) sont en secondes depuis le début de la carte.
    - `geste` de l'arbitre : siffle (ouverture), pointe, carton (chiffre choc), deux (fin).
-   - Structure : accroche « Si … passe, voilà ce que [toi / ta grand-mère / ton loyer…] » → la règle → le calcul pour un profil → le chiffre choc → ce qui ne change pas → POUR → CONTRE → où en est le texte → « Alors, pour ou contre ? Ton camp en commentaire. »
-   - Durée cible : 35 à 60 s (priorité à la rétention tant que le compte a moins de 10 000 abonnés).
+   - Structure (7 à 9 phrases) : accroche avec le chiffre choc dès la 1re phrase (« Si … passe, ta grand-mère pourrait perdre 378 € par an. ») → la règle en une phrase → le calcul pour un profil → ce qui ne change pas → POUR → CONTRE → où en est le texte → « Pour ou contre ? Ton camp en commentaire, et abonne-toi : demain, une autre mesure passe au calcul. »
+   - Durée cible : **30 à 40 s**, jamais plus de 45 s. Retour du 28/10 : 804 vues, mais 13,8 s de visionnage moyen sur 58 s et 4,6 % de visionnage complet → couper tout ce qui répète, une idée par phrase.
+   - Le chiffre choc doit apparaître à l'écran (carte `compteur` ou `titre`) dans les 3 premières secondes.
 6. Générer : `python3 arene/generateur/video_si.py arene/episodes-si/<fichier>.json arene/videos/AAAA-MM-JJ_slug.mp4 arene/voix` (environ 5 min ; PIL, numpy, scipy, ffmpeg, polices Inter dans /usr/share/fonts/opentype/inter/).
 7. Contrôle qualité : la toute première image (t = 0) doit montrer la question d'accroche entière (miniature TikTok). Puis une image toutes les 4 s : rien ne déborde, ne se chevauche ou n'est coupé, chaque chiffre affiché correspond aux sources et au texte prononcé. Corriger et régénérer si besoin. Vidéo < 90 Mo.
 8. Publier le fichier dans le dépôt (commit + push sur main, auteur « Aymeric » <aymericgerard@icloud.com>), vérifier que `https://raw.githubusercontent.com/aymericgerard1502-boop/enigmes-images/main/arene/videos/<fichier>.mp4` répond 200.
