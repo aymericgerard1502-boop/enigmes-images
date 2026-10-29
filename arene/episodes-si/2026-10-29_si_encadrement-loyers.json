@@ -1,0 +1,128 @@
+{
+ "slug": "si_encadrement-loyers",
+ "rubrique": "SI ÇA PASSE · LOGEMENT",
+ "source": "Sources : Public Sénat, Cour des comptes, IPP",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si l'encadrement des loyers est prolongé, voilà ce que ça change pour toi.",
+   "affiche": "Si **l'encadrement des loyers** est prolongé, voilà ce que ça change pour toi.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · LOGEMENT",
+    "lignes": [
+     "SI L'ENCADREMENT",
+     "DES LOYERS EST",
+     "PROLONGÉ…"
+    ],
+    "taille": 72
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "À Paris, Lyon ou Lille, ton loyer est plafonné quand tu signes le bail.",
+   "affiche": "À Paris, Lyon ou Lille, ton loyer est **plafonné** quand tu signes le bail.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · 70 COMMUNES",
+    "titre": "Loyer à la signature",
+    "seuil": "Plafond",
+    "gauche": "Autorisé",
+    "droite": "Interdit sauf exception",
+    "part": 0.5
+   }
+  },
+  {
+   "dit": "Selon une étude publiée en mai, ça fait gagner 800 euros par an à un ménage parisien.",
+   "affiche": "Selon une étude publiée en mai, ça fait gagner **800 €** par an à un ménage parisien.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 800,
+    "prefixe": "+",
+    "suffixe": " €",
+    "legende": [
+     "par an, en moyenne,",
+     "par ménage locataire à Paris",
+     "500 € en province · étude IPP"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Mais aucune nouvelle ville n'entre. Et plus d'un bail sur trois est signé au-dessus du plafond.",
+   "affiche": "Mais **aucune nouvelle ville** n'entre. Et plus d'**un bail sur trois** est signé au-dessus du plafond.",
+   "carte": {
+    "type": "checks",
+    "label": "À SAVOIR",
+    "pas": 1.8,
+    "lignes": [
+     [
+      true,
+      "Prolongé jusqu'en 2028"
+     ],
+     [
+      false,
+      "Aucune nouvelle ville"
+     ],
+     [
+      null,
+      "1 bail sur 3 au-dessus"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Pour la gauche, il protège le pouvoir d'achat des locataires.",
+   "affiche": "Pour la gauche, il protège le **pouvoir d'achat** des locataires.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "PS, écologistes, communistes",
+    "lignes": [
+     "Il protège le",
+     "pouvoir d'achat",
+     "des locataires."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le RN, il décourage l'investissement et l'entretien des logements.",
+   "affiche": "Pour le RN, il décourage **l'investissement** et l'entretien des logements.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "RN et UDR",
+    "lignes": [
+     "Il décourage",
+     "l'investissement",
+     "et l'entretien."
+    ]
+   }
+  },
+  {
+   "dit": "Le Sénat a voté deux ans de plus. L'Assemblée a jusqu'au 24 novembre pour suivre.",
+   "affiche": "Le Sénat a voté **deux ans** de plus. L'Assemblée a jusqu'au **24 novembre** pour suivre.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "VOTÉ",
+    "sous": "Sénat, 21 octobre · 325 voix contre 17",
+    "suite": "ASSEMBLÉE ?",
+    "apres": 2.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
