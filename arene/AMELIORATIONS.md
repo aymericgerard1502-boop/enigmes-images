@@ -20,6 +20,14 @@ Pic de likes à 0:03 → l'accroche plaît. Ancien format « Pour ou contre ? »
 Hypothèse : le visionnage complet monte nettement (> 10 %) sans perte de vues.
 Bilan : à faire le 03/11.
 
+### Vague 2 — PROGRAMMÉE (03/11 → 07/11, validée par Aymeric le 29/10)
+**Changement unique : cibler les 18-30 ans, angle « ton argent, ta vie ».** À ne lancer qu'après le bilan de la vague 1 et la décision d'Aymeric sur la durée.
+- Choisir en priorité les sujets qui touchent directement les 18-30 ans : loyer et APL, Smic et premier salaire, jobs étudiants, bourses, prêt étudiant, impôts, accès au logement, permis, transports, retraite vue depuis 25 ans.
+- Un sujet qui concerne surtout une autre génération est raconté à travers le jeune spectateur : « ce que tes parents… », « ce que ta grand-mère… ».
+- Le profil type du calcul est un jeune (étudiant, alternant, jeune actif au Smic, jeune couple locataire), sauf quand le sujet passe par ses proches.
+- Vocabulaire simple et direct, tutoiement, exemples de leur quotidien.
+Hypothèse : public plus cohérent → TikTok trouve l'audience du compte → plus de vues et premiers abonnés.
+
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Chiffre choc dès la première phrase et à l'écran dans les 3 premières secondes (« … ta grand-mère pourrait perdre 378 € par an »).
 2. Phrase finale d'abonnement : « Abonne-toi : demain, une autre mesure passe au calcul. »
