@@ -1,0 +1,154 @@
+{
+ "slug": "si_emprunt-national",
+ "rubrique": "SI ÇA PASSE · ÉPARGNE",
+ "source": "Sources : MoneyVox/AFP, Économie Matin, Selectra, Boursorama",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si l'emprunt national à 3,5 pour cent passe, voilà ce que ça rapporte à ton épargne.",
+   "affiche": "Si **l'emprunt national à 3,5 %** passe, voilà ce que ça rapporte à ton épargne.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · ÉPARGNE",
+    "lignes": [
+     "SI L'EMPRUNT",
+     "À 3,5 %",
+     "PASSE…"
+    ],
+    "taille": 80
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "L'idée : prêter directement à l'État, à 3,5 pour cent, sans impôt sur les intérêts.",
+   "affiche": "L'idée : prêter directement à l'État, à **3,5 %**, **sans impôt** sur les intérêts.",
+   "carte": {
+    "type": "titre",
+    "label": "LA RÈGLE · AMENDEMENT LIOT",
+    "lignes": [
+     "TU PRÊTES",
+     "À L'ÉTAT",
+     "À 3,5 %"
+    ],
+    "taille": 80
+   }
+  },
+  {
+   "dit": "Pour 1000 euros placés un an, comparé au Livret A à 1,7 pour cent…",
+   "affiche": "Pour **1 000 €** placés un an, comparé au Livret A à 1,7 %…",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · 1 000 € SUR UN AN",
+    "lignes": [
+     [
+      "Livret A à 1,7 %",
+      "17 €",
+      0.1
+     ],
+     [
+      "Emprunt à 3,5 %",
+      "35 €",
+      0.8
+     ]
+    ],
+    "total": [
+     "En plus",
+     "18 €",
+     1.5
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "tu touches 35 euros d'intérêts, au lieu de 17.",
+   "affiche": "tu touches **35 €** d'intérêts, au lieu de 17.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 35,
+    "prefixe": "+",
+    "suffixe": " €",
+    "legende": [
+     "d'intérêts par an",
+     "pour 1 000 € placés",
+     "modalités pas encore fixées"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Mais selon ses auteurs, l'argent serait bloqué dix ans.",
+   "affiche": "Mais selon ses auteurs, l'argent serait **bloqué dix ans**.",
+   "carte": {
+    "type": "checks",
+    "label": "À SAVOIR",
+    "pas": 0.9,
+    "lignes": [
+     [
+      true,
+      "Intérêts sans impôt"
+     ],
+     [
+      false,
+      "Argent bloqué 10 ans"
+     ],
+     [
+      null,
+      "Rien d'ouvert à ce jour"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le groupe LIOT, les Français prêtent à l'État sans impôt ni frais bancaires.",
+   "affiche": "Pour le groupe LIOT, les Français prêtent à l'État **sans impôt ni frais** bancaires.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "LIOT, auteur de l'amendement",
+    "lignes": [
+     "Prêter à l'État",
+     "sans impôt",
+     "ni frais."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, plus c'est avantageux pour l'épargnant, plus ça coûte à l'État.",
+   "affiche": "Pour le gouvernement, plus c'est avantageux pour l'épargnant, **plus ça coûte à l'État**.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Gouvernement",
+    "lignes": [
+     "Avantageux",
+     "pour toi, coûteux",
+     "pour l'État."
+    ]
+   }
+  },
+  {
+   "dit": "Adopté par les députés le 30 octobre. Prochain vote le 3 novembre.",
+   "affiche": "Adopté par les députés le **30 octobre**. Prochain vote le **3 novembre**.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "ADOPTÉ",
+    "sous": "Assemblée, 30 octobre · budget 2027",
+    "suite": "3 NOVEMBRE ?",
+    "apres": 1.8
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
