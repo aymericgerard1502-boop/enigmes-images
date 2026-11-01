@@ -1,0 +1,154 @@
+{
+ "slug": "si_taxe-gigaoctet",
+ "rubrique": "SI ÇA PASSE · NUMÉRIQUE",
+ "source": "Sources : NosParlementaires, Europe 1, Clubic, Netflix",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la taxe au gigaoctet passe, voilà ce que coûtent tes séries.",
+   "affiche": "Si **la taxe au gigaoctet** passe, voilà ce que coûtent tes séries.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · NUMÉRIQUE",
+    "lignes": [
+     "SI LA TAXE",
+     "AU GIGAOCTET",
+     "PASSE…"
+    ],
+    "taille": 80
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "La règle : les plateformes paient 5,5 centimes par gigaoctet envoyé.",
+   "affiche": "La règle : les plateformes paient **5,5 centimes par Go** envoyé.",
+   "carte": {
+    "type": "titre",
+    "label": "LA RÈGLE · AMENDEMENT PS",
+    "lignes": [
+     "5,5 CENTIMES",
+     "PAR GO",
+     "ENVOYÉ"
+    ],
+    "taille": 80
+   }
+  },
+  {
+   "dit": "Une heure de série HD, c'est 3 gigaoctets. Une heure par jour : 90 par mois.",
+   "affiche": "Une heure de série HD, c'est **3 Go**. Une heure par jour : 90 par mois.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · 1 H DE SÉRIE HD PAR JOUR",
+    "lignes": [
+     [
+      "1 h en HD",
+      "3 Go",
+      0.1
+     ],
+     [
+      "30 h par mois",
+      "90 Go",
+      0.6
+     ]
+    ],
+    "total": [
+     "Taxe",
+     "4,95 €",
+     1.4
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Soit 4 euros 95 par mois, payés par la plateforme.",
+   "affiche": "Soit **4,95 €** par mois, payés par la plateforme.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 4.95,
+    "entier": false,
+    "suffixe": " €",
+    "legende": [
+     "de taxe par mois",
+     "payés par la plateforme",
+     "pour 1 h de série HD par jour"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Toi, tu ne paies rien directement. Mais ton abonnement pourrait augmenter.",
+   "affiche": "Toi, tu ne paies **rien directement**. Mais ton abonnement **pourrait augmenter**.",
+   "carte": {
+    "type": "checks",
+    "label": "À SAVOIR",
+    "pas": 0.9,
+    "lignes": [
+     [
+      true,
+      "Rien sur ta facture"
+     ],
+     [
+      null,
+      "Hausse d'abonnement ?"
+     ],
+     [
+      null,
+      "Plafond : 15 % du CA"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour les socialistes, les géants du numérique doivent payer selon leur trafic.",
+   "affiche": "Pour les socialistes, les géants du numérique doivent **payer selon leur trafic**.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "PS, auteur de l'amendement",
+    "lignes": [
+     "Les géants",
+     "paieraient selon",
+     "leur trafic."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, la moitié pèserait sur de plus petits acteurs, dont des Français.",
+   "affiche": "Pour le gouvernement, la moitié pèserait sur **de plus petits acteurs**, dont des Français.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Gouvernement",
+    "lignes": [
+     "Les petits",
+     "paieraient",
+     "aussi."
+    ]
+   }
+  },
+  {
+   "dit": "Adopté le 30 octobre, à une voix près. Reste le budget, puis le Sénat.",
+   "affiche": "Adopté le **30 octobre**, à **une voix près**. Reste le budget, puis le Sénat.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "ADOPTÉ",
+    "sous": "Assemblée, 30 octobre · 11 contre 10",
+    "suite": "SÉNAT ?",
+    "apres": 1.8
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
