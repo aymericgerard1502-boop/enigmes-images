@@ -1,0 +1,150 @@
+{
+ "slug": "si_taxe-assurance-auto",
+ "rubrique": "SI ÇA PASSE · ASSURANCE AUTO",
+ "source": "Sources : NosParlementaires, Politique Matin, Selectra, MoneyVox",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la hausse de taxe sur l'assurance auto passe, voilà ce que tu paies en plus.",
+   "affiche": "Si **la hausse de taxe sur l'assurance auto** passe, voilà ce que tu paies en plus.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · BUDGET 2027",
+    "lignes": [
+     "SI LA TAXE SUR",
+     "TON ASSURANCE",
+     "AUTO AUGMENTE…"
+    ],
+    "taille": 64
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "La règle : sur tes options, comme le vol ou le bris de glace, la taxe passe de 18 à 18,9 pour cent.",
+   "affiche": "La règle : sur tes options (vol, bris de glace…), la taxe passe de **18 à 18,9 %**.",
+   "carte": {
+    "type": "titre",
+    "label": "LA RÈGLE · ARTICLE 14",
+    "lignes": [
+     "18 % → 18,9 %",
+     "SUR TES",
+     "OPTIONS"
+    ],
+    "taille": 80
+   }
+  },
+  {
+   "dit": "Pour 400 euros d'options par an, hors taxes : 72 euros de taxe, puis 75 euros 60.",
+   "affiche": "Pour **400 € d'options** par an, hors taxes : 72 € de taxe, puis 75,60 €.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · 400 € D'OPTIONS PAR AN (HT)",
+    "lignes": [
+     [
+      "Taxe à 18 %",
+      "72,00 €",
+      0.1
+     ],
+     [
+      "Taxe à 18,9 %",
+      "75,60 €",
+      0.7
+     ]
+    ],
+    "total": [
+     "En plus",
+     "3,60 €",
+     1.4
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Soit 3 euros 60 de plus par an.",
+   "affiche": "Soit **3,60 €** de plus par an.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 3.6,
+    "entier": false,
+    "suffixe": " €",
+    "legende": [
+     "de plus par an",
+     "pour 400 € d'options HT",
+     "≈ 200 M€ par an pour l'État"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "L'assurance au tiers obligatoire, elle, ne bouge pas.",
+   "affiche": "L'assurance au tiers obligatoire, elle, **ne bouge pas**.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.9,
+    "lignes": [
+     [
+      true,
+      "Responsabilité civile"
+     ],
+     [
+      true,
+      "Contrat au tiers seul"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, il faut financer la lutte contre les incendies.",
+   "affiche": "Pour le gouvernement, il faut **financer la lutte contre les incendies**.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement, auteur du budget",
+    "lignes": [
+     "Il faut payer",
+     "la lutte contre",
+     "les incendies."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le RN, c'est une hausse déguisée, sans savoir où ira l'argent.",
+   "affiche": "Pour le RN, c'est **une hausse déguisée**, sans savoir où ira l'argent.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "RN, auteur de la suppression",
+    "lignes": [
+     "Une hausse",
+     "déguisée, sans",
+     "affectation claire."
+    ]
+   }
+  },
+  {
+   "dit": "Supprimée par les députés le 30 octobre. Mais le Sénat peut la rétablir.",
+   "affiche": "Supprimée par les députés le **30 octobre**. Mais le Sénat peut la rétablir.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "RETIRÉE",
+    "sous": "Assemblée, 30 octobre · 30 contre 22",
+    "suite": "SÉNAT ?",
+    "apres": 1.8
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
