@@ -1,0 +1,150 @@
+{
+ "slug": "si_apl-etudiantes",
+ "rubrique": "SI ÇA PASSE · APL ÉTUDIANTES",
+ "source": "Sources : PLF 2027 art. 78, France Épargne, NosParlementaires",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la réforme des APL étudiantes passe, voilà le choix que ta famille devra faire.",
+   "affiche": "Si **la réforme des APL étudiantes** passe, voilà le choix que ta famille devra faire.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · BUDGET 2027",
+    "lignes": [
+     "SI TES PARENTS",
+     "DOIVENT CHOISIR",
+     "TON APL OU",
+     "LEUR IMPÔT…"
+    ],
+    "taille": 64
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "La règle : au-delà de 30200 euros par part, pas d'APL si tu es rattaché.",
+   "affiche": "La règle : au-delà de **30 200 € par part**, pas d'APL si tu es rattaché.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · ARTICLE 78",
+    "titre": "Revenu des parents, par part",
+    "seuil": "30 200 €",
+    "gauche": "APL + demi-part",
+    "droite": "L'une ou l'autre",
+    "part": 0.45
+   }
+  },
+  {
+   "dit": "Tes parents choisissent : ton APL, 2160 euros par an en moyenne, ou leur demi-part.",
+   "affiche": "Tes parents choisissent : ton APL, **2 160 €** par an en moyenne, ou leur demi-part.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · CHIFFRES DU GOUVERNEMENT",
+    "lignes": [
+     [
+      "Ton APL (moyenne)",
+      "2 160 €/an",
+      0.2
+     ],
+     [
+      "Demi-part (plafond)",
+      "1 845 €/an",
+      1.3
+     ]
+    ],
+    "total": [
+     "Perte max",
+     "−1 845 €",
+     2.4
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Soit jusqu'à 1845 euros de moins par an pour ta famille.",
+   "affiche": "Soit jusqu'à **1 845 €** de moins par an pour ta famille.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 1845,
+    "prefixe": "−",
+    "suffixe": " €",
+    "legende": [
+     "par an, au maximum",
+     "si la demi-part rapporte son plafond",
+     "dès septembre 2027"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Sous ce seuil, ou si tu n'es pas rattaché, rien ne change.",
+   "affiche": "Sous ce seuil, ou si tu n'es pas rattaché, **rien ne change**.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.9,
+    "lignes": [
+     [
+      true,
+      "Sous 30 200 € par part"
+     ],
+     [
+      true,
+      "Étudiant non rattaché"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, un tiers des étudiants aidés ont des parents très aisés.",
+   "affiche": "Pour le gouvernement, **un tiers** des étudiants aidés ont des parents très aisés.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement, auteur du budget",
+    "lignes": [
+     "Recentrer l'aide",
+     "sur ceux qui en",
+     "ont le plus besoin."
+    ]
+   }
+  },
+  {
+   "dit": "Pour des syndicats étudiants, l'APL ne doit pas dépendre du revenu des parents.",
+   "affiche": "Pour des syndicats étudiants, l'APL **ne doit pas dépendre** du revenu des parents.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "UNEF, Union étudiante",
+    "lignes": [
+     "L'APL ne doit",
+     "pas dépendre des",
+     "revenus des parents."
+    ]
+   }
+  },
+  {
+   "dit": "Pas encore voté. Vote des députés prévu le 17 novembre, puis le Sénat.",
+   "affiche": "**Pas encore voté.** Vote des députés prévu le 17 novembre, puis le Sénat.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "EN DÉBAT",
+    "sous": "Assemblée · vote prévu le 17 novembre",
+    "suite": "SÉNAT ENSUITE",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
