@@ -1,0 +1,59 @@
+{
+ "slug": "si_taxe-mutuelles",
+ "rubrique": "SI ÇA PASSE · TAXE MUTUELLES",
+ "source": "Sources : PLFSS 2027 art. 12, France Épargne, NosParlementaires",
+ "voix": {"modele": "fr_FR-tom-medium", "vitesse": 0.88},
+ "phrases": [
+  {
+   "dit": "Si la taxe sur les mutuelles est reconduite, voilà ce qu'elle peut te coûter.",
+   "affiche": "Si **la taxe sur les mutuelles** est reconduite, voilà ce qu'elle peut te coûter.",
+   "carte": {"type": "titre", "label": "DOSSIER · BUDGET SÉCU 2027", "lignes": ["SI TA MUTUELLE", "RESTE TAXÉE", "EN 2027…"], "taille": 80},
+   "geste": "siffle"
+  },
+  {
+   "dit": "La règle : 2 virgule 05 pour cent prélevés sur les cotisations santé, un an de plus.",
+   "affiche": "La règle : **2,05 %** prélevés sur les cotisations santé, un an de plus.",
+   "carte": {"type": "calcul", "label": "LE CALCUL · SI TOUT EST RÉPERCUTÉ",
+     "lignes": [["Mutuelle à 100 €/mois", "1 200 €/an", 0.2], ["Taxe de 2,05 %", "24,60 €", 1.3]],
+     "total": ["Pour toi", "−24,60 €", 2.4]},
+   "geste": "pointe"
+  },
+  {
+   "dit": "Si ta mutuelle la répercute, ça fait 24 euros 60 par an pour 100 euros par mois.",
+   "affiche": "Si ta mutuelle la répercute, ça fait **24,60 €** par an pour 100 € par mois.",
+   "carte": {"type": "compteur", "valeur": 24.6, "entier": false, "prefixe": "−", "suffixe": " €",
+     "legende": ["par an", "pour une mutuelle à 100 €/mois", "si la taxe est répercutée"]},
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : la taxe existe déjà en 2026, et c'est la mutuelle qui la paie.",
+   "affiche": "Ce qui ne change pas : la taxe **existe déjà en 2026**, et c'est la mutuelle qui la paie.",
+   "carte": {"type": "checks", "label": "CE QUI NE CHANGE PAS", "pas": 0.9,
+     "lignes": [[true, "Déjà en place en 2026"], [true, "Payée par la mutuelle"]]}
+  },
+  {
+   "dit": "Pour le gouvernement, la Sécu rembourse une part croissante des soins : aux mutuelles d'aider.",
+   "affiche": "Pour le gouvernement, la Sécu rembourse **une part croissante** des soins : aux mutuelles d'aider.",
+   "carte": {"type": "camp", "camp": "POUR", "qui": "Gouvernement, auteur du budget",
+     "lignes": ["La Sécu paie", "de plus en plus :", "aux mutuelles d'aider."]}
+  },
+  {
+   "dit": "Pour la Mutualité française et des députés, la taxe finit dans le prix payé par les adhérents.",
+   "affiche": "Pour la Mutualité française et des députés, la taxe **finit dans le prix** payé par les adhérents.",
+   "carte": {"type": "camp", "camp": "CONTRE", "qui": "Mutualité française, députés DR, RN, LFI, GDR",
+     "lignes": ["La taxe finit", "dans le prix", "de ta mutuelle."]}
+  },
+  {
+   "dit": "Supprimée par les députés, elle revient avec le texte du gouvernement au Sénat, dès le 9 novembre.",
+   "affiche": "**Supprimée par les députés**, elle revient avec le texte du gouvernement au Sénat, dès le 9 novembre.",
+   "carte": {"type": "tampon", "tampon": "EN DÉBAT", "sous": "Supprimée à l'Assemblée, elle revient", "suite": "SÉNAT LE 9/11", "apres": 1.4},
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {"type": "cta", "appel": "Ton camp en commentaire ↓"},
+   "geste": "deux"
+  }
+ ]
+}
