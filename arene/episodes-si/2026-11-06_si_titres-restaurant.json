@@ -1,0 +1,153 @@
+{
+ "slug": "si_titres-restaurant",
+ "rubrique": "SI ÇA PASSE · TITRES-RESTAURANT",
+ "source": "Sources : Sénat, Au cœur du CHR, TPE Actu, Politique Matin",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si ton ticket resto a deux plafonds, voilà ce qui change pour tes courses.",
+   "affiche": "Si ton ticket resto a **deux plafonds**, voilà ce qui change pour tes courses.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · TITRES-RESTAURANT",
+    "lignes": [
+     "SI TON TICKET",
+     "RESTO A DEUX",
+     "PLAFONDS…"
+    ],
+    "taille": 80
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "La règle : un plafond plus bas pour ce qui se cuisine, comme les pâtes ou le riz.",
+   "affiche": "La règle : un plafond **plus bas** pour ce qui se cuisine, comme les pâtes ou le riz.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · SÉNAT",
+    "titre": "Plafond par jour",
+    "seuil": "2 plafonds",
+    "gauche": "Repas, fruits, légumes",
+    "droite": "Pâtes, riz : plus bas",
+    "part": 0.5
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Aujourd'hui : 25 euros par jour. Les restaurateurs demandent 10 euros pour ces courses.",
+   "affiche": "Aujourd'hui : **25 €** par jour. Les restaurateurs demandent **10 €** pour ces courses.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · HYPOTHÈSE À 10 €",
+    "lignes": [
+     [
+      "Plafond actuel",
+      "25 €/jour",
+      0.2
+     ],
+     [
+      "Demande des restos",
+      "10 €/jour",
+      2.4
+     ]
+    ],
+    "total": [
+     "Pâtes, riz…",
+     "−15 €/jour",
+     3.4
+    ]
+   }
+  },
+  {
+   "dit": "À 10 euros, c'est 15 euros de moins par jour pour ces courses.",
+   "affiche": "À 10 €, c'est **15 € de moins** par jour pour ces courses.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 15,
+    "prefixe": "−",
+    "suffixe": " €",
+    "legende": [
+     "par jour pour les produits à cuisiner",
+     "si le plafond est fixé à 10 €",
+     "(demande des restaurateurs)"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : repas, fruits et légumes gardent le plafond haut.",
+   "affiche": "Ce qui ne change pas : repas, fruits et légumes gardent **le plafond haut**.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Repas : plafond haut"
+     ],
+     [
+      true,
+      "Fruits et légumes aussi"
+     ],
+     [
+      null,
+      "Montants : fixés par décret"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour la rapporteure LR et les restaurateurs, les restos ont perdu 12 points de part de marché.",
+   "affiche": "Pour la rapporteure LR et les restaurateurs, les restos ont perdu **12 points** de part de marché.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Rapporteure LR au Sénat, GHR, Umih",
+    "lignes": [
+     "Les restos ont",
+     "perdu 12 points",
+     "de part de marché."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la grande distribution, le salarié doit rester libre : beaucoup cuisinent leur déjeuner.",
+   "affiche": "Pour la grande distribution, le salarié doit **rester libre** : beaucoup cuisinent leur déjeuner.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Grande distribution (FCD)",
+    "lignes": [
+     "Le salarié doit",
+     "rester libre de",
+     "ses courses."
+    ]
+   }
+  },
+  {
+   "dit": "Rejeté par les députés, adopté en commission au Sénat : vote en séance le 19 novembre.",
+   "affiche": "**Rejeté par les députés**, adopté en commission au Sénat : vote en séance le **19 novembre**.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "EN DÉBAT",
+    "sous": "Adopté en commission au Sénat le 3/11",
+    "suite": "SÉANCE LE 19/11",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, tu es pour, ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, tu es **pour**, ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
