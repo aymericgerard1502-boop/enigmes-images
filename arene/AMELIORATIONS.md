@@ -18,7 +18,7 @@ Pic de likes à 0:03 → l'accroche plaît. Ancien format « Pour ou contre ? »
 ### Vague 1 — EN COURS (29/10 → 02/11)
 **Changement unique : durée ramenée à 30-40 s** (jamais plus de 45 s). Même structure que la vague 0, simplement condensée : une idée par phrase, on coupe les répétitions et les transitions.
 Hypothèse : le visionnage complet monte nettement (> 10 %) sans perte de vues.
-Bilan Metricool envoyé à Aymeric le 03/11 (vues · likes · commentaires · partages) : 29/10 779 · 7 · 1 · 0 ; 30/10 706 · 7 · 0 · 1 ; 31/10 751 · 13 · 1 · 0 ; 01/11 937 · 15 · 1 · 0 ; 02/11 pas encore remonté. Moyenne sur 4 vidéos : 793 vues, 10,5 likes, 0,75 commentaire, 0,25 partage (vague 0 : 818 · 18 · 5 · 3). En attente des chiffres TikTok Studio et de la décision d'Aymeric ; vague 1 prolongée en attendant (03/11 : APL étudiantes ; 05/11 : taxe mutuelles ; 06/11 : titres-restaurant).
+Bilan Metricool envoyé à Aymeric le 03/11 (vues · likes · commentaires · partages) : 29/10 779 · 7 · 1 · 0 ; 30/10 706 · 7 · 0 · 1 ; 31/10 751 · 13 · 1 · 0 ; 01/11 937 · 15 · 1 · 0 ; 02/11 pas encore remonté. Moyenne sur 4 vidéos : 793 vues, 10,5 likes, 0,75 commentaire, 0,25 partage (vague 0 : 818 · 18 · 5 · 3). En attente des chiffres TikTok Studio et de la décision d'Aymeric ; vague 1 prolongée en attendant (03/11 : APL étudiantes ; 05/11 : taxe mutuelles ; 06/11 : titres-restaurant ; 07/11 : retour de la réforme des retraites).
 
 ### Vague 2 — PROGRAMMÉE (03/11 → 07/11, validée par Aymeric le 29/10)
 **Changement unique : cibler les 18-30 ans, angle « ton argent, ta vie ».** À ne lancer qu'après le bilan de la vague 1 et la décision d'Aymeric sur la durée.
