@@ -1,0 +1,153 @@
+{
+ "slug": "si_retour-reforme-retraites",
+ "rubrique": "SI ÇA PASSE · RETRAITES",
+ "source": "Sources : Public Sénat, SeniorActu, Previssima, Banque des Territoires",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la réforme des retraites revient, voilà ce que ça change pour tes parents.",
+   "affiche": "Si la **réforme des retraites** revient, voilà ce que ça change pour tes parents.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · BUDGET SÉCU 2027",
+    "lignes": [
+     "SI LA RÉFORME",
+     "DES RETRAITES",
+     "REVIENT…"
+    ],
+    "taille": 80
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Le Sénat veut annuler la pause de la réforme.",
+   "affiche": "Le Sénat veut **annuler la pause** de la réforme.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · SÉNAT",
+    "titre": "Âge légal de départ",
+    "seuil": "Nés 1964-1968",
+    "gauche": "Pause : −3 mois",
+    "droite": "Réforme 2023",
+    "part": 0.5
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Un parent né en 1968 partirait à 64 ans, au lieu de 63 ans et 9 mois.",
+   "affiche": "Un parent né en 1968 partirait à **64 ans**, au lieu de 63 ans et 9 mois.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · PARENT NÉ EN 1968",
+    "lignes": [
+     [
+      "Avec la pause",
+      "63 ans 9 mois",
+      0.2
+     ],
+     [
+      "Réforme rétablie",
+      "64 ans",
+      2.6
+     ]
+    ],
+    "total": [
+     "Écart",
+     "+3 mois",
+     3.6
+    ]
+   }
+  },
+  {
+   "dit": "3 mois de travail en plus, pour les nés de 1964 à 1968.",
+   "affiche": "**3 mois de travail en plus**, pour les nés de 1964 à 1968.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 3,
+    "prefixe": "+",
+    "suffixe": " mois",
+    "legende": [
+     "de travail avant la retraite",
+     "pour les personnes nées",
+     "entre 1964 et 1968"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Nés en 1969 ou après : 64 ans dans les deux cas.",
+   "affiche": "Nés en 1969 ou après : **64 ans** dans les deux cas.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Nés en 1969 et après : 64 ans"
+     ],
+     [
+      true,
+      "Toi aussi : 64 ans"
+     ],
+     [
+      null,
+      "Trimestres : pas encore précisé"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour la droite et le centre, on vit plus longtemps : 600 millions d'économies en 2027.",
+   "affiche": "Pour la droite et le centre, on vit plus longtemps : **600 M€** d'économies en 2027.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Majorité sénatoriale (LR, centristes)",
+    "lignes": [
+     "On vit plus",
+     "longtemps : 600 M€",
+     "d'économies en 2027."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la gauche, la pause protège ceux qui travaillent : 3,5 millions de personnes.",
+   "affiche": "Pour la gauche, la pause **protège ceux qui travaillent** : 3,5 millions de personnes.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Socialistes, écologistes",
+    "lignes": [
+     "La pause protège",
+     "ceux qui travaillent :",
+     "3,5 millions de gens."
+    ]
+   }
+  },
+  {
+   "dit": "Débat au Sénat dès le 9 novembre, vote le 18.",
+   "affiche": "Débat au Sénat dès le 9 novembre, vote le **18 novembre**.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "EN DÉBAT",
+    "sous": "Proposé par la commission du Sénat le 4/11",
+    "suite": "VOTE LE 18/11",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
