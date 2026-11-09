@@ -1,0 +1,153 @@
+{
+ "slug": "si_smic-1500",
+ "rubrique": "SI ÇA PASSE · SALAIRES",
+ "source": "Sources : AFP via Quartz, Echos Plus, Sud Radio",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si le Smic passe à 1500 euros net, voilà ce que ça change sur ta fiche de paie.",
+   "affiche": "Si le Smic passe à **1 500 €** net, voilà ce que ça change sur ta fiche de paie.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · CONFÉRENCE SOCIALE",
+    "lignes": [
+     "SI LE SMIC",
+     "PASSE À",
+     "1 500 € NET…"
+    ],
+    "taille": 80
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Le gouvernement veut franchir la barre des 1500 euros, peut-être dès le premier décembre.",
+   "affiche": "Le gouvernement veut franchir la barre des **1 500 €**, peut-être dès le 1er décembre.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA PROPOSITION · GOUVERNEMENT",
+    "titre": "Smic net, temps plein",
+    "seuil": "1 500 €",
+    "gauche": "Aujourd'hui",
+    "droite": "Objectif",
+    "part": 0.5
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Au Smic à temps plein, tu touches 1477 euros 93 par mois. Demain, 1500 euros.",
+   "affiche": "Au Smic à temps plein, tu touches **1 477,93 €** par mois. Demain, 1 500 €.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · SMIC À TEMPS PLEIN",
+    "lignes": [
+     [
+      "Aujourd'hui",
+      "1 477,93 €",
+      0.2
+     ],
+     [
+      "Avec la hausse",
+      "1 500 €",
+      2.8
+     ]
+    ],
+    "total": [
+     "Gain net",
+     "+22 €/mois",
+     3.8
+    ]
+   }
+  },
+  {
+   "dit": "Soit 22 euros de plus par mois, environ 265 euros par an.",
+   "affiche": "Soit **22 € de plus** par mois, environ 265 € par an.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 22,
+    "prefixe": "+",
+    "suffixe": " €",
+    "legende": [
+     "net par mois",
+     "au Smic à temps plein",
+     "soit ≈ 265 € par an"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Rien n'est encore tranché et les syndicats demandent plus.",
+   "affiche": "Rien n'est **encore tranché** et les syndicats demandent plus.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI N'EST PAS FIXÉ",
+    "pas": 0.8,
+    "lignes": [
+     [
+      null,
+      "Date : 1er décembre envisagé"
+     ],
+     [
+      null,
+      "Coup de pouce : pas tranché"
+     ],
+     [
+      null,
+      "CFDT : +100 € · CGT : ≈ +150 €"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour les syndicats, la vie chère impose une hausse d'urgence des petits salaires.",
+   "affiche": "Pour les syndicats, la vie chère impose une **hausse d'urgence** des petits salaires.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Syndicats (CFDT, CGT, CFTC)",
+    "lignes": [
+     "La vie chère impose",
+     "une hausse d'urgence",
+     "des petits salaires."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le patronat, chaque hausse pèse sur les marges et peut freiner l'embauche.",
+   "affiche": "Pour le patronat, chaque hausse **pèse sur les marges** et peut freiner l'embauche.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Organisations patronales (U2P, Medef)",
+    "lignes": [
+     "Chaque hausse pèse",
+     "sur les marges et peut",
+     "freiner l'embauche."
+    ]
+   }
+  },
+  {
+   "dit": "Syndicats et patronat sont reçus ce 9 novembre à Matignon. Ensuite, un décret.",
+   "affiche": "Syndicats et patronat reçus ce **9 novembre** à Matignon. Ensuite, un décret.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "EN DÉBAT",
+    "sous": "Conférence sociale à Matignon le 9/11",
+    "suite": "PUIS DÉCRET",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
