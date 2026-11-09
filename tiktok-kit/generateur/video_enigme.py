@@ -152,6 +152,8 @@ def question_layer(e, y, remaining, frac):
     qf = F("Caladea-Bold.ttf", 50)
     while d.textlength(q, font=qf) > RX - LX - 150 and qf.size > 42: qf = F("Caladea-Bold.ttf", qf.size - 2)
     lines = wrap(d, q, qf, RX - LX - 150)
+    if len(lines) > 1 and len(lines[-1]) <= 4 and " " in lines[-2]:   # pas de « ? » orphelin
+        head, last = lines[-2].rsplit(" ", 1); lines[-2] = head; lines[-1] = last + " " + lines[-1]
     ty = y + 75 - len(lines) * qf.size * 0.6
     for ln in lines: d.text((LX + 20, ty), ln, font=qf, fill=WHITE); ty += int(qf.size * 1.15)
     # minuteur

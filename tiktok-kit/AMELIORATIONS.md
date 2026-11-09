@@ -21,13 +21,23 @@ Indicateurs :
 Diagnostic : les spectateurs partent pendant l'écran titre, avant l'énigme.
 
 ### Vague 1 (28 oct. → 1er nov., 5 vidéos, ancien format)
-Changement : fin « Sur Amazon : Maël Kerjean » au lieu de « Lien en bio » (aucun lien cliquable possible).
-Limite : presque personne n'atteint l'écran de fin, donc cette vague sert surtout de deuxième mesure de l'ancien format.
+Changement : fin « Sur Amazon : Maël Kerjean » au lieu de « Lien en bio ».
+Résultat (au 07/11) : 1 810 vues (~360 par vidéo) · 4,0 s de visionnage moyen (2,5 à 3 s sauf « Le prix effacé », Santons, 8,7 s) · 3 likes · 0 commentaire · 0 partage.
+Conclusion : deuxième mesure de l'ancien format ; personne n'atteint l'écran de fin, la redirection ne peut pas encore être évaluée.
 
-### Vague 2 — EN COURS (2 → 7 nov., 6 vidéos) : rupture, nouveau format « mini-histoire »
+### Vague 2 (2 → 7 nov., 6 vidéos) : rupture, nouveau format « mini-histoire »
 Exception assumée à la règle du changement unique : l'ancien format ne retenait personne (2 s), on repart d'une nouvelle base validée par Aymeric le 27/10.
-Hypothèse : temps de visionnage moyen > 8 s, premiers commentaires (prénom du suspect).
-Bilan : le 8 nov. À partir de cette vague, un seul changement à la fois.
+Résultat (5 vidéos mesurées au 07/11, celle du 7 pas encore remontée) : 3 799 vues (**~760 par vidéo, ×2,1**) · **5,3 s** de visionnage moyen (4,3 à 6,7 s, ×1,8) · **89 likes** (×30) · 1 commentaire · **2 partages** (les premiers).
+Meilleures : « La valise échangée » (Train des Neiges) 6,7 s et 18 likes ; « Le télégramme envolé » (Belle-Île) 29 likes.
+Conclusion : le nouveau format est nettement meilleur sur toutes les mesures. Mais 5,3 s sur ~42 s : la plupart partent pendant l'histoire, avant le 1er indice (~13 s).
+Décision d'Aymeric : en attente (bilan envoyé le 08/11).
+
+### Vague 2 prolongée (8 → 10 nov., 3 vidéos, format inchangé) — en attendant la décision
+Train des Neiges 3 (8 nov.), Santons de Minuit 5 (9 nov.), Train des Neiges 4 (10 nov.).
+Correctif de mise en page sans effet sur le format : plus de « ? » orphelin dans la barre de question.
+
+### Vague 3 — proposée, pas encore lancée
+Changement unique proposé : vidéo plus courte (≤ 30 s), énigme plus tôt (histoire en 1 phrase, suspects affichés avec l'histoire). Hypothèse : le temps moyen passe de 5,3 s à plus de 8 s.
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Vidéo plus courte (≤ 30 s) : histoire en 2 phrases, indices plus rapides.

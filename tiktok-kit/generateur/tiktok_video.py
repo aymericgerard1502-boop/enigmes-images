@@ -24,6 +24,8 @@ HOOKS = {
     ("Le-Train-des-Neiges", 1): "Qui a déchiré ce billet ?",
     ("Le-Train-des-Neiges", 2): "Qui a échangé les valises ?",
     ("Le-Train-des-Neiges", 3): "Qui a arraché le houx ?",
+    ("Le-Train-des-Neiges", 4): "Qui a volé le sifflet ?",
+    ("Les-Santons-de-Minuit", 5): "Qui a arraché l'affiche ?",
     ("Tempete-sur-Belle-Ile", 3): "Qui a touché au portrait ?",
     ("Tempete-sur-Belle-Ile", 4): "Où est passé le télégramme ?",
     ("Les-Santons-de-Minuit", 2): "Qui a effacé ce prix ?",

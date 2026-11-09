@@ -17,6 +17,9 @@ PLAN = [  # date, slug, num
     ("2026-11-03", "Les-Santons-de-Minuit", 3), ("2026-11-04", "Vendanges-tardives", 3),
     ("2026-11-05", "Le-Train-des-Neiges", 2), ("2026-11-06", "Tempete-sur-Belle-Ile", 4),
     ("2026-11-07", "Les-Santons-de-Minuit", 4),
+    # vague 2 prolongée (format mini-histoire, sans changement)
+    ("2026-11-08", "Le-Train-des-Neiges", 3), ("2026-11-09", "Les-Santons-de-Minuit", 5),
+    ("2026-11-10", "Le-Train-des-Neiges", 4),
 ]
 TAGS = {"La-Nuit-de-l-Ankou": "#halloween #legendebretonne", "Tempete-sur-Belle-Ile": "#bretagne #belleile",
         "Vendanges-tardives": "#alsace #vendanges", "Les-Santons-de-Minuit": "#provence #noel",
