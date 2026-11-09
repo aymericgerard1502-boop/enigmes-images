@@ -32,6 +32,12 @@ HOOKS = {
     ("Les-Santons-de-Minuit", 3): "Qui a dérangé la crèche ?",
     ("Les-Santons-de-Minuit", 4): "Qui a volé les marrons ?",
     ("Vendanges-tardives", 3): "Qui a oublié ces grappes ?",
+    ("Le-Train-des-Neiges", 5): "Qui a changé l'étiquette ?",
+    ("Les-Santons-de-Minuit", 6): "Qui a coupé la musique ?",
+    ("Tempete-sur-Belle-Ile", 5): "Qui a enfermé Sardine ?",
+    ("Le-Train-des-Neiges", 6): "Qui a brisé ce verre ?",
+    ("Les-Santons-de-Minuit", 7): "Qui a poussé le panier ?",
+    ("Vendanges-tardives", 4): "Qui a volé le munster ?",
 }
 
 # ------------------------------------------------------------------ voix
@@ -402,6 +408,262 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
     return dict(duree=round(dur, 1), coupable=e["coupable"], titre=e["titre"],
                 timeline={k: (round(a, 1), round(b, 1)) for k, (a, b) in T.items()})
 
+
+# ================================================================== VAGUE 3 : format court + qualité
+from scipy.signal import fftconvolve
+
+def voice_fx(a):
+    """Voix plus chaude et présente : coupe-bas, présence, compression douce, légère pièce."""
+    with tempfile.TemporaryDirectory() as td:
+        src, dst = os.path.join(td, "a.wav"), os.path.join(td, "b.wav")
+        with wave.open(src, "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(a, -1, 1) * 32767).astype("<i2").tobytes())
+        flt = ("highpass=f=85,equalizer=f=180:t=q:w=1.2:g=2.5,equalizer=f=3200:t=q:w=1.4:g=3.5,"
+               "equalizer=f=7500:t=q:w=2:g=-2,acompressor=threshold=-20dB:ratio=3.5:attack=4:release=80:makeup=2,"
+               "aecho=0.85:0.5:28|52:0.10|0.06")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-af", flt, "-ar", str(SR), "-ac", "1", dst], check=True)
+        w = wave.open(dst); b = np.frombuffer(w.readframes(w.getnframes()), dtype="<i2").astype(np.float32) / 32768
+    return b / (np.abs(b).max() + 1e-6) * 0.92
+
+def reverb(x, secs=1.6, mix=0.28, seed=1):
+    n = int(secs * SR); rng = np.random.RandomState(seed)
+    ir = rng.uniform(-1, 1, n) * np.exp(-np.arange(n) / (n / 5.5)); ir[0] = 1
+    wet = fftconvolve(x, ir)[: len(x)]; wet /= (np.abs(wet).max() + 1e-6)
+    return (1 - mix) * x / (np.abs(x).max() + 1e-6) + mix * wet
+
+def music2(dur, timer, sfx_times):
+    """Musique d'enquête stéréo : contrebasse pizz., batterie feutrée, célesta en arpèges, nappe,
+    réverbération ; tension pendant le minuteur ; effets (whoosh, ding, montée, révélation)."""
+    bpm = 100; e8 = 60 / bpm / 2; n = int((dur + 2) * SR)
+    L_, R_ = np.zeros(n), np.zeros(n)
+    prog = [(50, [62, 65, 69]), (46, [62, 65, 70]), (43, [62, 67, 70]), (45, [61, 64, 69])]
+    bass_pat = [0, 0, 7, 0, 3, 0, 7, 6]
+    cache = {}
+    def add(buf, i, sig):
+        if i >= len(buf): return
+        j = min(len(buf), i + len(sig)); buf[i:j] += sig[: j - i]
+    tt = np.arange(int(0.35 * SR)) / SR
+    kick = np.sin(2 * np.pi * (45 + 75 * np.exp(-tt * 28)) * tt) * np.exp(-tt * 9) * 0.55
+    rs = np.random.RandomState(3)
+    snap = rs.uniform(-1, 1, int(0.12 * SR)) * np.exp(-np.arange(int(0.12 * SR)) / 900) * 0.12
+    t = 0.0; step = 0; ts0, ts1 = timer
+    while t < dur:
+        bar = (step // 8) % 4; root, chord = prog[bar]; i = int(t * SR)
+        tense = ts0 <= t < ts1
+        nb = root + (0 if tense else bass_pat[step % 8])
+        if nb not in cache: cache[nb] = ks_pluck(note(nb), 0.55)
+        b = cache[nb] * (0.6 if step % 2 == 0 else 0.42); add(L_, i, b); add(R_, i, b)
+        if step % 4 == 0: add(L_, i, kick); add(R_, i, kick)
+        if step % 4 == 2: add(L_, i, snap * 0.9); add(R_, i, snap)
+        if step % 2 == 1:
+            hh = np.random.RandomState(step).uniform(-1, 1, int(0.03 * SR)) * np.exp(-np.arange(int(0.03 * SR)) / 200) * 0.05
+            add(L_ if step % 4 == 1 else R_, i, hh)
+        if not tense:   # célesta en arpèges (une note sur deux croches), panoramique alterné
+            if step % 2 == 0:
+                cn = chord[(step // 2) % 3] + 12 + (12 if (step // 6) % 2 else 0)
+                tb = np.arange(int(0.9 * SR)) / SR
+                bell = (np.sin(2 * np.pi * note(cn) * tb) + 0.25 * np.sin(2 * np.pi * note(cn) * 2.01 * tb)) * np.exp(-tb * 4.5) * 0.06
+                add(L_, i, bell * (0.8 if step % 4 == 0 else 0.35)); add(R_, i, bell * (0.35 if step % 4 == 0 else 0.8))
+        if step % 8 == 0:
+            tp = np.arange(int(8 * e8 * SR)) / SR
+            env = np.minimum(1, tp / 0.8) * np.minimum(1, (8 * e8 - tp) / 0.5)
+            pad = sum(np.sin(2 * np.pi * note(cn - 12) * tp + k) for k, cn in enumerate(chord)) * env * (0.05 if tense else 0.032)
+            add(L_, i, pad); add(R_, i, np.roll(pad, 400))
+        t += e8; step += 1
+    # effets sonores
+    def whoosh(d=0.5):
+        m = int(d * SR); x = np.random.RandomState(7).uniform(-1, 1, m)
+        env = np.sin(np.linspace(0, np.pi, m)) ** 2
+        k = np.linspace(2, 40, m).astype(int); y = np.array([x[max(0, j - kk):j + 1].mean() for j, kk in enumerate(k)])
+        return y * env * 0.5
+    W_ = whoosh()
+    tb = np.arange(int(1.1 * SR)) / SR
+    ding = (np.sin(2 * np.pi * 1318.5 * tb) + 0.5 * np.sin(2 * np.pi * 1975.5 * tb)) * np.exp(-tb * 5) * 0.12
+    for kind, at in sfx_times:
+        i = int(at * SR)
+        if kind == "whoosh": add(L_, i, W_); add(R_, i, W_[::-1] * 0.8)
+        if kind == "ding": add(L_, i, ding); add(R_, i, ding)
+        if kind == "riser":
+            m = int(1.6 * SR); tr = np.arange(m) / SR
+            rz = (np.random.RandomState(9).uniform(-1, 1, m) * 0.15 + np.sin(2 * np.pi * (200 + 500 * tr / 1.6) * tr) * 0.08) * (tr / 1.6) ** 2
+            add(L_, i - m, rz); add(R_, i - m, rz)
+        if kind == "beat":   # battement de cœur pendant le minuteur
+            hb = np.sin(2 * np.pi * 55 * tt) * np.exp(-tt * 14) * 0.6
+            add(L_, i, hb); add(R_, i, hb); add(L_, i + int(0.22 * SR), hb * 0.6); add(R_, i + int(0.22 * SR), hb * 0.6)
+        if kind == "reveal":
+            tr = np.arange(int(2.2 * SR)) / SR
+            ch = sum(np.sin(2 * np.pi * note(m_) * tr) for m_ in (62, 66, 69, 74)) * np.exp(-tr * 1.6) * 0.07
+            add(L_, i, ch); add(R_, i, ch)
+    L_, R_ = reverb(L_[: int(dur * SR)], seed=1), reverb(R_[: int(dur * SR)], seed=2)
+    m = max(np.abs(L_).max(), np.abs(R_).max()) + 1e-6
+    return np.stack([L_ / m, R_ / m], 1)
+
+def vignette_layer():
+    yy, xx = np.mgrid[0:H, 0:W]
+    r = np.sqrt(((xx - W / 2) / (W * 0.62)) ** 2 + ((yy - H / 2) / (H * 0.6)) ** 2)
+    a = (np.clip((r - 0.55) / 0.6, 0, 1) ** 1.6 * 170).astype("uint8")
+    lay = Image.new("RGBA", (W, H), (4, 3, 12, 0)); lay.putalpha(Image.fromarray(a)); return lay
+
+def grain_layers(n=6):
+    out = []
+    for k in range(n):
+        g = np.random.RandomState(k).randint(0, 255, (H // 2, W // 2)).astype("uint8")
+        im = Image.fromarray(g).resize((W, H)).convert("RGBA"); im.putalpha(12); out.append(im)
+    return out
+
+def zoom(fr, z, cx=0.5, cy=0.55):
+    if z <= 1.001: return fr
+    w2, h2 = int(W / z), int(H / z); x0 = int((W - w2) * cx); y0 = int((H - h2) * cy)
+    return fr.crop((x0, y0, x0 + w2, y0 + h2)).resize((W, H), Image.BILINEAR)
+
+def popped(layer, k):
+    """Calque qui « rebondit » à l'apparition (k de 0 à 1)."""
+    if k >= 1: return layer
+    s = 0.9 + 0.1 * ease(k) + 0.03 * math.sin(k * math.pi)
+    w2, h2 = int(W * s), int(H * s); sm = layer.resize((w2, h2), Image.BILINEAR)
+    out = Image.new("RGBA", (W, H), (0, 0, 0, 0)); out.alpha_composite(sm, ((W - w2) // 2, (H - h2) // 2))
+    if k < 1:
+        a = out.getchannel("A").point(lambda v: int(v * min(1, ease(k * 1.6)))); out.putalpha(a)
+    return out
+
+def first_sentence(txt):
+    m = re.match(r"(.+?[.!?…])(\s|$)", txt)
+    return m.group(1) if m else txt
+
+def build_court(slug, num, out, voice="fr_FR-tom-medium", secs=5):
+    livre, e = V.load(slug, num)
+    plan = V.crop_plan(os.path.join(V.KIT, e["image"]))
+    cover = Image.open(os.path.join(V.KIT, livre["couverture"])).convert("RGB")
+    n_en = 24 if "Neiges" in livre["livre"] else 40
+    names = sorted(e["solution"].keys()); cols = NAME_COLS[:len(names)]
+    colored = [(nm, c) for nm, c in zip(names, cols)] + [(v["lieu"][0], GOLD) for v in e["solution"].values()]
+    hook = HOOKS.get((slug, num), e["titre"] + " : qui est le coupable ?")
+    q = f"Qui se trouvait {e['question_lieu'][1]} ?"
+    liste = f"{names[0]}, {names[1]} ou {names[2]}"
+    story = first_sentence(e["incident"])
+
+    lines = [("hook", hook), ("setup", story)]
+    for i, c in enumerate(e["indices"]): lines.append((f"clue{i}", c))
+    lines.append(("question", q + " Cinq secondes !"))
+    lines.append(("cta", f"{liste} ? Réponds en commentaire !"))
+    scale = 0.78
+    raw = {k: tts(txt, voice, scale) for k, txt in lines}
+    est = sum(len(a) for a in raw.values()) / SR + secs + 4
+    if est > 31:   # trop long : on accélère un peu la lecture des indices
+        for k, txt in lines:
+            if k.startswith("clue"): raw[k] = tts(txt, voice, 0.72)
+    audio = {k: voice_fx(a) for k, a in raw.items()}
+
+    T, t = {}, 0.0
+    for k, _ in lines:
+        if k == "cta": T["timer"] = (t, t + secs); t += secs
+        d = len(audio[k]) / SR + (0.22 if k.startswith("clue") else 0.15)
+        if k == "hook": d = max(d, 2.0)
+        T[k] = (t, t + d); t += d
+    dur = t + 1.2
+
+    sfx = [("whoosh", T["setup"][0] - 0.15), ("whoosh", T["clue0"][0] - 0.2), ("riser", T["timer"][0]),
+           ("reveal", T["cta"][0]), ("whoosh", T["cta"][0] - 0.2)]
+    for i in range(len(e["indices"])): sfx.append(("ding", T[f"clue{i}"][0]))
+    for s_ in range(secs): sfx.append(("beat", T["timer"][0] + s_))
+    mus = music2(dur, T["timer"], sfx)
+    mix = np.zeros((int(dur * SR) + SR, 2)); venv = np.zeros(len(mix))
+    for k, _ in lines:
+        i = int((T[k][0] + 0.05) * SR); a = audio[k]
+        mix[i:i + len(a), 0] += a; mix[i:i + len(a), 1] += a; venv[i:i + len(a)] = 1
+    kk = int(0.3 * SR); venv = np.convolve(venv, np.ones(kk) / kk, mode="same")
+    mix[: len(mus)] += mus * (0.34 - 0.22 * venv[: len(mus), None])
+    tk = np.sin(2 * np.pi * 1800 * np.arange(int(0.04 * SR)) / SR) * np.exp(-np.arange(int(0.04 * SR)) / 220) * 0.25
+    for s_ in range(secs * 2):
+        i = int((T["timer"][0] + s_ * 0.5) * SR); mix[i:i + len(tk)] += tk[:, None]
+    mix = mix[: int(dur * SR)]; mix = mix / (np.abs(mix).max() + 1e-6) * 0.95
+    wav = out + ".wav"
+    with wave.open(wav, "wb") as w:
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((mix * 32767).astype("<i2").tobytes())
+
+    sc = S.make_scene(slug)
+    still = sc["static"].copy(); dd = ImageDraw.Draw(still, "RGBA")
+    sc["back"](still, dd, 4.0); S.rose(dd, 250, S.GROUND_Y, 0); S.sardine(dd, 560, S.GROUND_Y, 0)
+    dim_bg = still.filter(ImageFilter.GaussianBlur(10)); dim_bg.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 190)))
+    vig = vignette_layer(); grains = grain_layers()
+    chips = chips_layer(names, cols)
+    order = plan_order(plan, [v["lieu"][0] for v in e["solution"].values()])
+    pl_small = tiles_layer(order, 370)[0] if order else plan_card(plan, 360)[0]
+    pl_recap, pr_end = tiles_layer(order, 350, h=120, fs=38) if order else plan_card(plan, 350, 700)
+    clue_words = [segments(c, colored) for c in e["indices"]]
+    clue_lays = [clue_layer(i, len(clue_words), ws) for i, ws in enumerate(clue_words)]
+    recap, ry = recap_layer(clue_words, pr_end + 30)
+    cta = V.cta_layer(livre, cover, n_en, names)
+    hook_words = hook_words_of(hook)
+    words = story.split(); chunks, cur = [], []
+    for wd in words:
+        cur.append(wd)
+        if len(" ".join(cur)) > 18 or wd.endswith((".", ",")): chunks.append(cur); cur = []
+    if cur: chunks.append(cur)
+    tot = sum(len(" ".join(c)) for c in chunks); tl, acc = [], 0
+    for c in chunks:
+        for j, wd in enumerate(c): tl.append((acc / tot, c, j)); acc += len(wd) + 1
+    cap_cache, qcache = {}, {}
+
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+           "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+           "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100",
+           "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    t_story_end = T["setup"][1]
+    for fi in range(int(dur * FPS)):
+        t = fi / FPS
+        if t < t_story_end + 0.25:
+            fr = sc["static"].copy(); d = ImageDraw.Draw(fr, "RGBA")
+            sc["back"](fr, d, t); S.rose(d, 250, S.GROUND_Y, t); S.sardine(d, 560, S.GROUND_Y, t)
+            if "billet" in e["incident"].lower() and t > T["setup"][0]: S.ticket(d, 760, S.GROUND_Y - 14, t)
+            sc["front"](fr, d, t)
+            fr = zoom(fr, 1.0 + 0.07 * min(1, t / max(1, t_story_end)))
+            if t < T["hook"][1]:
+                fr.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 140)))
+                el = t; per = 0.22
+                n = min(len(hook_words), 1 + int(el / per)); pop = ease(min(1, (el - (n - 1) * per) / 0.15))
+                fr.alpha_composite(hook_layer(hook, n, pop))
+            else:
+                el0 = t - T["setup"][0]
+                fr.alpha_composite(popped(chips, min(1, el0 / 0.3)))
+                el = el0 / max(0.1, (T["setup"][1] - T["setup"][0] - 0.2))
+                cc = [x for x in tl if x[0] <= el]
+                if cc:
+                    _, c, j = cc[-1]; key = (" ".join(c), j)
+                    if key not in cap_cache: cap_cache[key] = caption_layer(c, j)
+                    fr.alpha_composite(cap_cache[key])
+            if t > t_story_end - 0.1:
+                paste_alpha(fr, dim_bg, ease((t - t_story_end + 0.1) / 0.35))
+        else:
+            fr = dim_bg.copy()
+            fx = Image.new("RGBA", (W, H), (0, 0, 0, 0)); sc["front"](fx, ImageDraw.Draw(fx, "RGBA"), t); paste_alpha(fr, fx, 0.45)
+            for i in range(len(clue_lays)):
+                a, b = T[f"clue{i}"]
+                if a <= t < b:
+                    fr.alpha_composite(chips); fr.alpha_composite(pl_small)
+                    fr.alpha_composite(popped(clue_lays[i], min(1, (t - a) / 0.22)))
+            if T["question"][0] <= t < T["cta"][0]:
+                fr.alpha_composite(chips); fr.alpha_composite(pl_recap); fr.alpha_composite(recap)
+                if t >= T["timer"][0]:
+                    el = t - T["timer"][0]; rem = max(1, secs - int(el)); frac = min(1, el / secs)
+                else:
+                    rem, frac = secs, 0
+                key = (rem, round(frac * 60))
+                if key not in qcache: qcache[key] = V.question_layer(e, ry + 10, rem, key[1] / 60)
+                ql = qcache[key]
+                if t >= T["timer"][0] and (t - T["timer"][0]) % 1 < 0.12:   # pulsation à chaque seconde
+                    ql = popped(ql, 0.55 + (t - T["timer"][0]) % 1 * 3.5)
+                fr.alpha_composite(ql)
+            if t >= T["cta"][0]:
+                fr.alpha_composite(popped(cta, min(1, (t - T["cta"][0]) / 0.4)))
+        fr.alpha_composite(vig); fr.alpha_composite(grains[fi % len(grains)])
+        p.stdin.write(fr.convert("RGB").tobytes())
+    p.stdin.close(); p.wait(); os.remove(wav)
+    return dict(duree=round(dur, 1), coupable=e["coupable"], titre=e["titre"],
+                timeline={k: (round(a, 1), round(b, 1)) for k, (a, b) in T.items()})
+
 if __name__ == "__main__":
     v = next((a.split("=")[1] for a in sys.argv if a.startswith("--voix=")), "fr_FR-tom-medium")
-    print(build(sys.argv[1], int(sys.argv[2]), sys.argv[3], voice=v))
+    f = build if "--long" in sys.argv else build_court   # vague 3 : format court par défaut
+    print(f(sys.argv[1], int(sys.argv[2]), sys.argv[3], voice=v))

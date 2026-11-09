@@ -113,42 +113,64 @@ def snow(d, t, seed=9, n=170):
         d.ellipse((x - r, y - r, x + r, y + r), fill=(240, 242, 255, 210))
 
 # ---------------------------------------------------------------- personnages
-def rose(d, x, base, t):
-    """Rose Le Guen : chignon, manteau long, écharpe rouge, canne."""
+RIM = (92, 80, 150)   # liseré de lumière pour détacher les silhouettes du fond
+
+def _rose(d, x, base, t, c=INK, accents=True):
     sway = 2 * math.sin(t * 1.4)
-    d.rectangle((x - 30, base - 70, x - 12, base), fill=INK)
-    d.rectangle((x + 10, base - 70, x + 28, base), fill=INK)
-    d.polygon([(x - 62, base - 300), (x + 58, base - 300), (x + 92, base - 62), (x - 96, base - 62)], fill=INK)
-    d.ellipse((x - 64, base - 330, x + 60, base - 270), fill=INK)  # épaules
-    d.rectangle((x - 16, base - 345, x + 14, base - 315), fill=INK)  # cou
+    d.rectangle((x - 30, base - 70, x - 12, base), fill=c)
+    d.rectangle((x + 10, base - 70, x + 28, base), fill=c)
+    d.polygon([(x - 62, base - 300), (x + 58, base - 300), (x + 92, base - 62), (x - 96, base - 62)], fill=c)
+    d.ellipse((x - 64, base - 330, x + 60, base - 270), fill=c)  # épaules
+    d.rectangle((x - 16, base - 345, x + 14, base - 315), fill=c)  # cou
     hx, hy = x + sway, base - 385
-    d.ellipse((hx - 40, hy - 44, hx + 40, hy + 44), fill=INK)
-    d.ellipse((hx - 62, hy - 64, hx - 22, hy - 24), fill=INK)  # chignon
-    d.ellipse((hx + 18, hy - 6, hx + 30, hy + 6), outline=GOLD, width=3)  # lunettes
-    # écharpe
-    d.polygon([(x - 46, base - 330), (x + 44, base - 330), (x + 40, base - 300), (x - 44, base - 300)], fill=RED)
-    d.polygon([(x + 18, base - 305), (x + 44, base - 305), (x + 36 + sway * 2, base - 200), (x + 12 + sway * 2, base - 205)], fill=RED)
-    # bras + canne
-    d.line((x + 50, base - 280, x + 110, base - 170), fill=INK, width=26)
-    d.line((x + 112, base - 175, x + 132, base), fill=(90, 62, 40), width=9)
-    d.ellipse((x + 98, base - 186, x + 124, base - 160), fill=INK)
+    d.ellipse((hx - 40, hy - 44, hx + 40, hy + 44), fill=c)
+    d.ellipse((hx - 62, hy - 64, hx - 22, hy - 24), fill=c)  # chignon
+    # bras droit + canne
+    d.line((x + 50, base - 280, x + 110, base - 170), fill=c, width=26)
+    d.ellipse((x + 98, base - 186, x + 124, base - 160), fill=c)
+    # bras gauche levé, loupe à la main (oscille doucement : elle inspecte)
+    lift = 6 * math.sin(t * 1.1)
+    ex, ey = x - 112, base - 250 + lift
+    d.line((x - 50, base - 285, ex, ey), fill=c, width=24)
+    lx, ly = ex - 6, ey - 74 + lift
+    d.line((ex, ey, lx, ly + 34), fill=c if not accents else (110, 76, 46), width=12)
+    if accents:
+        d.ellipse((lx - 40, ly - 40, lx + 40, ly + 40), fill=(150, 190, 230, 90), outline=GOLD, width=9)
+        g = int(150 + 100 * max(0, math.sin(t * 2.3)))
+        d.arc((lx - 26, ly - 26, lx + 26, ly + 26), 200, 260, fill=(255, 255, 255, g), width=6)
+        d.ellipse((hx + 18, hy - 6, hx + 30, hy + 6), outline=GOLD, width=3)  # lunettes
+        d.polygon([(x - 46, base - 330), (x + 44, base - 330), (x + 40, base - 300), (x - 44, base - 300)], fill=RED)
+        d.polygon([(x + 18, base - 305), (x + 44, base - 305), (x + 36 + sway * 2, base - 200), (x + 12 + sway * 2, base - 205)], fill=RED)
+        d.line((x + 112, base - 175, x + 132, base), fill=(90, 62, 40), width=9)
+    else:
+        d.ellipse((lx - 44, ly - 44, lx + 44, ly + 44), fill=c)
+
+def rose(d, x, base, t):
+    """Rose Le Guen : chignon, manteau long, écharpe rouge, canne, loupe."""
+    _rose(d, x + 4, base - 3, t, RIM, False)
+    _rose(d, x, base, t)
+
+def _sardine(d, x, base, t, c=INK, accents=True):
+    sniff = 4 * math.sin(t * 9) if (t % 4) < 1.6 else 0
+    d.ellipse((x - 110, base - 120, x + 110, base - 40), fill=c)
+    for lx in (x - 80, x - 50, x + 50, x + 80):
+        d.rectangle((lx - 10, base - 60, lx + 10, base), fill=c)
+    ang = math.radians(-40 + 25 * math.sin(t * 8))
+    tx, ty = x - 104, base - 96
+    d.line((tx, ty, tx - 70 * math.cos(ang), ty + 70 * math.sin(ang)), fill=c, width=14)
+    hx, hy = x + 120, base - 118 + sniff
+    d.ellipse((hx - 48, hy - 40, hx + 40, hy + 34), fill=c)
+    d.polygon([(hx + 24, hy - 4), (hx + 92, hy + 26), (hx + 84, hy + 50), (hx + 20, hy + 34)], fill=c)
+    if accents:
+        d.ellipse((hx + 80, hy + 26, hx + 98, hy + 44), fill=(40, 30, 40))
+        d.ellipse((hx - 34, hy - 14, hx + 4, hy + 92), fill=INK2)  # oreille
+        d.rectangle((x + 74, base - 120, x + 88, base - 78), fill=RED)  # collier
+        d.ellipse((hx + 6, hy - 10, hx + 18, hy + 2), fill=GOLD)
 
 def sardine(d, x, base, t):
     """Sardine : basset, longues oreilles, collier rouge, queue qui remue."""
-    sniff = 4 * math.sin(t * 9) if (t % 4) < 1.6 else 0
-    d.ellipse((x - 110, base - 120, x + 110, base - 40), fill=INK)
-    for lx in (x - 80, x - 50, x + 50, x + 80):
-        d.rectangle((lx - 10, base - 60, lx + 10, base), fill=INK)
-    ang = math.radians(-40 + 25 * math.sin(t * 8))
-    tx, ty = x - 104, base - 96
-    d.line((tx, ty, tx - 70 * math.cos(ang), ty + 70 * math.sin(ang)), fill=INK, width=14)
-    hx, hy = x + 120, base - 118 + sniff
-    d.ellipse((hx - 48, hy - 40, hx + 40, hy + 34), fill=INK)
-    d.polygon([(hx + 24, hy - 4), (hx + 92, hy + 26), (hx + 84, hy + 50), (hx + 20, hy + 34)], fill=INK)
-    d.ellipse((hx + 80, hy + 26, hx + 98, hy + 44), fill=(40, 30, 40))
-    d.ellipse((hx - 34, hy - 14, hx + 4, hy + 92), fill=INK2)  # oreille
-    d.rectangle((x + 74, base - 120, x + 88, base - 78), fill=RED)  # collier
-    d.ellipse((hx + 6, hy - 10, hx + 18, hy + 2), fill=GOLD)
+    _sardine(d, x + 4, base - 3, t, RIM, False)
+    _sardine(d, x, base, t)
 
 def ticket(d, x, y, t):
     g = int(60 + 40 * math.sin(t * 5))

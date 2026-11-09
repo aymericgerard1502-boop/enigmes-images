@@ -36,8 +36,13 @@ Décision d'Aymeric : en attente (bilan envoyé le 08/11).
 Publiées avec un jour de décalage (rien le 8 nov., programmation faite trop tard) : Train des Neiges 3 (9 nov. 18:46), Santons de Minuit 5 (10 nov. 21:33), Train des Neiges 4 (11 nov. 17:39). Les fichiers gardent leur nom daté du 8, 9 et 10.
 Correctif de mise en page sans effet sur le format : plus de « ? » orphelin dans la barre de question.
 
-### Vague 3 — proposée, pas encore lancée
-Changement unique proposé : vidéo plus courte (≤ 30 s), énigme plus tôt (histoire en 1 phrase, suspects affichés avec l'histoire). Hypothèse : le temps moyen passe de 5,3 s à plus de 8 s.
+### Vague 3 — EN COURS (12 → 17 nov., 6 vidéos)
+Décision d'Aymeric (09/11) : 0 vente KDP depuis le début, 28 abonnés, 136 j'aime. Il valide le changement et demande en plus d'améliorer la qualité globale (voix, musique, illustrations).
+**Changement principal : vidéo courte (27 à 30 s), énigme beaucoup plus tôt** : accroche seule (2 s), histoire en une phrase avec les suspects affichés en même temps, 1er indice vers 5 s (au lieu de 13 s), minuteur 5 s (au lieu de 8).
+**Qualité (demandée par Aymeric, liée au même objectif de rétention)** : voix plus rapide (0.78) et traitée (égalisation, compression, légère pièce) ; musique stéréo plus riche (batterie feutrée, célesta en arpèges, réverbération) ; effets sonores (whoosh aux transitions, ding à chaque indice, montée avant le minuteur, battement de cœur, accord de révélation) ; volume normalisé à -14 LUFS ; Rose avec une loupe et un liseré de lumière ; zoom lent sur le décor ; rebond des textes ; vignettage et grain ; neige/pluie qui continue derrière les indices.
+Attention : comme plusieurs choses changent, on attribue le résultat à l'ensemble « format court + finition ».
+Hypothèse : temps moyen de visionnage > 8 s (contre 5,3 s), plus de commentaires.
+Bilan : le 18 nov.
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Vidéo plus courte (≤ 30 s) : histoire en 2 phrases, indices plus rapides.
