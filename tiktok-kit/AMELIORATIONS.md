@@ -32,8 +32,8 @@ Meilleures : « La valise échangée » (Train des Neiges) 6,7 s et 18 likes ; �
 Conclusion : le nouveau format est nettement meilleur sur toutes les mesures. Mais 5,3 s sur ~42 s : la plupart partent pendant l'histoire, avant le 1er indice (~13 s).
 Décision d'Aymeric : en attente (bilan envoyé le 08/11).
 
-### Vague 2 prolongée (8 → 10 nov., 3 vidéos, format inchangé) — en attendant la décision
-Train des Neiges 3 (8 nov.), Santons de Minuit 5 (9 nov.), Train des Neiges 4 (10 nov.).
+### Vague 2 prolongée (9 → 11 nov., 3 vidéos, format inchangé) — en attendant la décision
+Publiées avec un jour de décalage (rien le 8 nov., programmation faite trop tard) : Train des Neiges 3 (9 nov. 18:46), Santons de Minuit 5 (10 nov. 21:33), Train des Neiges 4 (11 nov. 17:39). Les fichiers gardent leur nom daté du 8, 9 et 10.
 Correctif de mise en page sans effet sur le format : plus de « ? » orphelin dans la barre de question.
 
 ### Vague 3 — proposée, pas encore lancée
