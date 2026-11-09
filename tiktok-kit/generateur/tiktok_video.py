@@ -508,7 +508,7 @@ def grain_layers(n=6):
     out = []
     for k in range(n):
         g = np.random.RandomState(k).randint(0, 255, (H // 2, W // 2)).astype("uint8")
-        im = Image.fromarray(g).resize((W, H)).convert("RGBA"); im.putalpha(12); out.append(im)
+        im = Image.fromarray(g).resize((W, H)).convert("RGBA"); im.putalpha(7); out.append(im)
     return out
 
 def zoom(fr, z, cx=0.5, cy=0.55):
@@ -606,7 +606,7 @@ def build_court(slug, num, out, voice="fr_FR-tom-medium", secs=5):
     cap_cache, qcache = {}, {}
 
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-           "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+           "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "22", "-maxrate", "4M", "-bufsize", "8M", "-pix_fmt", "yuv420p",
            "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100",
            "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
