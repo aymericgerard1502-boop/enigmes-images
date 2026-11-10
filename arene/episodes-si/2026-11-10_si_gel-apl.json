@@ -1,0 +1,160 @@
+{
+ "slug": "si_gel-apl",
+ "rubrique": "SI ÇA PASSE · LOGEMENT",
+ "source": "Sources : SeLoger, Cour des comptes, NosParlementaires, CNL",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si le gel des APL passe, voilà ce que tu perds sur ton aide au logement.",
+   "affiche": "Si le gel des APL passe, voilà ce que **tu perds** sur ton aide au logement.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · BUDGET 2027",
+    "lignes": [
+     "SI LE GEL",
+     "DES APL",
+     "PASSE…"
+    ],
+    "taille": 96
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Chaque premier octobre, les APL suivent les loyers. Le budget 2027 veut sauter cette hausse.",
+   "affiche": "Chaque 1er octobre, les APL suivent les loyers. Le budget 2027 veut **sauter cette hausse**.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · ARTICLE 74",
+    "titre": "APL au 1er octobre 2027",
+    "seuil": "Gel",
+    "gauche": "Suit les loyers",
+    "droite": "Bloquée",
+    "part": 0.5
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Pour une aide moyenne de 221 euros 50, sans gel, elle monterait à 224 euros 05.",
+   "affiche": "Pour une aide moyenne de **221,50 €**, sans gel, elle monterait à 224,05 € (+1,15 %).",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · AIDE MOYENNE",
+    "lignes": [
+     [
+      "Aide moyenne 2026",
+      "221,50 €",
+      0.2
+     ],
+     [
+      "2027 sans gel (+1,15 %)",
+      "224,05 €",
+      2.6
+     ],
+     [
+      "2027 avec le gel",
+      "221,50 €",
+      4.4
+     ]
+    ],
+    "total": [
+     "Chaque mois",
+     "−2,55 €",
+     5.0
+    ]
+   }
+  },
+  {
+   "dit": "Avec le gel : 2 euros 55 de moins par mois, 30 euros 60 par an.",
+   "affiche": "Avec le gel : **2,55 € de moins** par mois, **30,60 €** par an.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 30.6,
+    "entier": false,
+    "prefixe": "−",
+    "suffixe": " €",
+    "taille": 160,
+    "legende": [
+     "sur un an",
+     "pour une aide moyenne",
+     "si les loyers montent de 1,15 %"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ton aide ne baisse pas, mais ton loyer peut augmenter.",
+   "affiche": "Ton aide **ne baisse pas**, mais ton loyer peut augmenter.",
+   "carte": {
+    "type": "checks",
+    "label": "À SAVOIR",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Ton aide ne baisse pas"
+     ],
+     [
+      false,
+      "Ton loyer peut monter"
+     ],
+     [
+      null,
+      "Un décret peut annuler le gel"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, c'est un petit effort demandé à tous.",
+   "affiche": "Pour le gouvernement, c'est un **petit effort** demandé à tous.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement (ministère du Logement)",
+    "lignes": [
+     "Un petit effort",
+     "demandé à tous",
+     "pour économiser."
+    ]
+   }
+  },
+  {
+   "dit": "Pour les locataires, l'effort retombe sur les plus modestes.",
+   "affiche": "Pour les locataires, l'effort retombe **sur les plus modestes**.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Associations de locataires (CNL), UNEF",
+    "lignes": [
+     "L'effort retombe",
+     "d'abord sur",
+     "les plus modestes."
+    ]
+   }
+  },
+  {
+   "dit": "Rejeté par les députés le 4 novembre, le budget passe au Sénat, gel compris.",
+   "affiche": "Rejeté par les députés le **4 novembre**, le budget passe au Sénat, gel compris.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "AU SÉNAT",
+    "sous": "Budget rejeté par les députés le 4/11",
+    "suite": "VOTE LE 9/12",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
