@@ -1,0 +1,155 @@
+{
+ "slug": "si_frais-fac",
+ "rubrique": "SI ÇA PASSE · ÉTUDES",
+ "source": "Sources : Public Sénat, 75 Secondes, NosParlementaires",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la hausse des frais de fac passe, voilà ce que tu paies en plus pour t'inscrire.",
+   "affiche": "Si la hausse des frais de fac passe, voilà ce que **tu paies en plus** pour t'inscrire.",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · BUDGET 2027",
+    "lignes": [
+     "SI LES FRAIS",
+     "DE FAC",
+     "MONTENT…"
+    ],
+    "taille": 96
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Au Sénat, la rapporteure veut des frais selon le revenu de tes parents.",
+   "affiche": "Au Sénat, la rapporteure veut des frais **selon le revenu de tes parents**.",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · COMMISSION DES FINANCES",
+    "titre": "Frais d'inscription en licence",
+    "seuil": "Revenu",
+    "gauche": "178 € pour tous",
+    "droite": "Jusqu'à 3 900 €",
+    "part": 0.5
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "En licence, c'est 178 euros aujourd'hui. Avec des parents à 50000 euros de revenu fiscal, ce serait 750 euros.",
+   "affiche": "En licence, c'est **178 €** aujourd'hui. Avec des parents à 50 000 € de revenu fiscal, ce serait **750 €**.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · LICENCE",
+    "lignes": [
+     [
+      "Aujourd'hui",
+      "178 €",
+      0.2
+     ],
+     [
+      "Parents à 50 000 €",
+      "750 €",
+      2.6
+     ]
+    ],
+    "total": [
+     "Chaque année",
+     "+572 €",
+     4.4
+    ]
+   }
+  },
+  {
+   "dit": "Soit 572 euros de plus par an.",
+   "affiche": "Soit **572 € de plus** par an.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 572,
+    "entier": true,
+    "prefixe": "+",
+    "suffixe": " €",
+    "taille": 160,
+    "legende": [
+     "par an en licence",
+     "parents à 50 000 €",
+     "de revenu fiscal"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Et le repas Crous à 1 euro resterait réservé aux boursiers. Les autres paieraient 3 euros 30.",
+   "affiche": "Et le repas Crous à 1 € resterait **réservé aux boursiers**. Les autres paieraient 3,30 €.",
+   "carte": {
+    "type": "checks",
+    "label": "AU CROUS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Boursier : repas à 1 €"
+     ],
+     [
+      false,
+      "Non boursier : 3,30 €"
+     ],
+     [
+      null,
+      "Bourses réformées"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour la rapporteure, les familles aisées paient plus pour aider les plus précaires.",
+   "affiche": "Pour la rapporteure, les familles aisées paient plus pour **aider les plus précaires**.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Rapporteure du Sénat (Les Indépendants)",
+    "lignes": [
+     "Les plus aisés",
+     "paient plus pour",
+     "les plus précaires."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la gauche, la fac publique doit rester quasi gratuite pour tous.",
+   "affiche": "Pour la gauche, la fac publique doit rester **quasi gratuite** pour tous.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Sénateurs de gauche",
+    "lignes": [
+     "La fac publique",
+     "doit rester quasi",
+     "gratuite pour tous."
+    ]
+   }
+  },
+  {
+   "dit": "Adoptée en commission, la mesure doit encore passer en séance au Sénat.",
+   "affiche": "Adoptée en commission, la mesure doit **encore passer en séance** au Sénat.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "AU SÉNAT",
+    "sous": "Adoptée en commission",
+    "suite": "SÉANCE À VENIR",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
