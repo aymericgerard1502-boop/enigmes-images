@@ -1,0 +1,155 @@
+{
+ "slug": "si_prime-apprentis",
+ "rubrique": "SI ÇA PASSE · TRAVAIL",
+ "source": "Sources : Cour des comptes, Sénat, TPE Actu, Hellowork",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la prime d'activité des apprentis saute, voilà ce que tu perds chaque mois.",
+   "affiche": "Si la prime d'activité des apprentis saute, voilà ce que **tu perds chaque mois.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · BUDGET 2027",
+    "lignes": [
+     "SI LA PRIME",
+     "DES APPRENTIS",
+     "SAUTE…"
+    ],
+    "taille": 96
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Aujourd'hui, un apprenti y a droit s'il gagne plus de 78 pour cent du Smic.",
+   "affiche": "Aujourd'hui, un apprenti y a droit s'il gagne **plus de 78 % du Smic.**",
+   "carte": {
+    "type": "seuil",
+    "label": "LA RÈGLE · AUJOURD'HUI",
+    "titre": "Prime d'activité d'un apprenti",
+    "seuil": "78 % du Smic",
+    "gauche": "Pas de prime",
+    "droite": "Prime versée",
+    "part": 0.5
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "La Cour des comptes propose de la supprimer : 257 millions d'euros pour 135000 apprentis.",
+   "affiche": "La Cour des comptes propose de **la supprimer** : 257 M€ pour 135 000 apprentis.",
+   "carte": {
+    "type": "calcul",
+    "label": "LE CALCUL · EN MOYENNE",
+    "lignes": [
+     [
+      "Dépense annuelle",
+      "257 M€",
+      0.2
+     ],
+     [
+      "Apprentis aidés",
+      "135 000",
+      2.6
+     ]
+    ],
+    "total": [
+     "Par an",
+     "≈ 1 900 €",
+     4.6
+    ]
+   }
+  },
+  {
+   "dit": "Soit environ 160 euros de moins par mois.",
+   "affiche": "Soit environ **160 € de moins** par mois.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 160,
+    "entier": true,
+    "prefixe": "−",
+    "suffixe": " €",
+    "taille": 160,
+    "legende": [
+     "par mois, en moyenne,",
+     "pour un apprenti",
+     "qui la touche"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ton salaire ne bouge pas. Les étudiants salariés garderaient la prime.",
+   "affiche": "Ton salaire **ne bouge pas.** Les étudiants salariés garderaient la prime.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Salaire d'apprenti"
+     ],
+     [
+      true,
+      "Prime des étudiants salariés"
+     ],
+     [
+      false,
+      "Prime des apprentis"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour la Cour des comptes, l'apprenti travaille déjà : la prime ne l'incite pas plus.",
+   "affiche": "Pour la Cour des comptes, l'apprenti travaille déjà : la prime **ne l'incite pas** plus.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Cour des comptes",
+    "lignes": [
+     "L'apprenti",
+     "travaille déjà :",
+     "pas d'effet incitatif."
+    ]
+   }
+  },
+  {
+   "dit": "Pour un sénateur communiste, c'est injuste envers de jeunes travailleurs modestes.",
+   "affiche": "Pour un sénateur communiste, c'est **injuste** envers de jeunes travailleurs modestes.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Rapporteur communiste au Sénat",
+    "lignes": [
+     "Injuste pour",
+     "de jeunes travailleurs",
+     "aux revenus modestes."
+    ]
+   }
+  },
+  {
+   "dit": "Pour l'instant, rien n'est voté : le budget 2027 est au Sénat.",
+   "affiche": "Pour l'instant, **rien n'est voté** : le budget 2027 est au Sénat.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "PROPOSÉE",
+    "sous": "Cour des comptes",
+    "suite": "RIEN N'EST VOTÉ",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
