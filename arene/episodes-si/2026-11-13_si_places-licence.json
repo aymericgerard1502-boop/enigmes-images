@@ -1,0 +1,146 @@
+{
+ "slug": "si_places-licence",
+ "rubrique": "SI ÇA PASSE · ÉTUDES",
+ "source": "Sources : 20 Minutes/AFP, L'Express Éducation, HuffPost, Social Mag",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si les 5000 places promises en licence s'ouvrent, voilà ce que ça change pour toi.",
+   "affiche": "Si les 5 000 places promises en licence s'ouvrent, voilà **ce que ça change pour toi.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · UNIVERSITÉ",
+    "lignes": [
+     "SI 5 000 PLACES",
+     "S'OUVRENT",
+     "EN LICENCE…"
+    ],
+    "taille": 84
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Le Premier ministre l'a promis le 10 novembre aux présidents d'université.",
+   "affiche": "Le Premier ministre l'a promis **le 10 novembre** aux présidents d'université.",
+   "carte": {
+    "type": "calcul",
+    "label": "LES PLACES EN PLUS",
+    "lignes": [
+     [
+      "Annoncées le 26 octobre",
+      "15 000",
+      0.2
+     ],
+     [
+      "Promises le 10 novembre",
+      "+ 5 000",
+      2.4
+     ]
+    ],
+    "total": [
+     "Total promis",
+     "20 000",
+     4.4
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Avec les 15000 places déjà annoncées, ça fait 20000 places en plus.",
+   "affiche": "Avec les 15 000 places déjà annoncées, ça fait **20 000 places en plus.**"
+  },
+  {
+   "dit": "Les organisations étudiantes en réclament 250000. Ça en couvre 8 pour cent.",
+   "affiche": "Les organisations étudiantes en réclament 250 000. Ça en couvre **8 %.**",
+   "carte": {
+    "type": "compteur",
+    "valeur": 8,
+    "entier": true,
+    "prefixe": "",
+    "suffixe": " %",
+    "taille": 160,
+    "legende": [
+     "des 250 000 places",
+     "réclamées par",
+     "les organisations étudiantes"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Parcoursup reste en place en 2027 : tes vœux, c'est du 18 janvier au 11 mars.",
+   "affiche": "Parcoursup **reste en place** en 2027 : tes vœux, c'est du 18 janvier au 11 mars.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Parcoursup en 2027"
+     ],
+     [
+      true,
+      "Vœux du 18 janv. au 11 mars"
+     ],
+     [
+      false,
+      "Facs et filières : à préciser"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le Premier ministre, des moyens en plus suivront, pour bien accueillir ces étudiants.",
+   "affiche": "Pour le Premier ministre, **des moyens en plus** suivront, pour bien accueillir ces étudiants.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Premier ministre",
+    "lignes": [
+     "Des moyens en plus,",
+     "dans de bonnes",
+     "conditions d'accueil."
+    ]
+   }
+  },
+  {
+   "dit": "Pour les organisations étudiantes, c'est très loin des 250000 places qu'elles réclament.",
+   "affiche": "Pour les organisations étudiantes, c'est **très loin** des 250 000 places qu'elles réclament.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Organisations étudiantes",
+    "lignes": [
+     "Très loin",
+     "des 250 000 places",
+     "qu'elles réclament."
+    ]
+   }
+  },
+  {
+   "dit": "Pour l'instant, c'est une promesse : ni les facs, ni la date ne sont fixées.",
+   "affiche": "Pour l'instant, c'est **une promesse** : ni les facs, ni la date ne sont fixées.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "PROMIS",
+    "sous": "Courrier du 10 novembre",
+    "suite": "RIEN N'EST FIXÉ",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
