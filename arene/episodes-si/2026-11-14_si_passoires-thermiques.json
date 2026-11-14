@@ -1,0 +1,166 @@
+{
+ "slug": "si_passoires-thermiques",
+ "rubrique": "SI ÇA PASSE · LOGEMENT",
+ "source": "Sources : France-Jeunes, Immo Matin, SeLoger, Effy, Public Sénat",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la loi logement passe, ton prochain appart pourrait être une passoire thermique.",
+   "affiche": "Si la loi logement passe, ton prochain appart pourrait être **une passoire thermique.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · LOGEMENT",
+    "lignes": [
+     "SI LES PASSOIRES",
+     "RESTENT",
+     "À LOUER…"
+    ],
+    "taille": 84
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Les G sont déjà interdits à la location, les F le seront en 2028.",
+   "affiche": "Les G sont **déjà interdits** à la location, les F le seront **en 2028.**",
+   "carte": {
+    "type": "checks",
+    "label": "LA RÈGLE AUJOURD'HUI",
+    "pas": 0.8,
+    "lignes": [
+     [
+      false,
+      "Classe G : interdit depuis 2025"
+     ],
+     [
+      false,
+      "Classe F : interdit en 2028"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Sauf si le proprio signe un contrat de travaux avant 2030.",
+   "affiche": "Sauf si le proprio **signe un contrat de travaux** avant 2030."
+  },
+  {
+   "dit": "Ton studio est F, ta copro signe fin 2029 : louable jusqu'en 2034.",
+   "affiche": "Ton studio est F, ta copro signe fin 2029 : louable **jusqu'en 2034.**",
+   "carte": {
+    "type": "calcul",
+    "label": "STUDIO F EN COPROPRIÉTÉ",
+    "lignes": [
+     [
+      "Interdiction prévue en",
+      "2028",
+      0.2
+     ],
+     [
+      "Contrat signé fin",
+      "2029",
+      1.0
+     ],
+     [
+      "Délai copro",
+      "+ 5 ans",
+      1.8
+     ]
+    ],
+    "total": [
+     "Louable jusqu'à fin",
+     "2034",
+     2.6
+    ]
+   }
+  },
+  {
+   "dit": "700000 logements en jeu, selon le gouvernement.",
+   "affiche": "**700 000 logements** en jeu, selon le gouvernement.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 700000,
+    "entier": true,
+    "prefixe": "",
+    "suffixe": "",
+    "taille": 130,
+    "legende": [
+     "logements F et G",
+     "en jeu d'ici 2028",
+     "selon le gouvernement"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : leur loyer reste bloqué.",
+   "affiche": "Ce qui ne change pas : leur loyer **reste bloqué.**",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Loyer F ou G bloqué"
+     ],
+     [
+      true,
+      "Calendrier 2025 · 2028 · 2034"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, on garde ces logements et on pousse aux travaux.",
+   "affiche": "Pour le gouvernement, on **garde ces logements** et on pousse aux travaux.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement",
+    "lignes": [
+     "On garde",
+     "ces logements et on",
+     "pousse aux travaux."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la CLCV, c'est un report, avec des travaux bien trop flous.",
+   "affiche": "Pour la CLCV, c'est **un report**, avec des travaux bien trop flous.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "CLCV (consommateurs)",
+    "lignes": [
+     "Un report,",
+     "avec des travaux",
+     "bien trop flous."
+    ]
+   }
+  },
+  {
+   "dit": "Voté au Sénat, le texte arrive à l'Assemblée le 16 novembre.",
+   "affiche": "Voté au Sénat, le texte arrive **à l'Assemblée le 16 novembre.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "EN DÉBAT",
+    "sous": "Assemblée dès le 16 novembre",
+    "suite": "RIEN N'EST DÉFINITIF",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
