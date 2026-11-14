@@ -29,7 +29,7 @@ Bilan Metricool envoyé à Aymeric le 03/11 (vues · likes · commentaires · pa
 - Le profil type du calcul est un jeune (étudiant, alternant, jeune actif au Smic, jeune couple locataire), sauf quand le sujet passe par ses proches.
 - Vocabulaire simple et direct, tutoiement, exemples de leur quotidien.
 Hypothèse : public plus cohérent → TikTok trouve l'audience du compte → plus de vues et premiers abonnés.
-Vidéos de la vague : 10/11 gel des APL ; 11/11 frais de fac ; 12/11 prime d'activité des apprentis ; 13/11 5 000 places en licence.
+Vidéos de la vague : 10/11 gel des APL ; 11/11 frais de fac ; 12/11 prime d'activité des apprentis ; 13/11 5 000 places en licence ; 14/11 passoires thermiques (loi logement). Vague terminée : bilan Metricool à envoyer le 15/11.
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Chiffre choc dès la première phrase et à l'écran dans les 3 premières secondes (« … ta grand-mère pourrait perdre 378 € par an »).
