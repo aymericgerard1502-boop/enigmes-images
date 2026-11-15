@@ -1,0 +1,165 @@
+{
+ "slug": "si_taxe-vody",
+ "rubrique": "SI ÇA PASSE · SANTÉ",
+ "source": "Sources : Public Sénat, Politique Matin, rapport AN n° 3273 (chiffrage Bercy)",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la taxe Vody passe, ta canette à 18 degrés prend 7 euros de taxes.",
+   "affiche": "Si la taxe Vody passe, ta canette à 18 degrés prend **7 € de taxes.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · SANTÉ",
+    "lignes": [
+     "SI LES CANETTES",
+     "VODY SONT",
+     "TAXÉES…"
+    ],
+    "taille": 84
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Aujourd'hui, la taxe prémix vise les mélanges jusqu'à 12 degrés.",
+   "affiche": "Aujourd'hui, la taxe prémix vise les mélanges **jusqu'à 12 degrés.**",
+   "carte": {
+    "type": "checks",
+    "label": "LA RÈGLE AUJOURD'HUI",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Prémix jusqu'à 12 % : taxés"
+     ],
+     [
+      true,
+      "Avec stimulants : taxés"
+     ],
+     [
+      false,
+      "18-22 % sans stimulant : non"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Le Sénat veut monter à 25 degrés, même sans stimulant.",
+   "affiche": "Le Sénat veut monter **à 25 degrés**, même sans stimulant."
+  },
+  {
+   "dit": "Selon Bercy, 33 centilitres à 18 degrés : de 1 à 8 euros de taxes.",
+   "affiche": "Selon Bercy, 33 cl à 18 degrés : de **1 € à 8 €** de taxes.",
+   "carte": {
+    "type": "calcul",
+    "label": "CANETTE 33 CL À 18 % · HORS TVA",
+    "lignes": [
+     [
+      "Taxes sans la mesure",
+      "1 €",
+      0.2
+     ],
+     [
+      "Taxes avec la mesure",
+      "8 €",
+      1.0
+     ]
+    ],
+    "total": [
+     "En plus par canette",
+     "+ 7 €",
+     1.8
+    ]
+   }
+  },
+  {
+   "dit": "7 euros de plus par canette, hors TVA, si c'est répercuté.",
+   "affiche": "**+ 7 € par canette**, hors TVA, si c'est répercuté.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 7,
+    "entier": true,
+    "prefixe": "+ ",
+    "suffixe": " €",
+    "taille": 150,
+    "legende": [
+     "de taxes par canette",
+     "33 cl à 18 %, hors TVA",
+     "chiffrage Bercy"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Les versions avec stimulants, elles, sont déjà taxées.",
+   "affiche": "Les versions avec stimulants, elles, sont **déjà taxées.**",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Prémix sous 12 % : déjà taxés"
+     ],
+     [
+      true,
+      "Avec stimulants : déjà taxés"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour les sénateurs auteurs, ce format pousse les jeunes à boire vite.",
+   "affiche": "Pour les sénateurs auteurs, ce format pousse **les jeunes à boire vite.**",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Sénateurs auteurs (A. Billon)",
+    "lignes": [
+     "Prix et format",
+     "poussent les jeunes",
+     "à boire vite."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, c'est une double taxe sur des alcools déjà taxés.",
+   "affiche": "Pour le gouvernement, c'est **une double taxe** sur des alcools déjà taxés.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Gouvernement",
+    "lignes": [
+     "Une double taxe",
+     "sur des alcools",
+     "déjà taxés."
+    ]
+   }
+  },
+  {
+   "dit": "Voté au Sénat 172 voix contre 157, mais rien n'est définitif.",
+   "affiche": "Voté au Sénat **172 voix contre 157**, mais rien n'est définitif.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "EN DÉBAT",
+    "sous": "Budget de la Sécu : vote du Sénat le 18/11",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
