@@ -1,0 +1,161 @@
+{
+ "slug": "si_csg-apprentis",
+ "rubrique": "SI ÇA PASSE · TON SALAIRE",
+ "source": "Sources : L'Express Éducation, Politique Matin, Tout sur mes finances",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la CSG des apprentis baisse, tu gagnes jusqu'à 52 euros par mois.",
+   "affiche": "Si la CSG des apprentis baisse, tu gagnes **jusqu'à 52 € par mois.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · TON SALAIRE",
+    "lignes": [
+     "SI LA CSG",
+     "DES APPRENTIS",
+     "BAISSE…"
+    ],
+    "taille": 84
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Depuis mars 2025, un apprenti paie la CSG au-dessus de la moitié du Smic.",
+   "affiche": "Depuis mars 2025, un apprenti paie la CSG **au-dessus de la moitié du Smic.**",
+   "carte": {
+    "type": "checks",
+    "label": "LA RÈGLE AUJOURD'HUI",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Contrat depuis mars 2025"
+     ],
+     [
+      true,
+      "CSG dès 50 % du Smic"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Des sénateurs voulaient monter ce seuil à 79 pour cent du Smic.",
+   "affiche": "Des sénateurs voulaient monter ce seuil à **79 % du Smic.**"
+  },
+  {
+   "dit": "À 26 ans au Smic : 89 euros de CSG par mois, 37 avec la mesure.",
+   "affiche": "À 26 ans au Smic : **89 €** de CSG par mois, **37 €** avec la mesure.",
+   "carte": {
+    "type": "calcul",
+    "label": "APPRENTI 26 ANS ET + · AU SMIC",
+    "lignes": [
+     [
+      "CSG-CRDS aujourd'hui",
+      "89 €/mois",
+      0.2
+     ],
+     [
+      "Avec le seuil à 79 %",
+      "37 €/mois",
+      1.0
+     ]
+    ],
+    "total": [
+     "En plus",
+     "+ 52 €/mois",
+     1.8
+    ]
+   }
+  },
+  {
+   "dit": "Soit environ 620 euros de plus par an.",
+   "affiche": "Soit environ **620 € de plus par an.**",
+   "carte": {
+    "type": "compteur",
+    "valeur": 620,
+    "entier": true,
+    "prefixe": "+ ",
+    "suffixe": " €",
+    "taille": 150,
+    "legende": [
+     "par an, net",
+     "apprenti de 26 ans et + au Smic",
+     "calcul L'Express Éducation"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Contrat signé avant mars 2025 ? Toujours zéro CSG.",
+   "affiche": "Contrat signé avant mars 2025 ? **Toujours zéro CSG.**",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Avant mars 2025 : 0 CSG"
+     ],
+     [
+      true,
+      "Sous 50 % du Smic : 0 CSG"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour les sénateurs LR, moins de pouvoir d'achat freine l'apprentissage.",
+   "affiche": "Pour les sénateurs LR, moins de pouvoir d'achat **freine l'apprentissage.**",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Sénateurs LR (C. Belrhiti)",
+    "lignes": [
+     "Moins de pouvoir",
+     "d'achat freine",
+     "l'apprentissage."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le rapporteur à l'Assemblée, à salaire égal, même net qu'un étudiant salarié.",
+   "affiche": "Pour le rapporteur à l'Assemblée, à salaire égal, **même net** qu'un étudiant salarié.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Rapporteur à l'Assemblée (T. Bazin)",
+    "lignes": [
+     "À salaire égal,",
+     "même net qu'un",
+     "étudiant salarié."
+    ]
+   }
+  },
+  {
+   "dit": "Rejeté au Sénat le 13 novembre, 228 voix contre 100. L'Assemblée peut y revenir.",
+   "affiche": "Rejeté au Sénat le 13 novembre, **228 voix contre 100.** L'Assemblée peut y revenir.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "REJETÉ",
+    "sous": "Sénat, 13/11 : 228 voix contre 100",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.4
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
