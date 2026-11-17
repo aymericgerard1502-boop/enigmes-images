@@ -1,0 +1,140 @@
+{
+ "slug": "si_taxe-lapin",
+ "rubrique": "SI ÇA PASSE · TA SANTÉ",
+ "source": "Sources : Public Sénat, JeChange, Concours Pluripro, Quartz",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si la taxe lapin passe, un rendez-vous médical raté pourra te coûter jusqu'à 30 euros.",
+   "affiche": "Si la taxe lapin passe, un rendez-vous médical raté pourra te coûter **jusqu'à 30 €.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · TA SANTÉ",
+    "lignes": [
+     "SI LA",
+     "TAXE LAPIN",
+     "PASSE…"
+    ],
+    "taille": 84
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Votée au Sénat le 16 novembre, dans le budget de la Sécu.",
+   "affiche": "Votée au Sénat **le 16 novembre**, dans le budget de la Sécu."
+  },
+  {
+   "dit": "Pas venu, ou annulé trop tard ? Ton médecin pourra te faire payer.",
+   "affiche": "Pas venu, ou annulé trop tard ? **Ton médecin pourra te faire payer.**",
+   "carte": {
+    "type": "checks",
+    "label": "LA RÈGLE VOTÉE",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Rendez-vous non honoré"
+     ],
+     [
+      true,
+      "Annulation trop tardive"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Plafond : le prix de la consultation. Chez un généraliste au tarif Sécu, 30 euros, non remboursés.",
+   "affiche": "Plafond : **le prix de la consultation.** Chez un généraliste au tarif Sécu, 30 €, non remboursés.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 30,
+    "entier": true,
+    "prefixe": "jusqu'à ",
+    "suffixe": " €",
+    "taille": 150,
+    "legende": [
+     "par rendez-vous raté",
+     "généraliste au tarif Sécu",
+     "chiffre JeChange"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Motif impérieux ? Pas de pénalité. Et chaque médecin choisit de l'appliquer.",
+   "affiche": "Motif impérieux ? **Pas de pénalité.** Et chaque médecin choisit de l'appliquer.",
+   "carte": {
+    "type": "checks",
+    "label": "CE QUI NE CHANGE PAS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Motif impérieux : 0 €"
+     ],
+     [
+      true,
+      "Prélèvement facultatif"
+     ],
+     [
+      true,
+      "Médecin libre de l'appliquer"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour les sénateurs centristes et LR, 27 millions de rendez-vous ratés, c'est du temps médical perdu.",
+   "affiche": "Pour les sénateurs centristes et LR, **27 millions de rendez-vous ratés**, c'est du temps médical perdu.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Sénateurs centristes et LR",
+    "lignes": [
+     "Du temps médical",
+     "perdu pour",
+     "d'autres patients."
+    ]
+   }
+  },
+  {
+   "dit": "Pour les sénateurs socialistes, sanctionner le patient ne règle pas l'accès aux soins.",
+   "affiche": "Pour les sénateurs socialistes, **sanctionner le patient** ne règle pas l'accès aux soins.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Sénateurs socialistes",
+    "lignes": [
+     "Sanctionner",
+     "le patient ne règle",
+     "pas l'accès aux soins."
+    ]
+   }
+  },
+  {
+   "dit": "Censurée une première fois en 2025. Rien n'est définitif.",
+   "affiche": "Censurée une première fois **en 2025.** Rien n'est définitif.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "VOTÉ",
+    "sous": "Sénat, 16/11 · censurée en 2025",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
