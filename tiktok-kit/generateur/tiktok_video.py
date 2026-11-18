@@ -38,6 +38,9 @@ HOOKS = {
     ("Le-Train-des-Neiges", 6): "Qui a brisé ce verre ?",
     ("Les-Santons-de-Minuit", 7): "Qui a poussé le panier ?",
     ("Vendanges-tardives", 4): "Qui a volé le munster ?",
+    ("Les-Santons-de-Minuit", 8): "Qui a menacé Fernand ?",
+    ("Tempete-sur-Belle-Ile", 6): "Qui a fait taire le piano ?",
+    ("Les-Santons-de-Minuit", 9): "Qui a lavé cette tache ?",
 }
 
 # ------------------------------------------------------------------ voix

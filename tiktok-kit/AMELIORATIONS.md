@@ -36,13 +36,20 @@ Décision d'Aymeric : en attente (bilan envoyé le 08/11).
 Publiées avec un jour de décalage (rien le 8 nov., programmation faite trop tard) : Train des Neiges 3 (9 nov. 18:46), Santons de Minuit 5 (10 nov. 21:33), Train des Neiges 4 (11 nov. 17:39). Les fichiers gardent leur nom daté du 8, 9 et 10.
 Correctif de mise en page sans effet sur le format : plus de « ? » orphelin dans la barre de question.
 
-### Vague 3 — EN COURS (12 → 17 nov., 6 vidéos)
+### Vague 3 (12 → 17 nov., 6 vidéos)
 Décision d'Aymeric (09/11) : 0 vente KDP depuis le début, 28 abonnés, 136 j'aime. Il valide le changement et demande en plus d'améliorer la qualité globale (voix, musique, illustrations).
 **Changement principal : vidéo courte (27 à 30 s), énigme beaucoup plus tôt** : accroche seule (2 s), histoire en une phrase avec les suspects affichés en même temps, 1er indice vers 5 s (au lieu de 13 s), minuteur 5 s (au lieu de 8).
 **Qualité (demandée par Aymeric, liée au même objectif de rétention)** : voix plus rapide (0.78) et traitée (égalisation, compression, légère pièce) ; musique stéréo plus riche (batterie feutrée, célesta en arpèges, réverbération) ; effets sonores (whoosh aux transitions, ding à chaque indice, montée avant le minuteur, battement de cœur, accord de révélation) ; volume normalisé à -14 LUFS ; Rose avec une loupe et un liseré de lumière ; zoom lent sur le décor ; rebond des textes ; vignettage et grain ; neige/pluie qui continue derrière les indices.
 Attention : comme plusieurs choses changent, on attribue le résultat à l'ensemble « format court + finition ».
 Hypothèse : temps moyen de visionnage > 8 s (contre 5,3 s), plus de commentaires.
-Bilan : le 18 nov.
+Résultat (au 18/11) : 4 438 vues (~740 par vidéo, stable) · **3,9 s de visionnage moyen (contre 5,3 s, −27 %)** · 157 likes (~26 par vidéo contre ~23) · 0 commentaire · 3 partages.
+Détail : seule « La place réservée » (Train, 12/11) tient 5,35 s ; les 5 autres entre 3,1 et 4,0 s. Meilleure en likes : « Le chant interrompu » (Santons) 47 likes, mais 3,6 s.
+Pour comparaison, vague 2 prolongée (4 vidéos, 7 → 11 nov., format long) : ~750 vues · 5,3 s · ~23 likes par vidéo.
+Conclusion : hypothèse non validée. Raccourcir n'a pas retenu plus longtemps : les gens partent dans les 2 à 4 premières secondes, donc le début compte plus que la longueur. Le gros titre seul (sans scène ni histoire) retient moins bien que l'ouverture narrative de la vague 2. Les likes progressent un peu, les commentaires restent à 0.
+Décision d'Aymeric : en attente (bilan envoyé le 18/11).
+
+### Vague 3 prolongée (18 → 20 nov., 3 vidéos, format inchangé) — en attendant la décision
+Santons de Minuit 8 « La lettre au Père Noël » (18/11), Tempête sur Belle-Île 6 « Le piano muet » (19/11), Santons de Minuit 9 « Le lavoir gelé » (20/11).
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Vidéo plus courte (≤ 30 s) : histoire en 2 phrases, indices plus rapides.
