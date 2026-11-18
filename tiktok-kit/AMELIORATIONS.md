@@ -55,7 +55,7 @@ Santons de Minuit 8 « La lettre au Père Noël » (18/11 18:09). Les versions c
 Base : retour au format de la vague 2 (mini-histoire, ~37 à 46 s, minuteur 8 s), qui avait le meilleur temps de visionnage (5,3 s).
 **Changement unique : les 2,6 premières secondes.** Au lieu de la question sur l'objet (« Qui a fait taire le piano ? »), Rose défie le spectateur : voix « Toi, tu trouves le coupable avant Rose ? », gros titre « TOI, TU LE TROUVES AVANT ROSE ? », et les 3 suspects (pastilles + prénoms, « 3 suspects, 1 seul coupable ») visibles dès la 1re image, sans apparition progressive.
 Hypothèse : moins de départs dans les 3 premières secondes, temps moyen > 6 s (contre 5,3 s en vague 2 et 3,9 s en vague 3), plus de commentaires.
-Vidéos : Belle-Île 6 (19/11), Santons 9 (20/11), Vendanges 5 (21/11), Santons 10 (22/11), Belle-Île 7 (23/11), Vendanges 6 (24/11).
+Vidéos (programmées dans Buffer) : Belle-Île 6 « Le piano muet » (19/11 20:43), Santons 9 « Le lavoir gelé » (20/11 19:52), Vendanges 5 « Les cigognes dérangées » (21/11 19:14), Santons 10 « Le dernier verre » (22/11 21:21), Belle-Île 7 « La page arrachée » (23/11 21:31), Vendanges 6 « La borne déplacée » (24/11 19:26).
 Bilan : le 25 nov.
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
