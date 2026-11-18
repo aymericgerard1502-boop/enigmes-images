@@ -49,7 +49,7 @@ Conclusion : hypothèse non validée. Raccourcir n'a pas retenu plus longtemps :
 Décision d'Aymeric : en attente (bilan envoyé le 18/11).
 
 ### Vague 3 prolongée (18 → 20 nov., 3 vidéos, format inchangé) — en attendant la décision
-Santons de Minuit 8 « La lettre au Père Noël » (18/11), Tempête sur Belle-Île 6 « Le piano muet » (19/11), Santons de Minuit 9 « Le lavoir gelé » (20/11).
+Santons de Minuit 8 « La lettre au Père Noël » (18/11 18:09), Tempête sur Belle-Île 6 « Le piano muet » (19/11 20:14), Santons de Minuit 9 « Le lavoir gelé » (20/11 18:52). Programmées dans Buffer.
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Vidéo plus courte (≤ 30 s) : histoire en 2 phrases, indices plus rapides.
