@@ -30,7 +30,7 @@ Bilan Metricool envoyé à Aymeric le 03/11 (vues · likes · commentaires · pa
 - Vocabulaire simple et direct, tutoiement, exemples de leur quotidien.
 Hypothèse : public plus cohérent → TikTok trouve l'audience du compte → plus de vues et premiers abonnés.
 Vidéos de la vague : 10/11 gel des APL ; 11/11 frais de fac ; 12/11 prime d'activité des apprentis ; 13/11 5 000 places en licence ; 14/11 passoires thermiques (loi logement). Vague terminée : bilan Metricool à envoyer le 15/11.
-Bilan Metricool envoyé à Aymeric le 15/11 (vues · likes · commentaires · partages) : 10/11 690 · 8 · 0 · 0 ; 11/11 783 · 27 · 0 · 0 ; 12/11 680 · 9 · 0 · 0 ; 13/11 765 · 10 · 0 · 2 ; 14/11 376 · 2 · 0 · 0 (pas encore stabilisé). Moyenne sur 4 vidéos : 730 vues, 13,5 likes, 0 commentaire, 0,5 partage (vague 1 : 790 · 8,8 · 0,8 · 0,2). En attente des chiffres TikTok Studio (abonnés) et de la décision d'Aymeric ; vague 2 prolongée en attendant (15/11 : taxe Vody ; 16/11 : CSG des apprentis ; 17/11 : taxe lapin).
+Bilan Metricool envoyé à Aymeric le 15/11 (vues · likes · commentaires · partages) : 10/11 690 · 8 · 0 · 0 ; 11/11 783 · 27 · 0 · 0 ; 12/11 680 · 9 · 0 · 0 ; 13/11 765 · 10 · 0 · 2 ; 14/11 376 · 2 · 0 · 0 (pas encore stabilisé). Moyenne sur 4 vidéos : 730 vues, 13,5 likes, 0 commentaire, 0,5 partage (vague 1 : 790 · 8,8 · 0,8 · 0,2). En attente des chiffres TikTok Studio (abonnés) et de la décision d'Aymeric ; vague 2 prolongée en attendant (15/11 : taxe Vody ; 16/11 : CSG des apprentis ; 17/11 : taxe lapin ; 18/11 : dons d'argent).
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Chiffre choc dès la première phrase et à l'écran dans les 3 premières secondes (« … ta grand-mère pourrait perdre 378 € par an »).
