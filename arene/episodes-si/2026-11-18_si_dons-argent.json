@@ -1,0 +1,146 @@
+{
+ "slug": "si_dons-argent",
+ "rubrique": "SI ÇA PASSE · TON ARGENT",
+ "source": "Sources : LégiFiscal, France Épargne, LeMag Juridique",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "phrases": [
+  {
+   "dit": "Si les dons d'argent sont allégés, ta famille pourra te donner 50000 euros sans impôt.",
+   "affiche": "Si les dons d'argent sont allégés, ta famille pourra te donner **50 000 € sans impôt.**",
+   "carte": {
+    "type": "titre",
+    "label": "DOSSIER · TON ARGENT",
+    "lignes": [
+     "SI LES DONS",
+     "D'ARGENT SONT",
+     "ALLÉGÉS…"
+    ],
+    "taille": 84
+   },
+   "geste": "siffle"
+  },
+  {
+   "dit": "Parent ou grand-parent : 50000 euros sans impôt, contre 31865 aujourd'hui.",
+   "affiche": "Parent ou grand-parent : **50 000 € sans impôt**, contre 31 865 € aujourd'hui.",
+   "carte": {
+    "type": "calcul",
+    "label": "LA RÈGLE · DON D'ARGENT",
+    "lignes": [
+     [
+      "Sans impôt aujourd'hui",
+      "31 865 €",
+      0.2
+     ],
+     [
+      "Avec la mesure",
+      "50 000 €",
+      1.0
+     ]
+    ],
+    "total": [
+     "En plus",
+     "+ 18 135 €",
+     1.8
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Un don de 100000 euros, abattement déjà utilisé : 18200 euros d'impôt aujourd'hui, 6000 avec la mesure.",
+   "affiche": "Un don de 100 000 €, abattement déjà utilisé : 18 200 € d'impôt aujourd'hui, **6 000 €** avec la mesure.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 12200,
+    "entier": true,
+    "prefixe": "− ",
+    "suffixe": " €",
+    "taille": 150,
+    "legende": [
+     "d'impôt sur un don de 100 000 €",
+     "abattement parent déjà utilisé",
+     "calcul LégiFiscal"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Conditions : de l'argent, un donneur de moins de 80 ans, toi entre 18 et 50 ans.",
+   "affiche": "Conditions : **de l'argent**, un donneur de moins de 80 ans, toi entre 18 et 50 ans.",
+   "carte": {
+    "type": "checks",
+    "label": "LES CONDITIONS",
+    "pas": 0.8,
+    "lignes": [
+     [
+      true,
+      "Argent seulement"
+     ],
+     [
+      true,
+      "Donneur de moins de 80 ans"
+     ],
+     [
+      true,
+      "Toi entre 18 et 50 ans"
+     ],
+     [
+      true,
+      "Dons du 1/01 au 30/06/2027"
+     ]
+    ]
+   }
+  },
+  {
+   "dit": "Pour le gouvernement, l'héritage arrive trop tard : l'argent doit circuler vers les jeunes.",
+   "affiche": "Pour le gouvernement, **l'héritage arrive trop tard** : l'argent doit circuler vers les jeunes.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement",
+    "lignes": [
+     "L'héritage arrive",
+     "trop tard : aider",
+     "les jeunes plus tôt."
+    ]
+   }
+  },
+  {
+   "dit": "Pour La France insoumise, ça vide les caisses de l'État au profit des héritiers.",
+   "affiche": "Pour La France insoumise, ça **vide les caisses** de l'État au profit des héritiers.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "La France insoumise",
+    "lignes": [
+     "Moins de recettes",
+     "pour l'État, au",
+     "profit des héritiers."
+    ]
+   }
+  },
+  {
+   "dit": "Budget rejeté par les députés : le Sénat l'examine dès le 20 novembre. Rien n'est définitif.",
+   "affiche": "Budget rejeté par les députés : **le Sénat l'examine dès le 20 novembre.** Rien n'est définitif.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "AU SÉNAT",
+    "sous": "Séance à partir du 20/11",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
