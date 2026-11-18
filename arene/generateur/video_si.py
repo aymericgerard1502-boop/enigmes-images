@@ -52,23 +52,62 @@ def fr_typo(t):
 
 # ---------------------------------------------------------------- voix
 def synthesize(phrases, voix_dir, voix_cfg):
+    """Synthèse phrase par phrase : texte normalisé (prononciation), rythme légèrement varié selon la ponctuation."""
     from piper import PiperVoice, SynthesisConfig
+    from prononciation import normaliser, mots_suspects
     model = os.path.join(voix_dir, voix_cfg['modele'] + '.onnx')
     v = PiperVoice.load(model)
-    cfg = SynthesisConfig(speaker_id=voix_cfg.get('locuteur'), length_scale=voix_cfg.get('vitesse', 0.9),
-                          noise_scale=0.6, noise_w_scale=0.7)
+    base = voix_cfg.get('vitesse', 0.9)
     sr = None; out = []
     for ph in phrases:
-        chunks = list(v.synthesize(ph['dit'], cfg))
+        txt = normaliser(ph['dit'])
+        for w, p in mots_suspects(txt, v):
+            print(f'⚠ prononciation à vérifier : « {w} » → {p}', file=sys.stderr)
+        ls = base + (0.04 if txt.rstrip().endswith('?') else 0.0)
+        cfg = SynthesisConfig(speaker_id=voix_cfg.get('locuteur'), length_scale=ls, noise_scale=0.62, noise_w_scale=0.82)
+        chunks = list(v.synthesize(txt, cfg))
         sr = chunks[0].sample_rate
         a = np.concatenate([c.audio_float_array for c in chunks]).astype(np.float32)
-        # retirer les silences de début/fin pour un rythme serré
         env = np.abs(a) > 0.02
         if env.any():
-            i0 = max(0, np.argmax(env) - int(0.03 * sr)); i1 = min(len(a), len(a) - np.argmax(env[::-1]) + int(0.06 * sr))
+            i0 = max(0, np.argmax(env) - int(0.03 * sr)); i1 = min(len(a), len(a) - np.argmax(env[::-1]) + int(0.08 * sr))
             a = a[i0:i1]
         out.append(a)
     return out, sr
+
+SR_OUT = 48000
+
+def traiter_voix(voice, sr):
+    """Chaîne studio : rééchantillonnage 48 kHz, chaleur, présence, de-esser, compression douce, petite pièce."""
+    tmpd = tempfile.mkdtemp(); fin = os.path.join(tmpd, 'v_in.wav'); fout = os.path.join(tmpd, 'v_out.wav')
+    with wave.open(fin, 'wb') as wf:
+        wf.setnchannels(1); wf.setsampwidth(2); wf.setframerate(sr)
+        wf.writeframes((np.clip(voice, -1, 1) * 32767).astype(np.int16).tobytes())
+    chain = ('aresample=48000:resampler=soxr:precision=28,highpass=f=75,lowpass=f=10500,'
+             'equalizer=f=170:t=q:w=0.9:g=2.5,equalizer=f=450:t=q:w=1.2:g=-2,equalizer=f=3200:t=q:w=1.4:g=2.5,'
+             'deesser=i=0.35:m=0.5:f=0.5,acompressor=threshold=0.1:ratio=3:attack=8:release=120:makeup=1.8,'
+             'aecho=0.9:0.9:22|41:0.07|0.04')
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', fin, '-af', chain, '-ac', '1', '-ar', str(SR_OUT), fout], check=True)
+    with wave.open(fout) as wf:
+        y = np.frombuffer(wf.readframes(wf.getnframes()), np.int16).astype(np.float32) / 32768
+    return y
+
+def sifflet(sr, dur=0.34):
+    """Coup de sifflet d'arbitre synthétique (trille)."""
+    t = np.arange(int(dur * sr)) / sr
+    trille = 0.55 + 0.45 * np.sign(np.sin(2 * np.pi * 28 * t))
+    ton = np.sin(2 * np.pi * 3050 * t + 6 * np.sin(2 * np.pi * 28 * t)) + 0.25 * np.sin(2 * np.pi * 6100 * t)
+    env = np.minimum(1, t / 0.015) * np.minimum(1, (dur - t) / 0.06)
+    rng = np.random.default_rng(11)
+    souffle = np.convolve(rng.standard_normal(len(t)), np.ones(6) / 6, mode='same') * 0.08
+    return ((ton * trille + souffle) * env * 0.28).astype(np.float32)
+
+def impact(sr, dur=0.9):
+    t = np.arange(int(dur * sr)) / sr
+    boom = np.sin(2 * np.pi * np.cumsum(42 + 90 * np.exp(-t * 16)) / sr) * np.exp(-t * 4.5)
+    rng = np.random.default_rng(12)
+    crack = rng.standard_normal(len(t)) * np.exp(-t * 60) * 0.35
+    return ((boom + crack) * 0.55).astype(np.float32)
 
 def word_timings(text, dur):
     """Répartit les mots affichés sur la durée de la phrase, au prorata des lettres (approximation suffisante)."""
@@ -321,7 +360,26 @@ def card_cta(c, t, dur):
     d.text((64, 520), fr_typo(c.get('appel', 'Ton camp en commentaire ↓')), font=font(BOLD, 48), fill=WHITE + (255,))
     return im, 1.0
 
-CARDS = dict(titre=card_titre, seuil=card_seuil, calcul=card_calcul, compteur=card_compteur, cumul=card_cumul,
+def card_choc(c, t, dur):
+    """Ouverture : le chiffre en jeu, énorme, dès l'image 0 ; arrive avec un léger « punch »."""
+    im = Image.new('RGBA', (1000, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    val = fr_typo(c['valeur'])
+    size = 300
+    while font(BLACK, size).getlength(val) > 900 and size > 120:
+        size -= 10
+    f = font(BLACK, size)
+    d.text((500 - f.getlength(val) / 2 + 8, 48), val, font=f, fill=(0, 0, 0, 170))
+    d.text((500 - f.getlength(val) / 2, 40), val, font=f, fill=RED + (255,))
+    y = 40 + int(size * 1.05) + 20
+    for line in c.get('legende', '').split('\n'):
+        if not line:
+            continue
+        fl = font(XBOLD, 64); L = fr_typo(line)
+        d.text((500 - fl.getlength(L) / 2, y), L, font=fl, fill=WHITE + (255,)); y += 76
+    sc = 1.14 - 0.14 * ease(t / 0.28)
+    return im, sc
+
+CARDS = dict(choc=card_choc, titre=card_titre, seuil=card_seuil, calcul=card_calcul, compteur=card_compteur, cumul=card_cumul,
              checks=card_checks, camp=card_camp, tampon=card_tampon, cta=card_cta)
 
 # ---------------------------------------------------------------- fond et sous-titres
@@ -339,7 +397,7 @@ def make_background(ep):
     d.text((48, 98), ep['source'], font=font(SEMI, 26), fill=DIM + (255,))
     return im
 
-def draw_subtitle(canvas, words, t, force_page=None):
+def draw_subtitle(canvas, words, t, force_page=None, reveal=False):
     """Sous-titres mot à mot, par pages de 3 lignes : mot prononcé en blanc, à venir en gris, mots **clés** en rouge."""
     if not words:
         return
@@ -367,6 +425,9 @@ def draw_subtitle(canvas, words, t, force_page=None):
         x = (W - lw) / 2
         for wd, a, b, hl, wl in ws:
             said = t >= a
+            if reveal and not said:
+                x += wl + space
+                continue
             col = (RED if hl else WHITE) if said else DIM
             yy = y - (8 * (1 - ease((t - a) / 0.12)) if a <= t < b else 0)
             d.text((x + 4, yy + 5), wd, font=f, fill=(0, 0, 0, 160))
@@ -386,32 +447,46 @@ def parse_hl(text):
 # ---------------------------------------------------------------- rendu
 def render(ep, outp, voix_dir):
     phrases = ep['phrases']
-    audios, sr = synthesize(phrases, voix_dir, ep['voix'])
-    gap = ep.get('pause', 0.22)
-    starts, t = [], 0.35
-    for a in audios:
-        starts.append(t); t += len(a) / sr + gap
-    total = t + 1.4
+    audios, sr0 = synthesize(phrases, voix_dir, ep['voix'])
+    choc = ep.get('choc')
+    rngp = np.random.default_rng(3)
+    starts, t = [], (0.32 if choc else 0.12)
+    durs = []
+    for ph, a in zip(phrases, audios):
+        d = len(a) / sr0
+        starts.append(t); durs.append(d)
+        end = ph['dit'].rstrip()[-1:]
+        gap = {'?': 0.40, '!': 0.30, ':': 0.22}.get(end, 0.26) + rngp.uniform(-0.04, 0.04)
+        t += d + gap
+    total = t + 1.2
+    sr = SR_OUT
     N = int(total * sr)
-    voice = np.zeros(N, np.float32)
-    for s, a in zip(starts, audios):
-        i = int(s * sr); voice[i:i + len(a)] += a[:N - i]
+    raw = np.zeros(int(total * sr0) + 1, np.float32)
+    for s0, a in zip(starts, audios):
+        i = int(s0 * sr0); raw[i:i + len(a)] += a[:len(raw) - i]
+    raw /= max(1e-6, np.abs(raw).max()); raw *= 0.9
+    voice = traiter_voix(raw, sr0)[:N]
+    voice = np.pad(voice, (0, max(0, N - len(voice))))
     voice /= max(1e-6, np.abs(voice).max()); voice *= 0.92
     # enveloppe pour la bouche
     hop = sr // FPS
-    env = np.array([np.sqrt(np.mean(voice[i * hop:(i + 1) * hop] ** 2)) for i in range(int(total * FPS) + 2)])
+    env = np.array([np.sqrt(np.mean(voice[i * hop:(i + 1) * hop] ** 2)) if i * hop < N else 0.0 for i in range(int(total * FPS) + 2)])
     env = np.nan_to_num(env)
     env = np.clip(env / (np.percentile(env[env > 0.01], 90) if (env > 0.01).any() else 1), 0, 1.2)
-    # musique de fond, plus discrète, baissée sous la voix
-    mus = musique.build(total, 0.35, starts[1:])
+    # musique de fond, baissée sous la voix
+    mus = musique.build(total, starts[0], starts[1:])
     mus = np.interp(np.arange(N) / sr, np.arange(len(mus)) / musique.SR, mus[:, 0]).astype(np.float32)
     duck = np.repeat(np.clip(env * 1.4, 0, 1), hop)[:N]; duck = np.pad(duck, (0, max(0, N - len(duck))))
     k = int(0.15 * sr); duck = np.convolve(duck, np.ones(k) / k, mode='same')
-    mix = voice + mus * (0.16 - 0.08 * duck)
+    mix = voice + mus * (0.15 - 0.08 * duck)
+    if choc:
+        w = sifflet(sr); mix[:len(w)] += w
+        b = impact(sr); mix[:len(b)] += b
     mix = np.tanh(mix * 1.05); mix *= 0.95 / np.abs(mix).max()
     tmpd = tempfile.mkdtemp(); wav = os.path.join(tmpd, 'a.wav')
     with wave.open(wav, 'wb') as wf:
         wf.setnchannels(1); wf.setsampwidth(2); wf.setframerate(sr); wf.writeframes((mix * 32767).astype(np.int16).tobytes())
+    audios = [np.zeros(int(d * sr)) for d in durs]  # durées à la nouvelle fréquence, pour les sous-titres
 
     # timings des mots affichés
     subs = []
@@ -423,11 +498,13 @@ def render(ep, outp, voix_dir):
     # cartes : chaque phrase peut ouvrir une nouvelle carte qui reste jusqu'à la suivante
     card_spans = []
     for i, ph in enumerate(phrases):
-        if 'carte' in ph:
+        if i == 0 and choc:
+            card_spans.append([0.0, None, dict(choc, type='choc')])
+        elif 'carte' in ph:
             card_spans.append([starts[i], None, ph['carte']])
     for j in range(len(card_spans)):
         card_spans[j][1] = card_spans[j + 1][0] if j + 1 < len(card_spans) else total
-    gestes = [(starts[i], ph['geste']) for i, ph in enumerate(phrases) if ph.get('geste')]
+    gestes = [((0.0 if (i == 0 and choc) else starts[i]), ph['geste']) for i, ph in enumerate(phrases) if ph.get('geste')]
 
     base = make_background(ep)
     arb = Arbitre()
@@ -435,7 +512,7 @@ def render(ep, outp, voix_dir):
     grains = [np.kron(rng.normal(0, 3.5, (H // 2, W // 2)), np.ones((2, 2))).astype(np.float32) for _ in range(4)]
     cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
            '-i', wav, '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-maxrate', '7M', '-bufsize', '14M', '-pix_fmt', 'yuv420p',
-           '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', outp]
+           '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outp]
     pr = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     nfr = int(total * FPS)
     for fi in range(nfr):
@@ -443,11 +520,14 @@ def render(ep, outp, voix_dir):
         c = base.copy()
         # sous-titres de la phrase en cours (ou la dernière dite)
         k = max([i for i, s in enumerate(starts) if s <= tg + 0.05] or [0])
-        draw_subtitle(c, subs[k], tg if fi > 0 else 999, force_page='tout' if fi == 0 else None)  # image 0 : accroche entière (miniature)
+        if choc:
+            draw_subtitle(c, subs[k], tg, reveal=(k == 0))  # accroche révélée mot à mot, pas de mur de texte
+        else:
+            draw_subtitle(c, subs[k], tg if fi > 0 else 999, force_page='tout' if fi == 0 else None)  # image 0 : accroche entière (miniature)
         # carte
         for s, e, cd in card_spans:
             if s - 0.05 <= tg < e or (fi == 0 and s == card_spans[0][0]):
-                lt = tg - s if fi > 0 else 5
+                lt = tg - s if (fi > 0 or cd['type'] == 'choc') else 5
                 im, sc = CARDS[cd['type']](cd, lt, e - s)
                 fade = 1.0 if tg < e - 0.18 else max(0, (e - tg) / 0.18)
                 sc = max(0.05, sc)
@@ -456,6 +536,8 @@ def render(ep, outp, voix_dir):
                 if fade < 1:
                     im.putalpha(im.getchannel('A').point(lambda v: int(v * fade)))
                 cx, cy = W // 2, 860
+                if cd['type'] == 'choc' and lt < 0.22:  # petite secousse à l'impact
+                    cx += int(10 * math.sin(lt * 90)); cy += int(6 * math.cos(lt * 70))
                 c.alpha_composite(im, (int(cx - im.width / 2), int(cy - im.height / 2)))
         # arbitre
         g, gt = None, 0
