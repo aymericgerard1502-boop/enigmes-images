@@ -46,14 +46,21 @@ Résultat (au 18/11) : 4 438 vues (~740 par vidéo, stable) · **3,9 s de vision
 Détail : seule « La place réservée » (Train, 12/11) tient 5,35 s ; les 5 autres entre 3,1 et 4,0 s. Meilleure en likes : « Le chant interrompu » (Santons) 47 likes, mais 3,6 s.
 Pour comparaison, vague 2 prolongée (4 vidéos, 7 → 11 nov., format long) : ~750 vues · 5,3 s · ~23 likes par vidéo.
 Conclusion : hypothèse non validée. Raccourcir n'a pas retenu plus longtemps : les gens partent dans les 2 à 4 premières secondes, donc le début compte plus que la longueur. Le gros titre seul (sans scène ni histoire) retient moins bien que l'ouverture narrative de la vague 2. Les likes progressent un peu, les commentaires restent à 0.
-Décision d'Aymeric : en attente (bilan envoyé le 18/11).
+Décision d'Aymeric (18/11) : 29 abonnés, toujours 0 vente KDP. Il lance la vague 4 proposée.
 
-### Vague 3 prolongée (18 → 20 nov., 3 vidéos, format inchangé) — en attendant la décision
-Santons de Minuit 8 « La lettre au Père Noël » (18/11 18:09), Tempête sur Belle-Île 6 « Le piano muet » (19/11 20:14), Santons de Minuit 9 « Le lavoir gelé » (20/11 18:52). Programmées dans Buffer.
+### Vague 3 prolongée (18 nov., 1 vidéo)
+Santons de Minuit 8 « La lettre au Père Noël » (18/11 18:09). Les versions courtes du 19 et du 20 ont été remplacées par la vague 4 avant publication.
+
+### Vague 4 — EN COURS (19 → 24 nov., 6 vidéos)
+Base : retour au format de la vague 2 (mini-histoire, ~37 à 46 s, minuteur 8 s), qui avait le meilleur temps de visionnage (5,3 s).
+**Changement unique : les 2,6 premières secondes.** Au lieu de la question sur l'objet (« Qui a fait taire le piano ? »), Rose défie le spectateur : voix « Toi, tu trouves le coupable avant Rose ? », gros titre « TOI, TU LE TROUVES AVANT ROSE ? », et les 3 suspects (pastilles + prénoms, « 3 suspects, 1 seul coupable ») visibles dès la 1re image, sans apparition progressive.
+Hypothèse : moins de départs dans les 3 premières secondes, temps moyen > 6 s (contre 5,3 s en vague 2 et 3,9 s en vague 3), plus de commentaires.
+Vidéos : Belle-Île 6 (19/11), Santons 9 (20/11), Vendanges 5 (21/11), Santons 10 (22/11), Belle-Île 7 (23/11), Vendanges 6 (24/11).
+Bilan : le 25 nov.
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Vidéo plus courte (≤ 30 s) : histoire en 2 phrases, indices plus rapides.
-2. Accroche tournée vers le spectateur : « Toi, tu trouves le coupable en 8 secondes ? » au lieu de la question sur l'objet.
+2. ~~Accroche tournée vers le spectateur~~ → vague 4.
 3. Réponse en vidéo le lendemain (début de la vidéo suivante : « Hier, c'était Jacques ! »), pour fidéliser.
 4. Série numérotée « L'enquête du jour n° X » avec Rose et Sardine comme fil rouge.
 5. Voix légèrement plus rapide (0.76) ou autre voix.

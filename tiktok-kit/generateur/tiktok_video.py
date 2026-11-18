@@ -231,6 +231,27 @@ def hook_layer(title, n_words_shown, last_pop):
                   F("Carlito-Bold.ttf", 64), y + 30, stroke=7)
     return lay
 
+def defi_layer(names, cols):
+    """Vague 4 : ouverture tournée vers le spectateur, suspects visibles dès la 1re image."""
+    lay = L(); d = ImageDraw.Draw(lay)
+    f = F("Carlito-Bold.ttf", 40); t = "ÉNIGME DU JOUR"
+    bw = d.textlength(t, font=f) + 60; bx = (W - bw) / 2 - 40
+    d.rounded_rectangle((bx, 300, bx + bw, 370), 35, fill=RED); d.text((bx + 30, 313), t, font=f, fill=WHITE)
+    words = [["TOI,", GOLD], ["TU", GOLD], ["LE", GOLD], ["TROUVES", GOLD], ["AVANT", GOLD], ["ROSE\u00a0?", WHITE]]
+    y = draw_rich(d, words, F("Caladea-Bold.ttf", 124), 420, width=900, stroke=8, spacing=1.06)
+    r = 92; gap = 270; cx0 = W / 2 - 40 - gap; cy = y + 70 + r
+    for k, nm in enumerate(names[:3]):
+        cx = cx0 + k * gap
+        d.ellipse((cx - r - 8, cy - r - 8, cx + r + 8, cy + r + 8), fill=WHITE)
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=cols[k])
+        bf = F("Caladea-Bold.ttf", 110)
+        d.text((cx - d.textlength(nm[0], font=bf) / 2, cy - bf.size * 0.62), nm[0], font=bf, fill=BLACK)
+        nf = F("Carlito-Bold.ttf", 52)
+        d.text((cx - d.textlength(nm, font=nf) / 2, cy + r + 22), nm, font=nf, fill=WHITE, stroke_width=6, stroke_fill=BLACK)
+    draw_rich(d, [["3", GOLD], ["suspects,", WHITE], ["1", GOLD], ["seul", WHITE], ["coupable", WHITE]],
+              F("Carlito-Bold.ttf", 62), cy + r + 105, stroke=7)
+    return lay
+
 def caption_layer(words, active):
     lay = L(); d = ImageDraw.Draw(lay); f = F("Carlito-Bold.ttf", 82)
     ws = [[w, GOLD if i == active else WHITE] for i, w in enumerate(words)]
@@ -275,7 +296,7 @@ def suspects_layer(names, cols, shown, pops):
     return lay
 
 # ------------------------------------------------------------------ montage
-def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
+def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
     livre, e = V.load(slug, num)
     plan = V.crop_plan(os.path.join(V.KIT, e["image"]))
     cover = Image.open(os.path.join(V.KIT, livre["couverture"])).convert("RGB")
@@ -289,13 +310,14 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
     liste = f"{names[0]}, {names[1]} ou {names[2]}"
 
     # --- textes parlés
-    lines = [("hook", hook + " Trouve le coupable avant Rose."),
+    lines = [("hook", "Toi, tu trouves le coupable avant Rose ?" if defi
+                      else hook + " Trouve le coupable avant Rose."),
              ("setup", e["incident"]),
              ("suspects", f"Trois suspects : {', '.join(names[:-1])} et {names[-1]}. Écoute bien les indices.")]
     for i, c in enumerate(e["indices"]): lines.append((f"clue{i}", c))
     lines.append(("question", "Alors… " + q + " Tu as huit secondes."))
     lines.append(("cta", f"{liste} ? Dis-le en commentaire !"))
-    audio = {k: tts(txt, voice) for k, txt in lines}
+    audio = {k: tts(txt, voice, 0.70 if (defi and k == "hook") else 0.82) for k, txt in lines}
 
     # --- chronologie
     T, t = {}, 0.0
@@ -355,9 +377,10 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
         for j, wd in enumerate(c):
             tl.append((acc / tot, c, j)); acc += len(wd) + 1
     hook_words = hook_words_of(hook)
+    defi_lay = defi_layer(names, cols) if defi else None
 
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-           "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
+           "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "4M", "-bufsize", "8M", "-pix_fmt", "yuv420p",
            "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     qcache = {}
@@ -371,7 +394,9 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8):
             if "billet" in e["incident"].lower() and t > T["setup"][0]: S.ticket(d, 760, S.GROUND_Y - 14, t)
             sc["front"](fr, d, t)
             if t < T["hook"][1]:
-                fr.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 150)))
+                fr.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 190 if defi_lay is not None else 150)))
+                if defi_lay is not None:
+                    fr.alpha_composite(defi_lay); p.stdin.write(fr.convert("RGB").tobytes()); continue
                 el = t - T["hook"][0]; per = 0.28
                 n = min(len(hook_words), 1 + int(el / per)); pop = ease(min(1, (el - (n - 1) * per) / 0.18))
                 fr.alpha_composite(hook_layer(hook, n, pop))
@@ -668,5 +693,7 @@ def build_court(slug, num, out, voice="fr_FR-tom-medium", secs=5):
 
 if __name__ == "__main__":
     v = next((a.split("=")[1] for a in sys.argv if a.startswith("--voix=")), "fr_FR-tom-medium")
-    f = build if "--long" in sys.argv else build_court   # vague 3 : format court par défaut
-    print(f(sys.argv[1], int(sys.argv[2]), sys.argv[3], voice=v))
+    a = (sys.argv[1], int(sys.argv[2]), sys.argv[3])
+    if "--court" in sys.argv: print(build_court(*a, voice=v))        # vague 3
+    elif "--long" in sys.argv: print(build(*a, voice=v))             # vague 2
+    else: print(build(*a, voice=v, defi=True))                       # vague 4 : format vague 2 + ouverture « défi »
