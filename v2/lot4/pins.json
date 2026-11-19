@@ -1,0 +1,150 @@
+[
+ {
+  "id": "41",
+  "day": "2026-11-20",
+  "kind": "hero",
+  "scene": "A",
+  "slug": "Le-Train-des-Neiges",
+  "stamp": "avent",
+  "board": "avent",
+  "kicker": "LIVRE-JEU D'ENQUÊTE",
+  "title": [
+   "Calendrier de l'Avent",
+   "pour adultes"
+  ],
+  "sub": "24 énigmes · une par jour jusqu’à Noël"
+ },
+ {
+  "id": "42",
+  "day": "2026-11-21",
+  "kind": "teaser",
+  "scene": "B",
+  "slug": "Le-Train-des-Neiges",
+  "num": 5,
+  "board": "enigmes",
+  "kicker": "ÉNIGME DU 5 DÉCEMBRE",
+  "title": [
+   "Qui a changé",
+   "la réservation ?"
+  ],
+  "sub": "3 suspects, 4 indices : à vous de jouer"
+ },
+ {
+  "id": "43",
+  "day": "2026-11-22",
+  "kind": "hero",
+  "scene": "A3",
+  "slug": "Le-Train-des-Neiges",
+  "stamp": "avent",
+  "board": "noel",
+  "kicker": "IDÉE CADEAU DE NOËL",
+  "title": [
+   "Pour un fan",
+   "d'énigmes"
+  ],
+  "sub": "Un calendrier de l’Avent d’enquête"
+ },
+ {
+  "id": "44",
+  "day": "2026-11-23",
+  "kind": "hero",
+  "scene": "B2",
+  "slug": "Deux-enquetes-de-Noel",
+  "stamp": "2en1",
+  "board": "noel",
+  "kicker": "IDÉE CADEAU DE NOËL",
+  "title": [
+   "Deux enquêtes",
+   "de Noël"
+  ],
+  "sub": "Les Santons de Minuit + Le Train des Neiges"
+ },
+ {
+  "id": "45",
+  "day": "2026-11-24",
+  "kind": "teaser",
+  "scene": "A2",
+  "slug": "Le-Train-des-Neiges",
+  "num": 2,
+  "board": "enigmes",
+  "kicker": "ÉNIGME DU 2 DÉCEMBRE",
+  "title": [
+   "Qui a échangé la valise ?"
+  ],
+  "sub": "3 suspects, 4 indices : à vous de jouer"
+ },
+ {
+  "id": "46",
+  "day": "2026-11-25",
+  "kind": "hero",
+  "scene": "B",
+  "slug": "Le-Train-des-Neiges",
+  "stamp": "avent",
+  "board": "avent",
+  "kicker": "LIVRE-JEU D'ENQUÊTE",
+  "title": [
+   "Calendrier de l'Avent",
+   "pour adultes"
+  ],
+  "sub": "24 énigmes · une par jour jusqu’à Noël"
+ },
+ {
+  "id": "47",
+  "day": "2026-11-26",
+  "kind": "teaser",
+  "scene": "A3",
+  "slug": "Les-Santons-de-Minuit",
+  "num": 3,
+  "board": "enigmes",
+  "kicker": "ÉNIGME DE NOËL · PROVENCE",
+  "title": [
+   "Qui a dérangé la crèche ?"
+  ],
+  "sub": "3 suspects, 4 indices : à vous de jouer"
+ },
+ {
+  "id": "48",
+  "day": "2026-11-27",
+  "kind": "hero",
+  "scene": "B2",
+  "slug": "Le-Train-des-Neiges",
+  "stamp": "avent",
+  "board": "avent",
+  "kicker": "CALENDRIER DE L'AVENT ADULTE",
+  "title": [
+   "À commander avant",
+   "le 1er décembre"
+  ],
+  "sub": "Une énigme par jour jusqu’à Noël"
+ },
+ {
+  "id": "49",
+  "day": "2026-11-28",
+  "kind": "teaser",
+  "scene": "A2",
+  "slug": "Le-Train-des-Neiges",
+  "num": 6,
+  "board": "enigmes",
+  "kicker": "ÉNIGME DU 6 DÉCEMBRE",
+  "title": [
+   "Qui a brisé son verre ?"
+  ],
+  "sub": "3 suspects, 4 indices : à vous de jouer"
+ },
+ {
+  "id": "50",
+  "day": "2026-11-29",
+  "kind": "hero",
+  "scene": "B",
+  "flip": true,
+  "slug": "Le-Train-des-Neiges",
+  "stamp": "avent",
+  "board": "avent",
+  "kicker": "DERNIÈRE MINUTE",
+  "title": [
+   "L'Avent commence",
+   "mardi"
+  ],
+  "sub": "24 énigmes à ouvrir dès le 1er décembre"
+ }
+]

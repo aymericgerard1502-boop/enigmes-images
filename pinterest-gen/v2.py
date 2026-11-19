@@ -236,3 +236,109 @@ if __name__ == '__main__':
     style_B('Le-Train-des-Neiges', t2, sub, stamp).save(os.path.join(out, 'ov_B.png'))
     style_C('Le-Train-des-Neiges', t3, '24 énigmes, une par jour', stamp).save(os.path.join(out, 'ov_C.png'))
     print('ok')
+
+
+# =====================================================================
+# PRODUCTION : héros (livre en scène) et teasers (fiche d'énigme en scène)
+# =====================================================================
+def card_A(c, kicker, title, sub, top=56, kick_col=RED, size=62):
+    lines = len(title)
+    h = 84 + lines * (size + 12) + 64
+    card = Image.new('RGBA', (W, H), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
+    cd.rounded_rectangle([60, top, 940, top + h], radius=28, fill=CREAM + (244,))
+    sh, pad = shadow_of(card, 16, 0.45, (0, 10)); c.alpha_composite(sh, (-pad, -pad)); c.alpha_composite(card)
+    d = ImageDraw.Draw(c)
+    text(d, (W / 2, top + 28), kicker, font('sansB', 21), kick_col, anchor='ma', track=4)
+    ft = font('title', size)
+    for i, line in enumerate(title):
+        text(d, (W / 2, top + 62 + i * (size + 12)), line, ft, NAVY, anchor='ma')
+    text(d, (W / 2, top + 62 + lines * (size + 12) + 12), sub, font('sans', 26), (70, 64, 60), anchor='ma')
+    return top + h
+
+
+def head_B(c, kicker, title, sub, size=74):
+    grad = Image.new('RGBA', (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(grad)
+    for y in range(600):
+        a = int(215 * (1 - y / 600) ** 1.3); gd.line([(0, y), (W, y)], fill=(8, 6, 6, a))
+    c.alpha_composite(grad)
+    ft = font('title', size); fk = font('sansB', 21); fs = font('serifI', 40)
+
+    def draw_all(d, col=None):
+        text(d, (W / 2, 66), kicker, fk, col or GOLD, anchor='ma', track=5)
+        for i, line in enumerate(title):
+            text(d, (W / 2, 102 + i * (size + 14)), line, ft, col or WHITE, anchor='ma')
+        text(d, (W / 2, 112 + len(title) * (size + 14)), sub, fs, col or (255, 228, 190), anchor='ma')
+    soft_text_shadow(c, lambda d, col: draw_all(d, col), blur=12, opacity=0.9)
+    draw_all(ImageDraw.Draw(c))
+
+
+def sheet(slug, num, w, angle):
+    """Fiche d'énigme réelle (rendu du livre) recadrée sur son contenu, comme une feuille posée."""
+    p = Image.open(os.path.join(KIT, 'enigmes', f'{slug}_enigme{num:02d}.png')).convert('RGB')
+    arr = np.asarray(p.convert('L')); rows = np.where(arr.min(axis=1) < 200)[0]
+    bottom = min(p.height, int(rows[rows < p.height * 0.85].max()) + 70)
+    p = p.crop((40, 30, p.width - 40, bottom))
+    h = round(w * p.height / p.width)
+    p = p.resize((w, h), Image.LANCZOS).convert('RGBA')
+    paper = Image.new('RGBA', (w + 2, h + 2), (252, 250, 244, 255)); paper.alpha_composite(p, (1, 1))
+    ImageDraw.Draw(paper).rectangle([0, 0, w + 1, h + 1], outline=(0, 0, 0, 40))
+    return paper.rotate(angle, expand=True, resample=Image.BICUBIC)
+
+
+def mirror_quad(q):
+    tl, tr, br, bl = q
+    return [(W - tr[0], tr[1]), (W - tl[0], tl[1]), (W - bl[0], bl[1]), (W - br[0], br[1])]
+
+
+# positions propres à chaque décor (calculées sur l'aperçu du décor recadré en 2:3)
+SCENES = {
+    'A':  dict(style='A', public='pins/proto/bg_A_flatlay', book=(500, 900), stamp=(795, 590)),
+    'A2': dict(style='A', public='pins/bg/A2_tartan_vert', book=(500, 880), stamp=(790, 570)),
+    'A3': dict(style='A', public='pins/bg/A3_bordeaux_loupe', book=(500, 880), stamp=(790, 570)),
+    'B':  dict(style='B', public='pins/proto/bg_B_coinfeu', quad=[(345, 960), (705, 975), (760, 1352), (282, 1330)], stamp=(190, 985)),
+    'B2': dict(style='B', public='pins/bg/B2_fenetre_neige', quad=[(252, 838), (592, 843), (652, 1152), (182, 1146)], stamp=(820, 1255)),
+}
+
+
+def hero(scene, slug, kicker, title, sub, stamp=None, flip=False, book_w=500):
+    S = SCENES[scene]; c = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    if S['style'] == 'A':
+        bottom = card_A(c, kicker, title, sub)
+        cx, cy = S['book']; cy = max(cy, bottom + 40 + book_w * 0.65)
+        paste_with_shadow(c, book_flat(slug, book_w, 4 if not flip else -4), cx, cy, blur=20, opacity=0.6, offset=(16, 26))
+        if stamp:
+            sticker(c, cx + book_w * 0.59, cy - book_w * 0.6, 92, stamp)
+    else:
+        head_B(c, kicker, title, sub)
+        q = S['quad'] if not flip else mirror_quad(S['quad'])
+        book_persp(c, slug, q)
+        if stamp:
+            sx, sy = S['stamp']; sticker(c, W - sx if flip else sx, sy, 84, stamp, angle=-10)
+    signature(c)
+    return c
+
+
+def teaser(scene, slug, num, kicker, title, sub, thumb=True):
+    S = SCENES[scene]; c = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    if S['style'] == 'A':
+        bottom = card_A(c, kicker, title, sub, size=56)
+        sh = sheet(slug, num, 820, -1.5)
+        cy = bottom + 30 + sh.height / 2
+    else:
+        head_B(c, kicker, title, sub, size=64)
+        sh = sheet(slug, num, 800, 1.5)
+        cy = 120 + len(title) * 78 + 90 + sh.height / 2
+    paste_with_shadow(c, sh, 500, cy, blur=16, opacity=0.55, offset=(10, 18))
+    if thumb:
+        b = book_flat(slug, 230, 8, thick=6)
+        paste_with_shadow(c, b, 815, min(1290, cy + sh.height / 2 + 40), blur=12, opacity=0.55, offset=(8, 14))
+    signature(c)
+    return c
+
+
+def stamp_avent():
+    return [('À OUVRIR', font('sansX', 22)), ('le 1er', font('titleI', 34)), ('DÉCEMBRE', font('sansX', 22))]
+
+
+def stamp_2en1():
+    return [('2 LIVRES', font('sansX', 22)), ('en 1', font('titleI', 38)), ('64 ÉNIGMES', font('sansX', 19))]
