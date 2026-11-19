@@ -1,0 +1,119 @@
+{
+ "slug": "si_epargne-salariale",
+ "rubrique": "SI ÇA PASSE · TON ARGENT",
+ "source": "Sources : Tout sur mes finances, Previssima, RH News",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "10 000 €",
+  "legende": "d'épargne salariale\ndébloqués d'un coup"
+ },
+ "phrases": [
+  {
+   "dit": "Si le déblocage de l'épargne salariale passe, tu pourras retirer jusqu'à 10000 euros d'un coup.",
+   "affiche": "Si le déblocage de l'épargne salariale passe, tu pourras retirer **jusqu'à 10 000 €** d'un coup.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Concrètement : ta participation et ton intéressement, placés avant 2026. Une seule demande, dans l'année.",
+   "affiche": "Concrètement : ta participation et ton intéressement, **placés avant 2026**. Une seule demande, dans l'année.",
+   "carte": {
+    "type": "checks",
+    "label": "LA RÈGLE",
+    "pas": 0.7,
+    "lignes": [
+     [
+      true,
+      "Participation"
+     ],
+     [
+      true,
+      "Intéressement"
+     ],
+     [
+      true,
+      "Placés avant le 1/01/2026"
+     ],
+     [
+      true,
+      "1 demande, sous 12 mois"
+     ],
+     [
+      false,
+      "PER et fonds solidaires"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Exemple : tu as 2000 euros d'intéressement placés en 2025 ? Tu peux tout récupérer, sans impot sur le revenu.",
+   "affiche": "Exemple : tu as 2 000 € d'intéressement placés en 2025 ? **Tu peux tout récupérer**, sans impôt sur le revenu.",
+   "carte": {
+    "type": "compteur",
+    "valeur": 2000,
+    "entier": true,
+    "prefixe": "",
+    "suffixe": " €",
+    "taille": 150,
+    "legende": [
+     "récupérables d'un coup",
+     "hypothèse : 2 000 € placés en 2025",
+     "sans impôt sur le revenu"
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Pour le gouvernement, c'est du pouvoir d'achat tout de suite, qui relance la consommation.",
+   "affiche": "Pour le gouvernement, c'est **du pouvoir d'achat tout de suite**, qui relance la consommation.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Gouvernement",
+    "lignes": [
+     "Du pouvoir d'achat",
+     "tout de suite, qui",
+     "relance la conso."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la gauche, c'est une fausse solution : il faudrait plutot augmenter les salaires.",
+   "affiche": "Pour la gauche, c'est **une fausse solution** : il faudrait plutôt augmenter les salaires.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Députés de gauche",
+    "lignes": [
+     "Fausse solution :",
+     "il faut plutôt",
+     "augmenter les salaires."
+    ]
+   }
+  },
+  {
+   "dit": "Les députés ont voté le 16 novembre, 95 voix contre 34. Le Sénat voulait 5000 euros : il faut encore un accord.",
+   "affiche": "Les députés ont voté le 16 novembre, 95 voix contre 34. **Le Sénat voulait 5 000 €** : il faut encore un accord.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "VOTÉ",
+    "sous": "Assemblée · 16/11 · 95 contre 34",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
