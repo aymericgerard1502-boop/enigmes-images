@@ -241,18 +241,19 @@ if __name__ == '__main__':
 # =====================================================================
 # PRODUCTION : héros (livre en scène) et teasers (fiche d'énigme en scène)
 # =====================================================================
-def card_A(c, kicker, title, sub, top=56, kick_col=RED, size=62):
+def card_A(c, kicker, title, sub, top=56, kick_col=RED, size=62, dark=False):
     lines = len(title)
     h = 84 + lines * (size + 12) + 64
     card = Image.new('RGBA', (W, H), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
-    cd.rounded_rectangle([60, top, 940, top + h], radius=28, fill=CREAM + (244,))
+    cd.rounded_rectangle([60, top, 940, top + h], radius=28, fill=(NAVY if dark else CREAM) + (246,))
+    if dark: kick_col = GOLD
     sh, pad = shadow_of(card, 16, 0.45, (0, 10)); c.alpha_composite(sh, (-pad, -pad)); c.alpha_composite(card)
     d = ImageDraw.Draw(c)
     text(d, (W / 2, top + 28), kicker, font('sansB', 21), kick_col, anchor='ma', track=4)
     ft = font('title', size)
     for i, line in enumerate(title):
-        text(d, (W / 2, top + 62 + i * (size + 12)), line, ft, NAVY, anchor='ma')
-    text(d, (W / 2, top + 62 + lines * (size + 12) + 12), sub, font('sans', 26), (70, 64, 60), anchor='ma')
+        text(d, (W / 2, top + 62 + i * (size + 12)), line, ft, CREAM if dark else NAVY, anchor='ma')
+    text(d, (W / 2, top + 62 + lines * (size + 12) + 12), sub, font('sans', 26), (225, 214, 196) if dark else (70, 64, 60), anchor='ma')
     return top + h
 
 
@@ -295,6 +296,10 @@ SCENES = {
     'A':  dict(style='A', public='pins/proto/bg_A_flatlay', book=(500, 900), stamp=(795, 590)),
     'A2': dict(style='A', public='pins/bg/A2_tartan_vert', book=(500, 880), stamp=(790, 570)),
     'A3': dict(style='A', public='pins/bg/A3_bordeaux_loupe', book=(500, 880), stamp=(790, 570)),
+    'A4': dict(style='A', public='pins/bg/A4_provence', book=(500, 880), stamp=(790, 570), dark=True),
+    'A5': dict(style='A', public='pins/bg/A5_paquets', book=(500, 880), stamp=(790, 570)),
+    'B3': dict(style='B', public='pins/bg/B3_sapin_cadeaux', quad=[(300, 930), (700, 935), (770, 1290), (230, 1285)], stamp=(845, 1080)),
+    'B4': dict(style='B', public='pins/bg/B4_salon_loupe', quad=[(470, 860), (820, 872), (875, 1185), (430, 1175)], stamp=(190, 720)),
     'B':  dict(style='B', public='pins/proto/bg_B_coinfeu', quad=[(345, 960), (705, 975), (760, 1352), (282, 1330)], stamp=(190, 985)),
     'B2': dict(style='B', public='pins/bg/B2_fenetre_neige', quad=[(252, 838), (592, 843), (652, 1152), (182, 1146)], stamp=(820, 1255)),
 }
@@ -303,7 +308,7 @@ SCENES = {
 def hero(scene, slug, kicker, title, sub, stamp=None, flip=False, book_w=500):
     S = SCENES[scene]; c = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     if S['style'] == 'A':
-        bottom = card_A(c, kicker, title, sub)
+        bottom = card_A(c, kicker, title, sub, dark=S.get('dark', False))
         cx, cy = S['book']; cy = max(cy, bottom + 40 + book_w * 0.65)
         paste_with_shadow(c, book_flat(slug, book_w, 4 if not flip else -4), cx, cy, blur=20, opacity=0.6, offset=(16, 26))
         if stamp:
@@ -321,7 +326,7 @@ def hero(scene, slug, kicker, title, sub, stamp=None, flip=False, book_w=500):
 def teaser(scene, slug, num, kicker, title, sub, thumb=True):
     S = SCENES[scene]; c = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     if S['style'] == 'A':
-        bottom = card_A(c, kicker, title, sub, size=56)
+        bottom = card_A(c, kicker, title, sub, size=56, dark=S.get('dark', False))
         sh = sheet(slug, num, 820, -1.5)
         cy = bottom + 30 + sh.height / 2
     else:
@@ -342,3 +347,19 @@ def stamp_avent():
 
 def stamp_2en1():
     return [('2 LIVRES', font('sansX', 22)), ('en 1', font('titleI', 38)), ('64 ÉNIGMES', font('sansX', 19))]
+
+
+SERIES = ['Tempete-sur-Belle-Ile', 'Les-Santons-de-Minuit', 'Vendanges-tardives', 'La-Nuit-de-l-Ankou', 'Le-Train-des-Neiges']
+
+
+def series(scene, kicker, title, sub, flip=False):
+    """Les 5 livres de la série en éventail sur un décor vu de dessus."""
+    S = SCENES[scene]; c = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    bottom = card_A(c, kicker, title, sub, dark=S.get('dark', False))
+    top = bottom + 30
+    pos = [(195, top + 215, -5), (500, top + 205, 2), (805, top + 215, 6), (345, top + 590, 4), (655, top + 590, -4)]
+    for k in range(5):
+        x, y, a = pos[k]
+        paste_with_shadow(c, book_flat(SERIES[k], 270, a, thick=7), x, y, blur=14, opacity=0.5, offset=(9, 16))
+    signature(c)
+    return c
