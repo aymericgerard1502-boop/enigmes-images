@@ -7,7 +7,7 @@ T, S, D = 'Le-Train-des-Neiges', 'Les-Santons-de-Minuit', 'Deux-enquetes-de-Noel
 BI, VT = 'Tempete-sur-Belle-Ile', 'Vendanges-tardives'
 AMZ = {T: 'https://www.amazon.fr/dp/B0HNNJBKS7', S: 'https://www.amazon.fr/dp/B0HM13CCC4', D: 'https://www.amazon.fr/dp/B0HS845H1Z',
        BI: 'https://www.amazon.fr/dp/B0HLZTZPRP', VT: 'https://www.amazon.fr/dp/B0HMP5Y7WJ',
-       'serie': 'https://www.amazon.fr/s?k=Ma%C3%ABl+Kerjean&i=stripbooks'}
+       'serie': 'https://www.amazon.fr/stores/author/B0HM88KRYF'}
 B = {'enigmes': '1149895786049019780', 'cosy': '1149895786049019784', 'avent': '1149895786049019791',
      'noel': '1149895786049019793', 'bretagne': '1149895786049019795'}
 VID = 'https://res.cloudinary.com/khtgpvta/video/upload/'
