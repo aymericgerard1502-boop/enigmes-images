@@ -45,7 +45,7 @@ def stars(im, seed=3, n=70):
 
 
 def wrap(d, text, font, width):
-    words, lines, cur = text.split(), [], ''
+    words, lines, cur = [w for w in text.split(' ') if w], [], ''
     for w in words:
         t = (cur + ' ' + w).strip()
         if d.textlength(t, font=font) <= width:
@@ -58,6 +58,7 @@ def wrap(d, text, font, width):
 
 
 def text_block(d, text, font, y, fill, width=860, lh=1.18):
+    text = text.replace(' ?', '\u00a0?').replace(' !', '\u00a0!')
     lines = [l for para in text.split('\n') for l in wrap(d, para, font, width)]
     for ln in lines:
         d.text(((W - d.textlength(ln, font=font)) / 2, y), ln, font=font, fill=fill)
@@ -212,6 +213,44 @@ def lot3():
              ["40 énigmes et une enquête finale dans un manoir breton",
               "Des frissons, jamais d'horreur",
               "Dès 12 ans · solutions incluses"], theme='purple', accent=ORANGE)
+
+
+def lot4():
+    pin_teaser('31_train-enigme-5-decembre', 'Le-Train-des-Neiges', 5, "ÉNIGME DU 5 DÉCEMBRE",
+               "Qui a changé l'étiquette de réservation ?", "24 énigmes comme celle-ci",
+               "Le Train des Neiges, calendrier de l'Avent d'enquête")
+    pin_hero('32_train-avent-enigmes', 'Le-Train-des-Neiges', "CALENDRIER DE L'AVENT ADULTE",
+             "Le calendrier des amateurs d'énigmes",
+             ["24 énigmes logiques, une par jour jusqu'à Noël",
+              "Une enquête complète à bord d'un train de luxe de 1930",
+              "Dès 12 ans · solutions incluses"])
+    pin_teaser('33_santons-prix-efface', 'Les-Santons-de-Minuit', 2, "ÉNIGME DE NOËL · PROVENCE",
+               "Qui a effacé les prix du marché ?", "40 énigmes comme celle-ci",
+               "Les Santons de Minuit, une enquête de Noël en Provence")
+    pin_series5('34_serie-cadeau-amateur-enigmes', "IDÉES CADEAUX DE NOËL",
+                "Un cadeau pour chaque amateur d'énigmes", "Bretagne, Provence, Alsace, Halloween ou calendrier de l'Avent.")
+    pin_teaser('35_ankou-chat-chapelle', 'La-Nuit-de-l-Ankou', 5, "ÉNIGME · LÉGENDES DE BRETAGNE",
+               "Qui a enfermé le chat noir ?", "40 énigmes comme celle-ci",
+               "La Nuit de l'Ankou, livre-jeu d'enquête en Bretagne", theme='purple', accent=ORANGE)
+    pin_teaser('36_belle-ile-piano-muet', 'Tempete-sur-Belle-Ile', 6, "ÉNIGME GRATUITE · BELLE-ÎLE",
+               "Qui a fait taire le piano ?", "40 énigmes comme celle-ci",
+               "Tempête sur Belle-Île, une enquête au cœur de la Bretagne")
+    pin_hero('37_train-a-commander', 'Le-Train-des-Neiges', "L'AVENT COMMENCE LE 1ER DÉCEMBRE",
+             "Un calendrier à ouvrir énigme après énigme",
+             ["À commander avant le 1er décembre",
+              "Une énigme chaque jour, seul ou en famille",
+              "Le coupable démasqué la veille de Noël"])
+    pin_teaser('38_vendanges-cigognes', 'Vendanges-tardives', 5, "ÉNIGME GRATUITE · ALSACE",
+               "Qui a dérangé les cigognes ?", "40 énigmes comme celle-ci",
+               "Vendanges tardives, une enquête dans les vignes d'Alsace")
+    pin_hero('39_santons-noel-provence', 'Les-Santons-de-Minuit', "IDÉE CADEAU · NOËL EN PROVENCE",
+             "Une enquête au pays des santons",
+             ["40 énigmes dans un village provençal sous la neige",
+              "Crèche, marché de Noël et treize suspects",
+              "Dès 12 ans · solutions incluses"])
+    pin_teaser('40_train-enigme-6-decembre', 'Le-Train-des-Neiges', 6, "ÉNIGME DU 6 DÉCEMBRE",
+               "Qui a brisé son verre pendant le toast ?", "24 énigmes comme celle-ci",
+               "Le Train des Neiges, calendrier de l'Avent d'enquête")
 
 
 if __name__ == '__main__':
