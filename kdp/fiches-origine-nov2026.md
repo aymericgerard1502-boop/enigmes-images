@@ -137,3 +137,30 @@ Description :
 | Ankou B0HN5Q9779 | 9,99 € | oui | idem (classement : 731 Cozy Animal Mysteries, 3 011 Crossword Puzzle & Quiz, 3 726 Brain Teaser Games) |
 | Train B0HNNJBKS7 | 12,16 € | oui | idem |
 | 2 en 1 B0HS845H1Z | 14,99 € | oui | Books › Crafts, Hobbies & Home › Games › Brain Teasers |
+
+## Bio Author Central d'origine (FR)
+
+> Maël Kerjean écrit des livres-jeux d'enquête pour les amateurs de cosy mystery et de casse-têtes. Sa série, Les Enquêtes de Rose Le Guen, suit une institutrice bretonne à la retraite qui sillonne la France avec Sardine, sa basset, et tombe toujours sur un crime. Chaque livre se déroule dans une région et une saison différentes (Bretagne, Provence, Alsace, Monts d'Arrée, Alpes) et propose des énigmes logiques à solution unique, toutes vérifiées, qui mènent pas à pas au coupable. Des enquêtes à résoudre crayon en main, seul ou en famille, à offrir ou à s'offrir.
+
+---
+
+# Réglages de Noël appliqués le 20/11/2026
+
+Descriptions : seul le dernier paragraphe change (accroche « Une idée cadeau de Noël pour les amateurs d'énigmes et de romans policiers », mention « seul ou en famille », plus de « Cluedo » nulle part). Le reste du texte est identique à l'origine ci-dessus.
+
+| Livre | Nouveaux mots-clés | Rubriques |
+|---|---|---|
+| Belle-Île | idée cadeau noël adulte livre jeu · jeu d'enquête adulte à résoudre · livre d'énigmes logiques adulte · cadeau fan de polar original · cosy mystery bretagne île tempête · jeu de déduction meurtre mystère · escape book casse-tête logique | inchangées |
+| Santons | idée cadeau noël adulte original · jeu d'enquête adulte noël · livre d'énigmes logiques noël · cadeau fan de polar provence · cosy mystery provence santons crèche · jeu de déduction meurtre mystère · escape book casse-tête logique | inchangées |
+| Vendanges | idée cadeau noël adulte amateur de vin · jeu d'enquête adulte alsace · livre d'énigmes logiques adulte · cadeau fan de polar original · cosy mystery vin vendanges alsace · jeu de déduction meurtre mystère · escape book casse-tête logique | inchangées |
+| Ankou | idée cadeau noël adulte original · jeu d'enquête adulte légendes bretonnes · livre d'énigmes logiques adulte · cadeau fan de polar bretagne · cosy mystery halloween ankou · jeu de déduction meurtre mystère · escape book casse-tête logique | inchangées |
+| Train | calendrier de l'avent adulte livre · calendrier de l'avent enquête 2026 · idée cadeau noël adulte original · jeu d'enquête adulte noël · livre d'énigmes logiques une par jour · cadeau fan de polar · cosy mystery train neige escape book | inchangées |
+| 2 en 1 | idée cadeau noël adulte livre jeu · calendrier de l'avent adulte enquête · jeu d'enquête adulte noël · livre d'énigmes logiques adulte · cadeau fan de polar original · cosy mystery noël provence train · jeu de déduction meurtre mystère escape book | « Femmes détectives » remplacée par Calendriers et Agendas › Calendriers de l'Avent |
+
+Aucune rubrique « Noël » n'existe dans l'arborescence KDP livres (vérifié : Loisirs créatifs n'a que Animaux domestiques, Antiquités, Art et création, Bricolage et décoration, Jeux, Paysage et jardin).
+
+Bio Author Central (FR) publiée le 20/11 : « Maël Kerjean est un auteur indépendant de livres-jeux d'enquête… » + phrase « Les deux enquêtes de Noël, Les Santons de Minuit et Le Train des Neiges, sont aussi réunies en un seul volume. »
+
+## Retour arrière en janvier 2027
+- Remettre les mots-clés et derniers paragraphes d'origine des livres non-Noël (Belle-Île, Vendanges, Ankou) ; Santons/Train/2 en 1 peuvent garder l'angle Noël jusqu'à fin janvier puis revenir à l'origine.
+- 2 en 1 : remettre « Femmes détectives » à la place de « Calendriers de l'Avent ».
