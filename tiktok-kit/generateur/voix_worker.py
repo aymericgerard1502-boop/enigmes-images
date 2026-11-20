@@ -35,7 +35,9 @@ def main():
         from pocket_tts import TTSModel
         torch.manual_seed(7)
         m = TTSModel.load_model(language="french")
-        st = m.get_state_for_audio_prompt(ref)
+        # Clonage verrouillé (conditions HF à accepter) : voix intégrée « estelle »
+        # = kyutai/tts-voices unmute-prod-website/developpeuse-3.wav, licence CC0.
+        st = m.get_state_for_audio_prompt(os.environ.get("POCKET_VOICE", "estelle"))
         def synth(t):
             return m.generate_audio(st, t).numpy(), m.sample_rate
     elif eng == "chatter":
@@ -54,7 +56,7 @@ def main():
         rt = OnnxTtsRuntime(model_dir=os.environ.get("MOSS_MODELS"), thread_count=os.cpu_count() or 2)
         def synth(t):
             tmp = os.path.join(out, "_moss_tmp.wav")
-            r = rt.synthesize(text=t, prompt_audio_path=ref, output_audio_path=tmp, seed=7)
+            r = rt.synthesize(text=t, prompt_audio_path=ref, output_audio_path=tmp, seed=7)  # écarté du test : invente des mots en français
             import soundfile as sf
             a, sr = sf.read(tmp, dtype="float32")
             if a.ndim > 1: a = a.mean(1)
@@ -62,6 +64,8 @@ def main():
     else:
         sys.exit(f"moteur inconnu : {eng}")
     for j in jobs:
+        if "seed" in j and eng != "kokoro":
+            import torch; torch.manual_seed(int(j["seed"]))
         a, sr = synth(j["text"])
         save(os.path.join(out, j["id"] + ".wav"), a, sr)
         print(j["id"], round(len(np.asarray(a).reshape(-1)) / sr, 2), flush=True)
