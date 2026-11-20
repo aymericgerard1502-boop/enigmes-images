@@ -39,6 +39,7 @@ Bilan Metricool envoyé à Aymeric le 15/11 (vues · likes · commentaires · pa
 **Deux changements, à la demande d'Aymeric** (on ne pourra pas séparer leurs effets) :
 1. **Première seconde** : le chiffre en jeu énorme dès l'image 0 (champ `choc`), avec coup de sifflet et impact sonore, petite secousse ; la voix démarre à 0,3 s ; l'accroche s'écrit mot à mot au lieu d'être affichée d'un bloc.
 2. **Voix off de qualité** : correction automatique de la prononciation (`prononciation.py` : sigles épelés, €, %, signes, mots lus à l'anglaise), rythme plus naturel (pauses selon la ponctuation, légère variation), traitement studio (48 kHz, chaleur, présence, de-esser, compression, petite pièce, loudness −14 LUFS), et texte `dit` écrit comme on parle.
+Incident du 20/11 : une vidéo de la vague 3 bannie par TikTok (très probablement celle du 19/11 sur l'épargne salariale : « 10 000 € débloqués d'un coup », « tu peux tout récupérer, sans impôt » = forme d'arnaque « argent facile »). Correctif de sécurité appliqué dès le 21/11 (hors méthode des vagues, car c'est une règle de conformité) : bandeau « SI LA LOI PASSE » au-dessus du chiffre d'ouverture, interdiction des formulations de gain facile et des sujets d'épargne/placement (voir CONSIGNES).
 Objectif : temps de visionnage moyen > 8 s, décrochage principal après 0:03 (au lieu de 0:01), premiers abonnés.
 Bilan : le 24/11, avec les chiffres TikTok Studio de 2 ou 3 vidéos.
 Vidéos de la vague : 19/11 déblocage de l'épargne salariale (choc 10 000 €) ; 20/11 réduction d'impôt pour frais de scolarité (choc −183 €).

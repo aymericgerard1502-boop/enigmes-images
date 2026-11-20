@@ -362,15 +362,20 @@ def card_cta(c, t, dur):
 
 def card_choc(c, t, dur):
     """Ouverture : le chiffre en jeu, énorme, dès l'image 0 ; arrive avec un léger « punch »."""
-    im = Image.new('RGBA', (1000, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    im = Image.new('RGBA', (1000, 700), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    # bandeau de contexte : on montre d'emblée que c'est une loi en débat, pas une offre
+    tag = fr_typo(c.get('tag', 'SI LA LOI PASSE'))
+    ft = font(MONO, 34); tw = ft.getlength(tag)
+    d.rounded_rectangle((500 - tw / 2 - 22, 0, 500 + tw / 2 + 22, 54), radius=10, fill=CREAM + (255,))
+    d.text((500 - tw / 2, 8), tag, font=ft, fill=INK + (255,))
     val = fr_typo(c['valeur'])
     size = 300
     while font(BLACK, size).getlength(val) > 900 and size > 120:
         size -= 10
     f = font(BLACK, size)
-    d.text((500 - f.getlength(val) / 2 + 8, 48), val, font=f, fill=(0, 0, 0, 170))
-    d.text((500 - f.getlength(val) / 2, 40), val, font=f, fill=RED + (255,))
-    y = 40 + int(size * 1.05) + 20
+    d.text((500 - f.getlength(val) / 2 + 8, 88), val, font=f, fill=(0, 0, 0, 170))
+    d.text((500 - f.getlength(val) / 2, 80), val, font=f, fill=RED + (255,))
+    y = 80 + int(size * 1.05) + 20
     for line in c.get('legende', '').split('\n'):
         if not line:
             continue
