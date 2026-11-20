@@ -58,10 +58,23 @@ Hypothèse : moins de départs dans les 3 premières secondes, temps moyen > 6 s
 Vidéos (programmées dans Buffer) : Belle-Île 6 « Le piano muet » (19/11 20:43), Santons 9 « Le lavoir gelé » (20/11 19:52), Vendanges 5 « Les cigognes dérangées » (21/11 19:14), Santons 10 « Le dernier verre » (22/11 21:21), Belle-Île 7 « La page arrachée » (23/11 21:31), Vendanges 6 « La borne déplacée » (24/11 19:26).
 Bilan : le 25 nov.
 
+### Priorité avant la vague 5 : la voix off (demande d'Aymeric, 20/11)
+Constat : visuel et scénario bons, mais la voix Piper « Tom » fait amateur (ton plat, mots qui se chevauchent, ponctuation et silences sautés). Les spectatrices partent après 3 à 4 s.
+1. Mise en rythme (faite, `generateur/voix_off.py` + `voix_worker.py`) : synthèse phrase par phrase, blancs retirés, puis vrais silences : 0,40 s après un point, 0,45 s après « ? », 0,15 s après une virgule, 0,75 s avant une révélation (marqueur ⏸). Plus aucun chevauchement.
+2. Test à l'aveugle A/B/C/D (même script de vague 4, même rythme), moteurs gratuits dont les POIDS autorisent l'usage commercial : Kokoro ff_siwis (Apache 2.0), Kyutai Pocket TTS (CC BY 4.0), Resemble Chatterbox Multilingual (MIT), OpenMOSS MOSS-TTS-Nano (Apache 2.0). Voix de référence pour le clonage : lectrice française de CML-TTS (LibriVox, CC BY 4.0). Écartés : Mistral Voxtral TTS (poids CC BY-NC 4.0, GPU 16 Go), Coqui XTTS (non commercial), services payants.
+3. La voix choisie remplace Tom à partir de la vague 5. Aucune vidéo publiée n'est retouchée.
+
+### Audience (TikTok Studio, 20/11)
+90-93 % de femmes ; ~78 % de 18-34 ans (18-24 : 41-45 % ; 25-34 : 33-36 %) ; ~90 % en France. 100 % de non-abonnées, 89 % de nouvelles spectatrices : personne ne revient ni ne s'abonne.
+Persona cible : femmes de 16 à 35 ans qui aiment le mystère, l'horreur douce et le paranormal. Voix : féminine, posée, conteuse, légèrement chuchotée.
+Priorité : donner une raison de s'abonner → calendrier de l'Avent en direct du 1er au 24 décembre (une énigme du Train des Neiges par jour, « Jour X/24 », réponse de la veille au début de chaque vidéo). Énigmes 7 à 24 à reprendre du livre (PDF intérieur demandé à Aymeric le 20/11).
+Ordre : nouvelle voix → calendrier de l'Avent dès le 1er décembre (avec le choix A/B/C si prêt) → reste de la liste.
+
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
-1. Vidéo plus courte (≤ 30 s) : histoire en 2 phrases, indices plus rapides.
-2. ~~Accroche tournée vers le spectateur~~ → vague 4.
-3. Réponse en vidéo le lendemain (début de la vidéo suivante : « Hier, c'était Jacques ! »), pour fidéliser.
+1. **Vague 6 (ajouté le 20/11)** : question en choix A/B/C (les 3 suspects affichés, « Tape A, B ou C ») ; commentaire épinglé par le compte ; ambiance un peu plus sombre (brume, bougies, légendes bretonnes), cohérente avec le persona.
+2. Décembre : calendrier de l'Avent en direct (1 énigme du Train des Neiges par jour, du 1er au 24, « Jour X/24 », réponse de la veille en ouverture) — prioritaire, voir plus haut.
+3. Réponse en vidéo le lendemain (début de la vidéo suivante : « Hier, c'était Jacques ! »), pour fidéliser (inclus dans le calendrier de l'Avent).
 4. Série numérotée « L'enquête du jour n° X » avec Rose et Sardine comme fil rouge.
-5. Voix légèrement plus rapide (0.76) ou autre voix.
-6. Décembre : calendrier de l'Avent en direct (1 énigme du Train des Neiges par jour, du 1er au 24).
+5. ~~Voix plus rapide ou autre voix~~ → priorité avant la vague 5 (test à l'aveugle).
+6. ~~Vidéo plus courte (≤ 30 s)~~ → vague 3, non concluant.
+7. ~~Accroche tournée vers le spectateur~~ → vague 4.
