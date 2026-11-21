@@ -1,0 +1,118 @@
+{
+ "slug": "si_abattement-retraites",
+ "rubrique": "SI ÇA PASSE · RETRAITES",
+ "source": "Sources : Public Sénat, LCP, actu.fr, L'Appel, Politique Matin",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "−617 €",
+  "legende": "par an en moyenne\npour tes grands-parents"
+ },
+ "phrases": [
+  {
+   "dit": "Si le Sénat supprime cet avantage, tes grands-parents paient 617 euros d'impot en plus par an, en moyenne.",
+   "affiche": "Si le Sénat supprime cet avantage, tes grands-parents paient **617 € d'impôt en plus** par an, en moyenne.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Aujourd'hui, les retraités déduisent 10 % de leur pension avant l'impot. Le Sénat veut supprimer ça.",
+   "affiche": "Aujourd'hui, les retraités déduisent 10 % de leur pension avant l'impôt. **Le Sénat veut supprimer ça.**",
+   "carte": {
+    "type": "checks",
+    "label": "AUJOURD'HUI · RETRAITÉS",
+    "pas": 0.7,
+    "lignes": [
+     [
+      true,
+      "10 % de la pension déduits"
+     ],
+     [
+      true,
+      "Plafond : 4 439 € par foyer"
+     ],
+     [
+      false,
+      "Si le Sénat l'emporte"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "D'après le Sénat, ça fait 617 euros de plus par an, en moyenne, pour les foyers concernés.",
+   "affiche": "D'après le Sénat, ça fait **617 € de plus** par an, en moyenne, pour les foyers concernés.",
+   "carte": {
+    "type": "calcul",
+    "label": "HYPOTHÈSE · MOYENNE DU SÉNAT",
+    "lignes": [
+     [
+      "Foyers concernés",
+      "8,7 millions",
+      0.3
+     ]
+    ],
+    "total": [
+     "Impôt en plus, par an",
+     "+ 617 €",
+     1.3
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "En échange, le Sénat veut revaloriser toutes les pensions avec l'inflation.",
+   "affiche": "En échange, le Sénat veut **revaloriser toutes les pensions** avec l'inflation."
+  },
+  {
+   "dit": "Pour la rapporteure du budget au Sénat, c'est plus juste : pensions protégées, vieille niche supprimée.",
+   "affiche": "Pour la rapporteure du budget au Sénat, **c'est plus juste** : pensions protégées, vieille niche supprimée.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Rapporteure du budget (Sénat)",
+    "lignes": [
+     "Plus juste :",
+     "pensions protégées,",
+     "vieille niche supprimée."
+    ]
+   }
+  },
+  {
+   "dit": "En octobre, RN, PS et communistes ont dit non : une hausse d'impot sur des retraités modestes.",
+   "affiche": "En octobre, RN, PS et communistes ont dit non : **une hausse d'impôt** sur des retraités modestes.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Députés RN, PS, PCF",
+    "lignes": [
+     "Hausse d'impôt :",
+     "ça touche aussi",
+     "des retraités modestes."
+    ]
+   }
+  },
+  {
+   "dit": "Proposé en commission au Sénat. Vote le 9 décembre. Rien n'est définitif.",
+   "affiche": "Proposé en commission au Sénat. Vote le 9 décembre. **Rien n'est définitif.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "PROPOSÉ",
+    "sous": "Commission du Sénat · 18/11",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
