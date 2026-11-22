@@ -39,7 +39,7 @@ PLAN = [  # date, slug, num
 ] + [  # calendrier de l'Avent en direct : 1 énigme du Train des Neiges par jour (7 à 24 : à extraire du PDF du livre)
     (f"2026-12-{j:02d}", "Le-Train-des-Neiges", j) for j in range(1, 25)
 ]
-TAGS = {"La-Nuit-de-l-Ankou": "#halloween #legendebretonne", "Tempete-sur-Belle-Ile": "#bretagne #belleile",
+TAGS = {"La-Nuit-de-l-Ankou": "#legendebretonne #bretagne #mystere", "Tempete-sur-Belle-Ile": "#bretagne #belleile",
         "Vendanges-tardives": "#alsace #vendanges", "Les-Santons-de-Minuit": "#provence #noel",
         "Le-Train-des-Neiges": "#calendrierdelavent #noel"}
 livres = {l["slug"]: l for l in json.load(open(os.path.join(KIT, "enigmes.json")))}

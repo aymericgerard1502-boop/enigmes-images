@@ -68,8 +68,14 @@ Résultat du test (20/11) : 3 versions envoyées (voix_A/B/C.mp3, correspondance
 
 ### Vague 5 — EN COURS (25 → 30 nov., 6 vidéos)
 Changement unique : la voix (conteuse féminine rythmée à la place de Tom). Le reste = format de la vague 4.
-Vidéos : Belle-Île 8 (25/11), Ankou 9 (26/11), Vendanges 7 (27/11), Belle-Île 9 (28/11), Ankou 10 (29/11), Vendanges 8 (30/11). Ankou choisi pour coller au persona (légendes bretonnes, paranormal doux).
+Vidéos (programmées dans Buffer le 22/11) : Belle-Île 8 (25/11 18:43), Ankou 9 (26/11 18:15), Vendanges 7 (27/11 20:50), Belle-Île 9 (28/11 19:03), Ankou 10 (29/11 19:47), Vendanges 8 (30/11 20:29). Bilan : le 1er déc. Ankou choisi pour coller au persona (légendes bretonnes, paranormal doux).
 Hypothèse : temps moyen > 6 s (vague 4 : 3 à 4 s selon Aymeric). Puis calendrier de l'Avent dès le 1er décembre.
+
+### Calendrier de l'Avent en direct (1er → 24 déc.) — PRÊT
+- PDF intérieur reçu le 22/11. `outils/extraire_train.py` extrait les énigmes 7 à 24, traduit chaque indice en contrainte logique, et un solveur vérifie que la solution est unique et que le coupable est celui des pages de solutions du livre : 18/18 OK. Plans redessinés en grille (voisinages lus sur les plans du livre).
+- Le livre demande 6 à 12 indices (4 à 5 suspects) : trop pour TikTok. Version vidéo = 3 à 6 affirmations : indices du livre choisis par le solveur (chacun nécessaire, aucun ne donne la réponse seul), complétés au besoin par 1 à 3 « faits établis » tirés de la solution du livre. Même question, même coupable que le livre ; la version complète reste dans le livre. Champs `indices_livre` et `faits_ajoutes` dans enigmes.json.
+- Format : « Hier : c'était X ! » + badge « CALENDRIER DE L'AVENT · JOUR X/24 » dès la 1re image, suspects A/B/C(/D/E), fin « A, B ou C ? Tape ta lettre en commentaire ! » avec les pastilles lettre-prénom ; légende « Abonne-toi pour la suite demain ». Choix A/B/C intégré (point 1 de la vague 6 avancé).
+- Commande : `python3 tiktok-kit/generateur/tiktok_video.py Le-Train-des-Neiges <jour> tiktok-videos/2026-12-<jj>_avent_jour<jj>.mp4 --avent` ; script de lot : relancer la boucle sur les jours manquants.
 
 ### Audience (TikTok Studio, 20/11)
 90-93 % de femmes ; ~78 % de 18-34 ans (18-24 : 41-45 % ; 25-34 : 33-36 %) ; ~90 % en France. 100 % de non-abonnées, 89 % de nouvelles spectatrices : personne ne revient ni ne s'abonne.
