@@ -2002,7 +2002,7 @@
  {
   "livre": "Le Train des Neiges",
   "slug": "Le-Train-des-Neiges",
-  "amazon": null,
+  "amazon": "https://www.amazon.fr/dp/B0HNNJBKS7",
   "couverture": "couvertures/Le-Train-des-Neiges.jpg",
   "enigmes": [
    {
@@ -2298,6 +2298,2182 @@
      "La personne qui avait le parapluie n'était pas dans le wagon-restaurant."
     ],
     "image": "enigmes/Le-Train-des-Neiges_enigme06.png"
+   },
+   {
+    "num": 7,
+    "titre": "La lumière éteinte",
+    "incident": "Pendant le tunnel, quelqu'un a actionné l'interrupteur général. La panne n'était pas un accident.",
+    "question_lieu": [
+     "Wagon-restaurant",
+     "dans le wagon-restaurant"
+    ],
+    "coupable": "Constance",
+    "solution": {
+     "Henri": {
+      "lieu": [
+       "Cabine de luxe",
+       "dans la cabine de luxe"
+      ],
+      "objet": [
+       "montre",
+       "la montre"
+      ]
+     },
+     "Nicolas": {
+      "lieu": [
+       "Voiture-bar",
+       "dans la voiture-bar"
+      ],
+      "objet": [
+       "tasse de chocolat",
+       "la tasse de chocolat"
+      ]
+     },
+     "Constance": {
+      "lieu": [
+       "Wagon-restaurant",
+       "dans le wagon-restaurant"
+      ],
+      "objet": [
+       "lampe de poche",
+       "la lampe de poche"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Voiture-salon",
+       "dans la voiture-salon"
+      ],
+      "objet": [
+       "menu",
+       "le menu"
+      ]
+     }
+    },
+    "indices": [
+     "Henri était dans la cabine de luxe.",
+     "Constance se trouvait dans une pièce voisine de celle de la personne qui avait la tasse de chocolat.",
+     "La personne qui avait la tasse de chocolat était dans la voiture-bar."
+    ],
+    "faits_ajoutes": [],
+    "indices_livre": [
+     "Henri était dans la cabine de luxe.",
+     "Tatiana se trouvait dans une pièce voisine de celle de la personne qui avait la lampe de poche.",
+     "La personne qui avait la montre n'était pas dans le wagon-restaurant.",
+     "Tatiana se trouvait dans une pièce voisine de celle de la personne qui avait la montre.",
+     "Tatiana n'avait pas la tasse de chocolat.",
+     "Constance se trouvait dans une pièce voisine de celle de la personne qui avait la tasse de chocolat.",
+     "La personne qui avait la tasse de chocolat était dans la voiture-bar."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme07.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Wagon-restaurant",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Voiture-salon",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Voiture-bar",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Cabine de luxe",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Wagon-restaurant",
+       "Voiture-salon"
+      ],
+      [
+       "Wagon-restaurant",
+       "Voiture-bar"
+      ],
+      [
+       "Voiture-salon",
+       "Cabine de luxe"
+      ],
+      [
+       "Voiture-bar",
+       "Cabine de luxe"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 8,
+    "titre": "La porte de la cabine",
+    "incident": "La porte de la cabine d'Augustin n'était pas verrouillée. Pourtant, il fermait toujours à double tour.",
+    "question_lieu": [
+     "Plateforme",
+     "sur la plateforme"
+    ],
+    "coupable": "Samuel",
+    "solution": {
+     "Gabriel": {
+      "lieu": [
+       "Cabine de luxe",
+       "dans la cabine de luxe"
+      ],
+      "objet": [
+       "sifflet",
+       "le sifflet"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Voiture-salon",
+       "dans la voiture-salon"
+      ],
+      "objet": [
+       "menu",
+       "le menu"
+      ]
+     },
+     "Samuel": {
+      "lieu": [
+       "Plateforme",
+       "sur la plateforme"
+      ],
+      "objet": [
+       "clé de cabine",
+       "la clé de cabine"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Wagon-restaurant",
+       "dans le wagon-restaurant"
+      ],
+      "objet": [
+       "montre",
+       "la montre"
+      ]
+     }
+    },
+    "indices": [
+     "Samuel n'était pas dans la cabine de luxe.",
+     "Samuel n'était pas dans le wagon-restaurant.",
+     "Margaux était dans la voiture-salon."
+    ],
+    "faits_ajoutes": [
+     "Margaux était dans la voiture-salon."
+    ],
+    "indices_livre": [
+     "Samuel n'était pas dans la cabine de luxe.",
+     "Samuel n'était pas dans le wagon-restaurant.",
+     "Margaux n'avait pas le sifflet.",
+     "La personne qui avait la clé de cabine était sur la plateforme.",
+     "La personne qui avait le menu n'était pas dans le wagon-restaurant.",
+     "La personne qui avait la montre n'était pas dans la cabine de luxe.",
+     "Samuel ne se trouvait pas dans une pièce voisine de celle de Mathilde.",
+     "La personne qui avait le menu n'était pas dans la cabine de luxe.",
+     "Mathilde n'avait pas le sifflet."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme08.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Voiture-salon",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Plateforme",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Wagon-restaurant",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Cabine de luxe",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Voiture-salon",
+       "Plateforme"
+      ],
+      [
+       "Voiture-salon",
+       "Wagon-restaurant"
+      ],
+      [
+       "Plateforme",
+       "Cabine de luxe"
+      ],
+      [
+       "Wagon-restaurant",
+       "Cabine de luxe"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 9,
+    "titre": "La tasse de chocolat",
+    "incident": "Sur la table de nuit d'Augustin, une tasse de chocolat encore tiède. Quelqu'un la lui a apportée juste avant le tunnel.",
+    "question_lieu": [
+     "Voiture-salon",
+     "dans la voiture-salon"
+    ],
+    "coupable": "Henri",
+    "solution": {
+     "Constance": {
+      "lieu": [
+       "Compartiment du chef",
+       "dans le compartiment du chef"
+      ],
+      "objet": [
+       "montre",
+       "la montre"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Plateforme",
+       "sur la plateforme"
+      ],
+      "objet": [
+       "sifflet",
+       "le sifflet"
+      ]
+     },
+     "Henri": {
+      "lieu": [
+       "Voiture-salon",
+       "dans la voiture-salon"
+      ],
+      "objet": [
+       "couverture",
+       "la couverture"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "tasse de chocolat",
+       "la tasse de chocolat"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la montre était dans le compartiment du chef.",
+     "La personne qui avait la couverture n'était pas sur la plateforme.",
+     "Margaux était dans la cuisine.",
+     "Henri avait la couverture."
+    ],
+    "faits_ajoutes": [
+     "Margaux était dans la cuisine.",
+     "Henri avait la couverture."
+    ],
+    "indices_livre": [
+     "Constance ne se trouvait pas dans une pièce voisine de celle de Margaux.",
+     "Henri n'avait pas le sifflet.",
+     "Constance n'avait pas le sifflet.",
+     "Margaux se trouvait dans une pièce voisine de celle de la personne qui avait la couverture.",
+     "La personne qui avait la montre était dans le compartiment du chef.",
+     "Margaux n'avait pas le sifflet.",
+     "Constance n'avait pas la tasse de chocolat.",
+     "La personne qui avait la couverture n'était pas sur la plateforme."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme09.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Compartiment du chef",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Plateforme",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Voiture-salon",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Cuisine",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Compartiment du chef",
+       "Plateforme"
+      ],
+      [
+       "Compartiment du chef",
+       "Voiture-salon"
+      ],
+      [
+       "Plateforme",
+       "Cuisine"
+      ],
+      [
+       "Voiture-salon",
+       "Cuisine"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 10,
+    "titre": "Les pastilles",
+    "incident": "Sous le lit de la cabine, Rose trouve une petite boîte de pastilles à la menthe, à moitié vide.",
+    "question_lieu": [
+     "Cuisine",
+     "dans la cuisine"
+    ],
+    "coupable": "Nicolas",
+    "solution": {
+     "Constance": {
+      "lieu": [
+       "Wagon-restaurant",
+       "dans le wagon-restaurant"
+      ],
+      "objet": [
+       "couverture",
+       "la couverture"
+      ]
+     },
+     "Henri": {
+      "lieu": [
+       "Voiture-bar",
+       "dans la voiture-bar"
+      ],
+      "objet": [
+       "sifflet",
+       "le sifflet"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Compartiment du chef",
+       "dans le compartiment du chef"
+      ],
+      "objet": [
+       "montre",
+       "la montre"
+      ]
+     },
+     "Nicolas": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "clé de cabine",
+       "la clé de cabine"
+      ]
+     }
+    },
+    "indices": [
+     "Henri avait le sifflet.",
+     "La personne qui avait le sifflet n'était pas dans la cuisine.",
+     "Ulysse n'était pas dans la cuisine.",
+     "Constance était dans le wagon-restaurant."
+    ],
+    "faits_ajoutes": [
+     "Constance était dans le wagon-restaurant."
+    ],
+    "indices_livre": [
+     "Henri avait le sifflet.",
+     "Ulysse avait la montre.",
+     "Constance se trouvait dans une pièce voisine de celle de la personne qui avait le sifflet.",
+     "La personne qui avait la couverture était dans le wagon-restaurant.",
+     "La personne qui avait le sifflet n'était pas dans la cuisine.",
+     "Henri se trouvait dans une pièce voisine de celle de la personne qui avait la couverture.",
+     "Ulysse n'était pas dans la cuisine."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme10.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Voiture-bar",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Compartiment du chef",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Wagon-restaurant",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Cuisine",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Voiture-bar",
+       "Compartiment du chef"
+      ],
+      [
+       "Voiture-bar",
+       "Wagon-restaurant"
+      ],
+      [
+       "Compartiment du chef",
+       "Cuisine"
+      ],
+      [
+       "Wagon-restaurant",
+       "Cuisine"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 11,
+    "titre": "La montre arrêtée",
+    "incident": "La montre d'Augustin s'est arrêtée à l'entrée du tunnel. Henri, l'horloger, confirme qu'elle n'a pas été trafiquée.",
+    "question_lieu": [
+     "Cabine de luxe",
+     "dans la cabine de luxe"
+    ],
+    "coupable": "Bertille",
+    "solution": {
+     "Bertille": {
+      "lieu": [
+       "Cabine de luxe",
+       "dans la cabine de luxe"
+      ],
+      "objet": [
+       "lampe de poche",
+       "la lampe de poche"
+      ]
+     },
+     "Constance": {
+      "lieu": [
+       "Compartiment du chef",
+       "dans le compartiment du chef"
+      ],
+      "objet": [
+       "tasse de chocolat",
+       "la tasse de chocolat"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Voiture-bar",
+       "dans la voiture-bar"
+      ],
+      "objet": [
+       "sifflet",
+       "le sifflet"
+      ]
+     },
+     "Samuel": {
+      "lieu": [
+       "Fourgon",
+       "dans le fourgon"
+      ],
+      "objet": [
+       "clé de cabine",
+       "la clé de cabine"
+      ]
+     }
+    },
+    "indices": [
+     "Ulysse ne se trouvait pas dans une pièce voisine de celle de Samuel.",
+     "La personne qui avait la tasse de chocolat n'était pas dans la cabine de luxe.",
+     "Samuel était dans le fourgon.",
+     "Constance avait la tasse de chocolat."
+    ],
+    "faits_ajoutes": [
+     "Samuel était dans le fourgon.",
+     "Constance avait la tasse de chocolat."
+    ],
+    "indices_livre": [
+     "Ni Ulysse ni Samuel n'avait la tasse de chocolat.",
+     "Bertille était dans la cabine de luxe.",
+     "Ulysse ne se trouvait pas dans une pièce voisine de celle de Samuel.",
+     "Ulysse n'avait pas la clé de cabine.",
+     "Samuel se trouvait dans une pièce voisine de celle de la personne qui avait la lampe de poche.",
+     "Ulysse n'était pas dans le fourgon.",
+     "La personne qui avait la tasse de chocolat n'était pas dans la cabine de luxe."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme11.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Voiture-bar",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Compartiment du chef",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Cabine de luxe",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Fourgon",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Voiture-bar",
+       "Compartiment du chef"
+      ],
+      [
+       "Voiture-bar",
+       "Cabine de luxe"
+      ],
+      [
+       "Compartiment du chef",
+       "Fourgon"
+      ],
+      [
+       "Cabine de luxe",
+       "Fourgon"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 12,
+    "titre": "Le testament dans le menu",
+    "incident": "Glissée dans un menu du dîner, une copie du testament d'Augustin. Le nom d'un des héritiers a été entouré.",
+    "question_lieu": [
+     "Cuisine",
+     "dans la cuisine"
+    ],
+    "coupable": "Ulysse",
+    "solution": {
+     "Gabriel": {
+      "lieu": [
+       "Fourgon",
+       "dans le fourgon"
+      ],
+      "objet": [
+       "montre",
+       "la montre"
+      ]
+     },
+     "Bertille": {
+      "lieu": [
+       "Voiture-bar",
+       "dans la voiture-bar"
+      ],
+      "objet": [
+       "menu",
+       "le menu"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "lampe de poche",
+       "la lampe de poche"
+      ]
+     },
+     "Edmond": {
+      "lieu": [
+       "Compartiment du chef",
+       "dans le compartiment du chef"
+      ],
+      "objet": [
+       "tasse de chocolat",
+       "la tasse de chocolat"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la montre était dans le fourgon.",
+     "Ulysse n'avait pas la montre.",
+     "Bertille était dans la voiture-bar.",
+     "Edmond était dans le compartiment du chef."
+    ],
+    "faits_ajoutes": [
+     "Bertille était dans la voiture-bar.",
+     "Edmond était dans le compartiment du chef."
+    ],
+    "indices_livre": [
+     "Bertille n'avait pas la tasse de chocolat.",
+     "Edmond se trouvait dans une pièce voisine de celle de la personne qui avait la lampe de poche.",
+     "La personne qui avait la montre était dans le fourgon.",
+     "Bertille se trouvait dans une pièce voisine de celle de la personne qui avait la montre.",
+     "La personne qui avait la tasse de chocolat était dans le compartiment du chef.",
+     "Ulysse n'avait pas la montre.",
+     "La personne qui avait la lampe de poche n'était pas dans la voiture-bar."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme12.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Cuisine",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Compartiment du chef",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Voiture-bar",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Fourgon",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Cuisine",
+       "Compartiment du chef"
+      ],
+      [
+       "Cuisine",
+       "Voiture-bar"
+      ],
+      [
+       "Compartiment du chef",
+       "Fourgon"
+      ],
+      [
+       "Voiture-bar",
+       "Fourgon"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 13,
+    "titre": "Les traces dans la neige",
+    "incident": "Devant la gare, des traces de pas font le tour du train puis reviennent. Le pied gauche s'enfonce plus que le droit.",
+    "question_lieu": [
+     "Gare",
+     "à la gare"
+    ],
+    "coupable": "Gabriel",
+    "solution": {
+     "Nicolas": {
+      "lieu": [
+       "Hôtel",
+       "à l'hôtel de la gare"
+      ],
+      "objet": [
+       "bonnet",
+       "le bonnet"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Téléphérique",
+       "au téléphérique"
+      ],
+      "objet": [
+       "gants",
+       "les gants"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Remise",
+       "dans la remise des chasse-neige"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Gabriel": {
+      "lieu": [
+       "Gare",
+       "à la gare"
+      ],
+      "objet": [
+       "raquettes",
+       "les raquettes"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait les raquettes n'était pas à l'hôtel de la gare.",
+     "La personne qui avait les gants était au téléphérique.",
+     "Ni Nicolas ni Gabriel n'avait la lanterne.",
+     "Gabriel n'était pas dans la remise des chasse-neige.",
+     "Nicolas n'avait pas les raquettes.",
+     "Tatiana était au téléphérique."
+    ],
+    "faits_ajoutes": [
+     "Tatiana était au téléphérique."
+    ],
+    "indices_livre": [
+     "La personne qui avait les raquettes n'était pas à l'hôtel de la gare.",
+     "La personne qui avait les gants était au téléphérique.",
+     "Tatiana n'avait pas les raquettes.",
+     "Ni Nicolas ni Gabriel n'avait la lanterne.",
+     "Gabriel n'était pas dans la remise des chasse-neige.",
+     "Tatiana n'avait pas la lanterne.",
+     "Tatiana n'était pas à l'hôtel de la gare.",
+     "La personne qui avait le bonnet n'était pas dans la remise des chasse-neige.",
+     "Nicolas n'avait pas les raquettes."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme13.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Gare",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Téléphérique",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Remise",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Hôtel",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Gare",
+       "Téléphérique"
+      ],
+      [
+       "Gare",
+       "Remise"
+      ],
+      [
+       "Téléphérique",
+       "Hôtel"
+      ],
+      [
+       "Remise",
+       "Hôtel"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 14,
+    "titre": "La lettre à la poste",
+    "incident": "Quelqu'un a tenté de poster une lettre pour le Japon. L'épicière, qui fait aussi la poste, l'a gardée de côté.",
+    "question_lieu": [
+     "Remise",
+     "dans la remise des chasse-neige"
+    ],
+    "coupable": "Clara",
+    "solution": {
+     "Gabriel": {
+      "lieu": [
+       "Chapelle",
+       "à la chapelle"
+      ],
+      "objet": [
+       "bonnet",
+       "le bonnet"
+      ]
+     },
+     "Clara": {
+      "lieu": [
+       "Remise",
+       "dans la remise des chasse-neige"
+      ],
+      "objet": [
+       "gants",
+       "les gants"
+      ]
+     },
+     "Constance": {
+      "lieu": [
+       "Patinoire",
+       "à la patinoire"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Hôtel",
+       "à l'hôtel de la gare"
+      ],
+      "objet": [
+       "thermos",
+       "le thermos"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Gabriel ni Clara n'avait le thermos.",
+     "Ni Gabriel ni Clara n'avait la lanterne.",
+     "La personne qui avait les gants était dans la remise des chasse-neige.",
+     "Gabriel était à la chapelle."
+    ],
+    "faits_ajoutes": [
+     "Gabriel était à la chapelle."
+    ],
+    "indices_livre": [
+     "Ni Gabriel ni Clara n'avait le thermos.",
+     "La personne qui avait le thermos était à l'hôtel de la gare.",
+     "Ni Gabriel ni Clara n'avait la lanterne.",
+     "Gabriel se trouvait dans un lieu voisin de celui de la personne qui avait la lanterne.",
+     "La personne qui avait les gants était dans la remise des chasse-neige.",
+     "Gabriel ne se trouvait pas dans un lieu voisin de celui de Tatiana."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme14.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Remise",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Chapelle",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Hôtel",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Patinoire",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Remise",
+       "Chapelle"
+      ],
+      [
+       "Remise",
+       "Hôtel"
+      ],
+      [
+       "Chapelle",
+       "Patinoire"
+      ],
+      [
+       "Hôtel",
+       "Patinoire"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 15,
+    "titre": "La patinoire",
+    "incident": "Sur la glace de la patinoire, une inscription griffée au patin : « 1975 ». Qui s'en souvient ?",
+    "question_lieu": [
+     "Salle d'attente",
+     "dans la salle d'attente"
+    ],
+    "coupable": "Jacques",
+    "solution": {
+     "Margaux": {
+      "lieu": [
+       "Épicerie",
+       "à l'épicerie"
+      ],
+      "objet": [
+       "pelle",
+       "la pelle"
+      ]
+     },
+     "Jacques": {
+      "lieu": [
+       "Salle d'attente",
+       "dans la salle d'attente"
+      ],
+      "objet": [
+       "luge",
+       "la luge"
+      ]
+     },
+     "Bertille": {
+      "lieu": [
+       "Patinoire",
+       "à la patinoire"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Remise",
+       "dans la remise des chasse-neige"
+      ],
+      "objet": [
+       "raquettes",
+       "les raquettes"
+      ]
+     }
+    },
+    "indices": [
+     "Bertille était à la patinoire.",
+     "Margaux était à l'épicerie.",
+     "Mathilde était dans la remise des chasse-neige."
+    ],
+    "faits_ajoutes": [
+     "Margaux était à l'épicerie.",
+     "Mathilde était dans la remise des chasse-neige."
+    ],
+    "indices_livre": [
+     "La personne qui avait la lanterne n'était pas à l'épicerie.",
+     "Jacques se trouvait dans un lieu voisin de celui de la personne qui avait les raquettes.",
+     "Margaux n'avait pas la luge.",
+     "La personne qui avait la luge n'était pas à l'épicerie.",
+     "La personne qui avait la lanterne n'était pas dans la remise des chasse-neige.",
+     "Margaux ne se trouvait pas dans un lieu voisin de celui de Jacques.",
+     "La personne qui avait la lanterne n'était pas dans la salle d'attente.",
+     "Bertille était à la patinoire."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme15.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Salle d'attente",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Patinoire",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Remise",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Épicerie",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Salle d'attente",
+       "Patinoire"
+      ],
+      [
+       "Salle d'attente",
+       "Remise"
+      ],
+      [
+       "Patinoire",
+       "Épicerie"
+      ],
+      [
+       "Remise",
+       "Épicerie"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 16,
+    "titre": "La remise",
+    "incident": "Dans la remise des chasse-neige, une vieille lampe de chef de train, cuivrée, astiquée avec soin.",
+    "question_lieu": [
+     "Chapelle",
+     "à la chapelle"
+    ],
+    "coupable": "Constance",
+    "solution": {
+     "Edmond": {
+      "lieu": [
+       "Remise",
+       "dans la remise des chasse-neige"
+      ],
+      "objet": [
+       "pelle",
+       "la pelle"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Épicerie",
+       "à l'épicerie"
+      ],
+      "objet": [
+       "gants",
+       "les gants"
+      ]
+     },
+     "Nicolas": {
+      "lieu": [
+       "Hôtel",
+       "à l'hôtel de la gare"
+      ],
+      "objet": [
+       "raquettes",
+       "les raquettes"
+      ]
+     },
+     "Constance": {
+      "lieu": [
+       "Chapelle",
+       "à la chapelle"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     }
+    },
+    "indices": [
+     "Ni Margaux ni Constance n'avait la pelle.",
+     "La personne qui avait la pelle était dans la remise des chasse-neige.",
+     "Margaux était à l'épicerie.",
+     "Nicolas était à l'hôtel de la gare."
+    ],
+    "faits_ajoutes": [
+     "Margaux était à l'épicerie.",
+     "Nicolas était à l'hôtel de la gare."
+    ],
+    "indices_livre": [
+     "Nicolas se trouvait dans un lieu voisin de celui de la personne qui avait la lanterne.",
+     "Margaux et Nicolas se trouvaient dans des lieux voisins.",
+     "La personne qui avait la lanterne n'était pas à l'épicerie.",
+     "Ni Margaux ni Constance n'avait la pelle.",
+     "Margaux n'avait pas la lanterne.",
+     "Nicolas avait les raquettes.",
+     "La personne qui avait la pelle était dans la remise des chasse-neige."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme16.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Hôtel",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Chapelle",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Épicerie",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Remise",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Hôtel",
+       "Chapelle"
+      ],
+      [
+       "Hôtel",
+       "Épicerie"
+      ],
+      [
+       "Chapelle",
+       "Remise"
+      ],
+      [
+       "Épicerie",
+       "Remise"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 17,
+    "titre": "Le gant oublié",
+    "incident": "À la chapelle, un gant oublié sur un banc. Un gant gauche, très usé au pouce.",
+    "question_lieu": [
+     "Remise",
+     "dans la remise des chasse-neige"
+    ],
+    "coupable": "Mathilde",
+    "solution": {
+     "Jacques": {
+      "lieu": [
+       "Gare",
+       "à la gare"
+      ],
+      "objet": [
+       "bonnet",
+       "le bonnet"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Remise",
+       "dans la remise des chasse-neige"
+      ],
+      "objet": [
+       "thermos",
+       "le thermos"
+      ]
+     },
+     "Clara": {
+      "lieu": [
+       "Chapelle",
+       "à la chapelle"
+      ],
+      "objet": [
+       "lanterne",
+       "la lanterne"
+      ]
+     },
+     "Bertille": {
+      "lieu": [
+       "Hôtel",
+       "à l'hôtel de la gare"
+      ],
+      "objet": [
+       "luge",
+       "la luge"
+      ]
+     }
+    },
+    "indices": [
+     "Mathilde n'était pas à l'hôtel de la gare.",
+     "Mathilde et Clara se trouvaient dans des lieux voisins.",
+     "Clara était à la chapelle."
+    ],
+    "faits_ajoutes": [],
+    "indices_livre": [
+     "Mathilde n'était pas à l'hôtel de la gare.",
+     "La personne qui avait la luge n'était pas dans la remise des chasse-neige.",
+     "Ni Jacques ni Clara n'avait la luge.",
+     "La personne qui avait le bonnet était à la gare.",
+     "Mathilde et Clara se trouvaient dans des lieux voisins.",
+     "Clara était à la chapelle.",
+     "Clara se trouvait dans un lieu voisin de celui de la personne qui avait le thermos."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme17.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Gare",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Hôtel",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Remise",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Chapelle",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Gare",
+       "Hôtel"
+      ],
+      [
+       "Gare",
+       "Remise"
+      ],
+      [
+       "Hôtel",
+       "Chapelle"
+      ],
+      [
+       "Remise",
+       "Chapelle"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 18,
+    "titre": "Le téléphérique",
+    "incident": "Le téléphérique a été mis en marche en pleine nuit, sans passager. Pour créer une diversion ?",
+    "question_lieu": [
+     "Épicerie",
+     "à l'épicerie"
+    ],
+    "coupable": "Henri",
+    "solution": {
+     "Ulysse": {
+      "lieu": [
+       "Téléphérique",
+       "au téléphérique"
+      ],
+      "objet": [
+       "thermos",
+       "le thermos"
+      ]
+     },
+     "Henri": {
+      "lieu": [
+       "Épicerie",
+       "à l'épicerie"
+      ],
+      "objet": [
+       "raquettes",
+       "les raquettes"
+      ]
+     },
+     "Nicolas": {
+      "lieu": [
+       "Remise",
+       "dans la remise des chasse-neige"
+      ],
+      "objet": [
+       "luge",
+       "la luge"
+      ]
+     },
+     "Samuel": {
+      "lieu": [
+       "Chapelle",
+       "à la chapelle"
+      ],
+      "objet": [
+       "pelle",
+       "la pelle"
+      ]
+     }
+    },
+    "indices": [
+     "Samuel n'était pas à l'épicerie.",
+     "Henri ne se trouvait pas dans un lieu voisin de celui de Samuel.",
+     "Ulysse était au téléphérique."
+    ],
+    "faits_ajoutes": [
+     "Ulysse était au téléphérique."
+    ],
+    "indices_livre": [
+     "Ulysse n'avait pas la luge.",
+     "Henri n'avait pas le thermos.",
+     "Ni Henri ni Nicolas n'avait la pelle.",
+     "Nicolas se trouvait dans un lieu voisin de celui de la personne qui avait la pelle.",
+     "Samuel n'était pas à l'épicerie.",
+     "Henri ne se trouvait pas dans un lieu voisin de celui de Samuel.",
+     "La personne qui avait le thermos était au téléphérique.",
+     "La personne qui avait la luge n'était pas à l'épicerie."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme18.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Épicerie",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Téléphérique",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Remise",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Chapelle",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Épicerie",
+       "Téléphérique"
+      ],
+      [
+       "Épicerie",
+       "Remise"
+      ],
+      [
+       "Téléphérique",
+       "Chapelle"
+      ],
+      [
+       "Remise",
+       "Chapelle"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 19,
+    "titre": "Le sapin dépouillé",
+    "incident": "Toutes les boules rouges du sapin ont disparu. On les retrouve dans une poubelle de la cuisine.",
+    "question_lieu": [
+     "Bibliothèque",
+     "dans la bibliothèque"
+    ],
+    "coupable": "Samuel",
+    "solution": {
+     "Margaux": {
+      "lieu": [
+       "Fumoir",
+       "dans le fumoir"
+      ],
+      "objet": [
+       "paquet cadeau",
+       "le paquet cadeau"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Grand salon",
+       "dans le grand salon"
+      ],
+      "objet": [
+       "boule de noël",
+       "la boule de noël"
+      ]
+     },
+     "Samuel": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "bûche",
+       "la bûche"
+      ]
+     },
+     "Clara": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "guirlande",
+       "la guirlande"
+      ]
+     }
+    },
+    "indices": [
+     "Tatiana n'était pas dans la cuisine.",
+     "Samuel n'était pas dans la cuisine.",
+     "Margaux et Tatiana se trouvaient dans des pièces voisines.",
+     "Margaux était dans le fumoir.",
+     "Ulysse était dans la véranda."
+    ],
+    "faits_ajoutes": [
+     "Margaux était dans le fumoir.",
+     "Ulysse était dans la véranda."
+    ],
+    "indices_livre": [
+     "Ni Ulysse ni Samuel n'avait la boule de Noël.",
+     "Tatiana n'était pas dans la cuisine.",
+     "Margaux ne se trouvait pas dans une pièce voisine de celle de Ulysse.",
+     "Ulysse n'avait pas la bûche.",
+     "La personne qui avait la boule de Noël n'était pas dans la cuisine.",
+     "Ni Margaux ni Clara n'avait la bûche.",
+     "La personne qui avait le paquet cadeau était dans le fumoir.",
+     "Margaux se trouvait dans une pièce voisine de celle de la personne qui avait la guirlande.",
+     "Samuel n'était pas dans la cuisine.",
+     "Margaux et Tatiana se trouvaient dans des pièces voisines.",
+     "Tatiana se trouvait dans une pièce voisine de celle de la personne qui avait la bûche."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme19.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Fumoir",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Cuisine",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Véranda",
+       "ligne": 0,
+       "col": 2
+      },
+      {
+       "lieu": "Grand salon",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Bibliothèque",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Fumoir",
+       "Cuisine"
+      ],
+      [
+       "Fumoir",
+       "Grand salon"
+      ],
+      [
+       "Cuisine",
+       "Véranda"
+      ],
+      [
+       "Cuisine",
+       "Bibliothèque"
+      ],
+      [
+       "Grand salon",
+       "Bibliothèque"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 20,
+    "titre": "Le cadeau sans nom",
+    "incident": "Sous le sapin, un paquet sans étiquette contient une maquette de la locomotive du Train des Neiges.",
+    "question_lieu": [
+     "Grand salon",
+     "dans le grand salon"
+    ],
+    "coupable": "Ulysse",
+    "solution": {
+     "Mathilde": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "bûche",
+       "la bûche"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Vestiaire",
+       "au vestiaire"
+      ],
+      "objet": [
+       "l'étoile du sapin",
+       "l'étoile du sapin"
+      ]
+     },
+     "Clara": {
+      "lieu": [
+       "Escalier",
+       "dans l'escalier"
+      ],
+      "objet": [
+       "clochette",
+       "la clochette"
+      ]
+     },
+     "Samuel": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "guirlande",
+       "la guirlande"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Grand salon",
+       "dans le grand salon"
+      ],
+      "objet": [
+       "boule de noël",
+       "la boule de noël"
+      ]
+     }
+    },
+    "indices": [
+     "La personne qui avait la boule de Noël était dans le grand salon.",
+     "Ulysse se trouvait dans une pièce voisine de celle de la personne qui avait l'étoile du sapin.",
+     "La personne qui avait la guirlande était dans la bibliothèque.",
+     "Ni Mathilde ni Ulysse n'avait la guirlande."
+    ],
+    "faits_ajoutes": [],
+    "indices_livre": [
+     "La personne qui avait la boule de Noël était dans le grand salon.",
+     "Ulysse se trouvait dans une pièce voisine de celle de la personne qui avait l'étoile du sapin.",
+     "Ni Clara ni Samuel n'avait l'étoile du sapin.",
+     "La personne qui avait la clochette n'était pas au vestiaire.",
+     "La personne qui avait la guirlande était dans la bibliothèque.",
+     "La personne qui avait la bûche n'était pas au vestiaire.",
+     "Samuel se trouvait dans une pièce voisine de celle de la personne qui avait l'étoile du sapin.",
+     "La personne qui avait la bûche n'était pas dans l'escalier.",
+     "Ni Mathilde ni Ulysse n'avait la guirlande.",
+     "Mathilde était dans la salle à manger."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme20.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Vestiaire",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Grand salon",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Salle à manger",
+       "ligne": 0,
+       "col": 2
+      },
+      {
+       "lieu": "Bibliothèque",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Escalier",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Vestiaire",
+       "Grand salon"
+      ],
+      [
+       "Vestiaire",
+       "Bibliothèque"
+      ],
+      [
+       "Grand salon",
+       "Salle à manger"
+      ],
+      [
+       "Grand salon",
+       "Escalier"
+      ],
+      [
+       "Bibliothèque",
+       "Escalier"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 21,
+    "titre": "La bûche entamée",
+    "incident": "La bûche de Mathilde a été entamée avant le dîner. Sur la crème, un brin de menthe qui n'était pas prévu.",
+    "question_lieu": [
+     "Fumoir",
+     "dans le fumoir"
+    ],
+    "coupable": "Nicolas",
+    "solution": {
+     "Nicolas": {
+      "lieu": [
+       "Fumoir",
+       "dans le fumoir"
+      ],
+      "objet": [
+       "l'étoile du sapin",
+       "l'étoile du sapin"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Véranda",
+       "dans la véranda"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Constance": {
+      "lieu": [
+       "Grand salon",
+       "dans le grand salon"
+      ],
+      "objet": [
+       "guirlande",
+       "la guirlande"
+      ]
+     },
+     "Edmond": {
+      "lieu": [
+       "Escalier",
+       "dans l'escalier"
+      ],
+      "objet": [
+       "paquet cadeau",
+       "le paquet cadeau"
+      ]
+     },
+     "Henri": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "bûche",
+       "la bûche"
+      ]
+     }
+    },
+    "indices": [
+     "Nicolas n'était pas dans le grand salon.",
+     "Nicolas n'était pas dans la véranda.",
+     "Edmond était dans l'escalier.",
+     "Henri était dans la bibliothèque."
+    ],
+    "faits_ajoutes": [
+     "Edmond était dans l'escalier.",
+     "Henri était dans la bibliothèque."
+    ],
+    "indices_livre": [
+     "Nicolas se trouvait dans une pièce voisine de celle de la personne qui avait la bougie.",
+     "Edmond se trouvait dans une pièce voisine de celle de la personne qui avait la bûche.",
+     "Nicolas n'était pas dans le grand salon.",
+     "Edmond avait le paquet cadeau.",
+     "Tatiana ne se trouvait pas dans une pièce voisine de celle de Henri.",
+     "Nicolas n'était pas dans la véranda.",
+     "La personne qui avait le paquet cadeau était dans l'escalier.",
+     "Ni Nicolas ni Tatiana n'avait la bûche.",
+     "Constance n'avait pas l'étoile du sapin."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme21.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Grand salon",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Bibliothèque",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Escalier",
+       "ligne": 0,
+       "col": 2
+      },
+      {
+       "lieu": "Véranda",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Fumoir",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Grand salon",
+       "Bibliothèque"
+      ],
+      [
+       "Grand salon",
+       "Véranda"
+      ],
+      [
+       "Bibliothèque",
+       "Escalier"
+      ],
+      [
+       "Bibliothèque",
+       "Fumoir"
+      ],
+      [
+       "Véranda",
+       "Fumoir"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 22,
+    "titre": "Le chant interrompu",
+    "incident": "Tatiana joue un chant de Noël au violon. Une corde casse net quand un convive se lève brusquement.",
+    "question_lieu": [
+     "Cuisine",
+     "dans la cuisine"
+    ],
+    "coupable": "Tatiana",
+    "solution": {
+     "Nicolas": {
+      "lieu": [
+       "Escalier",
+       "dans l'escalier"
+      ],
+      "objet": [
+       "clochette",
+       "la clochette"
+      ]
+     },
+     "Gabriel": {
+      "lieu": [
+       "Grand salon",
+       "dans le grand salon"
+      ],
+      "objet": [
+       "l'étoile du sapin",
+       "l'étoile du sapin"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Fumoir",
+       "dans le fumoir"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "guirlande",
+       "la guirlande"
+      ]
+     },
+     "Bertille": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "boule de noël",
+       "la boule de noël"
+      ]
+     }
+    },
+    "indices": [
+     "Nicolas et Gabriel se trouvaient dans des pièces voisines.",
+     "Gabriel et Bertille se trouvaient dans des pièces voisines.",
+     "Gabriel était dans le grand salon.",
+     "Mathilde était dans le fumoir."
+    ],
+    "faits_ajoutes": [
+     "Gabriel était dans le grand salon.",
+     "Mathilde était dans le fumoir."
+    ],
+    "indices_livre": [
+     "Ni Nicolas ni Tatiana n'avait la boule de Noël.",
+     "Mathilde ne se trouvait pas dans une pièce voisine de celle de Tatiana.",
+     "Nicolas et Gabriel se trouvaient dans des pièces voisines.",
+     "Mathilde n'avait pas la guirlande.",
+     "La personne qui avait la guirlande n'était pas dans le fumoir.",
+     "La personne qui avait l'étoile du sapin était dans le grand salon.",
+     "Ni Nicolas ni Bertille n'avait la bougie.",
+     "La personne qui avait la guirlande n'était pas dans l'escalier.",
+     "La personne qui avait la boule de Noël était dans la salle à manger.",
+     "Gabriel et Bertille se trouvaient dans des pièces voisines.",
+     "Bertille se trouvait dans une pièce voisine de celle de la personne qui avait la guirlande."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme22.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Escalier",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Grand salon",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Fumoir",
+       "ligne": 0,
+       "col": 2
+      },
+      {
+       "lieu": "Cuisine",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Salle à manger",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Escalier",
+       "Grand salon"
+      ],
+      [
+       "Escalier",
+       "Cuisine"
+      ],
+      [
+       "Grand salon",
+       "Fumoir"
+      ],
+      [
+       "Grand salon",
+       "Salle à manger"
+      ],
+      [
+       "Cuisine",
+       "Salle à manger"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 23,
+    "titre": "L'étoile du sapin",
+    "incident": "L'étoile du sapin a été remplacée par une vieille plaque émaillée : « Chemins de fer Faure & Fils, 1931 ».",
+    "question_lieu": [
+     "Grand salon",
+     "dans le grand salon"
+    ],
+    "coupable": "Henri",
+    "solution": {
+     "Jacques": {
+      "lieu": [
+       "Salle à manger",
+       "dans la salle à manger"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Henri": {
+      "lieu": [
+       "Grand salon",
+       "dans le grand salon"
+      ],
+      "objet": [
+       "boule de noël",
+       "la boule de noël"
+      ]
+     },
+     "Mathilde": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "clochette",
+       "la clochette"
+      ]
+     },
+     "Margaux": {
+      "lieu": [
+       "Fumoir",
+       "dans le fumoir"
+      ],
+      "objet": [
+       "l'étoile du sapin",
+       "l'étoile du sapin"
+      ]
+     },
+     "Constance": {
+      "lieu": [
+       "Vestiaire",
+       "au vestiaire"
+      ],
+      "objet": [
+       "guirlande",
+       "la guirlande"
+      ]
+     }
+    },
+    "indices": [
+     "Mathilde se trouvait dans une pièce voisine de celle de la personne qui avait la bougie.",
+     "Ni Henri ni Constance n'avait la bougie.",
+     "Margaux n'avait pas la bougie.",
+     "Margaux était dans le fumoir.",
+     "Constance était au vestiaire."
+    ],
+    "faits_ajoutes": [
+     "Margaux était dans le fumoir.",
+     "Constance était au vestiaire."
+    ],
+    "indices_livre": [
+     "Mathilde se trouvait dans une pièce voisine de celle de la personne qui avait la bougie.",
+     "Margaux se trouvait dans une pièce voisine de celle de la personne qui avait la boule de Noël.",
+     "Constance se trouvait dans une pièce voisine de celle de la personne qui avait la boule de Noël.",
+     "La personne qui avait la boule de Noël était dans le grand salon.",
+     "Ni Henri ni Constance n'avait la bougie.",
+     "La personne qui avait l'étoile du sapin n'était pas au vestiaire.",
+     "Margaux n'avait pas la bougie.",
+     "Ni Henri ni Margaux n'avait la guirlande.",
+     "Margaux se trouvait dans une pièce voisine de celle de la personne qui avait la clochette."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme23.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Vestiaire",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Cuisine",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Salle à manger",
+       "ligne": 0,
+       "col": 2
+      },
+      {
+       "lieu": "Grand salon",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Fumoir",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Vestiaire",
+       "Cuisine"
+      ],
+      [
+       "Vestiaire",
+       "Grand salon"
+      ],
+      [
+       "Cuisine",
+       "Salle à manger"
+      ],
+      [
+       "Cuisine",
+       "Fumoir"
+      ],
+      [
+       "Grand salon",
+       "Fumoir"
+      ]
+     ]
+    }
+   },
+   {
+    "num": 24,
+    "titre": "Minuit",
+    "incident": "Les douze coups sonnent. Il ne manque plus qu'une lettre à Rose pour lire le dernier message.",
+    "question_lieu": [
+     "Bibliothèque",
+     "dans la bibliothèque"
+    ],
+    "coupable": "Bertille",
+    "solution": {
+     "Constance": {
+      "lieu": [
+       "Vestiaire",
+       "au vestiaire"
+      ],
+      "objet": [
+       "paquet cadeau",
+       "le paquet cadeau"
+      ]
+     },
+     "Clara": {
+      "lieu": [
+       "Grand salon",
+       "dans le grand salon"
+      ],
+      "objet": [
+       "bûche",
+       "la bûche"
+      ]
+     },
+     "Tatiana": {
+      "lieu": [
+       "Cuisine",
+       "dans la cuisine"
+      ],
+      "objet": [
+       "bougie",
+       "la bougie"
+      ]
+     },
+     "Bertille": {
+      "lieu": [
+       "Bibliothèque",
+       "dans la bibliothèque"
+      ],
+      "objet": [
+       "l'étoile du sapin",
+       "l'étoile du sapin"
+      ]
+     },
+     "Ulysse": {
+      "lieu": [
+       "Escalier",
+       "dans l'escalier"
+      ],
+      "objet": [
+       "guirlande",
+       "la guirlande"
+      ]
+     }
+    },
+    "indices": [
+     "Constance ne se trouvait pas dans une pièce voisine de celle de Ulysse.",
+     "Tatiana n'était pas dans la bibliothèque.",
+     "Clara ne se trouvait pas dans une pièce voisine de celle de Bertille.",
+     "Clara était dans le grand salon."
+    ],
+    "faits_ajoutes": [
+     "Clara était dans le grand salon."
+    ],
+    "indices_livre": [
+     "Bertille n'avait pas le paquet cadeau.",
+     "Constance ne se trouvait pas dans une pièce voisine de celle de Bertille.",
+     "Ni Clara ni Tatiana n'avait le paquet cadeau.",
+     "Constance ne se trouvait pas dans une pièce voisine de celle de Ulysse.",
+     "Clara se trouvait dans une pièce voisine de celle de la personne qui avait la guirlande.",
+     "Ni Tatiana ni Ulysse n'avait la bûche.",
+     "Tatiana n'était pas dans la bibliothèque.",
+     "Tatiana n'avait pas l'étoile du sapin.",
+     "La personne qui avait la guirlande n'était pas dans la cuisine.",
+     "Clara n'avait pas l'étoile du sapin.",
+     "Clara ne se trouvait pas dans une pièce voisine de celle de Bertille.",
+     "La personne qui avait la bûche était dans le grand salon."
+    ],
+    "image": "enigmes/Le-Train-des-Neiges_enigme24.png",
+    "plan_grille": {
+     "cases": [
+      {
+       "lieu": "Bibliothèque",
+       "ligne": 0,
+       "col": 0
+      },
+      {
+       "lieu": "Cuisine",
+       "ligne": 0,
+       "col": 1
+      },
+      {
+       "lieu": "Vestiaire",
+       "ligne": 0,
+       "col": 2
+      },
+      {
+       "lieu": "Escalier",
+       "ligne": 1,
+       "col": 0
+      },
+      {
+       "lieu": "Grand salon",
+       "ligne": 1,
+       "col": 1
+      }
+     ],
+     "voisins": [
+      [
+       "Bibliothèque",
+       "Cuisine"
+      ],
+      [
+       "Bibliothèque",
+       "Escalier"
+      ],
+      [
+       "Cuisine",
+       "Vestiaire"
+      ],
+      [
+       "Cuisine",
+       "Grand salon"
+      ],
+      [
+       "Escalier",
+       "Grand salon"
+      ]
+     ]
+    }
    }
   ]
  }

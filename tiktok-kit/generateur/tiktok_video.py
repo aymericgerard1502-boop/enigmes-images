@@ -16,7 +16,7 @@ from video_enigme import W, H, FPS, F, GOLD, ORANGE, RED, WHITE, MUTED, LX, RX, 
 
 SR = 44100
 VOIX_DIR = os.environ.get("VOIX_DIR", "/home/claude/voix")
-NAME_COLS = [(255, 112, 112), (90, 214, 200), (186, 146, 255)]
+NAME_COLS = [(255, 112, 112), (90, 214, 200), (186, 146, 255), (120, 190, 255), (255, 170, 210)]
 BLACK = (8, 6, 20)
 
 # Accroches écrites à la main (sinon : titre de l'énigme en question)
@@ -190,17 +190,48 @@ def tiles_layer(order, y, h=170, fs=46):
             d.polygon([(cx - 22, cy), (cx - 8, cy - 11), (cx - 8, cy + 11)], fill=GOLD)
     return lay, y + h
 
+def grid_layer(grille, y, h=130, fs=40):
+    """Plan en grille (cases + voisinages) redessiné au style des tuiles."""
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    nc = 1 + max(c["col"] for c in grille["cases"]); nl = 1 + max(c["ligne"] for c in grille["cases"])
+    gap, rgap = (40, 34) if nc == 3 else (70, 34)
+    tw = min(380, (W - 200 - gap * (nc - 1)) / nc); x0 = (W - nc * tw - (nc - 1) * gap) / 2 - 40
+    pos = {c["lieu"]: (x0 + c["col"] * (tw + gap), y + c["ligne"] * (h + rgap)) for c in grille["cases"]}
+    for a, b in grille["voisins"]:
+        (xa, ya), (xb, yb) = pos[a], pos[b]
+        if ya == yb:
+            cx, cy = min(xa, xb) + tw + gap / 2, ya + h / 2
+            d.line((cx - gap / 2 + 4, cy, cx + gap / 2 - 4, cy), fill=GOLD, width=6)
+        else:
+            cx, cy = xa + tw / 2, min(ya, yb) + h + rgap / 2
+            d.line((cx, cy - rgap / 2 + 4, cx, cy + rgap / 2 - 4), fill=GOLD, width=6)
+    for name, (x, yy) in pos.items():
+        d.rounded_rectangle((x, yy, x + tw, yy + h), 24, fill=(52, 46, 104), outline=GOLD, width=5)
+        size = fs
+        while True:
+            f = F("Carlito-Bold.ttf", size); lines = [z for z in V.wrap(d, name, f, tw - 30) if z]
+            if max(d.textlength(ln, font=f) for ln in lines) <= tw - 26 or size <= 24: break
+            size -= 2
+        lh = size * 1.15; cy0 = yy + h / 2 - (len(lines) - 1) * lh / 2
+        for j, ln in enumerate(lines):
+            d.text((x + tw / 2, cy0 + j * lh), ln, font=f, fill=WHITE, anchor="mm")
+    return lay, y + nl * h + (nl - 1) * rgap
+
 # ------------------------------------------------------------------ calques
 def L(): return Image.new("RGBA", (W, H), (0, 0, 0, 0))
 
 def chips_layer(names, cols, y=250, letters=None):
     if letters: names = [f"{l} · {n}" for l, n in zip(letters, names)]
-    lay = L(); d = ImageDraw.Draw(lay); f = F("Carlito-Bold.ttf", 44)
-    ws = [d.textlength(n, font=f) + 60 for n in names]; gap = 22
+    lay = L(); d = ImageDraw.Draw(lay); size = 44
+    while True:
+        f = F("Carlito-Bold.ttf", size); gap = 22 if size > 36 else 14
+        ws = [d.textlength(n, font=f) + (60 if size > 36 else 40) for n in names]
+        if sum(ws) + gap * (len(ws) - 1) <= W - 120 or size <= 28: break
+        size -= 2
     x = (W - sum(ws) - gap * (len(ws) - 1)) / 2 - 40
     for n, c, w in zip(names, cols, ws):
         d.rounded_rectangle((x, y, x + w, y + 72), 36, fill=c)
-        d.text((x + 30, y + 12), n, font=f, fill=BLACK); x += w + gap
+        d.text((x + w / 2, y + 36), n, font=f, fill=BLACK, anchor="mm"); x += w + gap
     return lay
 
 def plan_card(plan, y, width=820):
@@ -248,16 +279,17 @@ def defi_layer(names, cols, letters=None, badge="ÉNIGME DU JOUR", hier=None):
     d.rounded_rectangle((bx, 300, bx + bw, 370), 35, fill=RED); d.text((bx + 30, 313), t, font=f, fill=WHITE)
     words = [["TOI,", GOLD], ["TU", GOLD], ["LE", GOLD], ["TROUVES", GOLD], ["AVANT", GOLD], ["ROSE\u00a0?", WHITE]]
     y = draw_rich(d, words, F("Caladea-Bold.ttf", 124), 420, width=900, stroke=8, spacing=1.06)
-    r = 92; gap = 270; cx0 = W / 2 - 40 - gap; cy = y + 70 + r
-    for k, nm in enumerate(names[:3]):
+    n = len(names); r, gap, nfs = {3: (92, 270, 52), 4: (78, 225, 46), 5: (64, 182, 38)}[n]
+    cx0 = W / 2 - 40 - gap * (n - 1) / 2; cy = y + 70 + r
+    for k, nm in enumerate(names):
         cx = cx0 + k * gap; ch = letters[k] if letters else nm[0]
         d.ellipse((cx - r - 8, cy - r - 8, cx + r + 8, cy + r + 8), fill=WHITE)
         d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=cols[k])
-        bf = F("Caladea-Bold.ttf", 110)
+        bf = F("Caladea-Bold.ttf", int(r * 1.2))
         d.text((cx - d.textlength(ch, font=bf) / 2, cy - bf.size * 0.62), ch, font=bf, fill=BLACK)
-        nf = F("Carlito-Bold.ttf", 52)
+        nf = F("Carlito-Bold.ttf", nfs)
         d.text((cx - d.textlength(nm, font=nf) / 2, cy + r + 22), nm, font=nf, fill=WHITE, stroke_width=6, stroke_fill=BLACK)
-    draw_rich(d, [["3", GOLD], ["suspects,", WHITE], ["1", GOLD], ["seul", WHITE], ["coupable", WHITE]],
+    draw_rich(d, [[str(n), GOLD], ["suspects,", WHITE], ["1", GOLD], ["seul", WHITE], ["coupable", WHITE]],
               F("Carlito-Bold.ttf", 62), cy + r + 105, stroke=7)
     return lay
 
@@ -291,18 +323,19 @@ def recap_layer(clue_words, y0):
 
 def suspects_layer(names, cols, shown, pops, letters=None):
     lay = L(); d = ImageDraw.Draw(lay)
-    r = 105; gap = 300; cx0 = W / 2 - 40 - gap
+    n = len(names); r, gap, nfs = {3: (105, 300, 54), 4: (86, 235, 46), 5: (70, 188, 40)}[n]
+    cx0 = W / 2 - 40 - gap * (n - 1) / 2
     for k in range(shown):
         cx = cx0 + k * gap; cy = 1020; p = pops[k]; rr = int(r * (0.6 + 0.4 * p))
         d.ellipse((cx - rr - 8, cy - rr - 8, cx + rr + 8, cy + rr + 8), fill=WHITE)
         d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), fill=cols[k])
-        bf = F("Caladea-Bold.ttf", int(120 * (0.6 + 0.4 * p)))
+        bf = F("Caladea-Bold.ttf", int(r * 1.15 * (0.6 + 0.4 * p)))
         ch = letters[k] if letters else names[k][0]
         d.text((cx - d.textlength(ch, font=bf) / 2, cy - bf.size * 0.62), ch, font=bf, fill=BLACK)
-        nf = F("Carlito-Bold.ttf", 54)
+        nf = F("Carlito-Bold.ttf", nfs)
         d.text((cx - d.textlength(names[k], font=nf) / 2, cy + r + 30), names[k], font=nf, fill=WHITE, stroke_width=6, stroke_fill=BLACK)
     big = F("Caladea-Bold.ttf", 96)
-    draw_rich(d, [["3", GOLD], ["suspects", WHITE]], big, 700, stroke=8)
+    draw_rich(d, [[str(n), GOLD], ["suspects", WHITE]], big, 700, stroke=8)
     return lay
 
 # ------------------------------------------------------------------ montage
@@ -312,7 +345,7 @@ NOMBRES = ("zéro un deux trois quatre cinq six sept huit neuf dix onze douze tr
 def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=None, jour=None, hier=None, abc=False):
     """jour/hier : calendrier de l'Avent (badge « JOUR X/24 », réponse de la veille en ouverture) ; abc : suspects A/B/C."""
     livre, e = V.load(slug, num)
-    plan = V.crop_plan(os.path.join(V.KIT, e["image"]))
+    plan = None if e.get("plan_grille") else V.crop_plan(os.path.join(V.KIT, e["image"]))
     cover = Image.open(os.path.join(V.KIT, livre["couverture"])).convert("RGB")
     n_en = 24 if "Neiges" in livre["livre"] else 40
     names = sorted(e["solution"].keys()); cols = NAME_COLS[:len(names)]
@@ -321,21 +354,24 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=N
         colored.append((v["lieu"][0], GOLD))
     hook = HOOKS.get((slug, num), e["titre"] + " : qui est le coupable ?")
     q = f"Qui se trouvait {e['question_lieu'][1]} ?"
-    liste = f"{names[0]}, {names[1]} ou {names[2]}"
+    liste = ", ".join(names[:-1]) + " ou " + names[-1]
+    ns = len(names)
 
     # --- textes parlés
-    letters = ["A", "B", "C"][:len(names)] if abc else None
+    letters = list("ABCDE"[:len(names)]) if abc else None
+    lettres_txt = ", ".join(letters[:-1]) + " ou " + letters[-1] if abc else ""
     ouverture = "Toi, tu trouves le coupable avant Rose ?" if defi else hook + " Trouve le coupable avant Rose."
     if jour:
         ouverture = (f"Hier, c'était {hier} ! ⏸ " if hier else "") + f"Jour {NOMBRES[jour]} sur vingt-quatre. " + ouverture
-    presentation = (f"Trois suspects. " + " ".join(f"{l}, {n}." for l, n in zip(letters, names)) if abc
-                    else f"Trois suspects : {', '.join(names[:-1])} et {names[-1]}.") + " Écoute bien les indices."
+    nb = NOMBRES[ns].capitalize()
+    presentation = (f"{nb} suspects. " + " ".join(f"{l}, {n}." for l, n in zip(letters, names)) if abc
+                    else f"{nb} suspects : {', '.join(names[:-1])} et {names[-1]}.") + " Écoute bien les indices."
     lines = [("hook", ouverture), ("setup", e["incident"]), ("suspects", presentation)]
     for i, c in enumerate(e["indices"]): lines.append((f"clue{i}", c))
     pauses = {}
     if moteur:   # vague 5 : voix féminine de conteuse, rythmée phrase par phrase (voix_off.py)
         lines.append(("question", "Alors, à ton avis… ⏸ " + q + " Tu as huit secondes."))
-        lines.append(("cta", "A, B ou C ? ⏸ Tape ta lettre en commentaire !" if abc else f"{liste} ? ⏸ Dis-le en commentaire !"))
+        lines.append(("cta", f"{lettres_txt} ? ⏸ Tape ta lettre en commentaire !" if abc else f"{liste} ? ⏸ Dis-le en commentaire !"))
         import voix_off as VO
         res = VO.voix(lines, moteur=moteur)
         audio = {k: v[0] for k, v in res.items()}; pauses = {k: v[1] for k, v in res.items()}
@@ -380,19 +416,24 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=N
     S.rose(dd, 250, S.GROUND_Y, 0); S.sardine(dd, 560, S.GROUND_Y, 0)
     dim_bg = still.filter(ImageFilter.GaussianBlur(14)); dim_bg.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 205)))
     chips = chips_layer(names, cols, letters=letters)
-    order = plan_order(plan, [v["lieu"][0] for v in e["solution"].values()])
-    if order:
+    order = None if e.get("plan_grille") else plan_order(plan, [v["lieu"][0] for v in e["solution"].values()])
+    if e.get("plan_grille"):
+        pl_small, pl_end = grid_layer(e["plan_grille"], 360)
+    elif order:
         pl_small, pl_end = tiles_layer(order, 370)
     else:
         pl_small, pl_end = plan_card(plan, 360)
     clue_words = [segments(c, colored) for c in e["indices"]]
     clue_lays = [clue_layer(i, len(clue_words), ws) for i, ws in enumerate(clue_words)]
-    if order:
+    if e.get("plan_grille"):
+        pl_recap, pr_end = grid_layer(e["plan_grille"], 350, h=100, fs=34)
+    elif order:
         pl_recap, pr_end = tiles_layer(order, 350, h=120, fs=38)
     else:
         pl_recap, pr_end = plan_card(plan, 350, 700)
     recap, ry = recap_layer(clue_words, pr_end + 30)
-    cta = V.cta_layer(livre, cover, n_en, letters or names, sous_titre=" · ".join(f"{l}\u00a0:\u00a0{n}" for l, n in zip(letters, names)) if abc else None)
+    cta = V.cta_layer(livre, cover, n_en, letters or names, sous_titre="Tape ta lettre en commentaire !" if abc else None)
+    chips_cta = chips_layer(names, cols, y=1430, letters=letters) if abc else None
     cap_words = {}
     setup_words = e["incident"].split()
     chunks = []; cur = []
@@ -443,9 +484,9 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=N
         else:
             fr = dim_bg.copy()
             if T["suspects"][0] <= t < T["suspects"][1]:
-                el = t - T["suspects"][0]; ns = min(3, 1 + int(max(0, el - 0.9) / 0.55))
-                pops = [ease(min(1, (el - 0.9 - k * 0.55) / 0.2)) if el > 0.9 + k * 0.55 else 1 for k in range(3)]
-                fr.alpha_composite(suspects_layer(names, cols, ns if el > 0.9 else 0, pops, letters))
+                el = t - T["suspects"][0]; nsh = min(ns, 1 + int(max(0, el - 0.9) / 0.55))
+                pops = [ease(min(1, (el - 0.9 - k * 0.55) / 0.2)) if el > 0.9 + k * 0.55 else 1 for k in range(ns)]
+                fr.alpha_composite(suspects_layer(names, cols, nsh if el > 0.9 else 0, pops, letters))
             for i in range(len(clue_lays)):
                 a, b = T[f"clue{i}"]
                 if a <= t < b:
@@ -462,6 +503,7 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=N
                 fr.alpha_composite(qcache[key])
             if t >= T["cta"][0]:
                 el = t - T["cta"][0]; paste_alpha(fr, cta, ease(el / 0.5), (1 - ease(el / 0.5)) * 40)
+                if chips_cta is not None: paste_alpha(fr, chips_cta, ease((el - 0.3) / 0.4))
         p.stdin.write(fr.convert("RGB").tobytes())
     p.stdin.close(); p.wait(); os.remove(wav)
     return dict(duree=round(dur, 1), coupable=e["coupable"], titre=e["titre"],
