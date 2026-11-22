@@ -27,6 +27,9 @@ VERIFIER = {"pocket", "chatter"}  # moteurs autorégressifs : chaque morceau est
 def pour_moteur(s):
     """Texte envoyé au moteur : la ponctuation de suspension est rendue par nos silences."""
     s = s.replace("…", ".").replace("⏸", "").strip()
+    nombres = ("zéro un deux trois quatre cinq six sept huit neuf dix onze douze treize quatorze quinze seize dix-sept "
+               "dix-huit dix-neuf vingt vingt-et-un vingt-deux vingt-trois vingt-quatre").split()
+    s = re.sub(r"\b(\d{1,2})\b", lambda m: nombres[int(m.group(1))] if int(m.group(1)) < len(nombres) else m.group(1), s)
     return s
 
 _ASR = None
@@ -42,7 +45,10 @@ def transcrire(a):
 def _norm(t):
     import unicodedata
     t = unicodedata.normalize("NFD", t.lower()); t = "".join(c for c in t if unicodedata.category(c) != "Mn")
-    return re.sub(r"[^a-z0-9]+", " ", t.replace("huit", "8")).strip()
+    nombres = ("zero un deux trois quatre cinq six sept huit neuf dix onze douze treize quatorze quinze seize dix-sept "
+               "dix-huit dix-neuf vingt vingt-et-un vingt-deux vingt-trois vingt-quatre").split()
+    t = re.sub(r"\b(\d{1,2})\b", lambda m: nombres[int(m.group(1))] if int(m.group(1)) < len(nombres) else m.group(1), t)
+    return re.sub(r"[^a-z0-9]+", " ", t).strip()
 
 def ressemblance(attendu, entendu):
     import difflib
@@ -105,7 +111,7 @@ def _lancer(moteur, jobs, d, ref):
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode: raise RuntimeError(r.stderr[-3000:])
 
-def voix(lignes, moteur="kokoro", ref=None, log=False, essais=3, seuil=0.8):
+def voix(lignes, moteur="kokoro", ref=None, log=False, essais=4, seuil=0.9):
     """-> {clé: (audio, silence_final)} ; chaque morceau est rogné, vérifié (moteurs autorégressifs), puis espacé."""
     ref = ref or REF_DEFAUT
     plan, jobs = [], []
