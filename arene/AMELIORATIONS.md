@@ -42,7 +42,7 @@ Bilan Metricool envoyé à Aymeric le 15/11 (vues · likes · commentaires · pa
 Incident du 20/11 : une vidéo de la vague 3 bannie par TikTok (très probablement celle du 19/11 sur l'épargne salariale : « 10 000 € débloqués d'un coup », « tu peux tout récupérer, sans impôt » = forme d'arnaque « argent facile »). Correctif de sécurité appliqué dès le 21/11 (hors méthode des vagues, car c'est une règle de conformité) : bandeau « SI LA LOI PASSE » au-dessus du chiffre d'ouverture, interdiction des formulations de gain facile et des sujets d'épargne/placement (voir CONSIGNES).
 Objectif : temps de visionnage moyen > 8 s, décrochage principal après 0:03 (au lieu de 0:01), premiers abonnés.
 Bilan : le 24/11, avec les chiffres TikTok Studio de 2 ou 3 vidéos.
-Vidéos de la vague : 19/11 déblocage de l'épargne salariale (choc 10 000 €) ; 20/11 réduction d'impôt pour frais de scolarité (choc −183 €) ; 21/11 abattement de 10 % des retraités (choc −617 €, « tes grands-parents »).
+Vidéos de la vague : 19/11 déblocage de l'épargne salariale (choc 10 000 €) ; 20/11 réduction d'impôt pour frais de scolarité (choc −183 €) ; 21/11 abattement de 10 % des retraités (choc −617 €, « tes grands-parents ») ; 22/11 taxe sur les produits sucrés (choc +6 cts par paquet de gâteaux).
 
 ## Liste d'attente (une idée par vague, dans cet ordre sauf décision contraire)
 1. Phrase finale d'abonnement : « Abonne-toi : demain, une autre mesure passe au calcul. »
