@@ -364,8 +364,8 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=N
     if jour:
         ouverture = (f"Hier, c'était {hier} ! ⏸ " if hier else "") + f"Jour {NOMBRES[jour]} sur vingt-quatre. " + ouverture
     nb = NOMBRES[ns].capitalize()
-    presentation = (f"{nb} suspects. " + " ".join(f"{l}, {n}." for l, n in zip(letters, names)) if abc
-                    else f"{nb} suspects : {', '.join(names[:-1])} et {names[-1]}.") + " Écoute bien les indices."
+    # les lettres A/B/C restent à l'écran ; à l'oral, les prénoms seuls (les lettres isolées font bégayer la voix)
+    presentation = f"{nb} suspects : {', '.join(names[:-1])} et {names[-1]}. Écoute bien les indices."
     lines = [("hook", ouverture), ("setup", e["incident"]), ("suspects", presentation)]
     for i, c in enumerate(e["indices"]): lines.append((f"clue{i}", c))
     pauses = {}
