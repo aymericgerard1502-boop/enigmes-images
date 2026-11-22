@@ -4,6 +4,8 @@ import json, os, sys, subprocess
 from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 KIT = os.path.join(ROOT, "tiktok-kit")
+AVENT_DEBUT = "2026-12-01"
+
 PLAN = [  # date, slug, num
     ("2026-10-18", "La-Nuit-de-l-Ankou", 1), ("2026-10-19", "Tempete-sur-Belle-Ile", 1),
     ("2026-10-20", "La-Nuit-de-l-Ankou", 2), ("2026-10-21", "Vendanges-tardives", 1),
@@ -30,6 +32,12 @@ PLAN = [  # date, slug, num
     ("2026-11-19", "Tempete-sur-Belle-Ile", 6), ("2026-11-20", "Les-Santons-de-Minuit", 9),
     ("2026-11-21", "Vendanges-tardives", 5), ("2026-11-22", "Les-Santons-de-Minuit", 10),
     ("2026-11-23", "Tempete-sur-Belle-Ile", 7), ("2026-11-24", "Vendanges-tardives", 6),
+    # vague 5 : format vague 4 + nouvelle voix de conteuse (Chatterbox, choix « A » du 22/11)
+    ("2026-11-25", "Tempete-sur-Belle-Ile", 8), ("2026-11-26", "La-Nuit-de-l-Ankou", 9),
+    ("2026-11-27", "Vendanges-tardives", 7), ("2026-11-28", "Tempete-sur-Belle-Ile", 9),
+    ("2026-11-29", "La-Nuit-de-l-Ankou", 10), ("2026-11-30", "Vendanges-tardives", 8),
+] + [  # calendrier de l'Avent en direct : 1 énigme du Train des Neiges par jour (7 à 24 : à extraire du PDF du livre)
+    (f"2026-12-{j:02d}", "Le-Train-des-Neiges", j) for j in range(1, 25)
 ]
 TAGS = {"La-Nuit-de-l-Ankou": "#halloween #legendebretonne", "Tempete-sur-Belle-Ile": "#bretagne #belleile",
         "Vendanges-tardives": "#alsace #vendanges", "Les-Santons-de-Minuit": "#provence #noel",
@@ -41,8 +49,24 @@ def enigme(slug, num): return next(e for e in livres[slug]["enigmes"] if e["num"
 def items():
     out, prev = [], None
     for date, slug, num in PLAN:
+        if not any(x["num"] == num for x in livres[slug]["enigmes"]):
+            continue   # énigme pas encore dans enigmes.json (Train des Neiges 7 à 24 : PDF du livre attendu)
         e, l = enigme(slug, num), livres[slug]
         n = 24 if "Neiges" in l["livre"] else 40
+        if date >= AVENT_DEBUT and "Neiges" in l["livre"]:   # calendrier de l'Avent en direct : jour = numéro de l'énigme
+            noms = sorted(e["solution"])
+            lines = [f"🎄 Calendrier de l'Avent · Jour {num}/24",
+                     f"🔍 {e['titre']} : qui se trouvait {e['question_lieu'][1]} ?",
+                     "Tape A, B ou C en commentaire 👇 (" + " · ".join(f"{a} : {b}" for a, b in zip("ABC", noms)) + ")",
+                     "Abonne-toi pour la suite demain : réponse au début de la prochaine vidéo."]
+            if num > 1:
+                pe = enigme(slug, num - 1)
+                lines.append(f"✅ Jour {num - 1} (« {pe['titre']} ») : c'était {pe['coupable']} !")
+            lines.append(f"📖 Les 24 énigmes et l'enquête complète dans « {l['livre']} » (sur Amazon : Maël Kerjean)")
+            lines.append(f"#calendrierdelavent #enigme #trouvelecoupable #enquete #cassetete #livrejeu #booktokfrance #noel #mystere")
+            fn = f"tiktok-videos/{date}_avent_jour{num:02d}.mp4"
+            out.append(dict(date=date, slug=slug, num=num, file=fn, caption="\n".join(lines), coupable=e["coupable"], avent=True))
+            prev = (slug, num); continue
         lines = [f"🔍 {e['titre']} : qui se trouvait {e['question_lieu'][1]} ?",
                  "Ton suspect en commentaire 👇 Réponse demain sur le compte."]
         if prev:

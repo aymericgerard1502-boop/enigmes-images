@@ -166,10 +166,10 @@ def question_layer(e, y, remaining, frac):
     d.text((cx - d.textlength(s, font=nf) / 2, cy - 33), s, font=nf, fill=WHITE)
     return L
 
-def cta_layer(livre, cover, n_enigmes, noms=None):
+def cta_layer(livre, cover, n_enigmes, noms=None, sous_titre=None):
     L = layer(); d = ImageDraw.Draw(L)
     titre = (", ".join(noms[:-1]) + " ou " + noms[-1] + " ?") if noms else "Ton suspect en commentaire"
-    sous = "Réponds en commentaire !" if noms else "Réponse demain sur le compte."
+    sous = sous_titre or ("Réponds en commentaire !" if noms else "Réponse demain sur le compte.")
     y = text_block(d, (LX, 230), titre, F("Caladea-Bold.ttf", 82), GOLD, RX - LX, 1.05, "center")
     text_block(d, (LX, y + 20), sous, F("Carlito-Regular.ttf", 46), WHITE, RX - LX, align="center")
     cw = 470; ch = int(cover.height * cw / cover.width)

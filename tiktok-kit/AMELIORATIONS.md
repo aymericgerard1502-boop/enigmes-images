@@ -64,6 +64,12 @@ Constat : visuel et scénario bons, mais la voix Piper « Tom » fait amateur (t
 2. Test à l'aveugle A/B/C/D (même script de vague 4, même rythme), moteurs gratuits dont les POIDS autorisent l'usage commercial : Kokoro ff_siwis (Apache 2.0), Kyutai Pocket TTS (CC BY 4.0), Resemble Chatterbox Multilingual (MIT), OpenMOSS MOSS-TTS-Nano (Apache 2.0). Voix de référence pour le clonage : lectrice française de CML-TTS (LibriVox, CC BY 4.0). Écartés : Mistral Voxtral TTS (poids CC BY-NC 4.0, GPU 16 Go), Coqui XTTS (non commercial), services payants.
 Résultat du test (20/11) : 3 versions envoyées (voix_A/B/C.mp3, correspondance gardée hors du dépôt jusqu'au choix d'Aymeric). MOSS-TTS-Nano écarté après essai : en français, le clonage invente des mots (« Ah bon… », « Juste les haïsses cigognes »). Pocket TTS : clonage verrouillé derrière une acceptation de conditions sur Hugging Face, donc voix intégrée « estelle » (enregistrement Kyutai sous CC0). Chaque phrase des moteurs autorégressifs (Pocket, Chatterbox) est réécoutée par Whisper et refaite si elle s'écarte du texte (jusqu'à 3 essais). Les phrases d'un seul mot sont fragiles (« Alors… » devenait « Allô ») : écrire « Alors, à ton avis… ⏸ ».
 3. La voix choisie remplace Tom à partir de la vague 5. Aucune vidéo publiée n'est retouchée.
+**Choix d'Aymeric (22/11) : voix A = Chatterbox Multilingual (MIT), clonée sur la lectrice CML-TTS 5476_3103 (CC BY 4.0), exagération 0,35, cfg 0,4.** Commande par défaut de tiktok_video.py ; `--tom` pour l'ancienne voix.
+
+### Vague 5 — EN COURS (25 → 30 nov., 6 vidéos)
+Changement unique : la voix (conteuse féminine rythmée à la place de Tom). Le reste = format de la vague 4.
+Vidéos : Belle-Île 8 (25/11), Ankou 9 (26/11), Vendanges 7 (27/11), Belle-Île 9 (28/11), Ankou 10 (29/11), Vendanges 8 (30/11). Ankou choisi pour coller au persona (légendes bretonnes, paranormal doux).
+Hypothèse : temps moyen > 6 s (vague 4 : 3 à 4 s selon Aymeric). Puis calendrier de l'Avent dès le 1er décembre.
 
 ### Audience (TikTok Studio, 20/11)
 90-93 % de femmes ; ~78 % de 18-34 ans (18-24 : 41-45 % ; 25-34 : 33-36 %) ; ~90 % en France. 100 % de non-abonnées, 89 % de nouvelles spectatrices : personne ne revient ni ne s'abonne.

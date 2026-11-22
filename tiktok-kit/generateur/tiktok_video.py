@@ -193,7 +193,8 @@ def tiles_layer(order, y, h=170, fs=46):
 # ------------------------------------------------------------------ calques
 def L(): return Image.new("RGBA", (W, H), (0, 0, 0, 0))
 
-def chips_layer(names, cols, y=250):
+def chips_layer(names, cols, y=250, letters=None):
+    if letters: names = [f"{l} · {n}" for l, n in zip(letters, names)]
     lay = L(); d = ImageDraw.Draw(lay); f = F("Carlito-Bold.ttf", 44)
     ws = [d.textlength(n, font=f) + 60 for n in names]; gap = 22
     x = (W - sum(ws) - gap * (len(ws) - 1)) / 2 - 40
@@ -231,21 +232,29 @@ def hook_layer(title, n_words_shown, last_pop):
                   F("Carlito-Bold.ttf", 64), y + 30, stroke=7)
     return lay
 
-def defi_layer(names, cols):
-    """Vague 4 : ouverture tournée vers le spectateur, suspects visibles dès la 1re image."""
+def defi_layer(names, cols, letters=None, badge="ÉNIGME DU JOUR", hier=None):
+    """Vague 4 : ouverture tournée vers le spectateur, suspects visibles dès la 1re image.
+    Calendrier de l'Avent : badge « JOUR X/24 », réponse de la veille en tête, suspects A/B/C."""
     lay = L(); d = ImageDraw.Draw(lay)
-    f = F("Carlito-Bold.ttf", 40); t = "ÉNIGME DU JOUR"
+    if hier:
+        hf = F("Carlito-Bold.ttf", 46)
+        segs = [("Hier : c'était ", WHITE), (hier, GOLD), (" !", WHITE)]
+        tw = sum(d.textlength(t, font=hf) for t, _ in segs); x = (W - tw) / 2 - 40
+        d.rounded_rectangle((x - 34, 178, x + tw + 34, 254), 38, fill=(24, 21, 52, 235), outline=GOLD, width=3)
+        for t, c in segs:
+            d.text((x, 190), t, font=hf, fill=c); x += d.textlength(t, font=hf)
+    f = F("Carlito-Bold.ttf", 40); t = badge
     bw = d.textlength(t, font=f) + 60; bx = (W - bw) / 2 - 40
     d.rounded_rectangle((bx, 300, bx + bw, 370), 35, fill=RED); d.text((bx + 30, 313), t, font=f, fill=WHITE)
     words = [["TOI,", GOLD], ["TU", GOLD], ["LE", GOLD], ["TROUVES", GOLD], ["AVANT", GOLD], ["ROSE\u00a0?", WHITE]]
     y = draw_rich(d, words, F("Caladea-Bold.ttf", 124), 420, width=900, stroke=8, spacing=1.06)
     r = 92; gap = 270; cx0 = W / 2 - 40 - gap; cy = y + 70 + r
     for k, nm in enumerate(names[:3]):
-        cx = cx0 + k * gap
+        cx = cx0 + k * gap; ch = letters[k] if letters else nm[0]
         d.ellipse((cx - r - 8, cy - r - 8, cx + r + 8, cy + r + 8), fill=WHITE)
         d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=cols[k])
         bf = F("Caladea-Bold.ttf", 110)
-        d.text((cx - d.textlength(nm[0], font=bf) / 2, cy - bf.size * 0.62), nm[0], font=bf, fill=BLACK)
+        d.text((cx - d.textlength(ch, font=bf) / 2, cy - bf.size * 0.62), ch, font=bf, fill=BLACK)
         nf = F("Carlito-Bold.ttf", 52)
         d.text((cx - d.textlength(nm, font=nf) / 2, cy + r + 22), nm, font=nf, fill=WHITE, stroke_width=6, stroke_fill=BLACK)
     draw_rich(d, [["3", GOLD], ["suspects,", WHITE], ["1", GOLD], ["seul", WHITE], ["coupable", WHITE]],
@@ -280,7 +289,7 @@ def recap_layer(clue_words, y0):
         y += 14
     return lay, y
 
-def suspects_layer(names, cols, shown, pops):
+def suspects_layer(names, cols, shown, pops, letters=None):
     lay = L(); d = ImageDraw.Draw(lay)
     r = 105; gap = 300; cx0 = W / 2 - 40 - gap
     for k in range(shown):
@@ -288,7 +297,8 @@ def suspects_layer(names, cols, shown, pops):
         d.ellipse((cx - rr - 8, cy - rr - 8, cx + rr + 8, cy + rr + 8), fill=WHITE)
         d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), fill=cols[k])
         bf = F("Caladea-Bold.ttf", int(120 * (0.6 + 0.4 * p)))
-        d.text((cx - d.textlength(names[k][0], font=bf) / 2, cy - bf.size * 0.62), names[k][0], font=bf, fill=BLACK)
+        ch = letters[k] if letters else names[k][0]
+        d.text((cx - d.textlength(ch, font=bf) / 2, cy - bf.size * 0.62), ch, font=bf, fill=BLACK)
         nf = F("Carlito-Bold.ttf", 54)
         d.text((cx - d.textlength(names[k], font=nf) / 2, cy + r + 30), names[k], font=nf, fill=WHITE, stroke_width=6, stroke_fill=BLACK)
     big = F("Caladea-Bold.ttf", 96)
@@ -296,7 +306,11 @@ def suspects_layer(names, cols, shown, pops):
     return lay
 
 # ------------------------------------------------------------------ montage
-def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
+NOMBRES = ("zéro un deux trois quatre cinq six sept huit neuf dix onze douze treize quatorze quinze seize dix-sept "
+           "dix-huit dix-neuf vingt vingt-et-un vingt-deux vingt-trois vingt-quatre").split()
+
+def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False, moteur=None, jour=None, hier=None, abc=False):
+    """jour/hier : calendrier de l'Avent (badge « JOUR X/24 », réponse de la veille en ouverture) ; abc : suspects A/B/C."""
     livre, e = V.load(slug, num)
     plan = V.crop_plan(os.path.join(V.KIT, e["image"]))
     cover = Image.open(os.path.join(V.KIT, livre["couverture"])).convert("RGB")
@@ -310,20 +324,34 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
     liste = f"{names[0]}, {names[1]} ou {names[2]}"
 
     # --- textes parlés
-    lines = [("hook", "Toi, tu trouves le coupable avant Rose ?" if defi
-                      else hook + " Trouve le coupable avant Rose."),
-             ("setup", e["incident"]),
-             ("suspects", f"Trois suspects : {', '.join(names[:-1])} et {names[-1]}. Écoute bien les indices.")]
+    letters = ["A", "B", "C"][:len(names)] if abc else None
+    ouverture = "Toi, tu trouves le coupable avant Rose ?" if defi else hook + " Trouve le coupable avant Rose."
+    if jour:
+        ouverture = (f"Hier, c'était {hier} ! ⏸ " if hier else "") + f"Jour {NOMBRES[jour]} sur vingt-quatre. " + ouverture
+    presentation = (f"Trois suspects. " + " ".join(f"{l}, {n}." for l, n in zip(letters, names)) if abc
+                    else f"Trois suspects : {', '.join(names[:-1])} et {names[-1]}.") + " Écoute bien les indices."
+    lines = [("hook", ouverture), ("setup", e["incident"]), ("suspects", presentation)]
     for i, c in enumerate(e["indices"]): lines.append((f"clue{i}", c))
-    lines.append(("question", "Alors… " + q + " Tu as huit secondes."))
-    lines.append(("cta", f"{liste} ? Dis-le en commentaire !"))
-    audio = {k: tts(txt, voice, 0.70 if (defi and k == "hook") else 0.82) for k, txt in lines}
+    pauses = {}
+    if moteur:   # vague 5 : voix féminine de conteuse, rythmée phrase par phrase (voix_off.py)
+        lines.append(("question", "Alors, à ton avis… ⏸ " + q + " Tu as huit secondes."))
+        lines.append(("cta", "A, B ou C ? ⏸ Tape ta lettre en commentaire !" if abc else f"{liste} ? ⏸ Dis-le en commentaire !"))
+        import voix_off as VO
+        res = VO.voix(lines, moteur=moteur)
+        audio = {k: v[0] for k, v in res.items()}; pauses = {k: v[1] for k, v in res.items()}
+    else:
+        lines.append(("question", "Alors… " + q + " Tu as huit secondes."))
+        lines.append(("cta", f"{liste} ? Dis-le en commentaire !"))
+        audio = {k: tts(txt, voice, 0.70 if (defi and k == "hook") else 0.82) for k, txt in lines}
 
     # --- chronologie
     T, t = {}, 0.0
     for k, _ in lines:
         if k == "cta": T["timer"] = (t, t + secs); t += secs
-        d = len(audio[k]) / SR + (0.35 if k.startswith("clue") else 0.25)
+        if moteur:   # silence de fin de réplique = ponctuation (0,40 s après un point, 0,45 s après « ? »), un peu plus après un indice
+            d = len(audio[k]) / SR + max(pauses.get(k, 0.4), 0.55 if k.startswith("clue") else 0.4)
+        else:
+            d = len(audio[k]) / SR + (0.35 if k.startswith("clue") else 0.25)
         if k == "hook": d = max(d, 2.6)
         T[k] = (t, t + d); t += d
     dur = t + 1.8
@@ -333,6 +361,7 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
     for k, _ in lines:
         i = int((T[k][0] + 0.08) * SR); a = audio[k]
         mix[i:i + len(a)] += a; voice_env[i:i + len(a)] = 1
+    if moteur: mix = voix_conteuse(mix)
     k = int(0.25 * SR); voice_env = np.convolve(voice_env, np.ones(k) / k, mode="same")
     mus = music(dur + 1, *T["timer"]); mus = mus / (np.abs(mus).max() + 1e-6)
     mix[: len(mus)] += mus * (0.30 - 0.20 * voice_env[: len(mus)])
@@ -350,7 +379,7 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
     sc["back"](still, dd, 4.0)
     S.rose(dd, 250, S.GROUND_Y, 0); S.sardine(dd, 560, S.GROUND_Y, 0)
     dim_bg = still.filter(ImageFilter.GaussianBlur(14)); dim_bg.alpha_composite(Image.new("RGBA", (W, H), (10, 8, 26, 205)))
-    chips = chips_layer(names, cols)
+    chips = chips_layer(names, cols, letters=letters)
     order = plan_order(plan, [v["lieu"][0] for v in e["solution"].values()])
     if order:
         pl_small, pl_end = tiles_layer(order, 370)
@@ -363,7 +392,7 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
     else:
         pl_recap, pr_end = plan_card(plan, 350, 700)
     recap, ry = recap_layer(clue_words, pr_end + 30)
-    cta = V.cta_layer(livre, cover, n_en, names)
+    cta = V.cta_layer(livre, cover, n_en, letters or names, sous_titre=" · ".join(f"{l}\u00a0:\u00a0{n}" for l, n in zip(letters, names)) if abc else None)
     cap_words = {}
     setup_words = e["incident"].split()
     chunks = []; cur = []
@@ -377,10 +406,12 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
         for j, wd in enumerate(c):
             tl.append((acc / tot, c, j)); acc += len(wd) + 1
     hook_words = hook_words_of(hook)
-    defi_lay = defi_layer(names, cols) if defi else None
+    defi_lay = defi_layer(names, cols, letters, badge=f"CALENDRIER DE L'AVENT · JOUR {jour}/24" if jour else "ÉNIGME DU JOUR",
+                          hier=hier) if defi else None
 
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
            "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "4M", "-bufsize", "8M", "-pix_fmt", "yuv420p",
+           "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100",
            "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     qcache = {}
@@ -414,7 +445,7 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
             if T["suspects"][0] <= t < T["suspects"][1]:
                 el = t - T["suspects"][0]; ns = min(3, 1 + int(max(0, el - 0.9) / 0.55))
                 pops = [ease(min(1, (el - 0.9 - k * 0.55) / 0.2)) if el > 0.9 + k * 0.55 else 1 for k in range(3)]
-                fr.alpha_composite(suspects_layer(names, cols, ns if el > 0.9 else 0, pops))
+                fr.alpha_composite(suspects_layer(names, cols, ns if el > 0.9 else 0, pops, letters))
             for i in range(len(clue_lays)):
                 a, b = T[f"clue{i}"]
                 if a <= t < b:
@@ -439,6 +470,20 @@ def build(slug, num, out, voice="fr_FR-tom-medium", secs=8, defi=False):
 
 # ================================================================== VAGUE 3 : format court + qualité
 from scipy.signal import fftconvolve
+
+def voix_conteuse(a):
+    """Voix féminine : chaleur, sifflantes adoucies, compression douce (chaîne du test à l'aveugle du 20/11)."""
+    with tempfile.TemporaryDirectory() as d:
+        src, dst = os.path.join(d, "i.wav"), os.path.join(d, "o.wav")
+        with wave.open(src, "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(a / (np.abs(a).max() + 1e-6) * 0.9, -1, 1) * 32767).astype("<i2").tobytes())
+        flt = ("highpass=f=70,equalizer=f=220:t=q:w=1:g=1.5,equalizer=f=5500:t=q:w=1.2:g=-1.5,"
+               "acompressor=threshold=-20dB:ratio=2.5:attack=15:release=200")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-af", flt, "-ar", str(SR), "-ac", "1", dst], check=True)
+        with wave.open(dst) as w:
+            b = np.frombuffer(w.readframes(w.getnframes()), dtype="<i2").astype(np.float64) / 32768
+    out = np.zeros_like(a); out[: len(b)] = b[: len(a)]
+    return out / (np.abs(out).max() + 1e-6) * 0.9
 
 def voice_fx(a):
     """Voix plus chaude et présente : coupe-bas, présence, compression douce, légère pièce."""
@@ -696,4 +741,11 @@ if __name__ == "__main__":
     a = (sys.argv[1], int(sys.argv[2]), sys.argv[3])
     if "--court" in sys.argv: print(build_court(*a, voice=v))        # vague 3
     elif "--long" in sys.argv: print(build(*a, voice=v))             # vague 2
-    else: print(build(*a, voice=v, defi=True))                       # vague 4 : format vague 2 + ouverture « défi »
+    elif "--tom" in sys.argv: print(build(*a, voice=v, defi=True))   # vague 4 : format vague 2 + ouverture « défi », voix Tom
+    elif "--avent" in sys.argv:                                        # calendrier de l'Avent : Train des Neiges, énigme n = jour n
+        m = next((x.split("=")[1] for x in sys.argv if x.startswith("--moteur=")), "chatter")
+        hier = V.load(a[0], a[1] - 1)[1]["coupable"] if a[1] > 1 else None
+        print(build(*a, voice=v, defi=True, moteur=m, jour=a[1], hier=hier, abc=True))
+    else:                                                              # vague 5 : vague 4 + voix de conteuse (Chatterbox, choix « A » d'Aymeric)
+        m = next((x.split("=")[1] for x in sys.argv if x.startswith("--moteur=")), "chatter")
+        print(build(*a, voice=v, defi=True, moteur=m))
