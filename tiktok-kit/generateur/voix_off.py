@@ -109,7 +109,7 @@ def _lancer(moteur, jobs, d, ref):
     jp = os.path.join(d, "jobs.json"); json.dump(jobs, open(jp, "w"), ensure_ascii=False)
     cmd = [PY[moteur], WORKER, moteur, jp, d] + ([ref] if moteur not in ("kokoro", "pocket") else [])
     r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode: raise RuntimeError(r.stderr[-3000:])
+    if r.returncode: raise RuntimeError(f"moteur {moteur} : code {r.returncode}\n" + r.stderr[-3000:])
 
 def voix(lignes, moteur="kokoro", ref=None, log=False, essais=4, seuil=0.9):
     """-> {clé: (audio, silence_final)} ; chaque morceau est rogné, vérifié (moteurs autorégressifs), puis espacé."""
