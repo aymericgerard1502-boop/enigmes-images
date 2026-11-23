@@ -135,6 +135,8 @@ def voix(lignes, moteur="kokoro", ref=None, log=False, essais=4, seuil=0.9):
                 a_refaire = [dict(j, seed=GRAINE + 94 + essai * 37 + n) for n, j in enumerate(jobs) if score[j["id"]][0] < seuil]
                 if log: print(f"essai {essai + 1} : {len(a_refaire)} morceau(x) à refaire", [round(score[j['id']][0], 2) for j in jobs])
                 if not a_refaire or essai == essais - 1: break
+                global _ASR
+                _ASR = None; import gc; gc.collect()   # libère Whisper : le moteur de voix a besoin de ~5 Go
                 _lancer(moteur, a_refaire, d, ref)
                 for j in a_refaire:
                     sons[j["id"]] = rogner(lire_wav(os.path.join(d, j["id"] + ".wav")))
