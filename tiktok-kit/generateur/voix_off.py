@@ -21,6 +21,7 @@ REF_DEFAUT = os.environ.get("VOIX_REF", os.path.join(TTS_ROOT, "refs", "conteuse
 
 PAUSES = {".": 0.40, "!": 0.40, "?": 0.45, "…": 0.55, ":": 0.25, ";": 0.25, ",": 0.15}
 REVELATION = 0.75
+GRAINE = int(os.environ.get("VOIX_GRAINE", "7"))   # à changer si un rendu échoue toujours au même endroit
 TEMPO = {"pocket": 0.90}          # Pocket parle vite (~185 mots/min) : ralenti à ~165 pour une voix posée
 VERIFIER = {"pocket", "chatter"}  # moteurs autorégressifs : chaque morceau est réécouté par Whisper
 
@@ -118,7 +119,7 @@ def voix(lignes, moteur="kokoro", ref=None, log=False, essais=4, seuil=0.9):
     for k, txt in lignes:
         ids = []
         for s, p in decouper(txt):
-            jid = f"c{len(jobs):03d}"; jobs.append({"id": jid, "text": pour_moteur(s), "seed": 7}); ids.append((jid, p))
+            jid = f"c{len(jobs):03d}"; jobs.append({"id": jid, "text": pour_moteur(s), "seed": GRAINE}); ids.append((jid, p))
         plan.append((k, ids))
     garde = os.environ.get("VOIX_GARDER")
     with tempfile.TemporaryDirectory() as d:
@@ -131,7 +132,7 @@ def voix(lignes, moteur="kokoro", ref=None, log=False, essais=4, seuil=0.9):
                     if j["id"] not in score or score[j["id"]][0] < seuil:
                         sc = ressemblance(j["text"], transcrire(sons[j["id"]]))
                         if j["id"] not in score or sc > score[j["id"]][0]: score[j["id"]] = (sc, sons[j["id"]])
-                a_refaire = [dict(j, seed=101 + essai * 37 + n) for n, j in enumerate(jobs) if score[j["id"]][0] < seuil]
+                a_refaire = [dict(j, seed=GRAINE + 94 + essai * 37 + n) for n, j in enumerate(jobs) if score[j["id"]][0] < seuil]
                 if log: print(f"essai {essai + 1} : {len(a_refaire)} morceau(x) à refaire", [round(score[j['id']][0], 2) for j in jobs])
                 if not a_refaire or essai == essais - 1: break
                 _lancer(moteur, a_refaire, d, ref)
