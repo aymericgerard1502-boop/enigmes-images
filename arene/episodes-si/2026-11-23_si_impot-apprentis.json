@@ -1,0 +1,112 @@
+{
+ "slug": "si_impot-apprentis",
+ "rubrique": "SI ÇA PASSE · APPRENTISSAGE",
+ "source": "Sources : Sénat, L'Express, Mon Pôle Formation, L'Étudiant",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "÷ 4",
+  "legende": "ton salaire d'apprenti\nsans impôt"
+ },
+ "phrases": [
+  {
+   "dit": "Si cette loi passe, ton salaire d'apprenti sans impot est divisé par quatre.",
+   "affiche": "Si cette loi passe, ton salaire d'apprenti sans impôt est **divisé par 4**.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Aujourd'hui, c'est jusqu'à un Smic par an. Demain, 5 469 €.",
+   "affiche": "Aujourd'hui, c'est jusqu'à un Smic par an. Demain, **5 469 €**.",
+   "carte": {
+    "type": "calcul",
+    "label": "SALAIRE D'APPRENTI SANS IMPÔT, PAR AN",
+    "lignes": [
+     [
+      "Aujourd'hui (1 Smic)",
+      "21 876 €",
+      0.2
+     ],
+     [
+      "Si ça passe",
+      "5 469 €",
+      1.4
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Concrètement, au salaire moyen d'un apprenti, tu dépasses le plafond dès le sixième mois.",
+   "affiche": "Concrètement, au salaire moyen d'un apprenti, tu dépasses le plafond **dès le 6e mois**.",
+   "carte": {
+    "type": "seuil",
+    "label": "HYPOTHÈSE · SALAIRE MOYEN 1 082 € BRUT",
+    "titre": "Ton année d'apprenti",
+    "gauche": "Mois 1 à 5",
+    "droite": "Ensuite",
+    "seuil": "5 469 €",
+    "part": 0.42
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Le reste devient imposable, pour toi ou pour tes parents.",
+   "affiche": "Le reste devient **imposable**, pour toi ou pour tes parents."
+  },
+  {
+   "dit": "Ce qui ne change pas : ce que ton patron te verse.",
+   "affiche": "Ce qui ne change pas : **ce que ton patron te verse.**"
+  },
+  {
+   "dit": "Pour la rapporteure du Sénat : même règle que les étudiants, et fin d'une niche pour foyers aisés.",
+   "affiche": "Pour la rapporteure du Sénat : **même règle que les étudiants**, et fin d'une niche pour foyers aisés.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Rapporteure générale du budget (Sénat)",
+    "lignes": [
+     "Même règle que",
+     "les étudiants qui",
+     "travaillent."
+    ]
+   }
+  },
+  {
+   "dit": "Pour l'association des apprentis, c'est faux : un étudiant touche au moins le Smic horaire. Pas un apprenti.",
+   "affiche": "Pour l'association des apprentis, **c'est faux** : un étudiant touche au moins le Smic horaire. Pas un apprenti.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "ANAF (association des apprentis)",
+    "lignes": [
+     "Un apprenti touche",
+     "souvent moins",
+     "que le Smic."
+    ]
+   }
+  },
+  {
+   "dit": "Voté en commission seulement. Vote du Sénat le 9 décembre. Rien n'est définitif.",
+   "affiche": "Voté en commission seulement. Vote du Sénat le 9 décembre. **Rien n'est définitif.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "PROPOSÉ",
+    "sous": "Commission des finances du Sénat · 12/11",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
