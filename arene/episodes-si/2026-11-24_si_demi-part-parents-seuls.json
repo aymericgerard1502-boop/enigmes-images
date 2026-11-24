@@ -1,0 +1,102 @@
+{
+ "slug": "si_demi-part-parents-seuls",
+ "rubrique": "SI ÇA PASSE · IMPÔTS",
+ "source": "Sources : Public Sénat, SeniorActu, Anadolu, rapport du Sénat",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "−600 €",
+  "legende": "par an pour le parent\nqui t'a élevé seul"
+ },
+ "phrases": [
+  {
+   "dit": "Si cette loi passe, le parent qui t'a élevé seul paie environ 600 euros d'impot en plus par an.",
+   "affiche": "Si cette loi passe, le parent qui t'a élevé seul paie environ **600 € d'impôt en plus** par an.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Aujourd'hui, il garde une demi-part en plus, même une fois que tu es parti. Le Sénat l'a supprimée.",
+   "affiche": "Aujourd'hui, il garde une demi-part en plus, même une fois que tu es parti. **Le Sénat l'a supprimée.**",
+   "carte": {
+    "type": "checks",
+    "label": "AUJOURD'HUI · LA CASE L",
+    "pas": 0.7,
+    "lignes": [
+     [true, "Vivre seul aujourd'hui"],
+     [true, "Avoir élevé seul un enfant 5 ans"],
+     [false, "Si le Sénat l'emporte"]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Concrètement, d'après le Sénat, c'est 600 euros de plus en moyenne. Et jusqu'à 1 000 pour les plus aisés.",
+   "affiche": "Concrètement, d'après le Sénat, c'est **600 € de plus** en moyenne. Et jusqu'à 1 000 € pour les plus aisés.",
+   "carte": {
+    "type": "calcul",
+    "label": "HYPOTHÈSE · MOYENNES DU SÉNAT",
+    "lignes": [
+     ["Foyers (2023)", "1,2 million", 0.3],
+     ["Les plus aisés", "≈ 1 000 €", 1.1]
+    ],
+    "total": ["En moyenne", "+ 600 €", 1.9]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : la demi-part d'un parent seul avec un enfant encore à charge.",
+   "affiche": "Ce qui ne change pas : la demi-part d'un parent seul **avec un enfant encore à charge.**"
+  },
+  {
+   "dit": "Pour la rapporteure du Sénat, c'est un avantage à vie, alors que l'enfant parti ne coûte plus rien.",
+   "affiche": "Pour la rapporteure du Sénat, c'est **un avantage à vie**, alors que l'enfant parti ne coûte plus rien.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Rapporteure du budget (Sénat)",
+    "lignes": [
+     "Un avantage à vie,",
+     "alors que l'enfant",
+     "ne coûte plus rien."
+    ]
+   }
+  },
+  {
+   "dit": "Pour les écologistes, c'est une hausse d'impot sur les mères seules et les classes moyennes.",
+   "affiche": "Pour les écologistes, c'est **une hausse d'impôt** sur les mères seules et les classes moyennes.",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Sénateurs écologistes",
+    "lignes": [
+     "Une hausse d'impôt",
+     "sur les mères seules,",
+     "les classes moyennes."
+    ]
+   }
+  },
+  {
+   "dit": "Voté par le Sénat hier. Vote sur tout le budget le 9 décembre, puis compromis avec les députés. Rien n'est définitif.",
+   "affiche": "Voté par le Sénat hier. Vote sur tout le budget le 9 décembre, puis compromis avec les députés. **Rien n'est définitif.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "VOTÉ",
+    "sous": "Sénat · budget 2027 · 23/11",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
