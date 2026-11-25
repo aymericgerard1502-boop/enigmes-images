@@ -1,0 +1,123 @@
+{
+ "slug": "si_impot-arrets-ald",
+ "rubrique": "SI ÇA PASSE · SANTÉ",
+ "source": "Sources : Public Sénat, JeChange, LégiFiscal, rapport du Sénat",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "−366 €",
+  "legende": "d'impôt pour 3 mois\nd'arrêt longue maladie"
+ },
+ "phrases": [
+  {
+   "dit": "Si cette loi passe, trois mois d'arrêt longue maladie peuvent te couter 366 euros d'impot.",
+   "affiche": "Si cette loi passe, trois mois d'arrêt longue maladie peuvent te coûter **366 € d'impôt**.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Aujourd'hui, les indemnités d'une longue maladie, comme un cancer, ne sont pas imposées. Le Sénat veut tout imposer.",
+   "affiche": "Aujourd'hui, les indemnités d'une longue maladie, comme un cancer, ne sont pas imposées. **Le Sénat veut tout imposer.**",
+   "carte": {
+    "type": "checks",
+    "label": "INDEMNITÉS LONGUE MALADIE",
+    "pas": 0.7,
+    "lignes": [
+     [
+      true,
+      "Aujourd'hui : 0 € d'impôt"
+     ],
+     [
+      false,
+      "Gouvernement : 50 % imposé"
+     ],
+     [
+      false,
+      "Sénat : 100 % imposé"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Exemple : 2 500 euros brut, trois mois d'arrêt, tranche à 11 %. Selon JeChange, 366 euros d'impot en plus.",
+   "affiche": "Exemple : 2 500 € brut, trois mois d'arrêt, tranche à 11 %. Selon JeChange, **366 € d'impôt en plus.**",
+   "carte": {
+    "type": "calcul",
+    "label": "HYPOTHÈSE · 2 500 € BRUT · TRANCHE 11 %",
+    "lignes": [
+     [
+      "Indemnités (90 jours)",
+      "3 699 €",
+      0.3
+     ],
+     [
+      "Après abattement de 10 %",
+      "3 329 €",
+      1.1
+     ]
+    ],
+    "total": [
+     "Impôt en plus",
+     "+ 366 €",
+     1.9
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : les arrêts maladie classiques, déjà imposés.",
+   "affiche": "Ce qui ne change pas : les arrêts maladie classiques, **déjà imposés.**"
+  },
+  {
+   "dit": "Pour la rapporteure du Sénat, rien ne justifie un traitement à part. Il faut redresser les comptes.",
+   "affiche": "Pour la rapporteure du Sénat, **rien ne justifie un traitement à part**. Il faut redresser les comptes.",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Rapporteure du budget (Sénat)",
+    "lignes": [
+     "Pas de raison de",
+     "traiter ces arrêts à part.",
+     "Redresser les comptes."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la gauche et le Rassemblement national, c'est taxer des malades qui souffrent déjà.",
+   "affiche": "Pour la gauche et le Rassemblement national, c'est **taxer des malades qui souffrent déjà.**",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Gauche et RN au Sénat",
+    "lignes": [
+     "On fait payer",
+     "des malades qui",
+     "souffrent déjà."
+    ]
+   }
+  },
+  {
+   "dit": "Voté au Sénat lundi, refusé par les députés. Rien n'est définitif.",
+   "affiche": "Voté au Sénat lundi, refusé par les députés. **Rien n'est définitif.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "VOTÉ",
+    "sous": "Sénat · budget 2027 · 23/11",
+    "suite": "PAS DÉFINITIF",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
