@@ -51,12 +51,14 @@ Décision d'Aymeric (18/11) : 29 abonnés, toujours 0 vente KDP. Il lance la vag
 ### Vague 3 prolongée (18 nov., 1 vidéo)
 Santons de Minuit 8 « La lettre au Père Noël » (18/11 18:09). Les versions courtes du 19 et du 20 ont été remplacées par la vague 4 avant publication.
 
-### Vague 4 — EN COURS (19 → 24 nov., 6 vidéos)
+### Vague 4 (19 → 24 nov., 6 vidéos)
 Base : retour au format de la vague 2 (mini-histoire, ~37 à 46 s, minuteur 8 s), qui avait le meilleur temps de visionnage (5,3 s).
 **Changement unique : les 2,6 premières secondes.** Au lieu de la question sur l'objet (« Qui a fait taire le piano ? »), Rose défie le spectateur : voix « Toi, tu trouves le coupable avant Rose ? », gros titre « TOI, TU LE TROUVES AVANT ROSE ? », et les 3 suspects (pastilles + prénoms, « 3 suspects, 1 seul coupable ») visibles dès la 1re image, sans apparition progressive.
 Hypothèse : moins de départs dans les 3 premières secondes, temps moyen > 6 s (contre 5,3 s en vague 2 et 3,9 s en vague 3), plus de commentaires.
 Vidéos (programmées dans Buffer) : Belle-Île 6 « Le piano muet » (19/11 20:43), Santons 9 « Le lavoir gelé » (20/11 19:52), Vendanges 5 « Les cigognes dérangées » (21/11 19:14), Santons 10 « Le dernier verre » (22/11 21:21), Belle-Île 7 « La page arrachée » (23/11 21:31), Vendanges 6 « La borne déplacée » (24/11 19:26).
-Bilan : le 25 nov.
+Résultat (25/11, sans le 24/11 trop récent : 231 vues) : ~650 vues par vidéo · **4,2 s de visionnage moyen** (3,2 à 5,6 s) · ~12 likes par vidéo · 0 commentaire · 1 partage.
+Comparaison : vague 2 ~750 vues, 5,3 s, ~23 likes ; vague 3 ~740 vues, 3,9 s, ~26 likes.
+Conclusion : hypothèse non validée. L'ouverture « défi » ne retient pas mieux que la vague 2 et les likes baissent de moitié. Les deux meilleures (22/11 « Le dernier verre » 5,0 s, 23/11 « La page arrachée » 5,6 s) sont aussi les plus longues : celles qui passent le cap des premières secondes regardent davantage. Le frein principal reste les 3 premières secondes, et la voix (vague 5) est la prochaine piste testée.
 
 ### Priorité avant la vague 5 : la voix off (demande d'Aymeric, 20/11)
 Constat : visuel et scénario bons, mais la voix Piper « Tom » fait amateur (ton plat, mots qui se chevauchent, ponctuation et silences sautés). Les spectatrices partent après 3 à 4 s.
@@ -69,7 +71,7 @@ Résultat du test (20/11) : 3 versions envoyées (voix_A/B/C.mp3, correspondance
 ### Vague 5 — EN COURS (25 → 30 nov., 6 vidéos)
 Changement unique : la voix (conteuse féminine rythmée à la place de Tom). Le reste = format de la vague 4.
 Vidéos (programmées dans Buffer le 22/11) : Belle-Île 8 (25/11 18:43), Ankou 9 (26/11 18:15), Vendanges 7 (27/11 20:50), Belle-Île 9 (28/11 19:03), Ankou 10 (29/11 19:47), Vendanges 8 (30/11 20:29). Bilan : le 1er déc. Ankou choisi pour coller au persona (légendes bretonnes, paranormal doux).
-Hypothèse : temps moyen > 6 s (vague 4 : 3 à 4 s selon Aymeric). Puis calendrier de l'Avent dès le 1er décembre.
+Hypothèse : temps moyen > 6 s (vague 4 : 3 à 4 s selon Aymeric). Puis calendrier de l'Avent dès le 1er décembre (jours 1 à 4 programmés le 25/11 : 1/12 17:55, 2/12 19:23, 3/12 20:30, 4/12 20:36).
 
 ### Calendrier de l'Avent en direct (1er → 24 déc.) — PRÊT
 - PDF intérieur reçu le 22/11. `outils/extraire_train.py` extrait les énigmes 7 à 24, traduit chaque indice en contrainte logique, et un solveur vérifie que la solution est unique et que le coupable est celui des pages de solutions du livre : 18/18 OK. Plans redessinés en grille (voisinages lus sur les plans du livre).
