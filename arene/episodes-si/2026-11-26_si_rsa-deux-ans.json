@@ -1,0 +1,123 @@
+{
+ "slug": "si_rsa-deux-ans",
+ "rubrique": "SI ÇA PASSE · TRAVAIL",
+ "source": "Sources : Assemblée nationale (rapport n° 3479), NosParlementaires, LCP, CAF",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "−651 €",
+  "legende": "de RSA par mois\naprès 2 ans"
+ },
+ "phrases": [
+  {
+   "dit": "Si cette loi passe, au bout de deux ans de RSA, tu pourrais perdre 651 euros par mois.",
+   "affiche": "Si cette loi passe, au bout de deux ans de RSA, tu pourrais perdre **651 € par mois**.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Les LR proposent : le RSA s'arrête après vingt-quatre mois d'affilée, sauf renouvellement.",
+   "affiche": "Les LR proposent : le RSA s'arrête après **24 mois d'affilée**, sauf renouvellement.",
+   "carte": {
+    "type": "checks",
+    "label": "RSA · PROPOSITION LR",
+    "pas": 0.7,
+    "lignes": [
+     [
+      true,
+      "Dès 25 ans, sans limite"
+     ],
+     [
+      false,
+      "Proposé : 24 mois max"
+     ],
+     [
+      false,
+      "Puis renouvelé au cas par cas"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Exemple : tu vis seul et tu peux travailler. 651 euros de RSA par mois. Pas renouvelé ? Plus rien.",
+   "affiche": "Exemple : tu vis seul et tu peux travailler. 651 € de RSA par mois. Pas renouvelé ? **Plus rien.**",
+   "carte": {
+    "type": "calcul",
+    "label": "HYPOTHÈSE · SEUL · NON RENOUVELÉ",
+    "lignes": [
+     [
+      "RSA de base (CAF)",
+      "651,69 €",
+      0.3
+     ],
+     [
+      "Après 24 mois",
+      "0 €",
+      1.1
+     ]
+    ],
+    "total": [
+     "Sur un an",
+     "− 7 820 €",
+     1.9
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : si tu ne peux pas travailler, ou si tu suis un parcours d'insertion, ça continue.",
+   "affiche": "Ce qui ne change pas : si tu ne peux pas travailler, ou si tu suis un parcours d'insertion, **ça continue.**"
+  },
+  {
+   "dit": "Pour la droite, un filet de sécurité ne doit pas durer à vie.",
+   "affiche": "Pour la droite, **un filet de sécurité ne doit pas durer à vie.**",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Droite républicaine (LR)",
+    "lignes": [
+     "Un filet de sécurité",
+     "ne doit pas durer à vie.",
+     "Pousser vers l'emploi."
+    ]
+   }
+  },
+  {
+   "dit": "Pour la gauche, couper le RSA n'aide pas à trouver un emploi.",
+   "affiche": "Pour la gauche, **couper le RSA n'aide pas à trouver un emploi.**",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Gauche à l'Assemblée",
+    "lignes": [
+     "Couper le RSA",
+     "n'aide pas à trouver",
+     "un emploi."
+    ]
+   }
+  },
+  {
+   "dit": "Le hic : la mesure a été supprimée en commission. Les LR veulent la rétablir. Rien n'est voté.",
+   "affiche": "Le hic : la mesure a été supprimée en commission. Les LR veulent la rétablir. **Rien n'est voté.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "SUPPRIMÉ",
+    "sous": "Commission de l'Assemblée · 18/11",
+    "suite": "RIEN N'EST VOTÉ",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
