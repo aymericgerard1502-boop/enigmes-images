@@ -1,0 +1,128 @@
+{
+ "slug": "si_taxe-habitation",
+ "rubrique": "SI ÇA PASSE · LOGEMENT",
+ "source": "Sources : Capital (25/11), Bercy via MoneyVox/AFP, Assemblée nationale",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "−590 €",
+  "legende": "par an si la taxe\nd'habitation revient",
+  "tag": "SI ELLE EST RÉTABLIE"
+ },
+ "phrases": [
+  {
+   "dit": "Si la taxe d'habitation revient, ça pourrait te coûter 590 euros par an.",
+   "affiche": "Si la taxe d'habitation revient, ça pourrait te coûter **590 € par an**.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Mercredi, le Premier ministre a ouvert la porte à son retour.",
+   "affiche": "Mercredi, le Premier ministre a **ouvert la porte** à son retour.",
+   "carte": {
+    "type": "checks",
+    "label": "TAXE D'HABITATION",
+    "pas": 0.7,
+    "lignes": [
+     [
+      true,
+      "Supprimée depuis 2023"
+     ],
+     [
+      false,
+      "Lecornu : retour possible"
+     ],
+     [
+      false,
+      "Si le Sénat la rétablit"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Et elle est payée par l'occupant. Donc toi, si tu es locataire.",
+   "affiche": "Et elle est payée par l'occupant. Donc **toi, si tu es locataire**."
+  },
+  {
+   "dit": "Si elle revenait comme avant ? Sa suppression a fait gagner 590 euros par an en moyenne aux foyers concernés en 2020.",
+   "affiche": "Si elle revenait comme avant ? Sa suppression a fait gagner **590 € par an** en moyenne aux foyers concernés en 2020.",
+   "carte": {
+    "type": "calcul",
+    "label": "HYPOTHÈSE · RETOUR COMME AVANT",
+    "lignes": [
+     [
+      "Gain moyen 2020 (Bercy)",
+      "590 €",
+      0.3
+     ],
+     [
+      "Si elle revient",
+      "à repayer",
+      1.1
+     ]
+    ],
+    "total": [
+     "Sur un an",
+     "− 590 €",
+     1.9
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : les résidences secondaires la paient toujours.",
+   "affiche": "Ce qui ne change pas : les résidences secondaires **la paient toujours.**"
+  },
+  {
+   "dit": "Pour les maires de France, les communes ont besoin de cette ressource, avec un impot plus partagé.",
+   "affiche": "Pour les maires de France, les communes ont besoin de cette ressource, **avec un impôt plus partagé.**",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Association des maires de France",
+    "lignes": [
+     "Des ressources",
+     "pour les communes :",
+     "un impôt plus partagé."
+    ]
+   }
+  },
+  {
+   "dit": "Pour les députés macronistes, c'est un nouvel impot, il faut d'abord freiner les dépenses locales.",
+   "affiche": "Pour les députés macronistes, c'est un nouvel impôt, **il faut d'abord freiner les dépenses locales.**",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Députés Ensemble pour la République",
+    "lignes": [
+     "Pas de nouvel impôt :",
+     "freiner d'abord",
+     "les dépenses locales."
+    ]
+   }
+  },
+  {
+   "dit": "Le hic : rien n'est voté, aucun montant n'est fixé. Le Sénat vote ce samedi.",
+   "affiche": "Le hic : rien n'est voté, aucun montant n'est fixé. **Le Sénat vote ce samedi.**",
+   "carte": {
+    "type": "tampon",
+    "tampon": "PISTE",
+    "sous": "Premier ministre au Sénat · 25/11",
+    "suite": "RIEN N'EST VOTÉ",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
