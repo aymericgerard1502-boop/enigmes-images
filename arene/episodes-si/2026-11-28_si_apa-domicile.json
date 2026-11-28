@@ -1,0 +1,124 @@
+{
+ "slug": "si_apa-domicile",
+ "rubrique": "SI ÇA PASSE · SANTÉ",
+ "source": "Sources : Public Sénat/AFP (27/11), Handicap.fr/AFP (27/11), Senioractu (28/11)",
+ "voix": {
+  "modele": "fr_FR-tom-medium",
+  "vitesse": 0.88
+ },
+ "choc": {
+  "valeur": "+12 €",
+  "legende": "par mois pour ta grand-mère\naidée à domicile",
+  "tag": "DÉCRET PUBLIÉ"
+ },
+ "phrases": [
+  {
+   "dit": "C'est passé : l'aide à domicile de ta grand-mère va lui coûter 12 euros de plus par mois.",
+   "affiche": "C'est passé : l'aide à domicile de ta grand-mère va lui coûter **12 € de plus par mois**.",
+   "geste": "siffle"
+  },
+  {
+   "dit": "Vendredi, le gouvernement a changé le calcul de l'A P A, l'aide aux seniors qui vivent chez eux.",
+   "affiche": "Vendredi, le gouvernement a **changé le calcul de l'APA**, l'aide aux seniors qui vivent chez eux.",
+   "carte": {
+    "type": "checks",
+    "label": "APA À DOMICILE",
+    "pas": 0.7,
+    "lignes": [
+     [
+      true,
+      "830 000 seniors aidés"
+     ],
+     [
+      true,
+      "Le département paie le plan"
+     ],
+     [
+      false,
+      "Leur part augmente"
+     ]
+    ]
+   },
+   "geste": "pointe"
+  },
+  {
+   "dit": "Concrètement ? Sa part à payer monte de 12 euros par mois en moyenne, soit 144 euros par an. Et jusqu'à 36 euros par mois, selon le ministère.",
+   "affiche": "Concrètement ? Sa part à payer monte de **12 € par mois** en moyenne, soit 144 € par an. Et jusqu'à 36 € par mois, selon le ministère.",
+   "carte": {
+    "type": "calcul",
+    "label": "MINISTÈRE · MAX APRÈS CRÉDIT D'IMPÔT",
+    "lignes": [
+     [
+      "En moyenne",
+      "+ 12 €/mois",
+      0.3
+     ],
+     [
+      "Au maximum",
+      "+ 36 €/mois",
+      1.1
+     ]
+    ],
+    "total": [
+     "Sur un an",
+     "+ 144 €",
+     1.9
+    ]
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Ce qui ne change pas : sous 940 euros de revenus par mois, on ne paie toujours rien.",
+   "affiche": "Ce qui ne change pas : sous 940 € de revenus par mois, **on ne paie toujours rien.**"
+  },
+  {
+   "dit": "Pour le gouvernement, il faut recentrer l'aide sur les plus modestes et les plus dépendants.",
+   "affiche": "Pour le gouvernement, il faut **recentrer l'aide sur les plus modestes et les plus dépendants.**",
+   "carte": {
+    "type": "camp",
+    "camp": "POUR",
+    "qui": "Ministère de l'Autonomie",
+    "lignes": [
+     "Recentrer l'aide",
+     "sur les plus modestes",
+     "et les plus dépendants."
+    ]
+   }
+  },
+  {
+   "dit": "Pour le Conseil de l'age, des seniors risquent de réduire leurs heures d'aide, voire d'y renoncer.",
+   "affiche": "Pour le Conseil de l'âge, des seniors **risquent de réduire leurs heures d'aide, voire d'y renoncer.**",
+   "carte": {
+    "type": "camp",
+    "camp": "CONTRE",
+    "qui": "Conseil de l'âge (HCFEA)",
+    "lignes": [
+     "Risque de réduire",
+     "les heures d'aide,",
+     "voire d'y renoncer."
+    ]
+   }
+  },
+  {
+   "dit": "Le décret est publié. Il s'applique dès janvier, même aux aides déjà en cours.",
+   "affiche": "Le décret est publié. Il s'applique **dès janvier**, même aux aides déjà en cours.",
+   "carte": {
+    "type": "tampon",
+    "tampon": "DÉCRET",
+    "sous": "Journal officiel · 27/11",
+    "suite": "DÈS JANVIER",
+    "apres": 1.2
+   },
+   "geste": "carton"
+  },
+  {
+   "dit": "Alors, pour ou contre ? Ton camp en commentaire.",
+   "affiche": "Alors, **pour** ou **contre** ? Ton camp en commentaire.",
+   "carte": {
+    "type": "cta",
+    "appel": "Ton camp en commentaire ↓"
+   },
+   "geste": "deux"
+  }
+ ]
+}
